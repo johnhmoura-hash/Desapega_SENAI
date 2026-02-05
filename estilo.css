@@ -52,23 +52,27 @@ body{
 
 
 .botao {
-    display: block;
     width: 100%;
-    padding: 20px;
-    height: 8px;
-    box-sizing: border-box;
+    padding: 14px 0;          
+    display: flex;
+    align-items: center;      
+    justify-content: center;  
 
-    background:  #FF7F27;
-    text-align: center;
-    color: white;
-      
+    background-color: #FF7F27;
+    color: #fff;
+    font-size: 16px;
+    font-weight: 600;
+
     border-radius: 30px;
     cursor: pointer;
     text-decoration: none;
-    }
+}
+
 .botao:hover {
-    background-color: #0056b3;
-    }
+    background-color: #e66f1f;
+}
+
+
 
 
  .logo{
