@@ -165,6 +165,7 @@ h2 {
   border: 1px solid #005CAA; 
    width: 1vh;
   padding: 1vh;
+  color: #a8a8a8;
 }
 
 .menu input{
@@ -175,7 +176,7 @@ padding: 0.25vw;
 }
 
 .menu a:hover{
-  background-color: #0056b3;
+  color: #005CAA;
 
 }
 
