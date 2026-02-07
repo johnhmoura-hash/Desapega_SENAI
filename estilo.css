@@ -162,7 +162,7 @@ h2 {
   margin-right: 15px;
   background: #ffffff;
   border-radius: 10px;
-  border: 1px solid #005CAA; 
+  border: 1px solid #a8a8a8; 
    width: 1vh;
   padding: 1vh;
   color: #a8a8a8;
@@ -177,8 +177,12 @@ padding: 0.25vw;
 
 .menu a:hover{
   color: #005CAA;
+  border-color: #0056b3;
 
 }
+
+
+
 
 .ajuste{
   display: flex;
@@ -206,9 +210,5 @@ padding: 0.25vw;
   color: white;
 }
 
-.menu2 {
-  border-color: #005CAA;
-  background: #fff;
-  
-}
+
  
