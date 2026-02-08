@@ -134,6 +134,8 @@ h2 {
 
 /* TELA PRINCIPAL*/
 
+
+/* menu topo */
 .page {
   width: 100%;
   box-shadow: 0 1px #ddd;
@@ -182,6 +184,7 @@ padding: 0.25vw;
 
 }
 
+/* categoria */
 .ajuste{
   display: flex;
   gap: 30px;
