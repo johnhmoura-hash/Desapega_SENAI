@@ -221,6 +221,9 @@ h3{
   color: white;
 }
 
+.categoria:hover{
+  padding: 20px;
+}
 /* slider*/
 .interface {
   max-width: 1288px;
@@ -289,7 +292,6 @@ h3{
   background-color: #FF7F27;
 }
 
- 
 .botoes {
   position: absolute;
   bottom: 20px;  
@@ -297,18 +299,17 @@ h3{
 }
 
 .btn-inscrever {
-  border: 1px solid #1a5cff;
-  color: #1a5cff;
-  padding: 12px 24px;
+  border: 1px solid #0056b3;
+  color: #0056b3;
+  padding: 12px 25px;
   text-decoration: none;
   border-radius: 8px;
   font-weight: bold;
   background-color: #fff;
 }
 
-.btn-inscrever:hover {
-  background-color: #1a5cff;
-
+.btn-inscrever:hover { 
+   padding: 15px 29px;
 }
 
 .botaoes a{
