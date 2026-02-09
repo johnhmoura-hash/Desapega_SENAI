@@ -34,6 +34,7 @@ body{
     margin-bottom: 15px;
 
 }
+
 .campo label{
     display: block;
     margin-bottom: 5px;
@@ -212,12 +213,8 @@ h3{
      
     display: flex;
     border: 1px solid #005CAA;
-    flex-direction: column;
-     
-   
-    
+    flex-direction: column;     
 }
-
 
 .categoria a{
   text-decoration: none;
@@ -256,8 +253,6 @@ h3{
 .slider-box.ativo{
   opacity: 1;
  }
-
-
 
 .slider-box img{
   width: 100%;
