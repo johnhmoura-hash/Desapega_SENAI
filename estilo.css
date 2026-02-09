@@ -2,8 +2,7 @@ body{
     font-family: Arial, Helvetica, sans-serif;
     margin: 0;
     background: white;
-    display: grid;
-    place-items: center;
+   
 }
 
 /* Tela de login*/
@@ -142,15 +141,14 @@ h2 {
   display: flex;
   align-items: center;
   justify-items: center;
-  gap: 10px;
+  gap: 440px;
   padding: 10px;
   justify-content: center;
 }
 
 .logo2 img {
   width: 40px;     
-  height: auto;
-  margin-left: 10px;  
+
 }
 
 .menu { 
@@ -189,9 +187,19 @@ h2 {
 }
 
 /* categoria */
+h3{
+  color: #a8a8a8;
+}
+ .ajuste1{
+  display: grid;
+  justify-content: center;
+   
+ }
+
 .ajuste{
   display: flex;
   gap: 30px;
+  
 }
 
 .categoria{
@@ -202,14 +210,14 @@ h2 {
     border-radius: 12px;
     box-shadow: 0 4px 5px #a8a8a8; 
      
-    justify-content: center;
-    align-content: center;
     display: flex;
     border: 1px solid #005CAA;
     flex-direction: column;
-    text-align: center;
+     
+   
     
 }
+
 
 .categoria a{
   text-decoration: none;
@@ -225,10 +233,11 @@ h2 {
 
 
  .slider{
-  height: 50%;
+  
+  height: 300px;
   position: relative;
   overflow: hidden;
-  width: 80%;
+  width: 100%;
   margin: 2px auto;
 
 
@@ -273,14 +282,14 @@ h2 {
 .btn-nav-box .btn-nav{
   width: 30px;
   height: 5px;
-  border:  1px solid #8f8e8e;
+  border:  1px solid #FF7F27;
   border-radius: 8px;
 }
 .btn-nav-box .btn-nav:hover{
-  background-color: #8f8e8e;
+  background-color: #FF7F27;
 }
 .btn-nav-box .btn-nav.ativo{
-  background-color: #8f8e8e ;
+  background-color: #FF7F27;
 }
 
  
