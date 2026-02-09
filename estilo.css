@@ -34,6 +34,7 @@ body{
     margin-bottom: 15px;
 
 }
+
 .campo label{
     display: block;
     margin-bottom: 5px;
@@ -212,12 +213,8 @@ h3{
      
     display: flex;
     border: 1px solid #005CAA;
-    flex-direction: column;
-     
-   
-    
+    flex-direction: column;     
 }
-
 
 .categoria a{
   text-decoration: none;
@@ -257,8 +254,6 @@ h3{
   opacity: 1;
  }
 
-
-
 .slider-box img{
   width: 100%;
   height: 100%;
@@ -295,21 +290,25 @@ h3{
 }
 
  
-.botaoes{
-    width: 100px;
-    padding: 10px;
-    background: #ffffff;
-  
-    border-radius: 12px;
-    box-shadow: 0 4px 5px #a8a8a8; 
-    
-    border: 1px solid #005CAA;
-    flex-direction: column;
-    position: absolute;
-  
-  display: flex;
-  flex-direction: column; 
-  align-items: center;    
+.botoes {
+  position: absolute;
+  bottom: 20px;  
+  right: 20px;    
+}
+
+.btn-inscrever {
+  border: 1px solid #1a5cff;
+  color: #1a5cff;
+  padding: 12px 24px;
+  text-decoration: none;
+  border-radius: 8px;
+  font-weight: bold;
+  background-color: #fff;
+}
+
+.btn-inscrever:hover {
+  background-color: #1a5cff;
+
 }
 
 .btn-escreva {
