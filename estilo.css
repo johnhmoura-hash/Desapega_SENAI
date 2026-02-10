@@ -327,3 +327,169 @@ h3{
 text-decoration: none;
 color: #0056b3;
 }
+
+
+/*Tela produto*/
+
+* {
+    box-sizing: border-box;
+    font-family: Arial, sans-serif;
+}
+
+.box-produto {
+    width: 480px;
+    border: 2px solid #3b82f6;
+    border-radius: 20px;
+    padding: 20px;
+    margin: 40px auto;
+}
+
+.produto {
+    display: flex;
+    gap: 15px;
+    margin-bottom: 20px;
+}
+
+.produto img {
+    width: 100px;
+    height: 100px;
+    border-radius: 12px;
+}
+
+.info h2 {
+    color: #2563eb;
+    margin-bottom: 6px;
+}
+
+.info p {
+    font-size: 14px;
+    color: #555;
+}
+
+.titulo-info {
+    margin-bottom: 10px;
+    font-size: 16px;
+}
+
+.input-info {
+    width: 100%;
+    padding: 10px;
+    margin-top: 10px;
+    border-radius: 12px;
+    border: 1px solid #3b82f6;
+    outline: none;
+}
+
+.kkk{
+  font-family: Arial, sans-serif;
+  background: #f2f2f2;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 100vh;
+  margin: 0;
+}
+
+
+.chat-container {
+  width: 360px;
+  background: #fff;
+  border-radius: 10px;
+  box-shadow: 0 0 10px rgba(0,0,0,0.2);
+  display: flex;
+  flex-direction: column;
+  overflow: hidden;
+}
+
+
+.chat-header {
+  background: #eee;
+  padding: 12px;
+  display: flex;
+  align-items: center;
+  justify-content: center; 
+  gap: 10px;
+}
+
+.profile-pic {
+  width: 35px;
+  height: 35px;
+  border-radius: 50%;
+  object-fit: cover;
+}
+
+.contact-name {
+  font-weight: bold;
+  font-size: 16px;
+}
+
+
+.messages {
+  flex: 1;
+  padding: 12px;
+  display: flex;
+  flex-direction: column;
+}
+
+
+.message {
+  max-width: 70%;
+  padding: 10px 14px;
+  border-radius: 20px;
+  margin-bottom: 12px;
+  font-size: 14px;
+}
+
+.andre {
+  background: #e0e0e0;
+  align-self: flex-start;
+}
+
+.user {
+  background: #1e3a8a;
+  color: #fff;
+  align-self: flex-end;
+  margin-left: auto;
+}
+
+.status {
+  font-size: 12px;
+  color: gray;
+  text-align: right;
+  margin-top: -5px;
+  margin-bottom: 10px;
+}
+
+
+.input-area {
+  display: flex;
+  align-items: center;
+  border-top: 1px solid #ddd;
+  padding: 6px;
+}
+
+.input-area input {
+  flex: 1;
+  border: none;
+  padding: 10px;
+  font-size: 14px;
+  outline: none;
+}
+
+.input-area .camera {
+  background: none;
+  border: none;
+  font-size: 20px;
+  margin-right: 8px;
+  cursor: pointer;
+}
+
+.input-area .send {
+  background: orange;
+  border: none;
+  padding: 0 15px;
+  cursor: pointer;
+  font-size: 18px;
+  color: white;
+  border-radius: 50%;
+}
