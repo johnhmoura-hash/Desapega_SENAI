@@ -48,3 +48,4 @@ btnNav.forEach((btn, indice)=>{
 });
 
 iniciarAutoPlay();
+
