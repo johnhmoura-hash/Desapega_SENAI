@@ -13,42 +13,55 @@
     
 <div class="Card">
 <h2>Criar conta</h2>    
-<div>
-     <div class="campo">
+<form action="tela_principal.html" onsubmit="return validarFormulario()">
+  <div class="campo">
       <label for="usuario">Nome</label>
-      <input type="text" id="usuario" placeholder="Digite seu nome">
-    </div>
+        <input type="text" id="usuario" placeholder="Digite seu nome">
+      </div>
+      <div>
+      <div class="campo">
+        <label for="matrícula">Número de Matrícula</label>
+        <input type="number" id="numMatrícula" placeholder="Digite o número de matrícula">
+      </div>
+      <div class="campo">
+        <label for="matrícula">Número de Telefone</label>
+        <input type="tel" id="numTelefone" placeholder="Digite o número de telefone">
+      </div>
+      <div class="campo">
+        <label for="matrícula">Email</label>
+        <input type="email" id="email" placeholder="Digite o seu email">
+      </div>
+      <div class="campo">
+        <label for="matrícula"> Confirmar Email</label>
+        <input type="email" id="emailConfirmar" placeholder="Confirme seu email">
+      </div>
+      <div class="campo">
+        <label for="senha">Senha</label>
+        <input type="password" id="senha" placeholder="Digite sua senha"> 
+      </div>
+      <div class="campo">
+        <label for="senha">Confirmar senha</label>
+        <input type="password" id="confirmarSenha" placeholder="Confirme sua senha"> 
+      </div>
+      <div>
+        <button type="submit" class="botao">CRIAR CONTA</button>
+      </div>
+      </form>
+      <br>
+      <button class="google-btn">
+        <img src="https://upload.wikimedia.org/wikipedia/commons/c/c1/Google_%22G%22_logo.svg" alt="Google">
+      Criar com o Google
+      </button>
+      <p class="cadastro">
+ Ja possui cadastro?
+  <a href="Tela_login.html">Entrar</a>
+</p>
+  </div>
 
-    <div>
-     <div class="campo">
-      <label for="matrícula">Número de Matrícula</label>
-      <input type="number" id="matrícula" placeholder="Digite o número de matrícula">
-    </div>
-
-    <div class="campo">
-      <label for="senha">Senha</label>
-      <input type="password" id="senha" placeholder="Digite sua senha"> 
-    </div>
-<div>
-<a href="Tela_login.html" class="botao">CRIAR CONTA</a>
 </div>
 
-<br>
-<button class="google-btn">
-  <img src="https://upload.wikimedia.org/wikipedia/commons/c/c1/Google_%22G%22_logo.svg" alt="Google">
- Criar com o Google
-</button>
-
-
-
-
-
 </div>
-
-</div>
-
-</div>
-
+<script src="script.js"></script>
 </body>
 
 
