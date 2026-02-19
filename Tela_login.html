@@ -10,27 +10,31 @@
 </head>
 
 <body>
-<div class="Login-page">
-    <form action="tela_principal.html" onsubmit="return validarFormulario()">
-<div class="Card">
-    <img src="Img/logo 2.png" alt="logo"  class="logo">
-    <div>
-     <div class="campo">
-      <label for="usuario">Nome</label>
-      <input type="text" id="usuario" placeholder="Digite seu usuário">
-    </div>
+  <div class="Login-page">
+    <form class="form" id="form" action="tela_principal.html" onsubmit="return validarFormulario()">
 
-    <div class="campo">
-      <label for="senha">Senha</label>
-      <input type="password" id="senha" placeholder="Digite sua senha">
-          <i id="versenha" class="ri-eye-line"></i>
-    </div>
-<div>
-<button class="botao" type="submit">ENTRAR</button>
-</form>
-</div>
+      <div class="Card">
+        <img src="Img/logo 2.png" alt="logo"  class="logo">
+      <div>
+      <div class="campo">
+        <label for="usuario">Nome</label>
+        <input type="text" id="usuario" placeholder="Digite seu usuário">
+        <small>Error Message</small>
+      </div>
 
+      <div class="campo">
+        <label for="senha">Senha</label>
+        <input type="password" id="senha" placeholder="Digite sua senha">
+        <i id="versenha" class="ri-eye-line"></i>
+        <small>Error Message</small>
+      </div>
+
+      <button class="botao" type="submit">ENTRAR</button>
+
+    </form>
+  </div>
 <br>
+
 <button class="google-btn">
   <img src="https://upload.wikimedia.org/wikipedia/commons/c/c1/Google_%22G%22_logo.svg" alt="Google">
   Entrar com Google 
