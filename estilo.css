@@ -49,23 +49,30 @@ body{
     
   border-radius: 20px;
   border: 1px solid #005CAA;
+  outline: 0;
 }
 
 .campo.success input{
-   border: 3px solid #4ECA64;
+   border: 1.5px solid #4ECA64;
 }
 
 .campo.error input {
-    border: 3px solid #DB5A5A;
+    border: 1.5px solid #DB5A5A;
 }
 
 .campo small {
-    visibility: hidden;
+    
+   visibility: hidden;
     position: absolute;
-    margin-top: 5px;
+    margin-top: 3px;
     font-size: 14px;
 
 }
+.campo.error small{
+  color: #DB5A5A;
+  visibility: visible;
+}
+
 
 
 .ri-eye-line {

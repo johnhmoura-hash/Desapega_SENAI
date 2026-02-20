@@ -1,19 +1,50 @@
 /* Tela de Login*/
 const nome = document.getElementById('usuario'); 
 const senha = document.getElementById('senha');
+const form = document.getElementById('form');
+let validNome = false;
 
-function validarFormulario() {
-    
-    if (nome.trim()=="" || senha.trim()=="") {
-        alert('Por favor, preencha todos os campos obrigatórios.');
-        return false;
-    }
-    if (email != emailConfirmar && senha != confirmarSenha){
-        alert('');
-        return false;
-    }
-    return true;
+form.addEventListener('submit', (e) =>{
+    e.preventDefault();
+
+    validarFormulario();
+});
+
+nome.addEventListener("keyup", validarFormulario);
+
+function validarFormulario(){
+    const nomeValor = nome.value.trim();
+    const senhaValor = senha.value.trim();
+if(validNome){
+
+}else{
+    alert('ta vazio')
 }
+    if(nomeValor === ''){
+        validarErro(nome, "Preencha esse campo.")
+        validNome = false;
+    } else {
+        validarSucesso(nome)
+        validNome = true;
+    }
+}
+
+function validarErro(input, message){
+    const campo = input.parentElement;
+    const small = campo.querySelector('small');
+
+    small.innerText = message
+    campo.className = 'campo error';
+}
+
+function validarSucesso(input){
+
+    const campo = input.parentElement;
+
+    campo.className = 'campo success'
+}
+
+//botão de ver senha
 
 const bnt_eye = document.querySelector('#versenha');
 
