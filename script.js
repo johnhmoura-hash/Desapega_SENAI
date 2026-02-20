@@ -1,39 +1,64 @@
 /* Tela de Login*/
+const form = document.getElementById('form');
 const nome = document.getElementById('usuario'); 
 const senha = document.getElementById('senha');
-const form = document.getElementById('form');
-let validNome = false;
+const numMatricula = document.getElementById('numMatricula');
+const numTelefone = document.getElementById('numTelefone');
+const email = document.getElementById('email');
+const emailConfirmar = document.getElementById('emailConfirmar');
 
+
+if(form){
 form.addEventListener('submit', (e) =>{
     e.preventDefault();
 
     validarFormulario();
-});
+}); 
 
-nome.addEventListener("keyup", validarFormulario);
+nome.addEventListener("keyup", validarNome);
+senha.addEventListener("keyup", validarSenha);
 
-function validarFormulario(){
+function validarNome(){
+  
     const nomeValor = nome.value.trim();
-    const senhaValor = senha.value.trim();
-if(validNome){
-
-}else{
-    alert('ta vazio')
-}
+    
+    let validNome = true;
+   
+    
     if(nomeValor === ''){
-        validarErro(nome, "Preencha esse campo.")
+        validarErro(nome);
         validNome = false;
-    } else {
-        validarSucesso(nome)
+    } else if(nomeValor.length < 3) {
+         validarErro(nome);
+        validNome = false;
+    }else{
+        validarSucesso(nome);
         validNome = true;
     }
 }
 
-function validarErro(input, message){
-    const campo = input.parentElement;
-    const small = campo.querySelector('small');
+function validarSenha(){
+    const senhaValor = senha.value.trim();
 
-    small.innerText = message
+     let validSenha = true;
+
+    if(senhaValor === ''){
+        validarErro(senha)
+        validSenha = false;
+    } else if(senhaValor.length < 8){
+        validarErro(senha)
+        validSenha = false;
+    }else{
+        validarSucesso(senha)
+        validSenha = true;
+    }
+
+    return validNome && validSenha;
+}
+
+function validarErro(input){
+    const campo = input.parentElement;
+    
     campo.className = 'campo error';
 }
 
@@ -41,9 +66,9 @@ function validarSucesso(input){
 
     const campo = input.parentElement;
 
-    campo.className = 'campo success'
+    campo.className = 'campo success';
 }
-
+}
 //botão de ver senha
 
 const bnt_eye = document.querySelector('#versenha');
@@ -64,7 +89,6 @@ bnt_eye.addEventListener('click', ()=>{
     }
 })
 }
-
 const bnt_eyeConfirm = document.querySelector('#verconfirmesenha');
 
 if(bnt_eyeConfirm){

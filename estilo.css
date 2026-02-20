@@ -2,7 +2,6 @@ body{
     font-family: Arial, Helvetica, sans-serif;
     margin: 0;
     background: white;
-   
 }
 
 /* Tela de login*/
@@ -63,17 +62,14 @@ body{
 .campo small {
     
    visibility: hidden;
-    position: absolute;
     margin-top: 3px;
     font-size: 14px;
-
 }
+
 .campo.error small{
   color: #DB5A5A;
   visibility: visible;
 }
-
-
 
 .ri-eye-line {
   position: absolute;
