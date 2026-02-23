@@ -416,53 +416,81 @@ color: #0056b3;
   text-decoration: none;
 }
 /*Tela produto*/
-
-
-
 .box-produto {
-    width: 480px;
-    border: 2px solid #3b82f6;
-    border-radius: 20px;
-    padding: 20px;
-    margin: 40px auto;
+  width: 480px;
+  border: 2px solid #3b82f6;
+  border-radius: 20px;
+  padding: 25px;
+  margin: 40px auto;
+  background-color: #f8f9fb;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
 }
 
-.produto {
-    display: flex;
-    gap: 15px;
-    margin-bottom: 20px;
+.photo-upload {
+  width: 180px;
+  height: 150px;
+  background-color: #c7d7ea;
+  border-radius: 15px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  position: relative;
+  margin-bottom: 20px;
 }
 
-.produto img {
-    width: 100px;
-    height: 100px;
-    border-radius: 12px;
+.photo-upload svg {
+  width: 60px;
+  stroke: #555;
+  fill: none;
+  stroke-width: 1.5;
 }
 
-.info h2 {
-    color: #2563eb;
-    margin-bottom: 6px;
+.btn-add {
+  position: absolute;
+  top: -10px;
+  right: -10px;
+  background-color: #ff7f27;
+  color: white;
+  border: none;
+  border-radius: 50%;
+  width: 35px;
+  height: 35px;
+  font-size: 20px;
+  cursor: pointer;
 }
 
-.info p {
-    font-size: 14px;
-    color: #555;
+.form-produto {
+  width: 100%;
+  display: flex;
+  flex-direction: column;
 }
 
-.titulo-info {
-    margin-bottom: 10px;
-    font-size: 16px;
+.form-produto label {
+  margin-bottom: 10px;
+  font-weight: 500;
 }
 
 .input-info {
-    width: 100%;
-    padding: 10px;
-    margin-top: 10px;
-    border-radius: 12px;
-    border: 1px solid #3b82f6;
-    outline: none;
+  width: 100%;
+  padding: 12px;
+  margin-bottom: 12px;
+  border-radius: 12px;
+  border: 1px solid #3b82f6;
+  outline: none;
+  box-sizing: border-box;
+  font-size: 14px;
 }
 
+.input-info:focus {
+  border-color: #0056b3;
+}
+
+textarea.input-info {
+  height: 90px;
+  resize: none;
+}
 .kkk{
   font-family: Arial, sans-serif;
   background: #f2f2f2;
@@ -708,11 +736,12 @@ text-decoration: none;
 }
 
 .seguidores {
-  border: 1px solid #858585;
+  border: 1px solid #a0a0a0;
   background: #ffffff;
   padding: 8px 15px;
   border-radius: 5px;
   font-size: 14px;
+  color:#a0a0a0 ;
 }
 
 .editar {
@@ -776,4 +805,122 @@ border-color: #0056b3;
 .card p{
     margin-top:10px;
     font-size:14px;
+}
+
+
+/* POPUPS */
+
+.notificacao-wrapper,
+.chat-wrapper {
+  position: relative;
+}
+
+.popup-notificacao,
+.popup-chat {
+  position: absolute;
+  top: 45px;
+  right: 0;
+  width: 320px;
+  background: white;
+  border-radius: 15px;
+  box-shadow: 0 10px 25px rgba(0,0,0,0.15);
+  display: none;
+  flex-direction: column;
+  overflow: hidden;
+  z-index: 5000;
+}
+
+.popup-notificacao.ativo,
+.popup-chat.ativo {
+  display: flex;
+}
+
+/* Cabeçalho */
+.popup-header {
+  padding: 12px 15px;
+  border-bottom: 1px solid #eee;
+  font-weight: bold;
+  color: #0056b3;
+}
+
+/* Corpo */
+.popup-body {
+  max-height: 300px;
+  overflow-y: auto;
+}
+
+/* Notificação */
+.notificacao-item,
+.chat-item {
+  padding: 12px 15px;
+  border-bottom: 1px solid #f2f2f2;
+  font-size: 14px;
+  cursor: pointer;
+  transition: 0.2s;
+}
+
+.notificacao-item:hover,
+.chat-item:hover {
+  background: #f5f9ff;
+}
+
+.nao-lida {
+  background: #eaf3ff;
+}
+
+.tempo {
+  display: block;
+  font-size: 12px;
+  color: #888;
+  margin-top: 4px;
+}
+
+.chat-mensagens {
+  padding: 10px;
+  max-height: 200px;
+  overflow-y: auto;
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+}
+
+.mensagem {
+  padding: 8px 12px;
+  border-radius: 15px;
+  max-width: 80%;
+  font-size: 13px;
+}
+
+.bot {
+  background: #f1f1f1;
+  align-self: flex-start;
+}
+
+.user-msg {
+  background: #0056b3;
+  color: white;
+  align-self: flex-end;
+}
+
+.respostas-rapidas {
+  display: flex;
+  flex-direction: column;
+  gap: 6px;
+  padding: 10px;
+  border-top: 1px solid #eee;
+}
+
+.respostas-rapidas button {
+  padding: 6px;
+  border-radius: 20px;
+  border: 1px solid #0056b3;
+  background: white;
+  cursor: pointer;
+  font-size: 12px;
+  transition: 0.2s;
+}
+
+.respostas-rapidas button:hover {
+  background: #0056b3;
+  color: white;
 }

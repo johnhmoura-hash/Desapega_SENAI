@@ -2,46 +2,158 @@
 <html lang="pt-br">
 <head>
     <meta charset="UTF-8">
-    <title>Produto</title>
+    <title>Produto-Desapega SENAI</title>
     <link rel="stylesheet" href="estilo.css">
+     <link href="https://cdn.jsdelivr.net/npm/remixicon/fonts/remixicon.css" rel="stylesheet">
 </head>
 <body>
+      <div class="faixatopo">
+      <br>
+    </div>
+
+   <header class="page">
+  <div class="container">
+    <div class="logo2">
+      <img src="Img/possivel logo.png" width="40">
+    </div>
+
+    <div class="menu">
+
+      <div class="menu2">
+        <input type="text" name="buscar" placeholder="Buscar...">
+      </div>
+
+      <div class="menu2">
+        <a href="index.html">Início <i class="ri-home-line"></i></a>
+      </div>
+
+      <div class="menu2">
+        <a href="Tela_perfil.html">Perfil <i class="ri-user-line"></i></a>
+      </div>
+
+      <div class="menu2 notificacao-wrapper">
+        <a href="#" id="btnNotificacao">
+          Notificações <i class="ri-notification-line"></i>
+        </a>
+
+        <div class="popup-notificacao" id="popupNotificacao">
+          <div class="popup-header">
+            <h4>Notificações</h4>
+          </div>
+
+          <div class="popup-body">
+            <div class="notificacao-item ">
+              João curtiu seu produto
+              <span class="tempo">2 min atrás</span>
+            </div>
+
+            <div class="notificacao-item">
+              Nova mensagem recebida
+              <span class="tempo">10 min atrás</span>
+            </div>
+
+            <div class="notificacao-item">
+              Seu produto foi visualizado
+              <span class="tempo">1 hora atrás</span>
+            </div>
+          </div>
+        </div>
+      </div>
+      <div class="menu2 chat-wrapper">
+        <a href="#" id="btnChat">
+          Chat <i class="ri-chat-3-line"></i>
+        </a>
+
+        <div class="popup-chat" id="popupChat">
+          <div class="popup-header">
+            <h4>Chat</h4>
+          </div>
+
+          <div class="popup-body">
+            <div class="chat-item">
+              André: Oi, ainda está disponível?
+              <span class="tempo">5 min</span>
+            </div>
+
+            <div class="chat-item">
+              Maria: Pode enviar mais fotos?
+              <span class="tempo">20 min</span>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <div class="menu2">
+        <a href="tela_produto.html">Anunciar produto <i class="ri-add-line"></i></a>
+      </div>
+
+    </div>
+  </div>
+</header>
 
 <div class="box-produto">
 
-    <div class="produto">
-        <img src="Img/img_garrafa.webp" alt="Produto">
+  <div class="photo-upload">
+    <svg viewBox="0 0 24 24">
+      <path stroke-linecap="round" stroke-linejoin="round"
+        d="M3 8.25v10.5A2.25 2.25 0 005.25 21h13.5A2.25 2.25 0 0021 18.75V8.25M16.5 3.75h-9A2.25 2.25 0 005.25 6v1.5A2.25 2.25 0 007.5 9.75h9a2.25 2.25 0 002.25-2.25V6a2.25 2.25 0 00-2.25-2.25z"/>
+      <circle cx="12" cy="14.25" r="2.25"/>
+    </svg>
 
-        <div class="info">
-            <h2>Garrafa térmica</h2>
-            <p>
-                Garrafa térmica resistente e moderna, ideal para manter sua bebida
-                quente ou gelada por mais tempo.
-            </p>
-        </div>
-    </div>
+    <button class="btn-add">+</button>
+  </div>
 
-    <h3 class="titulo-info">Informações</h3>
+  <form class="form-produto">
 
-    <input
-        class="input-info"
-        type="text"
-        placeholder="Tempo de uso"
-        onfocus="this.value='Tempo de uso: dois meses'">
+    <label>Informações ⓘ</label>
 
-    <input
-        class="input-info"
-        type="text"
-        placeholder="Produto / pontos"
-        onfocus="this.value='Produto / pontos: 120'">
+    <input type="text" class="input-info" placeholder="Produto">
 
-    <input
-        class="input-info"
-        type="text"
-        placeholder="Produto p/ troca"
-        onfocus="this.value='Troca por mochila ou garrafa'">
+    <select class="input-info" required>
+      <option value="" disabled selected>Tempo de uso</option>
+      <option>1 mês</option>
+      <option>2 meses</option>
+      <option>3 meses</option>
+      <option>4 meses</option>
+      <option>5 meses</option>
+      <option>6 meses +</option>
+      <option>1 ano +</option>
+    </select>
 
-    </div>
+    <select class="input-info" required>
+      <option value="" disabled selected>Produto p/ troca</option>
+      <option>Papelaria </option>
+      <option>Beleza </option>
+      <option>Eletrônico </option>
+      <option>Esporte </option>
+      <option>Artefato </option>
+      <option>Livraria </option>
+      <option>Decoração </option>
+      <option>Infantil </option>
+      <option>Outros</option>
+    </select>
+
+    <select class="input-info" required>
+      <option value="" disabled selected>Categoria</option>
+      <option>Papelaria </option>
+      <option>Beleza </option>
+      <option>Eletrônico </option>
+      <option>Esporte </option>
+      <option>Artefato </option>
+      <option>Livraria </option>
+      <option>Decoração </option>
+      <option>Infantil </option>
+      <option>Outros</option>
+    </select>
+
+    <textarea class="input-info" placeholder="Descrição"></textarea>
+
+  </form>
 </div>
+
+
+</div>
+<script src="scriptFoto.js"></script>
+<script src="scriptPopup.js"></script>
 </body>
 </html>

@@ -6,40 +6,91 @@
       <meta name="viewport" content="width=device-width, initial-scale=1.0">
       <title>Principal-Desapega SENAI</title>
       <link rel="stylesheet" type="text/css" href="estilo.css">
-      <link href="https://cdn.jsdelivr.net/npm/remixicon/fonts/remixicon.css" rel="stylesheet">
+     
   </head>
   <body>
     <div class="faixatopo">
       <br>
     </div>
     <header class="page">
-      <div class="container">
-        <div class="logo2">
-          <img src="Img/possivel logo.png" width="40">
-        </div>
+  <div class="container">
+    <div class="logo2">
+      <img src="Img/possivel logo.png" width="40">
+    </div>
 
-        <div class="menu">
-          <div class="menu2">
-              <input type="text" name="buscar" placeholder="Buscar..." >
+    <div class="menu">
+
+      <div class="menu2">
+        <input type="text" name="buscar" placeholder="Buscar...">
+      </div>
+
+      <div class="menu2">
+        <a href="index.html">Início <i class="ri-home-line"></i></a>
+      </div>
+
+      <div class="menu2">
+        <a href="Tela_perfil.html">Perfil <i class="ri-user-line"></i></a>
+      </div>
+
+      <div class="menu2 notificacao-wrapper">
+        <a href="#" id="btnNotificacao">
+          Notificações <i class="ri-notification-line"></i>
+        </a>
+
+        <div class="popup-notificacao" id="popupNotificacao">
+          <div class="popup-header">
+            <h4>Notificações</h4>
           </div>
-          <div class="">
-            <a href=""> Início   <i class="ri-home-line"></i></a>
+
+          <div class="popup-body">
+            <div class="notificacao-item ">
+              João curtiu seu produto
+              <span class="tempo">2 min atrás</span>
+            </div>
+
+            <div class="notificacao-item">
+              Nova mensagem recebida
+              <span class="tempo">10 min atrás</span>
+            </div>
+
+            <div class="notificacao-item">
+              Seu produto foi visualizado
+              <span class="tempo">1 hora atrás</span>
+            </div>
           </div>
-          <div class="">
-            <a href=""> Perfil   <i class="ri-user-line"></i></a>
-          </div>
-          <div class="">
-            <a href="">Notificações  <i class="ri-notification-line"></i></a>
-          </div>
-          <div class="">
-            <a href="">Chat  <i class="ri-chat-3-line"></i></a>
-          </div>
-          <div class="">
-            <a href="">Anunciar produto  <i class="ri-add-line"></i></a>
-          </div>        
         </div>
       </div>
-    </header>
+      <div class="menu2 chat-wrapper">
+        <a href="#" id="btnChat">
+          Chat <i class="ri-chat-3-line"></i>
+        </a>
+
+        <div class="popup-chat" id="popupChat">
+          <div class="popup-header">
+            <h4>Chat</h4>
+          </div>
+
+          <div class="popup-body">
+            <div class="chat-item">
+              André: Oi, ainda está disponível?
+              <span class="tempo">5 min</span>
+            </div>
+
+            <div class="chat-item">
+              Maria: Pode enviar mais fotos?
+              <span class="tempo">20 min</span>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <div class="menu2">
+        <a href="tela_produto.html">Anunciar produto <i class="ri-add-line"></i></a>
+      </div>
+
+    </div>
+  </div>
+</header>
 
     <br><br>
     
@@ -273,6 +324,8 @@
         </div>        
     </main>
     </div>
+
+    <script src="scriptPopup.js"></script>
     <script src="script.js"></script>
   </body>
 </html>
