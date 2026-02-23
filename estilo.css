@@ -924,3 +924,18 @@ border-color: #0056b3;
   background: #0056b3;
   color: white;
 }
+
+
+.mensagens button {
+  padding: 6px 12px;
+  border-radius: 20px;
+  border: 1px solid #3b82f6;
+  background: white;
+  cursor: pointer;
+  transition: 0.2s;
+}
+
+.mensagens button.ativo {
+  background: #FF7F27;
+  color: white;
+}

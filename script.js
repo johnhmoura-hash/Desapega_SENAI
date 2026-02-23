@@ -148,3 +148,17 @@ btnNav.forEach((btn, indice)=>{
 
 iniciarAutoPlay();
 }
+
+
+function selecionar(botao, tipo) {
+
+  // Remove seleção de todos
+  const botoes = document.querySelectorAll(".mensagens button");
+  botoes.forEach(btn => btn.classList.remove("ativo"));
+
+  // Marca o clicado
+  botao.classList.add("ativo");
+
+  // (se quiser continuar usando a função de mensagem)
+  usarMensagem(tipo);
+}
