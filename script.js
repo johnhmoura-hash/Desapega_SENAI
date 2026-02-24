@@ -6,30 +6,38 @@ const numMatricula = document.getElementById('numMatricula');
 const numTelefone = document.getElementById('numTelefone');
 const email = document.getElementById('email');
 const emailConfirmar = document.getElementById('emailConfirmar');
+const confirmarSenha = document.getElementById('confirmarSenha');
+
 
 
 if(form){
 form.addEventListener('submit', (e) =>{
     e.preventDefault();
 
-    validarFormulario();
+    enviarFormulario();
 }); 
 
-nome.addEventListener("keyup", validarNome);
-senha.addEventListener("keyup", validarSenha);
+if (nome) nome.addEventListener("keyup", validarNome);
+if (senha) senha.addEventListener("keyup", validarSenha);
+if (numMatricula) numMatricula.addEventListener("keyup", validarMatricula);
+if (numTelefone) numTelefone.addEventListener("keyup", validarNumTelefone);
+if (email) email.addEventListener("keyup", validarEmail);
+if (emailConfirmar) emailConfirmar.addEventListener("keyup", validarConfirmarEmail);
+if (confirmarSenha) confirmarSenha.addEventListener("keyup", validarconfirmarSenha);
+
+
 
 function validarNome(){
   
     const nomeValor = nome.value.trim();
     
     let validNome = true;
-   
-    
+
     if(nomeValor === ''){
-        validarErro(nome);
+        validarErro(nome, 'Campo obrigatório')
         validNome = false;
     } else if(nomeValor.length < 3) {
-         validarErro(nome);
+          validarErro(nome, 'Campo obrigatório')
         validNome = false;
     }else{
         validarSucesso(nome);
@@ -43,32 +51,160 @@ function validarSenha(){
      let validSenha = true;
 
     if(senhaValor === ''){
-        validarErro(senha)
+        validarErro(senha, 'A senha deve ter no mínino 8 caracteres')
         validSenha = false;
     } else if(senhaValor.length < 8){
-        validarErro(senha)
+        validarErro(senha, 'A senha deve ter no mínino 8 caracteres')
         validSenha = false;
     }else{
         validarSucesso(senha)
         validSenha = true;
     }
 
-    return validNome && validSenha;
+}
+function validarconfirmarSenha(){
+    const confirmarSenhaValor = confirmarSenha.value.trim();
+    const senhaValor = senha.value.trim();
+
+     let validConfirmarSenha = true;
+
+    if(confirmarSenhaValor === ''){
+        validarErro(confirmarSenha, 'As senhas não coincides')
+        validConfirmarSenha = false;
+    } else if(confirmarSenhaValor !== senhaValor){
+        validarErro(confirmarSenha, 'As senhas não coincides')
+        validConfirmarSenha = false;
+    }else{
+        validarSucesso(confirmarSenha)
+        validconfirmarSenha = true;
+    }
+
+}
+function validarMatricula(){
+     const numMatriculaValor = numMatricula.value.trim();
+
+     let validNumMatricula = true;
+
+    if(numMatriculaValor === ''){
+        validarErro(numMatricula, 'A matrícula deve conter 7 números')
+        validNumMatricula = false;
+    } else if(numMatriculaValor.length !== 7){
+        validarErro(numMatricula, 'A matrícula deve conter 7 números')
+        validNumMatricula = false;
+    }else{
+        validarSucesso(numMatricula)
+        validNumMatricula = true;
+    }
+
+}
+function validarNumTelefone() {
+
+    const numLimpo = numTelefone.value.trim();
+    let validNumTelefone = true;
+
+    if (numLimpo === '') {
+        validarErro(numTelefone, 'Campo obrigatório');
+        validNumTelefone = false;
+
+    } else if (numLimpo.length !== 11) { 
+        validarErro(numTelefone, 'Campo obrigatório');
+        validNumTelefone = false;
+
+    } else {
+        
+        numTelefone.value = numLimpo.replace(
+            /^(\d{2})(\d{5})(\d{4})$/,
+            "($1) $2-$3"
+        );
+
+        validarSucesso(numTelefone);
+        validNumTelefone = true;
+    }
+
+}
+function validarEmail(){
+   const emailValor = email.value.trim();
+
+     let validEmail = true;
+
+    if(emailValor === ''){
+        validarErro(email, 'Campo obrigatório')
+        validEmail = false;
+    } else if(!isEmail(emailValor)){
+         validarErro(email, 'Campo obrigatório')
+        validEmail = false;
+    }else{
+        validarSucesso(email)
+        validEmail = true;
+    } 
 }
 
-function validarErro(input){
+function validarConfirmarEmail(){
+    const emailValor = email.value.trim();
+   const emailConfirmarValor = emailConfirmar.value.trim();
+
+     let validEmailConfirmar = true;
+
+    if(emailConfirmarValor === ''){
+        validarErro(emailConfirmar, 'Os emails não coincidens')
+        validEmailConfirmar = false;
+    } else if(emailValor !== emailConfirmarValor){
+        validarErro(emailConfirmar, 'Os emails não coincidens')
+        validEmailConfirmar = false;
+    }else{
+        validarSucesso(emailConfirmar)
+        validEmailConfirmar = true;
+    } 
+}
+
+function validarErro(input, mensagem){
     const campo = input.parentElement;
-    
-    campo.className = 'campo error';
+    const small = campo.querySelector("small");
+
+    small.innerText = mensagem; // coloca o texto
+    campo.className = "campo error";
 }
 
 function validarSucesso(input){
-
     const campo = input.parentElement;
+    const small = campo.querySelector("small");
 
-    campo.className = 'campo success';
+    small.innerText = "";
+    campo.className = "campo success";
+}
+
+function isEmail(email) {
+    return /^[a-zA-Z0-9._%+-]+@[a-zA-Z0-9-]+\.senai\.br$/.test(email);
+}
+function enviarFormulario() {
+
+    const dados = {
+        nome: nome.value,
+        matricula: numMatricula.value,
+        telefone: numTelefone.value,
+        email: email.value,
+        senha: senha.value
+    };
+
+    fetch("https://jsonplaceholder.typicode.com/posts", {
+        method: "POST",
+        headers: {
+            "Content-Type": "application/json"
+        },
+        body: JSON.stringify(dados)
+    })
+    .then(response => response.json())
+    .then(data => {
+        console.log("Sucesso:", data);
+        alert("Conta criada com sucesso!");
+    })
+    .catch(error => {
+        console.error("Erro:", error);
+    });
+
 }
 }
+
 //botão de ver senha
 
 const bnt_eye = document.querySelector('#versenha');
@@ -150,15 +286,3 @@ iniciarAutoPlay();
 }
 
 
-function selecionar(botao, tipo) {
-
-  // Remove seleção de todos
-  const botoes = document.querySelectorAll(".mensagens button");
-  botoes.forEach(btn => btn.classList.remove("ativo"));
-
-  // Marca o clicado
-  botao.classList.add("ativo");
-
-  // (se quiser continuar usando a função de mensagem)
-  usarMensagem(tipo);
-}

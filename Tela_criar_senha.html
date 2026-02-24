@@ -20,40 +20,45 @@
     <div class="campo">
       <label for="usuario">Nome</label>
       <input type="text" id="usuario" placeholder="Digite seu usuário">
-        
+      <small></small>
     </div>
 
     <div class="campo">
-      <label for="matricula">Número de Matrícula</label>
-      <input type="number" id="numMatricula" placeholder="Digite o número de matrícula">
+      <label for="numMatricula">Número de Matrícula</label>
+      <input  id="numMatricula" placeholder="Digite o número de matrícula"oninput="this.value = this.value.replace(/[^0-9]/g, '')">
+      <small></small>
     </div>
-
+      
     <div class="campo">
       <label for="numTelefone">Número de Telefone</label>
-      <input type="tel" id="numTelefone" placeholder="Digite o número de telefone">
+      <input  id="numTelefone" placeholder="Digite o número de telefone" oninput="this.value = this.value.replace(/[^0-9]/g, '')">
+      <small></small>
     </div>
-
+  
     <div class="campo">
       <label for="email">Email</label>
       <input type="email" id="email" placeholder="Digite o seu email">
+      <small></small>
     </div>
 
     <div class="campo">
       <label for="emailConfirmar"> Confirmar Email</label>
       <input type="email" id="emailConfirmar" placeholder="Confirme seu email">
-    </div>
-
-      <div class="campo">
-      <label for="senha">Senha</label>
-      <input type="password" id="senha" placeholder="Digite sua senha">
-      <i id="versenha" class="ri-eye-line"></i>
-       <small>A senha teve conter no mínimo 8 caracteres</small>
+      <small></small>
     </div>
 
     <div class="campo">
-      <label for="senha">Confirmar senha</label>
+      <label for="senha">Senha</label>
+      <input type="password" id="senha" placeholder="Digite sua senha">
+      <i id="versenha" class="ri-eye-line"></i>
+       <small></small>
+    </div>
+
+    <div class="campo">
+      <label for="confirmarSenha">Confirmar senha</label>
       <input type="password" id="confirmarSenha" placeholder="Confirme sua senha">
        <i id="verconfirmesenha" class="ri-eye-line"></i> 
+      <small></small>
     </div>
 
     <div>
