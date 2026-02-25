@@ -205,6 +205,44 @@ function enviarFormulario() {
 }
 }
 
+//Form feira de trocas
+const formFeira = document.getElementById('formFeira');
+if(formFeira){
+formFeira.addEventListener('submit', (e) =>{
+    e.preventDefault();
+
+    enviarFormulario();
+}); 
+
+function enviarFormulario() {
+
+    const dados = {
+        nome: nome.value,
+        matricula: numMatricula.value,
+    };
+
+    fetch("https://jsonplaceholder.typicode.com/posts", {
+        method: "POST",
+        headers: {
+            "Content-Type": "application/json"
+        },
+        body: JSON.stringify(dados)
+    })
+    .then(response => response.json())
+    .then(data => {
+        console.log("Sucesso:", data);
+        alert("Inscrição a com sucesso!");
+    })
+    .catch(error => {
+        console.error("Erro:", error);
+    });
+
+}
+}
+
+
+
+
 //botão de ver senha
 
 const bnt_eye = document.querySelector('#versenha');
@@ -245,16 +283,16 @@ bnt_eyeConfirm.addEventListener('click', ()=>{
 
 /* slider */
 
-let imgSlider = document.querySelectorAll('.slider-container .slider-box');
-let btnNav = document.querySelectorAll('.btn-nav-box .btn-nav');
+let imgSlider = document.querySelectorAll('.slider-box');
+let btnNav = document.querySelectorAll('.btn-nav');
 
 let contadorImg = imgSlider.length;
 let imgAtiva = 0;
 if(imgSlider){
 function mostrarSlider(){
 
-    let antigaImg = document.querySelector('.slider-container .slider-box.ativo')
-    let antigoBtnNav = document.querySelector('.btn-nav-box .btn-nav.ativo');
+    let antigaImg = document.querySelector('.slider-box.ativo')
+    let antigoBtnNav = document.querySelector('.btn-nav.ativo');
 
     antigaImg.classList.remove('ativo')
     antigoBtnNav.classList.remove('ativo');
@@ -286,3 +324,15 @@ iniciarAutoPlay();
 }
 
 
+function selecionar(botao, tipo) {
+
+  // Remove seleção de todos
+  const botoes = document.querySelectorAll(".mensagens button");
+  botoes.forEach(btn => btn.classList.remove("ativo"));
+
+  // Marca o clicado
+  botao.classList.add("ativo");
+
+  // (se quiser continuar usando a função de mensagem)
+  usarMensagem(tipo);
+}
