@@ -170,7 +170,17 @@ h2 {
   text-decoration: underline;
 }
 
-/* TELA PRINCIPAL*/
+/* tela de filtro*/
+
+.input-selct{
+  width: 100%;
+  max-width: 150px;
+  height: 30px;
+  padding: 5px;
+  border-radius: 12px;
+  border: 1px solid #3b82f6;
+  outline: none;
+}
 
 
 /* menu topo */
