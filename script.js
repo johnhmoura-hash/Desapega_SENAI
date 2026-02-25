@@ -14,8 +14,20 @@ if(form){
 form.addEventListener('submit', (e) =>{
     e.preventDefault();
 
-    enviarFormulario();
-}); 
+    const valido =
+
+        validarNome() &&
+        validarMatricula() &&
+        validarNumTelefone() &&
+        validarEmail() &&
+        validarConfirmarEmail()&&
+        validarSenha() &&
+        validarconfirmarSenha();
+
+    if (valido) {
+        enviarFormulario();
+    }
+});
 
 if (nome) nome.addEventListener("keyup", validarNome);
 if (senha) senha.addEventListener("keyup", validarSenha);
@@ -27,88 +39,47 @@ if (confirmarSenha) confirmarSenha.addEventListener("keyup", validarconfirmarSen
 
 
 
-function validarNome(){
-  
+function validarNome(){ 
     const nomeValor = nome.value.trim();
     
-    let validNome = true;
-
     if(nomeValor === ''){
         validarErro(nome, 'Campo obrigatório')
-        validNome = false;
+        return false;
     } else if(nomeValor.length < 3) {
           validarErro(nome, 'Campo obrigatório')
-        validNome = false;
+        return false;
     }else{
         validarSucesso(nome);
-        validNome = true;
+        return true;
     }
 }
 
-function validarSenha(){
-    const senhaValor = senha.value.trim();
-
-     let validSenha = true;
-
-    if(senhaValor === ''){
-        validarErro(senha, 'A senha deve ter no mínino 8 caracteres')
-        validSenha = false;
-    } else if(senhaValor.length < 8){
-        validarErro(senha, 'A senha deve ter no mínino 8 caracteres')
-        validSenha = false;
-    }else{
-        validarSucesso(senha)
-        validSenha = true;
-    }
-
-}
-function validarconfirmarSenha(){
-    const confirmarSenhaValor = confirmarSenha.value.trim();
-    const senhaValor = senha.value.trim();
-
-     let validConfirmarSenha = true;
-
-    if(confirmarSenhaValor === ''){
-        validarErro(confirmarSenha, 'As senhas não coincides')
-        validConfirmarSenha = false;
-    } else if(confirmarSenhaValor !== senhaValor){
-        validarErro(confirmarSenha, 'As senhas não coincides')
-        validConfirmarSenha = false;
-    }else{
-        validarSucesso(confirmarSenha)
-        validconfirmarSenha = true;
-    }
-
-}
 function validarMatricula(){
-     const numMatriculaValor = numMatricula.value.trim();
-
-     let validNumMatricula = true;
+     const numMatriculaValor = numMatricula.value.trim();   
 
     if(numMatriculaValor === ''){
-        validarErro(numMatricula, 'A matrícula deve conter 7 números')
-        validNumMatricula = false;
+        validarErro(numMatricula, 'Campo obrigatório')
+        return false;
     } else if(numMatriculaValor.length !== 7){
         validarErro(numMatricula, 'A matrícula deve conter 7 números')
-        validNumMatricula = false;
+        return false;
     }else{
         validarSucesso(numMatricula)
-        validNumMatricula = true;
+        return true;
     }
 
 }
 function validarNumTelefone() {
 
-    const numLimpo = numTelefone.value.trim();
-    let validNumTelefone = true;
+    const numLimpo = numTelefone.value.replace(/\D/g, '');
 
     if (numLimpo === '') {
         validarErro(numTelefone, 'Campo obrigatório');
-        validNumTelefone = false;
+       return false;
 
     } else if (numLimpo.length !== 11) { 
         validarErro(numTelefone, 'Campo obrigatório');
-        validNumTelefone = false;
+        return false;
 
     } else {
         
@@ -118,43 +89,75 @@ function validarNumTelefone() {
         );
 
         validarSucesso(numTelefone);
-        validNumTelefone = true;
+        return true;
     }
 
 }
 function validarEmail(){
    const emailValor = email.value.trim();
 
-     let validEmail = true;
 
     if(emailValor === ''){
         validarErro(email, 'Campo obrigatório')
-        validEmail = false;
+        return false;
     } else if(!isEmail(emailValor)){
          validarErro(email, 'Campo obrigatório')
-        validEmail = false;
+        return false;
     }else{
         validarSucesso(email)
-        validEmail = true;
+        return true;
     } 
 }
 
 function validarConfirmarEmail(){
     const emailValor = email.value.trim();
-   const emailConfirmarValor = emailConfirmar.value.trim();
-
-     let validEmailConfirmar = true;
+    const emailConfirmarValor = emailConfirmar.value.trim();
 
     if(emailConfirmarValor === ''){
-        validarErro(emailConfirmar, 'Os emails não coincidens')
-        validEmailConfirmar = false;
+        validarErro(emailConfirmar, 'Campo obrigatório')
+       return false;
     } else if(emailValor !== emailConfirmarValor){
         validarErro(emailConfirmar, 'Os emails não coincidens')
-        validEmailConfirmar = false;
+        return false;
     }else{
         validarSucesso(emailConfirmar)
-        validEmailConfirmar = true;
+       return true;
     } 
+}
+
+function validarSenha(){
+    const senhaValor = senha.value.trim();
+
+
+    if(senhaValor === ''){
+        validarErro(senha, 'Campo obrigatório')
+        return false;
+    } else if(senhaValor.length < 8){
+        validarErro(senha, 'A senha deve ter no mínino 8 caracteres')
+        return false;
+    }else{
+        validarSucesso(senha)
+        return true;
+    }
+
+}
+function validarconfirmarSenha(){
+    const confirmarSenhaValor = confirmarSenha.value.trim();
+    const senhaValor = senha.value.trim();
+
+    
+
+    if(confirmarSenhaValor === ''){
+        validarErro(confirmarSenha, 'Campo obrigatório')
+       return false;
+    } else if(confirmarSenhaValor !== senhaValor){
+        validarErro(confirmarSenha, 'As senhas não coincides')
+       return false;
+    }else{
+        validarSucesso(confirmarSenha)
+        return true;
+    }
+
 }
 
 function validarErro(input, mensagem){
