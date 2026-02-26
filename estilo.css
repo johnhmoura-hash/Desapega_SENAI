@@ -675,7 +675,7 @@ text-decoration: none;
   padding: 20px;
 }
 
- .logoperfil{
+ .logoperfil {
   background-color: #FF7F27;
   height: 200px;
   position: relative;
@@ -714,6 +714,13 @@ text-decoration: none;
   border: 4px solid white;
 }
 
+.fotoperfil img{
+  padding: 20px;
+  width: 90px;
+  height: 90px;
+  border-radius: 50%;
+
+}
 
 .info h2 {
   margin: 0;
