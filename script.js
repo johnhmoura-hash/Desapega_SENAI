@@ -1,4 +1,4 @@
-/* Tela de Login*/
+// Tela de Login
 const form = document.getElementById('form');
 const nome = document.getElementById('usuario'); 
 const senha = document.getElementById('senha');
@@ -7,7 +7,6 @@ const numTelefone = document.getElementById('numTelefone');
 const email = document.getElementById('email');
 const emailConfirmar = document.getElementById('emailConfirmar');
 const confirmarSenha = document.getElementById('confirmarSenha');
-
 
 
 if(form){
@@ -78,7 +77,7 @@ function validarNumTelefone() {
        return false;
 
     } else if (numLimpo.length !== 11) { 
-        validarErro(numTelefone, 'Campo obrigatório');
+        validarErro(numTelefone, 'Formato incorreto');
         return false;
 
     } else {
@@ -93,18 +92,19 @@ function validarNumTelefone() {
     }
 
 }
+
 function validarEmail(){
    const emailValor = email.value.trim();
 
 
     if(emailValor === ''){
-        validarErro(email, 'Campo obrigatório')
+        validarErro(email, 'Campo obrigatório');
         return false;
     } else if(!isEmail(emailValor)){
-         validarErro(email, 'Campo obrigatório')
+         validarErro(email, 'Campo obrigatório');
         return false;
     }else{
-        validarSucesso(email)
+        validarSucesso(email);
         return true;
     } 
 }
@@ -114,13 +114,13 @@ function validarConfirmarEmail(){
     const emailConfirmarValor = emailConfirmar.value.trim();
 
     if(emailConfirmarValor === ''){
-        validarErro(emailConfirmar, 'Campo obrigatório')
+        validarErro(emailConfirmar, 'Campo obrigatório');
        return false;
     } else if(emailValor !== emailConfirmarValor){
-        validarErro(emailConfirmar, 'Os emails não coincidens')
+        validarErro(emailConfirmar, 'Os emails não coincidens');
         return false;
     }else{
-        validarSucesso(emailConfirmar)
+        validarSucesso(emailConfirmar);
        return true;
     } 
 }
@@ -130,13 +130,13 @@ function validarSenha(){
 
 
     if(senhaValor === ''){
-        validarErro(senha, 'Campo obrigatório')
+        validarErro(senha, 'Campo obrigatório');
         return false;
     } else if(senhaValor.length < 8){
-        validarErro(senha, 'A senha deve ter no mínino 8 caracteres')
+        validarErro(senha, 'A senha deve ter no mínino 8 caracteres');
         return false;
     }else{
-        validarSucesso(senha)
+        validarSucesso(senha);
         return true;
     }
 
@@ -148,13 +148,13 @@ function validarconfirmarSenha(){
     
 
     if(confirmarSenhaValor === ''){
-        validarErro(confirmarSenha, 'Campo obrigatório')
+        validarErro(confirmarSenha, 'Campo obrigatório');
        return false;
     } else if(confirmarSenhaValor !== senhaValor){
-        validarErro(confirmarSenha, 'As senhas não coincides')
+        validarErro(confirmarSenha, 'As senhas não coincides');
        return false;
     }else{
-        validarSucesso(confirmarSenha)
+        validarSucesso(confirmarSenha);
         return true;
     }
 
@@ -200,6 +200,7 @@ function enviarFormulario() {
     .then(data => {
         console.log("Sucesso:", data);
         alert("Conta criada com sucesso!");
+        window.location.href="Tela_login.html";
     })
     .catch(error => {
         console.error("Erro:", error);
@@ -208,15 +209,68 @@ function enviarFormulario() {
 }
 }
 
+
 //Form feira de trocas
+
 const formFeira = document.getElementById('formFeira');
 if(formFeira){
 formFeira.addEventListener('submit', (e) =>{
     e.preventDefault();
 
-    enviarFormulario();
+    const valido =
+
+        validarNome() &&
+        validarMatricula();
+
+    if(valido){enviarFormulario();
+    }
 }); 
 
+function validarNome(){ 
+    const nomeValor = nome.value.trim();
+    
+    if(nomeValor === ''){
+        validarErro(nome, 'Campo obrigatório');
+        return false;
+    } else if(nomeValor.length < 3) {
+          validarErro(nome, 'Campo obrigatório');
+        return false;
+    }else{
+        validarSucesso(nome);
+        return true;
+    }
+}
+
+function validarMatricula(){
+     const numMatriculaValor = numMatricula.value.trim();   
+
+    if(numMatriculaValor === ''){
+        validarErro(numMatricula, 'Campo obrigatório');
+        return false;
+    } else if(numMatriculaValor.length !== 7){
+        validarErro(numMatricula, 'A matrícula deve conter 7 números');
+        return false;
+    }else{
+        validarSucesso(numMatricula);
+        return true;
+    }
+
+}
+function validarErro(input, mensagem){
+    const campo = input.parentElement;
+    const small = campo.querySelector("small");
+
+    small.innerText = mensagem; // coloca o texto
+    campo.className = "campo error";
+}
+
+function validarSucesso(input){
+    const campo = input.parentElement;
+    const small = campo.querySelector("small");
+
+    small.innerText = "";
+    campo.className = "campo success";
+}
 function enviarFormulario() {
 
     const dados = {
@@ -234,7 +288,8 @@ function enviarFormulario() {
     .then(response => response.json())
     .then(data => {
         console.log("Sucesso:", data);
-        alert("Inscrição a com sucesso!");
+        alert("Inscrição salva com sucesso!");
+        window.location.href = "index.html";
     })
     .catch(error => {
         console.error("Erro:", error);
@@ -242,8 +297,6 @@ function enviarFormulario() {
 
 }
 }
-
-
 
 
 //botão de ver senha
@@ -341,19 +394,13 @@ function selecionar(botao, tipo) {
 }
 
 
-
-
-
-
-
-
 const btnQuero = document.getElementById("btnQuero");
 const overlay = document.getElementById("overlayTroca");
 const cancelar = document.getElementById("cancelarTroca");
 const enviar = document.getElementById("enviarTroca");
 
 let itemSelecionado = null;
-
+if(btnQuero){
 // abrir
 btnQuero.onclick = () => {
   overlay.style.display = "flex";
@@ -383,3 +430,4 @@ enviar.onclick = () => {
   alert("Proposta enviada com item ID: " + itemSelecionado);
   overlay.style.display = "none";
 };
+}
