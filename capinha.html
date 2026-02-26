@@ -97,12 +97,10 @@
 
     <div class="produto-topo-area">
 
-        <!-- IMAGEM -->
         <div class="produto-imagem-box">
             <img src="Img/pao-caseiro-para-iniciantes_02-840x560.jpg" alt="Produto" class="produto-imagem-foto">
         </div>
 
-        <!-- CARD LATERAL -->
         <div class="produto-card-lateral">
 
             <h2 class="produto-titulo">Capa de iphone 11 pro max</h2>
@@ -114,18 +112,16 @@
             </div>
 
             <div class="produto-divisor"></div>
-
-            <button class="produto-botao-principal">Eu quero</button>
-
+      
+            <button id="btnQuero" class="produto-botao-principal">Eu quero</button>
+          
             <button class="produto-botao-chat">
                 Chat <i class="ri-chat-3-line"></i>
             </button>
-
         </div>
 
     </div>
 
-    <!-- PARTE DE BAIXO -->
     <div class="produto-inferior-area">
 
         <div class="produto-descricao-box">
@@ -166,5 +162,33 @@
     </div>
 
 </div>
+
+
+
+<div id="overlayTroca" class="overlay">
+  <div class="modal-troca">
+    <h2>Escolha um item para trocar</h2>
+
+    <select class="input-info" required>
+      <option value="" disabled selected>Categoria</option>
+      <option>Relógio</option>
+      <option>camisa vasco</option>
+      <option>dicionário de inglês</option>
+      <option>guarda chuva</option>
+      <option></option>
+      <option></option>
+      <option></option>
+      <option></option>
+      <option></option>
+    </select>
+
+    <div class="acoes">
+      <button id="cancelarTroca" class="btn-cancelar">Cancelar</button>
+      <button id="enviarTroca" class="btn-enviar">Enviar proposta</button>
+    </div>
+  </div>
+</div>
+
+<script src="script.js"></script>
 </body>
 </html>

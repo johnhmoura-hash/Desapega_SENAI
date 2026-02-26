@@ -339,3 +339,47 @@ function selecionar(botao, tipo) {
   // (se quiser continuar usando a função de mensagem)
   usarMensagem(tipo);
 }
+
+
+
+
+
+
+
+
+const btnQuero = document.getElementById("btnQuero");
+const overlay = document.getElementById("overlayTroca");
+const cancelar = document.getElementById("cancelarTroca");
+const enviar = document.getElementById("enviarTroca");
+
+let itemSelecionado = null;
+
+// abrir
+btnQuero.onclick = () => {
+  overlay.style.display = "flex";
+};
+
+// fechar
+cancelar.onclick = () => {
+  overlay.style.display = "none";
+};
+
+// selecionar item
+document.querySelectorAll(".item").forEach(item => {
+  item.onclick = () => {
+    document.querySelectorAll(".item").forEach(i => i.classList.remove("selecionado"));
+    item.classList.add("selecionado");
+    itemSelecionado = item.dataset.id;
+  };
+});
+
+// enviar proposta
+enviar.onclick = () => {
+  if(!itemSelecionado){
+    alert("Selecione um item");
+    return;
+  }
+
+  alert("Proposta enviada com item ID: " + itemSelecionado);
+  overlay.style.display = "none";
+};
