@@ -1282,3 +1282,43 @@ p{
   color: #fff;
   cursor: pointer;
 }
+
+.btn-pontos {
+  flex: 1;
+  padding: 12px;
+  border-radius: 8px;
+  border: none;
+  background: #6c63ff; /* roxo */
+  color: #fff;
+  cursor: pointer;
+  transition: 0.2s;
+}
+
+.btn-pontos:hover {
+  background: #0056b3;
+}
+
+
+
+
+
+.btn {
+  padding: 12px 20px;
+  border-radius: 8px;
+  border: 2px solid #ff7a00;
+  background: white;
+  color: #ff7a00;
+  cursor: pointer;
+  transition: 0.2s;
+}
+
+/* quando estiver selecionado */
+.btn.selecionado {
+  background: #ff7a00;
+  color: white;
+}
+.produto-usuario-foto img{ 
+    width: 40px;
+    height: 40px;
+    border-radius: 50%;
+}

@@ -345,8 +345,8 @@ function selecionar(botao, tipo) {
 
 
 
-
-
+const botao = document.getElementById("btnSelecionar");
+const btnPontos = document.getElementById("btnPontos");
 const btnQuero = document.getElementById("btnQuero");
 const overlay = document.getElementById("overlayTroca");
 const cancelar = document.getElementById("cancelarTroca");
@@ -382,4 +382,8 @@ enviar.onclick = () => {
 
   alert("Proposta enviada com item ID: " + itemSelecionado);
   overlay.style.display = "none";
+};
+
+botao.onclick = () => {
+  botao.classList.toggle("selecionado");
 };
