@@ -70,12 +70,14 @@
             <h4>Chat</h4>
           </div>
 
+   
           <div class="popup-body">
             <div class="chat-item">
-              André: Oi, ainda está disponível?
+              <a href="#" id="btnChat">André: Oi, ainda está disponível?<i class="ri-chat-3-line"></i>
+</a>
               <span class="tempo">5 min</span>
             </div>
-
+            
             <div class="chat-item">
               Maria: Pode enviar mais fotos?
               <span class="tempo">20 min</span>
@@ -300,12 +302,42 @@
            
         </div>        
     </main>
+
+         
     </div>
 
     <script src="scriptPopup.js"></script>
     <script src="script.js"></script>
 
     <div class="faixafim"></div>
+
+
+
+
+    <!-- POPUP CHAT -->
+<div id="overlayChat" class="overlay-chat">
+  <div class="chat-modal">
+
+    <div class="chat-header">
+      <img src="Img/aluno-foto.jpg" class="chat-foto">
+      <span>Andre Bonfim</span>
+      <button id="fecharChat" class="fechar-chat">✕</button>
+    </div>
+
+    <div class="chat-body">
+      <div class="msg recebida">Boa tarde!</div>
+      <div class="msg enviada">Olá, ainda está disponível?</div>
+      <div class="msg recebida">Sim, está sim.</div>
+      <div class="msg enviada pequena">Perfeito 👍</div>
+    </div>
+
+    <div class="chat-footer">
+      <input type="text" placeholder="Digite uma mensagem...">
+      <button class="btn-enviar-msg">➤</button>
+    </div>
+
+  </div>
+</div>
   </body>
 </html>
 
