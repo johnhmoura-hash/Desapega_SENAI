@@ -68,4 +68,28 @@ perguntas.forEach(pergunta => {
   });
 });
 
+document.addEventListener("DOMContentLoaded", function () {
 
+  const overlayChat = document.getElementById("overlayChat");
+  const btnChat = document.getElementById("btnChat");
+  const fecharChat = document.getElementById("fecharChat");
+
+  // Abrir popup
+  btnChat.addEventListener("click", function (e) {
+    e.preventDefault();
+    overlayChat.style.display = "flex";
+  });
+
+  // Fechar no X
+  fecharChat.addEventListener("click", function () {
+    overlayChat.style.display = "none";
+  });
+
+  // Fechar clicando fora
+  overlayChat.addEventListener("click", function (e) {
+    if (e.target === overlayChat) {
+      overlayChat.style.display = "none";
+    }
+  });
+
+});
