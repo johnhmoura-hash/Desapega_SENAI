@@ -211,7 +211,6 @@ h2 {
   margin-right: 15px;
   border-radius: 10px;
   border: 1px solid #a8a8a8; 
-  width: 1vh;
   padding: 1vh;
   color: #a8a8a8;
 }
@@ -859,6 +858,7 @@ border-color: #0056b3;
   overflow-y: auto;
 }
 
+
 /* Notificação */
 .notificacao-item,
 .chat-item {
@@ -1337,4 +1337,28 @@ p{
 background-color: #555;
 height: 400px;
 width: 100%;
+}
+
+/* RESET TOTAL DO POPUP */
+.popup-notificacao a {
+  all: unset;
+  display: block;
+  width: 100%;
+  padding: 12px 15px;
+  border-bottom: 1px solid #f2f2f2;
+  font-size: 14px;
+  cursor: pointer;
+  transition: 0.2s;
+  box-sizing: border-box;
+}
+
+.popup-notificacao a:hover {
+  background: #f5f9ff;
+}
+
+.popup-notificacao a .tempo {
+  display: block;
+  font-size: 12px;
+  color: #888;
+  margin-top: 4px;
 }
