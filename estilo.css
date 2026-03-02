@@ -1483,3 +1483,76 @@ width: 100%;
   font-size: 14px;
   margin-top: 20px;
 }
+
+
+/* ================= RESPONSIVO PERFIL ================= */
+
+/* PERFIL */
+@media (max-width: 900px) {
+
+  .perfil-container {
+    flex-direction: column;
+    gap: 20px;
+    text-align: center;
+  }
+
+  .perfil-esquerda {
+    flex-direction: column;
+  }
+
+  .perfil-direita {
+    align-items: center;
+  }
+
+}
+
+/* PRODUTOS DO PERFIL */
+@media (max-width: 900px) {
+
+  .container-produtos {
+    flex-direction: column;
+  }
+
+  .box {
+    width: 100%;
+  }
+
+  .grid {
+    grid-template-columns: 1fr;
+  }
+
+  .card img {
+    width: 100%;
+    height: auto;
+  }
+
+}
+
+/* MENU SUPERIOR */
+@media (max-width: 900px) {
+
+  .container {
+    flex-direction: column;
+    align-items: flex-start;
+  }
+
+  .menu {
+    flex-wrap: wrap;
+    gap: 10px;
+  }
+
+  .menu input {
+    width: 100%;
+  }
+
+}
+
+/* CHAT MOBILE */
+@media (max-width: 600px) {
+
+  .chat-modal {
+    width: 95%;
+    height: 90%;
+  }
+
+}
