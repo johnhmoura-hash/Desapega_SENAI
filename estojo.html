@@ -62,32 +62,16 @@
         </div>
       </div>
       <div class="menu2 chat-wrapper">
-        <a href="#" id="btnChat">
-          Chat <i class="ri-chat-3-line"></i>
-        </a>
+        <a href="#">
+  Chat <i class="ri-chat-3-line"></i>
+</a>
 
-        <div class="popup-chat" id="popupChat">
-          <div class="popup-header">
-            <h4>Chat</h4>
-          </div>
-
-          <div class="popup-body">
-            <div class="chat-item">
-              André: Oi, ainda está disponível?
-              <span class="tempo">5 min</span>
-            </div>
-
-            <div class="chat-item">
-              Maria: Pode enviar mais fotos?
-              <span class="tempo">20 min</span>
-            </div>
-          </div>
-        </div>
+      
       </div>
 
-      <div class="menu2">
+      
         <a href="tela_produto.html">Anunciar produto <i class="ri-add-line"></i></a>
-      </div>
+      
 
     </div>
   </div>
@@ -119,13 +103,15 @@
 
            <button id="btnQuero" class="produto-botao-principal">Eu quero</button>
 
-            <button class="produto-botao-chat">
-                Chat <i class="ri-chat-3-line"></i>
+           <button class="produto-botao-chat btnChat" id="btnChat">
+             Chat <i class="ri-chat-3-line"></i>
             </button>
 
         </div>
 
     </div>
+
+    
 
     <!-- PARTE DE BAIXO -->
     <div class="produto-inferior-area">
@@ -190,5 +176,33 @@ Não tenho interesse em trocar por pontos.
   </div>
 </div>
 <script src="script.js"></script>
+<script src="scriptPopup.js"></script>
+
+
+
+
+<!-- POPUP CHAT -->
+<div id="overlayChat" class="overlay-chat">
+  <div class="chat-modal">
+
+    <div class="chat-header">
+      <img src="Img/retrato-de-adolescente-feliz-por-voltar-a-universidade_23-2148586575.avif" class="chat-foto">
+      <span>Jaqueline</span>
+      <button id="fecharChat" class="fechar-chat">✕</button>
+    </div>
+
+    <div class="chat-body">
+      <div class="mensagem-sistema">
+        Nenhum assunto iniciado. Envie uma mensagem para começar a conversa.
+      </div>
+    </div>
+
+    <div class="chat-footer">
+      <input type="text" id="inputMensagem" placeholder="Digite uma mensagem...">
+      <button class="btn-enviar-msg" id="btnEnviar">➤</button>
+    </div>
+
+  </div>
+</div>
 </body>
 </html>
