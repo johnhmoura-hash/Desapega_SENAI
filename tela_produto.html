@@ -99,13 +99,13 @@
       </label>
       <input type="file" id="inputFoto" accept="image/*" style="display: none;">
     </div>
-  <form class="form-produto" div="form-produto">
-     
+  <form class="form-produto" id="formProduto">
     
-
     <label>Informações ⓘ</label>
-
+    <label for="nomeProduto" ></label>
     <input type="text" class="input-info" id="nomeProduto" placeholder="Produto">
+    <span></span>
+  
 
     <select class="input-info" id="tempoUso" >
       <option value="" disabled selected>Tempo de uso</option>
@@ -151,7 +151,7 @@
       </select>
   <br>
       <button class="botao2" type="submit">Anunciar</button>
-      
+  </form>
 </div>
 <script src="script.js"></script>
 <script src="scriptPopup.js"></script>
