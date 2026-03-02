@@ -77,23 +77,21 @@
 </header>
 
 <div class="box-produto">
-
-  <div class="photo-upload">
-    <a ><i class="ri-camera-line"></i></a>
-    </svg>
-
- 
-  </div>
-
- 
-
-  <form class="form-produto">
+<div class="photo-upload">
+      <label for="inputFoto" class="btn-foto">
+        <i class="ri-camera-line"></i>
+      </label>
+      <input type="file" id="inputFoto" accept="image/*" style="display: none;">
+    </div>
+  <form class="form-produto" div="form-produto">
+     
+    
 
     <label>Informações ⓘ</label>
 
-    <input type="text" class="input-info" placeholder="Produto">
+    <input type="text" class="input-info" id="nomeProduto" placeholder="Produto">
 
-    <select class="input-info" required>
+    <select class="input-info" id="tempoUso" >
       <option value="" disabled selected>Tempo de uso</option>
       <option>1 mês</option>
       <option>2 meses</option>
@@ -104,9 +102,7 @@
       <option>1 ano +</option>
     </select>
 
-
-
-    <select class="input-info" required>
+    <select class="input-info" id="categoria" >
       <option value="" disabled selected>Categoria</option>
       <option>Papelaria </option>
       <option>Beleza </option>
@@ -119,41 +115,27 @@
       <option>Outros</option>
     </select>
 
-    <textarea class="input-info" placeholder="Descrição"></textarea>
+    <textarea class="input-info" placeholder="Descrição" id="descricao"></textarea>
+    <span>Você receberá <i class="ri-money-dollar-circle-line"></i><a>2,00</a></span>
 
-<h3>preferências de trocas</h3>
-   <div class="mensagens">
-  <button type="button" onclick="selecionar(this, 1)">Produto</button>
-  <button type="button" onclick="selecionar(this, 2)">pontos</button>
-  <button type="button" onclick="selecionar(this, 3)">Produtos / pontos</button>
-</div>
-<br>
-    <select class="input-info" required>
-      <option value="" disabled selected>Produto p/ troca</option>
-      <option>Papelaria </option>
-      <option>Beleza </option>
-      <option>Eletrônico </option>
-      <option>Esporte </option>
-      <option>Artefato </option>
-      <option>Livraria </option>
-      <option>Decoração </option>
-      <option>Infantil </option>
-      <option>Outros</option>
-    </select>
-<br>
-     <button class="botao2" type="submit">Anunciar</button>
-
-
-
-
-
-
-
-
-
-
-
-     
+  <h3>Preferências de trocas</h3>
+      
+  <br>
+      <select class="input-info" id="troca" >
+        <option value="" disabled selected>Produto p/ troca</option>
+        <option>Papelaria </option>
+        <option>Beleza </option>
+        <option>Eletrônico </option>
+        <option>Esporte </option>
+        <option>Artefato </option>
+        <option>Livraria </option>
+        <option>Decoração </option>
+        <option>Infantil </option>
+        <option>Outros</option>
+      </select>
+  <br>
+      <button class="botao2" type="submit">Anunciar</button>
+      
 </div>
 <script src="script.js"></script>
 <script src="scriptPopup.js"></script>

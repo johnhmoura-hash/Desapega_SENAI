@@ -385,13 +385,13 @@ color: #0056b3;
 
 
 .caixinha{
-    height: 200px;
-    width: 300px;
+  height: 200px;
+  width: 300px;
     
-    background: #ffffff;     
-    display: flex;
+  background: #ffffff;     
+  display: flex;
    
-    flex-direction: column;     
+  flex-direction: column;     
 }
 
 .caixinha img{
@@ -416,7 +416,6 @@ color: #0056b3;
   align-items: center;
 }    
 
-
 .meses h3{
   text-decoration: none;
   color: #FF7F27;
@@ -424,6 +423,7 @@ color: #0056b3;
   width: auto;
   text-decoration: none;
 }
+
 /*Tela produto*/
 .box-produto {
   width: 480px;
@@ -435,6 +435,11 @@ color: #0056b3;
   display: flex;
   flex-direction: column;
   align-items: center;
+}
+
+.box-produto span{
+  color: rgb(145, 145, 145);
+   font-size: 15px;
 }
 
 .photo-upload {
