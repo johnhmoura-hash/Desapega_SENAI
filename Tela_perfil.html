@@ -9,27 +9,34 @@
       <link href="https://cdn.jsdelivr.net/npm/remixicon/fonts/remixicon.css" rel="stylesheet">
       <link rel="icon" href="Img/possivel logo.png" type="image/x-icon">
   </head>
-  <body>
-    <div class="faixatopo">
-      <br>
-    </div>
-   <header class="page">
+ <body>
+   <div class="faixatopo">
+    
+   </div>
+
+
+<header class="page">
   <div class="container">
+
     <div class="logo2">
       <img src="Img/possivel logo.png" width="40">
     </div>
 
-    <div class="menu">
+    <div class="pesquisar">
+      <input type="text" name="buscar" placeholder="Buscar...">
+    </div>
 
-      <div class="menu2">
-        <input type="text" name="buscar" placeholder="Buscar...">
-      </div>
+    <div class="menu-toggle" id="menuToggle">
+      ☰
+    </div>
 
-      <div class="menu2">
+    <nav class="menu" id="menu">
+
+      <div>
         <a href="index.html">Início <i class="ri-home-line"></i></a>
       </div>
 
-      <div class="menu2">
+      <div>
         <a href="Tela_perfil.html">Perfil <i class="ri-user-line"></i></a>
       </div>
 
@@ -44,7 +51,7 @@
           </div>
 
           <div class="popup-body">
-            <div class="notificacao-item ">
+            <div class="notificacao-item">
               João curtiu seu produto
               <span class="tempo">2 min atrás</span>
             </div>
@@ -61,20 +68,25 @@
           </div>
         </div>
       </div>
+
       <div class="menu2 chat-wrapper">
         <a href="#" id="btnChat">
           Chat <i class="ri-chat-3-line"></i>
         </a>
-
-      
       </div>
 
-      
-        <a href="tela_produto.html">Anunciar produto <i class="ri-add-line"></i></a>
-      
+      <div>
+        <a href="tela_produto.html">
+          Anunciar produto <i class="ri-add-line"></i>
+        </a>
+      </div>
 
-    </div>
+    </nav>
+
   </div>
+</header>
+
+<div class="overlay-menu" id="overlayMenu"></div>
 </header>
 
   <div class="all">
@@ -94,11 +106,13 @@
         </div>
 
         <div class="info">
-          <h2>Jenifer Menezes Moura de Oliveira</h2>
+          <h2>Jenifer </h2>
           <i class="ri-money-dollar-circle-line"></i><a>00,0</a>
 
         </div>
+
       </div>
+      <br><br>
       <div class="perfil-direita">
         <div class="seguidores">
           10 seguidores &nbsp;&nbsp; 20 seguindo
@@ -110,69 +124,107 @@
 
     </div>
 
-    <br><br>
-
-  <section class="container-produtos">
-
-    <div class="box">
-        <h3>Produtos trocados</h3>
-
-        <div class="grid">
-            <div class="card">
-                <img src="Img/img_fone_p.jpg">
-                <p>Fone sem fio</p>
-            </div>
-
-            <div class="card">
-                <img src="Img/img_garrafa_p.webp">
-                <p>Garrafa térmica</p>
-            </div>
-
-            <div class="card">
-                <img src="Img/IMAGEM77.jpg">
-                <p>Dicionário</p>
-            </div>
-
-            <div class="card">
-                <img src="Img/IMAGEM1.jpg">
-                <p>Capa de iphone 11</p>
-            </div>
-
-        </div>
-    </div>
+    <br><br><br><br><br>
+  <div class="corcinza">
+ <h2>Meus Produtos</h2>
+ </div>
+ <br>
+  <section class="gallery-container">
 
     
-
-    <div class="box">
-        <h3>Produtos disponíveis</h3>
-
-         <div class="grid">
-            <div class="card">
-                <img src="Img/IMAGEM2.webp">
-                <p>Raquete esportiva</p>
-            </div>
-
-            <div class="card">
-                <img src="Img/IMAGEM3.jpg">
-                <p>Camisa feminina do vasco</p>
-            </div>
-
-            <div class="card">
-                <img src="Img/IMAGEM9.jpg">
-                <p>Livro de quadrinhos</p>
-            </div>
-
-            <div class="card">
-                <img src="Img/relogio_digital.jpg">
-                <p>Relógio digital</p>
-            </div>
-
-        </div>
-    </div>
-
+            
+            <a href="" class="fotos">
+                <img src="Img/bolsa amarela.jpg" alt="">
+                <div>
+                  <br>
+               <h3>Livro bolsa amarela</h3>
+       
+                <div class="meses">
+                <h3>2 meses</h3>
+                </div>
+                </div>
+            </a>
+            <a href="capinha.html" class="fotos">
+                <img src="Img/IMAGEM7.jpg" alt="">
+                <div>
+                  <br>
+               <h3>Capa de iphone 11 pro max </h3>
+       
+                <div class="meses">
+                <h3>1 mês</h3>
+                </div>
+                </div>
+            </a>
+            <a href="raquete.html" class="fotos">
+                <img src="Img/IMAGEM2.webp" alt="">
+                <div>
+                  <br>
+               <h3>Raquete de tênis Profissional</h3>
+       
+                <div class="meses">
+                <h3>2 meses</h3>
+                </div>
+                </div>
+            </a>
+            <a href="" class="fotos">
+                <img src="Img/IMAGEM01.jpg" alt="">
+                <div>
+                  <br>
+               <h3>Camisa do vasco Feminina </h3>
+       
+                <div class="meses">
+                <h3>3 meses</h3>
+                </div>
+                </div>
+                
+            </a>
+            <a href="caneta.html" class="fotos">
+                <img src="Img/IMAGEM1.jpg" alt="">
+              <div>
+                  <br>
+               <h3>Caneta Esferográfica</h3>
+       
+                <div class="meses">
+                  <h3>5 meses</h3>
+                </div>
+              </div>
+            </a>
+            <a href="" class="fotos">
+                <img src="Img/IMAGEM77.jpg" alt="">
+                <div>
+                  <br>
+               <h3>Calça cargo</h3>
+       
+                <div class="meses">
+                <h3>1 mês</h3>
+                </div>
+                </div>
+            </a>
+             <a href="caneta.html" class="fotos">
+                <img src="Img/IMAGEM44.webp" alt="">
+              <div>
+                  <br>
+               <h3>Caneta Esferográfica</h3>
+       
+                <div class="meses">
+                  <h3>5 meses</h3>
+                </div>
+              </div>
+            </a>
+            <a href="" class="fotos">
+                <img src="Img/IMAGEM5.jpg" alt="">
+                <div>
+                  <br>
+               <h3>Calça cargo</h3>
+       
+                <div class="meses">
+                <h3>1 mês</h3>
+                </div>
+                </div>
+            </a>
 </section>
-
-
+<script src="resp.js"></script>
+<script src="script.js"></script>
 <script src="scriptPopup.js"></script>
 </body>
 </html>

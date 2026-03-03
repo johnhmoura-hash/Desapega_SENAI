@@ -186,6 +186,9 @@ h2 {
 /* menu topo */
 .faixatopo{
   background-color: #0056b3;
+  border: none;
+  height: 5px;
+  width: 100%;
 }
 .page {
   width: 100%;
@@ -244,6 +247,41 @@ h2 {
   display: flex;
   align-items: center;
  
+}
+
+
+
+
+
+.pesquisar a {
+  text-decoration: none;
+  font-weight: 500;
+  margin-right: 15px;
+  border-radius: 10px;
+  border: 1px solid #a8a8a8; 
+  padding: 1vh;
+  color: #a8a8a8;
+}
+
+
+.pesquisar a:hover{
+  color: #005CAA;
+  border-color: #0056b3;
+
+}
+
+.pesquisar input{
+  border:1px solid #a8a8a8;
+  border-radius: 20px;
+  padding: 0.5vw;
+  outline: none;
+  width: 300px;
+
+}
+
+.pesquisar input:hover{
+  border-color: #0056b3;
+  outline: none;
 }
 
 /* categoria */
@@ -679,24 +717,16 @@ text-decoration: none;
   padding: 20px;
 }
 
- .logoperfil {
-  background-color: #FF7F27;
+ 
+ .logoperfil img{
+  background-color: #ff7a00;
   height: 200px;
   position: relative;
-  overflow: hidden;
-  width: 100%;
+  width: 200%;
   margin: 40px auto;
   max-width: 100%;
   border-radius: 18px ;
- }
-
- .logoperfil img{
-  background-color: #FF7F27;
-  height: 200px;
-  width: 100%;
-  margin: 40px auto;
-  max-width: 100%;
-  border-radius: 18px ;
+  object-fit: cover;
  }
 
 .perfil-container {
@@ -776,14 +806,6 @@ border-color: #0056b3;
 }
 
 
-
-.container-produtos{
-    display:flex;
-    gap:30px;
-    padding:30px;
-}
-
-
 .box{
     background:#fff;
     border:2px solid #0056b3;
@@ -810,8 +832,8 @@ border-color: #0056b3;
 }
 
 .card img{
-    width: 300px;
-    height: 200px;
+    width: 100%;
+    height: auto;
     object-fit: cover;
     border-radius: 40px;
 }
@@ -1492,21 +1514,24 @@ width: 100%;
 
   .perfil-container {
     flex-direction: column;
-    gap: 20px;
+    align-items: center;
     text-align: center;
   }
 
   .perfil-esquerda {
     flex-direction: column;
-  }
-
-  .perfil-direita {
     align-items: center;
   }
 
-}
+  
+  .perfil-direita {
+    flex-direction: row;
+    align-items: center;
+    justify-content: center;
+    gap: 15px;
+  }
 
-/* PRODUTOS DO PERFIL */
+}
 @media (max-width: 900px) {
 
   .container-produtos {
@@ -1518,12 +1543,19 @@ width: 100%;
   }
 
   .grid {
-    grid-template-columns: 1fr;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 10px;
+  }
+
+  .card {
+    padding: 8px;
   }
 
   .card img {
     width: 100%;
-    height: auto;
+    aspect-ratio: 1/1;
+    object-fit: cover;
+    border-radius: 12px;
   }
 
 }
@@ -1531,20 +1563,34 @@ width: 100%;
 /* MENU SUPERIOR */
 @media (max-width: 900px) {
 
-  .container {
-    flex-direction: column;
-    align-items: flex-start;
-  }
+  
 
-  .menu {
-    flex-wrap: wrap;
-    gap: 10px;
-  }
+.container {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 10px;
+}
 
-  .menu input {
-    width: 100%;
-  }
+.logo2 {
+  flex: 0 0 auto;
+}
 
+
+.pesquisar input {
+  width: 100%;
+}
+
+.menu-toggle {
+  flex: 0 0 auto;
+  font-size: 24px;
+  cursor: pointer;
+  color: #ff7a00;
+}
+
+
+  
+  
 }
 
 /* CHAT MOBILE */
@@ -1639,3 +1685,31 @@ width: 100%;
   }
 
 }
+
+
+
+
+
+/* ================= MOBILE 2 POR LINHA ================= */
+
+@media (max-width: 600px) {
+
+  .gallery-container {
+    gap: 15px;
+    padding: 0 10px;
+  }
+
+  .fotos {
+    width: calc(50% - 10px); /* 2 por linha */
+    height: auto;
+  }
+
+  .fotos img {
+    height: 160px; /* controla altura da imagem */
+  }
+
+}
+
+
+
+

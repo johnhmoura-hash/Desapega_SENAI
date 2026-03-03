@@ -13,23 +13,28 @@
       <br>
     </div>
 
-    <header class="page">
+   <header class="page">
   <div class="container">
+
     <div class="logo2">
       <img src="Img/possivel logo.png" width="40">
     </div>
 
-    <div class="menu">
+    <div class="pesquisar">
+      <input type="text" name="buscar" placeholder="Buscar...">
+    </div>
 
-      <div class="menu2">
-        <input type="text" name="buscar" placeholder="Buscar...">
-      </div>
+    <div class="menu-toggle" id="menuToggle">
+      ☰
+    </div>
 
-      <div class="menu2">
+    <nav class="menu" id="menu">
+
+      <div>
         <a href="index.html">Início <i class="ri-home-line"></i></a>
       </div>
 
-      <div class="menu2">
+      <div>
         <a href="Tela_perfil.html">Perfil <i class="ri-user-line"></i></a>
       </div>
 
@@ -44,7 +49,7 @@
           </div>
 
           <div class="popup-body">
-            <div class="notificacao-item ">
+            <div class="notificacao-item">
               João curtiu seu produto
               <span class="tempo">2 min atrás</span>
             </div>
@@ -61,20 +66,23 @@
           </div>
         </div>
       </div>
+
       <div class="menu2 chat-wrapper">
         <a href="#" id="btnChat">
           Chat <i class="ri-chat-3-line"></i>
         </a>
-
-      
       </div>
 
-      
-        <a href="tela_produto.html">Anunciar produto <i class="ri-add-line"></i></a>
-      
+      <div>
+        <a href="tela_produto.html">
+          Anunciar produto <i class="ri-add-line"></i>
+        </a>
+      </div>
 
-    </div>
+    </nav>
+
   </div>
+  <div class="overlay-menu" id="overlayMenu"></div>
 </header>
 <br><br><br>
  <div class="pagina-produto">
