@@ -1563,10 +1563,8 @@ width: 100%;
 /* ================= MENU FIXO ================= */
 
 .page {
-  position: sticky;
-  top: 0;
+  position: relative;
   background: white;
-  z-index: 9998;
 }
 
 .container {

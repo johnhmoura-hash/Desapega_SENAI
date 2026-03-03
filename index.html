@@ -9,7 +9,9 @@
      <link rel="icon" href="Img/possivel logo.png" type="image/x-icon">
   </head>
   <body>
-   <div class="faixatopo"></div>
+   <div class="faixatopo">
+    <br>
+   </div>
 
 <header class="page">
   <div class="container">
@@ -29,27 +31,56 @@
     <nav class="menu" id="menu">
 
      
-
-      <div class="menu2">
-        <a href="index.html">Início</a>
+<div class="menu2">
+        <a href="index.html">Início <i class="ri-home-line"></i></a>
       </div>
 
       <div class="menu2">
-        <a href="Tela_perfil.html">Perfil</a>
+        <a href="Tela_perfil.html">Perfil <i class="ri-user-line"></i></a>
       </div>
 
-      <div class="menu2">
-        <a href="#">Notificações</a>
+      <div class="menu2 notificacao-wrapper">
+        <a href="#" id="btnNotificacao">
+          Notificações <i class="ri-notification-line"></i>
+        </a>
+
+        <div class="popup-notificacao" id="popupNotificacao">
+          <div class="popup-header">
+            <h4>Notificações</h4>
+          </div>
+
+          <div class="popup-body">
+            <div class="notificacao-item ">
+              João curtiu seu produto
+              <span class="tempo">2 min atrás</span>
+            </div>
+
+            <div class="notificacao-item">
+              Nova mensagem recebida
+              <span class="tempo">10 min atrás</span>
+            </div>
+
+            <div class="notificacao-item">
+              Seu produto foi visualizado
+              <span class="tempo">1 hora atrás</span>
+            </div>
+          </div>
+        </div>
+      </div>
+      <div class="menu2 chat-wrapper">
+        <a href="#" id="btnChat">
+          Chat <i class="ri-chat-3-line"></i>
+        </a>
+
+      
       </div>
 
-      <div class="menu2">
-        <a href="#">Chat</a>
-      </div>
+      
+        <a href="tela_produto.html">Anunciar produto <i class="ri-add-line"></i></a>
+      
 
-      <div class="menu2">
-        <a href="tela_produto.html">Anunciar produto</a>
-      </div>
-
+    </div>
+  </div>
     </nav>
 
   </div>
@@ -327,7 +358,7 @@
 
     </div>
   </div>
-
+  <script src="resp.js"></script>
   <script src="scriptPopup.js"></script>
   <script src="script.js"></script>
     
