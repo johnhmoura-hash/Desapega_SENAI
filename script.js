@@ -200,7 +200,7 @@ function enviarFormulario() {
     .then(data => {
         console.log("Sucesso:", data);
         alert("Conta criada com sucesso!");
-        window.location.href="Tela_login.html";
+       
     })
     .catch(error => {
         console.error("Erro:", error);
@@ -592,14 +592,15 @@ document.querySelectorAll(".item").forEach(item => {
 // enviar proposta
 enviar.onclick = () => {
   if(!itemSelecionado){
-    alert("Selecione um item");
+    alert("Proposta de troca enviada!");
+    window.location.href = "estojo.html";
     return;
-  }
+  } else{
 
   alert("Proposta enviada com item ID: " + itemSelecionado);
   overlay.style.display = "none";
+}
 };
-
 botao.onclick = () => {
   botao.classList.toggle("selecionado");
 }
