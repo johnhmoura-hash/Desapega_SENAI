@@ -12,12 +12,16 @@
 
 <body>
 
-  <div class="Login-page">
-    
-    <div class="Card">
-      <img src="Img/logo 2.png" alt="logo"  class="logo">
-    <div>
-        <form class="form" id="form">
+
+  <main class="Login-page">
+    <img src="Img/logo 2.png" alt="logo"  class="logo">
+    <div class="interface">
+
+      <section class="tela-login">
+                  
+        <h1>Faça seu login</h1>
+
+        <form action="#">
 
           <div class="campo">
             <label for="usuario">Nome</label>
@@ -32,27 +36,28 @@
             <small></small>
           </div>
 
-          <a class="botao" type="submit" href="index.html">ENTRAR</a>
+            <a href="#">Esqueceu a senha?</a>
+            <input type="submit" value="Entar" class="botao">
+
+            <button class="google-btn">
+            <img src="https://upload.wikimedia.org/wikipedia/commons/c/c1/Google_%22G%22_logo.svg" alt="Google">
+            Entrar com Google 
+          </button>
+
+        <p class="cadastro">
+            Não tem uma conta?
+            <a href="Tela_criar_login.html">Cadastre-se</a>
+        </p>
+
+                  
         </form>
-      </div>
-      <br>
 
-      <button class="google-btn">
-        <img src="https://upload.wikimedia.org/wikipedia/commons/c/c1/Google_%22G%22_logo.svg" alt="Google">
-        Entrar com Google 
-      </button>
-
-      <p class="cadastro">
-        Não tem uma conta?
-        <a href="Tela_criar_login.html">Cadastre-se</a>
-      </p>
-
-
+          
+      </section>
     </div>
+  </main>
 
-  </div>
-
-  </div>
+  
   <script src="script.js"></script>
 </body>
 
