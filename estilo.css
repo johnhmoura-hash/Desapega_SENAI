@@ -5,29 +5,25 @@ body{
 }
 /* Tela de login*/
 
-.Login-page{
-    margin: 0;
-    padding: 0;
-    box-sizing: border-box;
-    font-family: "Plus Jakarta Sans", sans-serif;
-}
-
 .interface{
   width: 100%;
   height: 100vh;
-
+  box-sizing: border-box; 
+ 
   display: flex;
-  align-items: center;
   justify-content: space-between;
 }
 
 .tela-login{
   width: 70%;
   text-align: center;
+  align-items: center;
 }
 
 .tela-login h1{
   font-size: 3.5rem;
+  font-family: "Plus Jakarta Sans", sans-serif; 
+
 }
 
 .tela-login form{
@@ -39,6 +35,7 @@ body{
   font-size: .8rem;
   text-align: right;
   display: block;
+  color: #005CAA;
 }
 
 .campo{
@@ -50,18 +47,21 @@ body{
     display: block;
     margin-bottom: 5px;
     font-weight:bold ;
+    text-align: left;
     
 }
 
 .campo input{
   width: 100%;
-  padding: 16px 12px;
-  height: 20px;
-  box-sizing: border-box;
+  padding: 16px;
+  margin-bottom: 8px;
+  height: 15px;
     
-  border-radius: 20px;
+  border-radius: 8px;
   border: 1px solid #005CAA;
   outline: 0;
+  font-size: 1rem;
+
 }
 
 .campo.success input{
@@ -84,10 +84,25 @@ body{
   visibility: visible;
 }
 
+.opt-login button{
+   width: 56px;
+   height: 56px;
+   border: none;
+   background-color: white;
+   box-shadow: 4px 4px 10px #b1b1b1;
+   cursor: pointer;
+   border-radius: 8px;
+   transition: background-color .2s;
+}
+
+.opt-login button:houver{
+background-color: #2b2929;
+ 
+}
 .ri-eye-line {
   position: absolute;
-  top: 41px;
-  right: 10px;
+  top: 49px;
+  right: 20px;
   cursor: pointer;
   transform: translateY(-50%);
   color: #858585;
@@ -95,8 +110,8 @@ body{
 
 .ri-eye-off-line{
   position: absolute;
-  top: 41px;
-  right: 10px;
+  top: 49px;
+  right: 20px;
   cursor: pointer;
   transform: translateY(-50%);
   color: #858585;
@@ -104,6 +119,7 @@ body{
 
 .botao {
     width: 100%;
+    margin-top: 20px;
     padding: 14px 0;          
     display: flex;
     align-items: center;      
