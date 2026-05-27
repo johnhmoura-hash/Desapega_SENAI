@@ -1,5 +1,15 @@
-var builder = WebApplication.CreateBuilder(args);
 
+using DesapegaSenai.Data;
+using Microsoft.EntityFrameworkCore;
+var builder = WebApplication.CreateBuilder(args);
+builder.Services.AddDistributedMemoryCache(); // Necessário para armazenar a sessão em
+
+builder.Services.AddSession(options =>
+{
+    options.IdleTimeout = TimeSpan.FromMinutes(30); // Tempo de expiração
+    options.Cookie.HttpOnly = true; // Segurança
+    options.Cookie.IsEssential = true;
+});
 // Add services to the container.
 
 builder.Services.AddControllers();
@@ -7,7 +17,13 @@ builder.Services.AddControllers();
 builder.Services.AddEndpointsApiExplorer();
 builder.Services.AddSwaggerGen();
 
+builder.Services.AddDbContext<DesapegaContext>(options =>
+options.UseSqlServer(builder.Configuration.GetConnectionString("DefaultConnection")));
+
 var app = builder.Build();
+
+
+app.UseSession();
 
 // Configure the HTTP request pipeline.
 if (app.Environment.IsDevelopment())

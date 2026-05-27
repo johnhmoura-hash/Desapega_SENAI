@@ -1,6 +1,11 @@
-﻿namespace DesapegaSenai.Data
+﻿
+using DesapegaSenai.Models;
+using Microsoft.EntityFrameworkCore;
+
+namespace DesapegaSenai.Data
 {
-    public class DesapegaContext
+    public class DesapegaContext : DbContext
     {
+        public DesapegaSenai(DbContextOptions<>)
     }
 }
