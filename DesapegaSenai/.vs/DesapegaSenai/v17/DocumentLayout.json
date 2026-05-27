@@ -52,7 +52,7 @@
               "RelativeDocumentMoniker": "DesapegaSenai\\Data\\DesapegaContext.cs",
               "ToolTip": "C:\\Users\\manha.ceticc\\Documents\\GitHub\\Desapega_SENAI\\DesapegaSenai\\DesapegaSenai\\Data\\DesapegaContext.cs",
               "RelativeToolTip": "DesapegaSenai\\Data\\DesapegaContext.cs",
-              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAYAAAAmAAAAAAAAAA==",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAsAAAAyAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
               "WhenOpened": "2026-05-27T13:18:14.302Z",
               "EditorCaption": ""
@@ -65,7 +65,7 @@
               "RelativeDocumentMoniker": "DesapegaSenai\\Program.cs",
               "ToolTip": "C:\\Users\\manha.ceticc\\Documents\\GitHub\\Desapega_SENAI\\DesapegaSenai\\DesapegaSenai\\Program.cs",
               "RelativeToolTip": "DesapegaSenai\\Program.cs",
-              "ViewState": "AgIAAAAAAAAAAAAAAAAAABMAAAAbAAAAAAAAAA==",
+              "ViewState": "AgIAAAMAAAAAAAAAAAAAABEAAAAhAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
               "WhenOpened": "2026-05-27T13:15:47.743Z",
               "EditorCaption": ""
@@ -80,8 +80,7 @@
               "RelativeToolTip": "DesapegaSenai\\Controllers\\UsuarioController.cs",
               "ViewState": "AgIAAAAAAAAAAAAAAAAAAAYAAAAAAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2026-05-27T13:07:44.533Z",
-              "EditorCaption": ""
+              "WhenOpened": "2026-05-27T13:07:44.533Z"
             },
             {
               "$type": "Document",
@@ -93,8 +92,7 @@
               "RelativeToolTip": "DesapegaSenai\\Models\\Troca.cs",
               "ViewState": "AgIAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2026-05-27T13:02:07.439Z",
-              "EditorCaption": ""
+              "WhenOpened": "2026-05-27T13:02:07.439Z"
             },
             {
               "$type": "Document",
@@ -106,8 +104,7 @@
               "RelativeToolTip": "DesapegaSenai\\Models\\Denuncia.cs",
               "ViewState": "AgIAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2026-05-27T13:02:06.173Z",
-              "EditorCaption": ""
+              "WhenOpened": "2026-05-27T13:02:06.173Z"
             },
             {
               "$type": "Document",
@@ -119,8 +116,7 @@
               "RelativeToolTip": "DesapegaSenai\\Models\\Mensagem.cs",
               "ViewState": "AgIAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2026-05-27T13:02:05.322Z",
-              "EditorCaption": ""
+              "WhenOpened": "2026-05-27T13:02:05.322Z"
             },
             {
               "$type": "Document",
@@ -132,8 +128,7 @@
               "RelativeToolTip": "DesapegaSenai\\Models\\Notificacao.cs",
               "ViewState": "AgIAAAAAAAAAAAAAAAAAAAsAAAAAAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2026-05-27T13:02:04.177Z",
-              "EditorCaption": ""
+              "WhenOpened": "2026-05-27T13:02:04.177Z"
             },
             {
               "$type": "Document",
@@ -145,8 +140,7 @@
               "RelativeToolTip": "DesapegaSenai\\Models\\Usuario.cs",
               "ViewState": "AgIAAAAAAAAAAAAAAAAAAAcAAAApAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2026-05-27T12:23:10.774Z",
-              "EditorCaption": ""
+              "WhenOpened": "2026-05-27T12:23:10.774Z"
             }
           ]
         }
