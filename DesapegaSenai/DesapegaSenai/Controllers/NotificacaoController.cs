@@ -8,7 +8,7 @@ using Microsoft.AspNetCore.Mvc;
 namespace DesapegaSenai.Controllers
 {
     [ApiController]
-    [Route("[controller")]
+    [Route("[controller")] 
     public class NotificacaoController : ControllerBase
 
     {
@@ -18,5 +18,25 @@ namespace DesapegaSenai.Controllers
         {
             _context = context;
         }
+
+        [HttpPost]
+        public IActionResult CriarNotificacao(Notificacao notificacao)
+        {
+            var usuario = HttpContext.Session.GetString("Email");
+            if (usuario == null)
+                return Unauthorized("Não autenticado");
+
+            var sessao = Request.Cookies["IdUsado"];
+            if (sessao != null)
+            {
+                notificacao.Fk_usuarios_matricula = int.Parse(sessao);
+            }
+
+            _context.Add(notificacao);
+            _context.SaveChanges();
+            return Created("Teste", notificacao);
+        }
+
+
     }
 }
