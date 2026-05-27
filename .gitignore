@@ -1,7 +1,4 @@
 ﻿################################################################################
 # Este arquivo .gitignore foi criado automaticamente pelo Microsoft(R) Visual Studio.
 ################################################################################
-
-/.vs/Desapega_SENAI/FileContentIndex/f095dae1-7bce-47cf-93c1-dae2a9448f91.vsidx
-/.vs
-/DesapegaSenai/.vs/DesapegaSenai
+/DesapegaSenai/.vs/DesapegaSenai/FileContentIndex
