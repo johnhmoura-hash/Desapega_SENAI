@@ -41,21 +41,82 @@
         "tags": [
           "Objeto"
         ],
+        "parameters": [
+          {
+            "name": "Id",
+            "in": "query",
+            "schema": {
+              "type": "integer",
+              "format": "int32"
+            }
+          },
+          {
+            "name": "Nome",
+            "in": "query",
+            "schema": {
+              "type": "string"
+            }
+          },
+          {
+            "name": "Categoria",
+            "in": "query",
+            "schema": {
+              "type": "string"
+            }
+          },
+          {
+            "name": "Tempo_uso",
+            "in": "query",
+            "schema": {
+              "type": "string"
+            }
+          },
+          {
+            "name": "Descricao",
+            "in": "query",
+            "schema": {
+              "type": "string"
+            }
+          },
+          {
+            "name": "Prefere_troca",
+            "in": "query",
+            "schema": {
+              "type": "string"
+            }
+          },
+          {
+            "name": "Fk_usuarios_matricula",
+            "in": "query",
+            "schema": {
+              "type": "integer",
+              "format": "int32"
+            }
+          },
+          {
+            "name": "Status_objeto",
+            "in": "query",
+            "schema": {
+              "type": "boolean"
+            }
+          }
+        ],
         "requestBody": {
           "content": {
-            "application/json": {
+            "multipart/form-data": {
               "schema": {
-                "$ref": "#/components/schemas/Objeto"
-              }
-            },
-            "text/json": {
-              "schema": {
-                "$ref": "#/components/schemas/Objeto"
-              }
-            },
-            "application/*+json": {
-              "schema": {
-                "$ref": "#/components/schemas/Objeto"
+                "type": "object",
+                "properties": {
+                  "Foto": {
+                    "type": "string",
+                    "format": "binary"
+                  }
+                }
+              },
+              "encoding": {
+                "Foto": {
+                  "style": "form"
+                }
               }
             }
           }
@@ -65,9 +126,17 @@
             "description": "OK"
           }
         }
+      },
+      "get": {
+        "tags": [
+          "Objeto"
+        ],
+        "responses": {
+          "200": {
+            "description": "OK"
+          }
+        }
       }
-<<<<<<< HEAD
-=======
     },
     "/Usuario/login": {
       "post": {
@@ -130,7 +199,83 @@
           }
         }
       }
->>>>>>> 7a5df8edfbe00b6b886defb3fbb6ffe360df5dec
+    },
+    "/Usuario/logout": {
+      "post": {
+        "tags": [
+          "Usuario"
+        ],
+        "responses": {
+          "200": {
+            "description": "OK"
+          }
+        }
+      }
+    },
+    "/Usuario/Atualizar/{id}": {
+      "put": {
+        "tags": [
+          "Usuario"
+        ],
+        "parameters": [
+          {
+            "name": "id",
+            "in": "path",
+            "required": true,
+            "schema": {
+              "type": "integer",
+              "format": "int32"
+            }
+          }
+        ],
+        "requestBody": {
+          "content": {
+            "application/json": {
+              "schema": {
+                "$ref": "#/components/schemas/Usuario"
+              }
+            },
+            "text/json": {
+              "schema": {
+                "$ref": "#/components/schemas/Usuario"
+              }
+            },
+            "application/*+json": {
+              "schema": {
+                "$ref": "#/components/schemas/Usuario"
+              }
+            }
+          }
+        },
+        "responses": {
+          "200": {
+            "description": "OK"
+          }
+        }
+      }
+    },
+    "/Usuario/Deletar/{id}": {
+      "delete": {
+        "tags": [
+          "Usuario"
+        ],
+        "parameters": [
+          {
+            "name": "id",
+            "in": "path",
+            "required": true,
+            "schema": {
+              "type": "integer",
+              "format": "int32"
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "OK"
+          }
+        }
+      }
     }
   },
   "components": {
@@ -160,45 +305,6 @@
           }
         },
         "additionalProperties": false
-      },
-      "Objeto": {
-        "type": "object",
-        "properties": {
-          "id": {
-            "type": "integer",
-            "format": "int32"
-          },
-          "nome": {
-            "type": "string",
-            "nullable": true
-          },
-          "categoria": {
-            "type": "string",
-            "nullable": true
-          },
-          "tempo_uso": {
-            "type": "string",
-            "nullable": true
-          },
-          "descricao": {
-            "type": "string",
-            "nullable": true
-          },
-          "prefere_troca": {
-            "type": "string",
-            "nullable": true
-          },
-          "fk_usuarios_matricula": {
-            "type": "integer",
-            "format": "int32"
-          },
-          "status_objeto": {
-            "type": "boolean"
-          }
-        },
-        "additionalProperties": false
-<<<<<<< HEAD
-=======
       },
       "Usuario": {
         "type": "object",
@@ -232,7 +338,6 @@
           }
         },
         "additionalProperties": false
->>>>>>> 7a5df8edfbe00b6b886defb3fbb6ffe360df5dec
       }
     }
   }

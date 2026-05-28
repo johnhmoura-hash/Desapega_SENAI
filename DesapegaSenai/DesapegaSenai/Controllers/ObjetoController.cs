@@ -29,7 +29,7 @@ namespace DesapegaSenai.Controllers
             return Created("Teste", objeto);
         }
 
-    [HttpGet]
+        [HttpGet]
 
         public IActionResult BuscarObjeto()
         {
@@ -48,15 +48,18 @@ namespace DesapegaSenai.Controllers
                                 select new
                                 {
                                     Usuarios = u.Nome,
-                                   
-                                    Objetos = o.Nome, o.Descricao,
-                                    o.Categoria,o.Tempo_uso, o.Foto,
+
+                                    Objetos = o.Nome,
+                                    o.Descricao,
+                                    o.Categoria,
+                                    o.Tempo_uso,
+                                    o.Foto,
                                     o.Prefere_troca
                                 };
                 return Ok(resultado.ToList());
             }
             return Unauthorized("Não autenticado");
 
-        } 
-    } 
+        }
+    }
 }

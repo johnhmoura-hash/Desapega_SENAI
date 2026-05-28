@@ -24,14 +24,83 @@
     "Order": 0,
     "Parameters": [
       {
-        "Name": "objeto",
-        "Type": "DesapegaSenai.Models.Objeto",
+        "Name": "Id",
+        "Type": "System.Int32",
+        "IsRequired": false
+      },
+      {
+        "Name": "Nome",
+        "Type": "System.String",
+        "IsRequired": false
+      },
+      {
+        "Name": "Categoria",
+        "Type": "System.String",
+        "IsRequired": false
+      },
+      {
+        "Name": "Foto",
+        "Type": "Microsoft.AspNetCore.Http.IFormFile",
+        "IsRequired": false
+      },
+      {
+        "Name": "Tempo_uso",
+        "Type": "System.String",
+        "IsRequired": false
+      },
+      {
+        "Name": "Descricao",
+        "Type": "System.String",
+        "IsRequired": false
+      },
+      {
+        "Name": "Prefere_troca",
+        "Type": "System.String",
+        "IsRequired": false
+      },
+      {
+        "Name": "Fk_usuarios_matricula",
+        "Type": "System.Int32",
+        "IsRequired": false
+      },
+      {
+        "Name": "Status_objeto",
+        "Type": "System.Boolean",
+        "IsRequired": false
+      }
+    ],
+    "ReturnTypes": []
+  },
+  {
+    "ContainingType": "DesapegaSenai.Controllers.ObjetoController",
+    "Method": "BuscarObjeto",
+    "RelativePath": "Objeto",
+    "HttpMethod": "GET",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [],
+    "ReturnTypes": []
+  },
+  {
+    "ContainingType": "DesapegaSenai.Controllers.UsuarioController",
+    "Method": "AtualizarPessoas",
+    "RelativePath": "Usuario/Atualizar/{id}",
+    "HttpMethod": "PUT",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [
+      {
+        "Name": "id",
+        "Type": "System.Int32",
+        "IsRequired": true
+      },
+      {
+        "Name": "usuario",
+        "Type": "DesapegaSenai.Models.Usuario",
         "IsRequired": true
       }
     ],
     "ReturnTypes": []
-<<<<<<< HEAD
-=======
   },
   {
     "ContainingType": "DesapegaSenai.Controllers.UsuarioController",
@@ -44,6 +113,22 @@
       {
         "Name": "usuario",
         "Type": "DesapegaSenai.Models.Usuario",
+        "IsRequired": true
+      }
+    ],
+    "ReturnTypes": []
+  },
+  {
+    "ContainingType": "DesapegaSenai.Controllers.UsuarioController",
+    "Method": "DeletarPessoas",
+    "RelativePath": "Usuario/Deletar/{id}",
+    "HttpMethod": "DELETE",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [
+      {
+        "Name": "id",
+        "Type": "System.Int32",
         "IsRequired": true
       }
     ],
@@ -64,6 +149,15 @@
       }
     ],
     "ReturnTypes": []
->>>>>>> 7a5df8edfbe00b6b886defb3fbb6ffe360df5dec
+  },
+  {
+    "ContainingType": "DesapegaSenai.Controllers.UsuarioController",
+    "Method": "logout",
+    "RelativePath": "Usuario/logout",
+    "HttpMethod": "POST",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [],
+    "ReturnTypes": []
   }
 ]
