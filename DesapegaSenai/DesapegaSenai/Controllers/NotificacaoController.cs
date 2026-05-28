@@ -1,14 +1,12 @@
 ﻿using DesapegaSenai.Data;
 using DesapegaSenai.Models;
-using Microsoft.AspNetCore.Components;
-using Microsoft.AspNetCore.Http;
 using Microsoft.AspNetCore.Mvc;
 
 
 namespace DesapegaSenai.Controllers
 {
     [ApiController]
-    [Route("[controller")] 
+    [Route("[controller]")] 
     public class NotificacaoController : ControllerBase
 
     {
@@ -37,6 +35,6 @@ namespace DesapegaSenai.Controllers
             return Created("Teste", notificacao);
         }
 
-
+       
     }
 }
