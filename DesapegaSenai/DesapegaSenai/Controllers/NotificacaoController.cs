@@ -6,7 +6,7 @@ using Microsoft.AspNetCore.Mvc;
 namespace DesapegaSenai.Controllers
 {
     [ApiController]
-    [Route("[controller")] 
+    [Route("[controller]")] 
     public class NotificacaoController : ControllerBase
 
     {
