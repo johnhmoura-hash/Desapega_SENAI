@@ -1,0 +1,34 @@
+[
+  {
+    "ContainingType": "DesapegaSenai.Controllers.NotificacaoController",
+    "Method": "CriarNotificacao",
+    "RelativePath": "Notificacao",
+    "HttpMethod": "POST",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [
+      {
+        "Name": "notificacao",
+        "Type": "DesapegaSenai.Models.Notificacao",
+        "IsRequired": true
+      }
+    ],
+    "ReturnTypes": []
+  },
+  {
+    "ContainingType": "DesapegaSenai.Controllers.ObjetoController",
+    "Method": "CriarObjeto",
+    "RelativePath": "Objeto",
+    "HttpMethod": "POST",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [
+      {
+        "Name": "objeto",
+        "Type": "DesapegaSenai.Models.Objeto",
+        "IsRequired": true
+      }
+    ],
+    "ReturnTypes": []
+  }
+]
