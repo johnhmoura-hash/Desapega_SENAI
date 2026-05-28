@@ -66,6 +66,71 @@
           }
         }
       }
+<<<<<<< HEAD
+=======
+    },
+    "/Usuario/login": {
+      "post": {
+        "tags": [
+          "Usuario"
+        ],
+        "requestBody": {
+          "content": {
+            "application/json": {
+              "schema": {
+                "$ref": "#/components/schemas/Usuario"
+              }
+            },
+            "text/json": {
+              "schema": {
+                "$ref": "#/components/schemas/Usuario"
+              }
+            },
+            "application/*+json": {
+              "schema": {
+                "$ref": "#/components/schemas/Usuario"
+              }
+            }
+          }
+        },
+        "responses": {
+          "200": {
+            "description": "OK"
+          }
+        }
+      }
+    },
+    "/Usuario/cadastrar": {
+      "post": {
+        "tags": [
+          "Usuario"
+        ],
+        "requestBody": {
+          "content": {
+            "application/json": {
+              "schema": {
+                "$ref": "#/components/schemas/Usuario"
+              }
+            },
+            "text/json": {
+              "schema": {
+                "$ref": "#/components/schemas/Usuario"
+              }
+            },
+            "application/*+json": {
+              "schema": {
+                "$ref": "#/components/schemas/Usuario"
+              }
+            }
+          }
+        },
+        "responses": {
+          "200": {
+            "description": "OK"
+          }
+        }
+      }
+>>>>>>> 7a5df8edfbe00b6b886defb3fbb6ffe360df5dec
     }
   },
   "components": {
@@ -132,6 +197,42 @@
           }
         },
         "additionalProperties": false
+<<<<<<< HEAD
+=======
+      },
+      "Usuario": {
+        "type": "object",
+        "properties": {
+          "matricula": {
+            "type": "integer",
+            "format": "int32"
+          },
+          "nome": {
+            "type": "string",
+            "nullable": true
+          },
+          "telefone": {
+            "type": "string",
+            "nullable": true
+          },
+          "email": {
+            "type": "string",
+            "nullable": true
+          },
+          "senha": {
+            "type": "string",
+            "nullable": true
+          },
+          "pontos": {
+            "type": "integer",
+            "format": "int32"
+          },
+          "status_usuario": {
+            "type": "boolean"
+          }
+        },
+        "additionalProperties": false
+>>>>>>> 7a5df8edfbe00b6b886defb3fbb6ffe360df5dec
       }
     }
   }
