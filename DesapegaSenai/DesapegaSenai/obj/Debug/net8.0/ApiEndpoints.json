@@ -1,0 +1,69 @@
+[
+  {
+    "ContainingType": "DesapegaSenai.Controllers.NotificacaoController",
+    "Method": "CriarNotificacao",
+    "RelativePath": "Notificacao",
+    "HttpMethod": "POST",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [
+      {
+        "Name": "notificacao",
+        "Type": "DesapegaSenai.Models.Notificacao",
+        "IsRequired": true
+      }
+    ],
+    "ReturnTypes": []
+  },
+  {
+    "ContainingType": "DesapegaSenai.Controllers.ObjetoController",
+    "Method": "CriarObjeto",
+    "RelativePath": "Objeto",
+    "HttpMethod": "POST",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [
+      {
+        "Name": "objeto",
+        "Type": "DesapegaSenai.Models.Objeto",
+        "IsRequired": true
+      }
+    ],
+    "ReturnTypes": []
+<<<<<<< HEAD
+=======
+  },
+  {
+    "ContainingType": "DesapegaSenai.Controllers.UsuarioController",
+    "Method": "CadastraCliente",
+    "RelativePath": "Usuario/cadastrar",
+    "HttpMethod": "POST",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [
+      {
+        "Name": "usuario",
+        "Type": "DesapegaSenai.Models.Usuario",
+        "IsRequired": true
+      }
+    ],
+    "ReturnTypes": []
+  },
+  {
+    "ContainingType": "DesapegaSenai.Controllers.UsuarioController",
+    "Method": "Login",
+    "RelativePath": "Usuario/login",
+    "HttpMethod": "POST",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [
+      {
+        "Name": "usuario",
+        "Type": "DesapegaSenai.Models.Usuario",
+        "IsRequired": true
+      }
+    ],
+    "ReturnTypes": []
+>>>>>>> 7a5df8edfbe00b6b886defb3fbb6ffe360df5dec
+  }
+]
