@@ -30,7 +30,7 @@
   .menu {
     position: fixed;
     top: 0;
-    right: -100%;
+    right: -150%;
     height: 100vh;
     width: 280px;
     background: white;
@@ -162,7 +162,7 @@
   }
 
   .card img {
-    width: 100%;
+    width: 150%;
     aspect-ratio: 1/1;
     object-fit: cover;
     border-radius: 12px;
@@ -203,7 +203,7 @@ p{
   }
 
   .fotos img {
-    height: 130px;
+    height: 200px;
   }
 
   .fotos h3 {

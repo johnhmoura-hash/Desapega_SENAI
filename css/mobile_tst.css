@@ -1,0 +1,91 @@
+/* RESPONSIVIDADE */
+@media (max-width: 900px){
+
+    .container{
+        width: 95%;
+        height: auto;
+        flex-direction: column;
+    }
+
+    /* LADO ESQUERDO */
+    .left{
+        width: 100%;
+        padding: 40px 20px;
+    }
+
+    .left h1{
+        font-size: 35px;
+    }
+
+    .left p{
+        font-size: 16px;
+    }
+
+    .img-left{
+        width: 180px;
+    }
+
+    /* LADO DIREITO */
+    .right{
+        width: 100%;
+        padding: 40px 20px;
+    }
+
+    .form-box{
+        width: 100%;
+    }
+
+    .form-box h2{
+        font-size: 30px;
+    }
+
+    .input-box input{
+        padding: 13px;
+        font-size: 15px;
+    }
+
+    .btn{
+        padding: 13px;
+        font-size: 16px;
+    }
+
+}
+
+/* CELULARES */
+@media (max-width: 500px){
+
+    .container{
+        border-radius: 15px;
+    }
+
+    .left{
+        padding: 30px 15px;
+    }
+
+    .left h1{
+        font-size: 28px;
+    }
+
+    .left p{
+        font-size: 14px;
+    }
+
+    .img-left{
+        width: 140px;
+    }
+
+    .right{
+        padding: 30px 15px;
+    }
+
+    .form-box h2{
+        font-size: 25px;
+        margin-bottom: 25px;
+    }
+
+    .social i{
+        font-size: 18px;
+        margin: 0 8px;
+    }
+
+}
