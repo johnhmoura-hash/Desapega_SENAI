@@ -28,9 +28,9 @@ namespace DesapegaSenai.Controllers
             _context.SaveChanges();
             return Created("Teste", objeto);
         }
-    }
 
     [HttpGet]
+
         public IActionResult BuscarObjeto()
         {
 
@@ -47,8 +47,8 @@ namespace DesapegaSenai.Controllers
                                 where u.Matricula == int.Parse(idUsuarioLogado)
                                 select new
                                 {
-                                    Usuarios = u.Nome
-                                   ,
+                                    Usuarios = u.Nome,
+                                   
                                     Objetos = o.Nome, o.Descricao,
                                     o.Categoria,o.Tempo_uso, o.Foto,
                                     o.Prefere_troca
