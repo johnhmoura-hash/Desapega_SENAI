@@ -17,19 +17,34 @@ namespace DesapegaSenai.Controllers
 
         [HttpPost]
 
-        public IActionResult CriarObjeto(Objeto objeto)
+        public async Task<IActionResult> CriarObjeto(Objeto objeto)
         {
 
-            var usuario = HttpContext.Session.GetString("Email");
+            var usuario = HttpContext.Session.GetString("Idusado");
             if (usuario == null)
                 return Unauthorized("Não autenticado");
+
+            if (objeto.ArquivoFoto != null)
+            {
+                var nomeArquivo = Guid.NewGuid().ToString() + Path.GetExtension(objeto.ArquivoFoto.FileName);
+
+                var caminho = Path.Combine("wwwroot/Uploads", nomeArquivo);
+
+                using (var stream = new FileStream(caminho, FileMode.Create))
+                {
+                    await objeto.ArquivoFoto.CopyToAsync(stream);
+                }
+
+                objeto.Foto = nomeArquivo;
+                objeto.Fk_usuarios_matricula = int.Parse(usuario);
+            }
 
             _context.Add(objeto);
             _context.SaveChanges();
             return Created("Teste", objeto);
         }
 
-        [HttpPost("cadastroFoto")]
+       /* [HttpPost("cadastroFoto")]
         public async Task<IActionResult> Criar([FromForm] Objeto objeto)
         {
             if (objeto.ArquivoFoto != null)
@@ -50,7 +65,7 @@ namespace DesapegaSenai.Controllers
             await _context.SaveChangesAsync();
 
             return Ok(objeto);
-        }
+        }*/
 
         [HttpGet]
 

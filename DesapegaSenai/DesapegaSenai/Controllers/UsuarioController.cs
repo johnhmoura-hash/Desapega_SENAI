@@ -26,7 +26,7 @@ namespace DesapegaSenai.Controllers
                 if (usuarioBd.Count == 0)
 
                     return Unauthorized("Email ou Senha Incorretas");
-                HttpContext.Session.SetString("email", login.Email);
+                HttpContext.Session.SetString("Idusado", usuarioBd[0].Matricula.ToString());
                 Response.Cookies.Append("Idusado", usuarioBd[0].Matricula.ToString(),
 
                 new CookieOptions

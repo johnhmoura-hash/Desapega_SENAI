@@ -1,5 +1,6 @@
 C:\Users\manha.ceticc\Documents\GitHub\Desapega_SENAI\DesapegaSenai\DesapegaSenai\bin\Debug\net8.0\appsettings.Development.json
 C:\Users\manha.ceticc\Documents\GitHub\Desapega_SENAI\DesapegaSenai\DesapegaSenai\bin\Debug\net8.0\appsettings.json
+C:\Users\manha.ceticc\Documents\GitHub\Desapega_SENAI\DesapegaSenai\DesapegaSenai\bin\Debug\net8.0\DesapegaSenai.staticwebassets.runtime.json
 C:\Users\manha.ceticc\Documents\GitHub\Desapega_SENAI\DesapegaSenai\DesapegaSenai\bin\Debug\net8.0\DesapegaSenai.staticwebassets.endpoints.json
 C:\Users\manha.ceticc\Documents\GitHub\Desapega_SENAI\DesapegaSenai\DesapegaSenai\bin\Debug\net8.0\DesapegaSenai.exe
 C:\Users\manha.ceticc\Documents\GitHub\Desapega_SENAI\DesapegaSenai\DesapegaSenai\bin\Debug\net8.0\DesapegaSenai.deps.json
@@ -145,4 +146,3 @@ C:\Users\manha.ceticc\Documents\GitHub\Desapega_SENAI\DesapegaSenai\DesapegaSena
 C:\Users\manha.ceticc\Documents\GitHub\Desapega_SENAI\DesapegaSenai\DesapegaSenai\obj\Debug\net8.0\DesapegaSenai.pdb
 C:\Users\manha.ceticc\Documents\GitHub\Desapega_SENAI\DesapegaSenai\DesapegaSenai\obj\Debug\net8.0\DesapegaSenai.genruntimeconfig.cache
 C:\Users\manha.ceticc\Documents\GitHub\Desapega_SENAI\DesapegaSenai\DesapegaSenai\obj\Debug\net8.0\ref\DesapegaSenai.dll
-C:\Users\manha.ceticc\Documents\GitHub\Desapega_SENAI\DesapegaSenai\DesapegaSenai\bin\Debug\net8.0\DesapegaSenai.staticwebassets.runtime.json

@@ -36,7 +36,6 @@
         }
       }
     },
-<<<<<<< HEAD
     "/Objeto": {
       "post": {
         "tags": [
@@ -156,83 +155,36 @@
         }
       }
     },
-    "/Objeto/cadastroFoto": {
+    "/Trocas": {
+      "get": {
+        "tags": [
+          "Trocas"
+        ],
+        "responses": {
+          "200": {
+            "description": "OK"
+          }
+        }
+      },
       "post": {
         "tags": [
-          "Objeto"
+          "Trocas"
         ],
         "requestBody": {
           "content": {
-            "multipart/form-data": {
+            "application/json": {
               "schema": {
-                "type": "object",
-                "properties": {
-                  "Id": {
-                    "type": "integer",
-                    "format": "int32"
-                  },
-                  "Nome": {
-                    "type": "string"
-                  },
-                  "Categoria": {
-                    "type": "string"
-                  },
-                  "Foto": {
-                    "type": "string"
-                  },
-                  "Tempo_uso": {
-                    "type": "string"
-                  },
-                  "Descricao": {
-                    "type": "string"
-                  },
-                  "Prefere_troca": {
-                    "type": "string"
-                  },
-                  "Fk_usuarios_matricula": {
-                    "type": "integer",
-                    "format": "int32"
-                  },
-                  "Status_objeto": {
-                    "type": "boolean"
-                  },
-                  "ArquivoFoto": {
-                    "type": "string",
-                    "format": "binary"
-                  }
-                }
-              },
-              "encoding": {
-                "Id": {
-                  "style": "form"
-                },
-                "Nome": {
-                  "style": "form"
-                },
-                "Categoria": {
-                  "style": "form"
-                },
-                "Foto": {
-                  "style": "form"
-                },
-                "Tempo_uso": {
-                  "style": "form"
-                },
-                "Descricao": {
-                  "style": "form"
-                },
-                "Prefere_troca": {
-                  "style": "form"
-                },
-                "Fk_usuarios_matricula": {
-                  "style": "form"
-                },
-                "Status_objeto": {
-                  "style": "form"
-                },
-                "ArquivoFoto": {
-                  "style": "form"
-                }
+                "$ref": "#/components/schemas/Troca"
+              }
+            },
+            "text/json": {
+              "schema": {
+                "$ref": "#/components/schemas/Troca"
+              }
+            },
+            "application/*+json": {
+              "schema": {
+                "$ref": "#/components/schemas/Troca"
               }
             }
           }
@@ -244,8 +196,29 @@
         }
       }
     },
-=======
->>>>>>> bd9ebf5684400ab85c2f30c1bb957edd3df3a85d
+    "/Trocas/{id}": {
+      "delete": {
+        "tags": [
+          "Trocas"
+        ],
+        "parameters": [
+          {
+            "name": "id",
+            "in": "path",
+            "required": true,
+            "schema": {
+              "type": "integer",
+              "format": "int32"
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "OK"
+          }
+        }
+      }
+    },
     "/Usuario/login": {
       "post": {
         "tags": [
@@ -255,17 +228,17 @@
           "content": {
             "application/json": {
               "schema": {
-                "$ref": "#/components/schemas/Usuario"
+                "$ref": "#/components/schemas/Login"
               }
             },
             "text/json": {
               "schema": {
-                "$ref": "#/components/schemas/Usuario"
+                "$ref": "#/components/schemas/Login"
               }
             },
             "application/*+json": {
               "schema": {
-                "$ref": "#/components/schemas/Usuario"
+                "$ref": "#/components/schemas/Login"
               }
             }
           }
@@ -388,6 +361,20 @@
   },
   "components": {
     "schemas": {
+      "Login": {
+        "type": "object",
+        "properties": {
+          "email": {
+            "type": "string",
+            "nullable": true
+          },
+          "senha": {
+            "type": "string",
+            "nullable": true
+          }
+        },
+        "additionalProperties": false
+      },
       "Notificacao": {
         "type": "object",
         "properties": {
@@ -408,6 +395,36 @@
             "nullable": true
           },
           "fk_usuarios_matricula": {
+            "type": "integer",
+            "format": "int32"
+          }
+        },
+        "additionalProperties": false
+      },
+      "Troca": {
+        "type": "object",
+        "properties": {
+          "id": {
+            "type": "integer",
+            "format": "int32"
+          },
+          "data": {
+            "type": "string",
+            "format": "date"
+          },
+          "status": {
+            "type": "string",
+            "nullable": true
+          },
+          "pontos_proposto": {
+            "type": "integer",
+            "format": "int32"
+          },
+          "fk_usuarios_matricula": {
+            "type": "integer",
+            "format": "int32"
+          },
+          "fk_objetos_id": {
             "type": "integer",
             "format": "int32"
           }
