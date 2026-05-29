@@ -39,7 +39,6 @@ namespace DesapegaSenai.Controllers
         }
 
         
-
         [HttpPost("cadastrar")]
         public IActionResult CadastraCliente(Usuario usuario)
         {
