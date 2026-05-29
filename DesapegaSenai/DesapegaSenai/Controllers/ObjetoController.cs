@@ -61,5 +61,27 @@ namespace DesapegaSenai.Controllers
             return Unauthorized("Não autenticado");
 
         }
+
+        [HttpDelete]
+        public IActionResult DeletarObjeto()
+        {
+            var usuario = HttpContext.Session.GetString("Email");
+            if (usuario == null)
+                return Unauthorized("Não autenticado");
+
+            var idUsuarioLogado = Request.Cookies["IdUsado"];
+
+            var objeto = _context.Usuarios.Find(idUsuarioLogado);
+
+            if (objeto == null)
+                return NotFound("Tarefa não encontrado");
+
+            _context.Usuarios.Remove(objeto);
+            _context.SaveChanges();
+
+            return Ok("Deletado com sucesso ");
+        }
+
     }
 }
+
