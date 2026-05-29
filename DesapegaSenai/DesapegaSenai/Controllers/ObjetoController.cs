@@ -68,7 +68,6 @@ namespace DesapegaSenai.Controllers
         }*/
 
         [HttpGet]
-
         public IActionResult BuscarObjeto()
         {
 
