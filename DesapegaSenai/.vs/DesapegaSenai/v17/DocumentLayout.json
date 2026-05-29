@@ -3,6 +3,7 @@
   "WorkspaceRootPath": "C:\\Users\\manha.ceticc\\Documents\\GitHub\\Desapega_SENAI\\DesapegaSenai\\",
   "Documents": [
     {
+<<<<<<< HEAD
       "AbsoluteMoniker": "D:0:0:{4974C4DE-9B36-4CCF-8B2F-40A54739E552}|DesapegaSenai\\DesapegaSenai.csproj|c:\\users\\manha.ceticc\\documents\\github\\desapega_senai\\desapegasenai\\desapegasenai\\controllers\\objetocontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
       "RelativeMoniker": "D:0:0:{4974C4DE-9B36-4CCF-8B2F-40A54739E552}|DesapegaSenai\\DesapegaSenai.csproj|solutionrelative:desapegasenai\\controllers\\objetocontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
@@ -11,16 +12,23 @@
       "RelativeMoniker": "D:0:0:{4974C4DE-9B36-4CCF-8B2F-40A54739E552}|DesapegaSenai\\DesapegaSenai.csproj|solutionrelative:desapegasenai\\models\\objeto.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
+=======
+>>>>>>> 012683e184b0ef01b94e45aa2fc1cc8aad146f9c
       "AbsoluteMoniker": "D:0:0:{4974C4DE-9B36-4CCF-8B2F-40A54739E552}|DesapegaSenai\\DesapegaSenai.csproj|c:\\users\\manha.ceticc\\documents\\github\\desapega_senai\\desapegasenai\\desapegasenai\\controllers\\usuariocontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
       "RelativeMoniker": "D:0:0:{4974C4DE-9B36-4CCF-8B2F-40A54739E552}|DesapegaSenai\\DesapegaSenai.csproj|solutionrelative:desapegasenai\\controllers\\usuariocontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
+<<<<<<< HEAD
       "AbsoluteMoniker": "D:0:0:{4974C4DE-9B36-4CCF-8B2F-40A54739E552}|DesapegaSenai\\DesapegaSenai.csproj|c:\\users\\manha.ceticc\\documents\\github\\desapega_senai\\desapegasenai\\desapegasenai\\properties\\launchsettings.json||{90A6B3A7-C1A3-4009-A288-E2FF89E96FA0}",
       "RelativeMoniker": "D:0:0:{4974C4DE-9B36-4CCF-8B2F-40A54739E552}|DesapegaSenai\\DesapegaSenai.csproj|solutionrelative:desapegasenai\\properties\\launchsettings.json||{90A6B3A7-C1A3-4009-A288-E2FF89E96FA0}"
     },
     {
       "AbsoluteMoniker": "D:0:0:{4974C4DE-9B36-4CCF-8B2F-40A54739E552}|DesapegaSenai\\DesapegaSenai.csproj|c:\\users\\manha.ceticc\\documents\\github\\desapega_senai\\desapegasenai\\desapegasenai\\models\\usuario.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
       "RelativeMoniker": "D:0:0:{4974C4DE-9B36-4CCF-8B2F-40A54739E552}|DesapegaSenai\\DesapegaSenai.csproj|solutionrelative:desapegasenai\\models\\usuario.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+=======
+      "AbsoluteMoniker": "D:0:0:{4974C4DE-9B36-4CCF-8B2F-40A54739E552}|DesapegaSenai\\DesapegaSenai.csproj|c:\\users\\manha.ceticc\\documents\\github\\desapega_senai\\desapegasenai\\desapegasenai\\controllers\\trocascontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{4974C4DE-9B36-4CCF-8B2F-40A54739E552}|DesapegaSenai\\DesapegaSenai.csproj|solutionrelative:desapegasenai\\controllers\\trocascontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+>>>>>>> 012683e184b0ef01b94e45aa2fc1cc8aad146f9c
     }
   ],
   "DocumentGroupContainers": [
@@ -30,6 +38,7 @@
       "DocumentGroups": [
         {
           "DockedWidth": 200,
+<<<<<<< HEAD
           "SelectedChildIndex": 2,
           "Children": [
             {
@@ -57,10 +66,27 @@
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
               "WhenOpened": "2026-05-29T13:51:05.927Z",
               "EditorCaption": ""
+=======
+          "SelectedChildIndex": 1,
+          "Children": [
+            {
+              "$type": "Document",
+              "DocumentIndex": 1,
+              "Title": "TrocasController.cs",
+              "DocumentMoniker": "C:\\Users\\manha.ceticc\\Documents\\GitHub\\Desapega_SENAI\\DesapegaSenai\\DesapegaSenai\\Controllers\\TrocasController.cs",
+              "RelativeDocumentMoniker": "DesapegaSenai\\Controllers\\TrocasController.cs",
+              "ToolTip": "C:\\Users\\manha.ceticc\\Documents\\GitHub\\Desapega_SENAI\\DesapegaSenai\\DesapegaSenai\\Controllers\\TrocasController.cs",
+              "RelativeToolTip": "DesapegaSenai\\Controllers\\TrocasController.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAB8AAAAgAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2026-05-29T10:54:26.371Z",
+              "EditorCaption": ""
+>>>>>>> 012683e184b0ef01b94e45aa2fc1cc8aad146f9c
             },
             {
               "$type": "Document",
               "DocumentIndex": 0,
+<<<<<<< HEAD
               "Title": "ObjetoController.cs",
               "DocumentMoniker": "C:\\Users\\manha.ceticc\\Documents\\GitHub\\Desapega_SENAI\\DesapegaSenai\\DesapegaSenai\\Controllers\\ObjetoController.cs",
               "RelativeDocumentMoniker": "DesapegaSenai\\Controllers\\ObjetoController.cs",
@@ -74,11 +100,14 @@
             {
               "$type": "Document",
               "DocumentIndex": 2,
+=======
+>>>>>>> 012683e184b0ef01b94e45aa2fc1cc8aad146f9c
               "Title": "UsuarioController.cs",
               "DocumentMoniker": "C:\\Users\\manha.ceticc\\Documents\\GitHub\\Desapega_SENAI\\DesapegaSenai\\DesapegaSenai\\Controllers\\UsuarioController.cs",
               "RelativeDocumentMoniker": "DesapegaSenai\\Controllers\\UsuarioController.cs",
               "ToolTip": "C:\\Users\\manha.ceticc\\Documents\\GitHub\\Desapega_SENAI\\DesapegaSenai\\DesapegaSenai\\Controllers\\UsuarioController.cs",
               "RelativeToolTip": "DesapegaSenai\\Controllers\\UsuarioController.cs",
+<<<<<<< HEAD
               "ViewState": "AgIAAA0AAAAAAAAAAAAgwCMAAAAwAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
               "WhenOpened": "2026-05-29T13:46:47.483Z",
@@ -95,6 +124,11 @@
               "ViewState": "AgIAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
               "WhenOpened": "2026-05-29T13:22:06.116Z",
+=======
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAA8AAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2026-05-29T10:47:02.756Z",
+>>>>>>> 012683e184b0ef01b94e45aa2fc1cc8aad146f9c
               "EditorCaption": ""
             }
           ]

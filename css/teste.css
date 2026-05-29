@@ -147,3 +147,7 @@ body{
     width: 150%;
     margin-bottom: 30px;
 }
+.logo{
+    width: 100%;
+    transition: 0.3s;
+}
