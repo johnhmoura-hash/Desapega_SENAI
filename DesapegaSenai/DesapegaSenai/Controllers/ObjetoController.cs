@@ -29,6 +29,29 @@ namespace DesapegaSenai.Controllers
             return Created("Teste", objeto);
         }
 
+        [HttpPost("cadastroFoto")]
+        public async Task<IActionResult> Criar([FromForm] Objeto objeto)
+        {
+            if (objeto.ArquivoFoto != null)
+            {
+                var nomeArquivo = Guid.NewGuid().ToString() + Path.GetExtension(objeto.ArquivoFoto.FileName);
+
+                var caminho = Path.Combine("wwwroot/imagens", nomeArquivo);
+
+                using (var stream = new FileStream(caminho, FileMode.Create))
+                {
+                    await objeto.ArquivoFoto.CopyToAsync(stream);
+                }
+
+                objeto.Foto = nomeArquivo;
+            }
+
+            _context.Objetos.Add(objeto);
+            await _context.SaveChangesAsync();
+
+            return Ok(objeto);
+        }
+
         [HttpGet]
 
         public IActionResult BuscarObjeto()
@@ -61,5 +84,27 @@ namespace DesapegaSenai.Controllers
             return Unauthorized("Não autenticado");
 
         }
+
+        [HttpDelete]
+        public IActionResult DeletarObjeto()
+        {
+            var usuario = HttpContext.Session.GetString("Email");
+            if (usuario == null)
+                return Unauthorized("Não autenticado");
+
+            var idUsuarioLogado = Request.Cookies["IdUsado"];
+
+            var objeto = _context.Usuarios.Find(idUsuarioLogado);
+
+            if (objeto == null)
+                return NotFound("Tarefa não encontrado");
+
+            _context.Usuarios.Remove(objeto);
+            _context.SaveChanges();
+
+            return Ok("Deletado com sucesso ");
+        }
+
     }
 }
+

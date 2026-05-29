@@ -16,6 +16,7 @@
     "ReturnTypes": []
   },
   {
+<<<<<<< HEAD
     "ContainingType": "DesapegaSenai.Controllers.ObjetoController",
     "Method": "CriarObjeto",
     "RelativePath": "Objeto",
@@ -40,7 +41,7 @@
       },
       {
         "Name": "Foto",
-        "Type": "Microsoft.AspNetCore.Http.IFormFile",
+        "Type": "System.String",
         "IsRequired": false
       },
       {
@@ -67,6 +68,11 @@
         "Name": "Status_objeto",
         "Type": "System.Boolean",
         "IsRequired": false
+      },
+      {
+        "Name": "ArquivoFoto",
+        "Type": "Microsoft.AspNetCore.Http.IFormFile",
+        "IsRequired": false
       }
     ],
     "ReturnTypes": []
@@ -82,6 +88,79 @@
     "ReturnTypes": []
   },
   {
+    "ContainingType": "DesapegaSenai.Controllers.ObjetoController",
+    "Method": "DeletarObjeto",
+    "RelativePath": "Objeto",
+    "HttpMethod": "DELETE",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [],
+    "ReturnTypes": []
+  },
+  {
+    "ContainingType": "DesapegaSenai.Controllers.ObjetoController",
+    "Method": "Criar",
+    "RelativePath": "Objeto/cadastroFoto",
+    "HttpMethod": "POST",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [
+      {
+        "Name": "Id",
+        "Type": "System.Int32",
+        "IsRequired": false
+      },
+      {
+        "Name": "Nome",
+        "Type": "System.String",
+        "IsRequired": false
+      },
+      {
+        "Name": "Categoria",
+        "Type": "System.String",
+        "IsRequired": false
+      },
+      {
+        "Name": "Foto",
+        "Type": "System.String",
+        "IsRequired": false
+      },
+      {
+        "Name": "Tempo_uso",
+        "Type": "System.String",
+        "IsRequired": false
+      },
+      {
+        "Name": "Descricao",
+        "Type": "System.String",
+        "IsRequired": false
+      },
+      {
+        "Name": "Prefere_troca",
+        "Type": "System.String",
+        "IsRequired": false
+      },
+      {
+        "Name": "Fk_usuarios_matricula",
+        "Type": "System.Int32",
+        "IsRequired": false
+      },
+      {
+        "Name": "Status_objeto",
+        "Type": "System.Boolean",
+        "IsRequired": false
+      },
+      {
+        "Name": "ArquivoFoto",
+        "Type": "Microsoft.AspNetCore.Http.IFormFile",
+        "IsRequired": false
+      }
+    ],
+    "ReturnTypes": []
+  },
+  {
+=======
+>>>>>>> bd9ebf5684400ab85c2f30c1bb957edd3df3a85d
     "ContainingType": "DesapegaSenai.Controllers.UsuarioController",
     "Method": "AtualizarPessoas",
     "RelativePath": "Usuario/Atualizar/{id}",

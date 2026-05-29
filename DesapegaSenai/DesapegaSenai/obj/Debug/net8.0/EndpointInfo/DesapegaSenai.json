@@ -36,6 +36,7 @@
         }
       }
     },
+<<<<<<< HEAD
     "/Objeto": {
       "post": {
         "tags": [
@@ -59,6 +60,13 @@
           },
           {
             "name": "Categoria",
+            "in": "query",
+            "schema": {
+              "type": "string"
+            }
+          },
+          {
+            "name": "Foto",
             "in": "query",
             "schema": {
               "type": "string"
@@ -107,14 +115,14 @@
               "schema": {
                 "type": "object",
                 "properties": {
-                  "Foto": {
+                  "ArquivoFoto": {
                     "type": "string",
                     "format": "binary"
                   }
                 }
               },
               "encoding": {
-                "Foto": {
+                "ArquivoFoto": {
                   "style": "form"
                 }
               }
@@ -136,8 +144,108 @@
             "description": "OK"
           }
         }
+      },
+      "delete": {
+        "tags": [
+          "Objeto"
+        ],
+        "responses": {
+          "200": {
+            "description": "OK"
+          }
+        }
       }
     },
+    "/Objeto/cadastroFoto": {
+      "post": {
+        "tags": [
+          "Objeto"
+        ],
+        "requestBody": {
+          "content": {
+            "multipart/form-data": {
+              "schema": {
+                "type": "object",
+                "properties": {
+                  "Id": {
+                    "type": "integer",
+                    "format": "int32"
+                  },
+                  "Nome": {
+                    "type": "string"
+                  },
+                  "Categoria": {
+                    "type": "string"
+                  },
+                  "Foto": {
+                    "type": "string"
+                  },
+                  "Tempo_uso": {
+                    "type": "string"
+                  },
+                  "Descricao": {
+                    "type": "string"
+                  },
+                  "Prefere_troca": {
+                    "type": "string"
+                  },
+                  "Fk_usuarios_matricula": {
+                    "type": "integer",
+                    "format": "int32"
+                  },
+                  "Status_objeto": {
+                    "type": "boolean"
+                  },
+                  "ArquivoFoto": {
+                    "type": "string",
+                    "format": "binary"
+                  }
+                }
+              },
+              "encoding": {
+                "Id": {
+                  "style": "form"
+                },
+                "Nome": {
+                  "style": "form"
+                },
+                "Categoria": {
+                  "style": "form"
+                },
+                "Foto": {
+                  "style": "form"
+                },
+                "Tempo_uso": {
+                  "style": "form"
+                },
+                "Descricao": {
+                  "style": "form"
+                },
+                "Prefere_troca": {
+                  "style": "form"
+                },
+                "Fk_usuarios_matricula": {
+                  "style": "form"
+                },
+                "Status_objeto": {
+                  "style": "form"
+                },
+                "ArquivoFoto": {
+                  "style": "form"
+                }
+              }
+            }
+          }
+        },
+        "responses": {
+          "200": {
+            "description": "OK"
+          }
+        }
+      }
+    },
+=======
+>>>>>>> bd9ebf5684400ab85c2f30c1bb957edd3df3a85d
     "/Usuario/login": {
       "post": {
         "tags": [
