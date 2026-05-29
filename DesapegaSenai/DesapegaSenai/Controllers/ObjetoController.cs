@@ -29,6 +29,29 @@ namespace DesapegaSenai.Controllers
             return Created("Teste", objeto);
         }
 
+        [HttpPost("cadastroFoto")]
+        public async Task<IActionResult> Criar([FromForm] Objeto objeto)
+        {
+            if (objeto.ArquivoFoto != null)
+            {
+                var nomeArquivo = Guid.NewGuid().ToString() + Path.GetExtension(objeto.ArquivoFoto.FileName);
+
+                var caminho = Path.Combine("wwwroot/imagens", nomeArquivo);
+
+                using (var stream = new FileStream(caminho, FileMode.Create))
+                {
+                    await objeto.ArquivoFoto.CopyToAsync(stream);
+                }
+
+                objeto.Foto = nomeArquivo;
+            }
+
+            _context.Objetos.Add(objeto);
+            await _context.SaveChangesAsync();
+
+            return Ok(objeto);
+        }
+
         [HttpGet]
 
         public IActionResult BuscarObjeto()

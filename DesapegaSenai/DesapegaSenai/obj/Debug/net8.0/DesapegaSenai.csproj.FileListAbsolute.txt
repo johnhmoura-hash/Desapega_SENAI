@@ -145,3 +145,4 @@ C:\Users\manha.ceticc\Documents\GitHub\Desapega_SENAI\DesapegaSenai\DesapegaSena
 C:\Users\manha.ceticc\Documents\GitHub\Desapega_SENAI\DesapegaSenai\DesapegaSenai\obj\Debug\net8.0\DesapegaSenai.pdb
 C:\Users\manha.ceticc\Documents\GitHub\Desapega_SENAI\DesapegaSenai\DesapegaSenai\obj\Debug\net8.0\DesapegaSenai.genruntimeconfig.cache
 C:\Users\manha.ceticc\Documents\GitHub\Desapega_SENAI\DesapegaSenai\DesapegaSenai\obj\Debug\net8.0\ref\DesapegaSenai.dll
+C:\Users\manha.ceticc\Documents\GitHub\Desapega_SENAI\DesapegaSenai\DesapegaSenai\bin\Debug\net8.0\DesapegaSenai.staticwebassets.runtime.json
