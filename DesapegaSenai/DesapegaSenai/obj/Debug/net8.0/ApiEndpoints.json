@@ -16,6 +16,7 @@
     "ReturnTypes": []
   },
   {
+<<<<<<< HEAD
     "ContainingType": "DesapegaSenai.Controllers.ObjetoController",
     "Method": "CriarObjeto",
     "RelativePath": "Objeto",
@@ -158,6 +159,8 @@
     "ReturnTypes": []
   },
   {
+=======
+>>>>>>> bd9ebf5684400ab85c2f30c1bb957edd3df3a85d
     "ContainingType": "DesapegaSenai.Controllers.UsuarioController",
     "Method": "AtualizarPessoas",
     "RelativePath": "Usuario/Atualizar/{id}",

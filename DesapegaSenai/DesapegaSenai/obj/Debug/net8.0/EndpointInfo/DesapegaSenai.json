@@ -36,6 +36,7 @@
         }
       }
     },
+<<<<<<< HEAD
     "/Objeto": {
       "post": {
         "tags": [
@@ -243,6 +244,8 @@
         }
       }
     },
+=======
+>>>>>>> bd9ebf5684400ab85c2f30c1bb957edd3df3a85d
     "/Usuario/login": {
       "post": {
         "tags": [
