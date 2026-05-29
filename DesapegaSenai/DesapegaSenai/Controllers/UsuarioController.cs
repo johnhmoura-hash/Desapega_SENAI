@@ -16,17 +16,17 @@ namespace DesapegaSenai.Controllers
 
 
         [HttpPost("login")]
-        public IActionResult Login(Usuario usuario){
+        public IActionResult Login(Login login){
             
             var usuarioBd = _context.Usuarios.Where
-                (c => c.Email.Equals(usuario.Email) &&
-                c.Senha.Equals(usuario.Senha)).ToList();
+                (c => c.Email.Equals(login.Email) &&
+                c.Senha.Equals(login.Senha)).ToList();
             
             
                 if (usuarioBd.Count == 0)
 
                     return Unauthorized("Email ou Senha Incorretas");
-                HttpContext.Session.SetString("email", usuario.Email);
+                HttpContext.Session.SetString("email", login.Email);
                 Response.Cookies.Append("Idusado", usuarioBd[0].Matricula.ToString(),
 
                 new CookieOptions

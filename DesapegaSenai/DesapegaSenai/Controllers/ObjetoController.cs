@@ -36,7 +36,7 @@ namespace DesapegaSenai.Controllers
             {
                 var nomeArquivo = Guid.NewGuid().ToString() + Path.GetExtension(objeto.ArquivoFoto.FileName);
 
-                var caminho = Path.Combine("wwwroot/imagens", nomeArquivo);
+                var caminho = Path.Combine("wwwroot/Uploads", nomeArquivo);
 
                 using (var stream = new FileStream(caminho, FileMode.Create))
                 {
