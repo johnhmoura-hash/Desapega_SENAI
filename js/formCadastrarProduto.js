@@ -123,12 +123,21 @@ function enviarProduto() {
         troca: troca.value
     };
 
-    fetch("https://jsonplaceholder.typicode.com/posts", {
+    fetch("https://localhost:7132/objeto", {
         method: "POST",
+        credentials:'include',
         headers: {
             "Content-Type": "application/json"
         },
-        body: JSON.stringify(dados)
+        body: JSON.stringify({
+            nome:document.getElementById("nomeProduto"),
+            descricao:document.getElementById("descricao"),
+            categoria:document.getElementById("categoria"),
+            tempo_uso:document.getElementById("tempoUso"),
+            foto:document.getElementById("inputFoto"),
+            prefere_troca:document.getElementById("troca")
+         
+            })
     })
     .then(response => response.json())
     .then(data => {

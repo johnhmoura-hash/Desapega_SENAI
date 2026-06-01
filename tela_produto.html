@@ -79,15 +79,18 @@
        <div class="overlay-menu" id="overlayMenu"></div>
     </header>
 <div class="box-produto">
-<div class="photo-upload">
+
+  <form class="form-produto" id="formProduto">
+    
+    <div class="photo-upload">
       <label for="inputFoto" class="btn-foto">
         <i class="ri-camera-line"></i>
       </label>
       <input type="file" id="inputFoto" accept="image/*" style="display: none;">
     </div>
-  <form class="form-produto" id="formProduto">
-    
+
     <label>Informações ⓘ</label>
+
     <label for="nomeProduto" ></label>
     <input type="text" class="input-info" id="nomeProduto" placeholder="Produto">
     <span></span>
@@ -162,9 +165,8 @@
 
   </div>
 </div>
-  <script src="resp.js"></script>
-<script src="script.js"></script>
-<script src="scriptPopup.js"></script>
+  <script src="js/formCadastrarProduto.js"></script>
+
 
 </body>
 </html>
