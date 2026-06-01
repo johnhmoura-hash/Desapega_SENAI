@@ -76,7 +76,7 @@ function enviarFormulario() {
     .then(data => {
         console.log("Sucesso:", data);
         alert("Inscrição salva com sucesso!");
-        window.location.href = "index.html";
+        window.location.href = "index.html"; 
     })
     .catch(error => {
         console.error("Erro:", error);

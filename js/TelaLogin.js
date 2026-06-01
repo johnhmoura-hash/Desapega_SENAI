@@ -13,7 +13,7 @@ if(form){
 form.addEventListener('submit', (e) =>{
     e.preventDefault();
 
-    const valido =
+    const valido =0
 
         validarNome() &&
         validarMatricula() &&
@@ -213,3 +213,4 @@ function enviarFormulario() {
 
 
 
+                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                
