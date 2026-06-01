@@ -34,34 +34,7 @@ namespace DesapegaSenai.Controllers
             _context.SaveChanges();
             return Created("Teste", notificacao);
         }
-        [HttpGet]
-        public IActionResult BuscarNotificacao()
-        {
 
-            var usuario = HttpContext.Session.GetString("Email");
-            if (usuario == null)
-                return Unauthorized("Não autenticado");
-            var idUsuarioLogado = Request.Cookies["IdUsado"];
-            if (idUsuarioLogado != null)
-            {
-                var resultado = from u in _context.Usuarios
-                                join n in _context.Notificacoes
-                                on u.Matricula equals n.Fk_usuarios_matricula
-                                where u.Matricula == int.Parse(idUsuarioLogado)
-                                select new
-                                {
-                                    Usuarios = u.Nome,
-
-                                    Objetos = n.Conteudo,
-                                    n.Data,
-                                    n.status,
-                                    
-                                };
-                return Ok(resultado.ToList());
-            }
-            return Unauthorized("Não autenticado");
-
-        }
        
     }
 }
