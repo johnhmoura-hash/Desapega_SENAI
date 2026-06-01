@@ -1,56 +1,75 @@
-<!DOCTYPE html>
 
+<!DOCTYPE html>
 <html lang="pt-br">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Login-Desapega SENAI</title>
-    <link rel="stylesheet" href="css/teste.css">
-    <link href="https://cdn.jsdelivr.net/npm/remixicon/fonts/remixicon.css" rel="stylesheet">
-    <link rel="icon" href="Img/possivel logo.png" type="image/x-icon">
+    <title>Tela de Login</title>
+
+    <!-- CSS -->
+    <link rel="stylesheet" href="css/formulario_login.css">
+    <link rel="stylesheet" href="css/mobile_tst.css">
+
+    <!-- Ícones -->
+    <link rel="stylesheet"
+    href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
 </head>
 
 <body>
 
+    <div class="container">
 
-  <main class="interface">
+        <!-- LADO ESQUERDO -->
+        <div class="left">
+            <img src="Img/logo3 .png" class="logo" id="logo">
+            
+                
+        </div>
 
-      <section class="tela-login">     
-        <h1>Faça seu login</h1>
+        <!-- LADO DIREITO -->
+        <div class="right">
 
-        <form action="#" id="form">
+            <div class="form-box">
 
-          <div class="campo">
+                <h2> BEM VINDO!  </h2>
+
+            <form>
+
+            <div class="input-box">
             <label for="email">Email</label>
             <input type="email" id="email" placeholder="Digite seu email">
             <small></small>
-          </div>
+            </div>
 
-          <div class="campo">
-            <label for="senha">Senha</label>
-            <input type="password" id="senha" placeholder="Digite sua senha">
-            <i id="versenha" class="ri-eye-line"></i>
-            <small></small>
-          </div>
+                    <div class="input-box">
+                    <label for="senha">Senha</label>
+                   <input type="password" id="senha" placeholder="Digite sua senha">
+                   <i id="versenha" class="ri-eye-line"></i>
+                   <small></small>
+                    </div>
 
-            <a href="">Esqueceu a senha?</a>
-            <input type="submit" value="Entrar" class="botao">                 
-        </form>
+                 
+              <input type="submit" value="Entrar" class="btn">
+             <a class=" social a ">     
+              <br><br><a href="tela_esquecer_senha.html">Esqueceu a senha?</a>                 
+               </a>
+               </form>   
+             <p class="social">
+              Não tem uma conta?
+             <a href="Tela_Cadastrar.html">Cadastre-se</a>
+            </p>
 
-        <article class="opt-login">
-          <p>Ou faça login usando:</p>
-          <button>
-            <img src="https://upload.wikimedia.org/wikipedia/commons/c/c1/Google_%22G%22_logo.svg" alt="MEU SENAI">           
-          </button>
+                   
+                   
+                </div>
 
-        <p class="cadastro">
-            Não tem uma conta?
-            <a href="Tela_criar_login.html">Cadastre-se</a>
-        </p>
-        </article>          
-      </section>
-  </main>
-  
-  <script src="script.js"></script>
+            </div>
+
+        </div>
+
+    </div>
+  <script src="js/test.js"></script>
+  <script src="js/botãodeversenha.js"></script>
 </body>
 </html>
+

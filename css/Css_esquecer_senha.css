@@ -112,7 +112,8 @@
             color: red;
             font-size: 12px;
         }
-
+        
+   
         /* RESPONSIVO */
 
         @media (max-width: 500px){

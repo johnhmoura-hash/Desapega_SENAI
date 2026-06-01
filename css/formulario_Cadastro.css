@@ -1,0 +1,171 @@
+
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: Arial, Helvetica, sans-serif;
+}
+
+body{
+    height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background: #fffafa;
+}
+
+.container{
+    width: 950px;
+    height: 680px;
+    background: #fff;
+    border-radius: 25px;
+    overflow: hidden;
+    display: flex;
+    box-shadow: 0 10px 25px rgba(0,0,0,0.1);
+}
+
+/* LADO ESQUERDO */
+.left{
+    width: 50%;
+    background: #FF7F27;
+    color:white;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+    padding: 40px;
+    position: relative;
+}
+
+.left h1{
+    font-size: 50px;
+    margin-bottom: 20px;
+}
+
+.left p{
+    font-size: 18px;
+    line-height: 1.5;
+}
+
+/* CÍRCULOS DECORATIVOS */
+.left::before{
+    content: "";
+    width: 300px;
+    height: 300px;
+    background: rgba(255, 255, 255, 0.26);
+    position: absolute;
+    border-radius: 50%;
+    bottom: -120px;
+    left: -120px;
+}
+
+.left::after{
+    content: "";
+    width: 180px;
+    height: 180px;
+    background: rgba(255, 255, 255, 0.144);
+    position: absolute;
+    border-radius: 50%;
+    top: 40px;
+    right: 40px;
+}
+
+/* LADO DIREITO */
+.right{
+    width: 50%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background: #fff;
+}
+
+.form-box{
+    width: 75%;
+    height: 500px;       
+    overflow-y: auto;     
+    padding-right: 10px;  
+}
+
+.form-box::-webkit-scrollbar{
+    width: 6px;
+}
+
+.form-box::-webkit-scrollbar-thumb{
+    background: #005baa52;
+    border-radius: 10px;
+}
+
+.form-box::-webkit-scrollbar-track{
+    background: #f1f1f1;
+}
+
+
+.form-box h2{
+    text-align: center;
+    color: #FF7F27;
+    margin-bottom: 40px;
+    font-size: 38px;
+}
+
+.input-box{
+    width: 100%;
+    margin-bottom: 20px;
+}
+
+.input-box input{
+    width: 100%;
+    padding: 15px;
+    border: none;
+    background: #f1f1f1;
+    border-radius: 8px;
+    font-size: 16px;
+    outline: none;
+}
+
+.btn{
+    width: 100%;
+    padding: 15px;
+    border: none;
+    border-radius: 10px;
+    background: #005CAA;
+    color: white;
+    font-size: 18px;
+    cursor: pointer;
+    transition: 0.3s;
+}
+
+.btn:hover{
+    background: #FF7F27;
+    
+}
+
+.social{
+    margin-top: 30px;
+    text-align: center;
+}
+
+.social p{
+    margin-bottom: 15px;
+    color: #999;
+}
+
+.social i{
+    font-size: 22px;
+    margin: 0 10px;
+    cursor: pointer;
+    color: #005CAA;
+    transition: 0.3s;
+}
+
+.social i:hover{
+    transform: scale(1.2);
+}
+/* IMAGEM LADO ESQUERDO */
+.img-left{
+    width: 150%;
+    margin-bottom: 30px;
+}
+.logo{
+    width: 100%;
+    transition: 0.3s;
+}
