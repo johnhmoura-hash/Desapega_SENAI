@@ -57,10 +57,10 @@ namespace DesapegaSenai.Controllers
             if (item.Fk_usuarios_destinatario == 0)
                 return BadRequest("Destinatário não informado.");
 
-            if (item.Fk_objeto_remetente == 0)
+            if (item.Fk_objetos_remetente == 0)
                 return BadRequest("Objeto remetente não informado.");
 
-            if (item.Fk_objeto_destinatario == 0)
+            if (item.Fk_objetos_destinatario == 0)
                 return BadRequest("Objeto destinatário não informado.");
 
             _context.Trocas.Add(item);
