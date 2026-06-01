@@ -30,7 +30,11 @@
       "DocumentGroups": [
         {
           "DockedWidth": 200,
+<<<<<<< HEAD
           "SelectedChildIndex": 3,
+=======
+          "SelectedChildIndex": 2,
+>>>>>>> 25f377ec133c96d27734945a50c6f261c9547fc7
           "Children": [
             {
               "$type": "Bookmark",
@@ -68,7 +72,7 @@
               "RelativeDocumentMoniker": "DesapegaSenai\\Controllers\\ObjetoController.cs",
               "ToolTip": "C:\\Users\\manha.ceticc\\Documents\\GitHub\\Desapega_SENAI\\DesapegaSenai\\DesapegaSenai\\Controllers\\ObjetoController.cs",
               "RelativeToolTip": "DesapegaSenai\\Controllers\\ObjetoController.cs",
-              "ViewState": "AgIAAA0AAAAAAAAAAAAgwCYAAABBAAAAAAAAAA==",
+              "ViewState": "AgIAAAgAAAAAAAAAAAAxwCIAAABBAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
               "WhenOpened": "2026-05-29T13:48:17.456Z",
               "EditorCaption": ""
