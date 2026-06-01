@@ -1,63 +1,76 @@
-<!DOCTYPE html>
 
+<!DOCTYPE html>
 <html lang="pt-br">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Novasenha-Desapega SENAI</title>
-    <link rel="stylesheet" href="css/formulario.css">
-    <link href="https://cdn.jsdelivr.net/npm/remixicon/fonts/remixicon.css" rel="stylesheet">
-    <link rel="icon" href="Img/possivel logo.png" type="image/x-icon">
+    <title>Tela de Cadastro</title>
+    <!-- CSS -->
+    <link rel="stylesheet" href="css/formulario_Cadastro.css">
+    <link rel="stylesheet" href="css/mobile_tst.css">
+    <!-- Ícones -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
 </head>
 
 <body>
-<main class="interface">
 
-      <section class="tela-login">  
-    
-<div class="Card">
-<h2>Criar conta</h2> 
+    <div class="container">
 
-  <form id="form" class="form">
+        <!-- LADO ESQUERDO -->
+        <div class="left">
+            <img src="Img/logo6.png" class="logo" id="logo">
+            
+                
+        </div>
 
-    <div class="campo">
+        <!-- LADO DIREITO -->
+        <div class="right">
+
+            <div class="form-box">
+
+                <h2> CRIE UMA CONTA </h2>
+
+            <form>
+
+         
+    <div class="input-box">
       <label for="usuario">Nome</label>
       <input type="text" id="usuario" placeholder="Digite seu usuário">
       <small></small>
     </div>
 
-    <div class="campo">
+    <div class="input-box">
       <label for="numMatricula">Número de Matrícula</label>
       <input  id="numMatricula" placeholder="Digite o número de matrícula"oninput="this.value = this.value.replace(/[^0-9]/g, '')">
       <small></small>
     </div>
       
-    <div class="campo">
+    <div class="input-box">
       <label for="numTelefone">Número de Telefone</label>
       <input  id="numTelefone" placeholder="Digite o número de telefone" oninput="this.value = this.value.replace(/[^0-9]/g, '')">
       <small></small>
     </div>
   
-    <div class="campo">
+    <div class="input-box">
       <label for="email">Email</label>
       <input type="email" id="email" placeholder="Digite o seu email">
       <small></small>
     </div>
 
-    <div class="campo">
+    <div class="input-box">
       <label for="emailConfirmar"> Confirmar Email</label>
       <input type="email" id="emailConfirmar" placeholder="Confirme seu email">
       <small></small>
     </div>
 
-    <div class="campo">
+    <div class="input-box">
       <label for="senha">Senha</label>
       <input type="password" id="senha" placeholder="Digite sua senha">
       <i id="versenha" class="ri-eye-line"></i>
        <small></small>
     </div>
 
-    <div class="campo">
+    <div class="input-box">
       <label for="confirmarSenha">Confirmar senha</label>
       <input type="password" id="confirmarSenha" placeholder="Confirme sua senha">
        <i id="verconfirmesenha" class="ri-eye-line"></i> 
@@ -65,30 +78,26 @@
     </div>
 
     <div>
-      <button type="submit" class="botao">CRIAR CONTA</button>
+      <button type="submit" class="btn">CRIAR CONTA</button>
     </div>
+               </form>   
+             <p class="social">
+              Já tenho uma conta!
+             <a href="tela_login.html">Voltar</a>
+            </p>
 
-  </form>
-  <br>
+                   
+                   
+                </div>
 
-  <button class="google-btn">
-    <img src="https://upload.wikimedia.org/wikipedia/commons/c/c1/Google_%22G%22_logo.svg" alt="Google">
-      Criar com o Google
-  </button>
+            </div>
 
-  <p class="cadastro">
-    Ja possui cadastro?
-    <a href="Tela_login.html">Entrar</a>
-  </p>
-</div>
+        </div>
 
-</div>
-
-</div>
-      </section>
-</main>
-<script src="js/botãodeversenha.js"></script>
-<script src="js/TelaLogin.js"></script>
+    </div>
+  <script src="js/test.js"></script>
+  <script src="js/botãodeversenha.js"></script>
+  <script src="js/TelaLogin.js"></script>
 </body>
 
 
