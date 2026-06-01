@@ -71,11 +71,11 @@ namespace DesapegaSenai.Controllers
         public IActionResult BuscarObjeto()
         {
 
-            var usuario = HttpContext.Session.GetString("Email");
+            var usuario = HttpContext.Session.GetString("Idusado");
             if (usuario == null)
                 return Unauthorized("Não autenticado");
 
-            var idUsuarioLogado = Request.Cookies["IdUsado"];
+            var idUsuarioLogado = Request.Cookies["Idusado"];
             if (idUsuarioLogado != null)
             {
                 var resultado = from u in _context.Usuarios
@@ -98,17 +98,34 @@ namespace DesapegaSenai.Controllers
             return Unauthorized("Não autenticado");
 
         }
-
-        [HttpDelete]
-        public IActionResult DeletarObjeto()
+        [HttpPut]
+        public IActionResult AtualizarObjeto(int id, Objeto objeto)
         {
-            var usuario = HttpContext.Session.GetString("Email");
+            var objBanco = _context.Objetos.Find(id);
+
+            if (objBanco == null)
+                return NotFound("Tarefa não encontrada");
+
+            objBanco.Nome = objeto.Nome;
+            objBanco.Descricao = objeto.Descricao;
+            objBanco.Prefere_troca = objeto.Prefere_troca;
+            objBanco.Tempo_uso = objeto.Tempo_uso;
+            objBanco.Status_objeto = objeto.Status_objeto;
+            objBanco.ArquivoFoto = objeto.ArquivoFoto;
+            objBanco.Foto = objeto.Foto;
+
+            _context.SaveChanges();
+            return Ok("Atualizado com sucesso!");
+        }
+
+        [HttpDelete("{id}")]
+        public IActionResult DeletarObjeto(int id)
+        {
+            var usuario = HttpContext.Session.GetString("Idusado");
             if (usuario == null)
                 return Unauthorized("Não autenticado");
 
-            var idUsuarioLogado = Request.Cookies["IdUsado"];
-
-            var objeto = _context.Usuarios.Find(idUsuarioLogado);
+            var objeto = _context.Usuarios.Find(id);
 
             if (objeto == null)
                 return NotFound("Tarefa não encontrado");
