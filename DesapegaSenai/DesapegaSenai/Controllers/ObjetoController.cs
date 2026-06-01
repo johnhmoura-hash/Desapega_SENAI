@@ -98,6 +98,10 @@ namespace DesapegaSenai.Controllers
             return Unauthorized("Não autenticado");
 
         }
+        [HttpPut]
+        public IActionResult AtualizarObjeto(int id, Objeto objeto)
+        {
+            var objBanco = _context.Objetos.Find(id);
 
         [HttpDelete]
         public IActionResult DeletarObjeto()
