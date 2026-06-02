@@ -17,13 +17,15 @@ namespace DesapegaSenai.Controllers
 
         [HttpPost]
 
-        public async Task<IActionResult> CriarObjeto(Objeto objeto)
+        public async Task<IActionResult> CriarObjeto([FromForm] string nome, [FromForm] string descricao, [FromForm] string tempo_uso, [FromForm] string categoria, [FromForm] string prefere_troca, [FromForm] string foto, [FromForm] bool status_objeto, [FromForm] IFormFile arquivoFoto)
         {
 
+            Objeto objeto = new Objeto(nome, categoria, foto, tempo_uso, descricao, prefere_troca, statusObjeto);                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                       );
             var usuario = HttpContext.Session.GetString("Idusado");
             if (usuario == null)
                 return Unauthorized("Não autenticado");
 
+            objeto.ArquivoFoto = arquivoFoto;
             if (objeto.ArquivoFoto != null)
             {
                 var nomeArquivo = Guid.NewGuid().ToString() + Path.GetExtension(objeto.ArquivoFoto.FileName);
