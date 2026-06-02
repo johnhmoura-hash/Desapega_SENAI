@@ -11,7 +11,8 @@ body{
     display: flex;
     justify-content: center;
     align-items: center;
-    background: #fffafa;
+     background: rgb(226, 234, 241);
+      text-decoration: none;
 }
 
 .container{
@@ -131,6 +132,10 @@ body{
     color: #999;
 }
 
+.social a{
+   text-decoration: none;
+}
+
 .social i{
     font-size: 22px;
     margin: 0 10px;
@@ -151,3 +156,27 @@ body{
     width: 100%;
     transition: 0.3s;
 }
+
+
+
+    .input-senha{
+            position: relative;
+        }
+
+        .input-senha input{
+            padding-right: 45px;
+        }
+
+        .input-senha i{
+            position: absolute;
+            right: 15px;
+            top: 50%;
+            transform: translateY(-50%);
+            cursor: pointer;
+            color: #777;
+            font-size: 20px;
+        }
+
+        .bnt a{
+text-decoration: none;
+        }
