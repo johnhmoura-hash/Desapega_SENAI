@@ -15,7 +15,18 @@ namespace DesapegaSenai.Models
         public bool Status_objeto {  get; set; }
         
         [NotMapped]
-        public IFormFile ArquivoFoto { get; set; }
+        public IFormFile? ArquivoFoto { get; set; }
 
+        public Objeto(string nome, string categoria, string foto, string tempo_uso, string descricao, string prefere_troca, bool status_objeto)
+        {
+            Nome = nome;
+            Categoria = categoria;
+            Foto = foto;
+            Tempo_uso = tempo_uso;
+            Descricao = descricao;
+            Prefere_troca = prefere_troca;
+            Status_objeto = status_objeto;
+            
+        }
     }
 }

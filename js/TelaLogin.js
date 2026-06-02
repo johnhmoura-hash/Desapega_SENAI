@@ -9,7 +9,7 @@ const emailConfirmar = document.getElementById('emailConfirmar');
 const confirmarSenha = document.getElementById('confirmarSenha');
 
 
-if(form){
+
 form.addEventListener('submit', (e) =>{
     e.preventDefault();
 
@@ -24,7 +24,27 @@ form.addEventListener('submit', (e) =>{
         validarconfirmarSenha();
 
     if (valido) {
-        enviarFormulario();
+           fetch("https://localhost:7132/usuario/login", {
+        method: "POST",
+        credentials:"include",
+        headers: {
+            "Content-Type": "application/json"
+        },
+        body: JSON.stringify({
+            email:document.getElementById("email"),
+            senha:document.getElementById("senha")
+        })
+    })
+    .then(response => response.json())
+    .then(data => {
+        console.log("Sucesso:", data);
+       
+       
+    })
+    .catch(error => {
+        console.error("Erro:", error);
+    });
+
     }
 });
 
@@ -179,35 +199,10 @@ function validarSucesso(input){
 function isEmail(email) {
     return /^[a-zA-Z0-9._%+-]+@[a-zA-Z0-9-]+\.senai\.br$/.test(email);
 }
-function enviarFormulario() {
 
-    const dados = {
-        nome: nome.value,
-        matricula: numMatricula.value,
-        telefone: numTelefone.value,
-        email: email.value,
-        senha: senha.value
-    };
 
-    fetch("https://jsonplaceholder.typicode.com/posts", {
-        method: "POST",
-        headers: {
-            "Content-Type": "application/json"
-        },
-        body: JSON.stringify(dados)
-    })
-    .then(response => response.json())
-    .then(data => {
-        console.log("Sucesso:", data);
-        alert("Conta criada com sucesso!");
-       
-    })
-    .catch(error => {
-        console.error("Erro:", error);
-    });
+ 
 
-}
-}
 
 
 

@@ -1,11 +1,9 @@
+
+
+
 //form Cadastrar Produto
 const formProduto = document.getElementById('formProduto');
-const nomeProduto = document.getElementById('nomeProduto');
-const tempoUso = document.getElementById('tempoUso');
-const categoria = document.getElementById('categoria');
-const descricao = document.getElementById('descricao');
-const troca = document.getElementById('troca');
-const inputFoto = document.getElementById("inputFoto");
+const arquivoInput = document.querySelector('#inputFoto');
 
 if (inputFoto) {
   inputFoto.addEventListener("change", function () {
@@ -46,6 +44,28 @@ formProduto.addEventListener('submit', (e) => {
          enviarProduto();
     }
 });
+function enviarProduto() {
+
+    const formData = new FormData();
+formData.append('nome', document.getElementById("nomeProduto").value);
+formData.append('descricao', document.getElementById("descricao").value);
+formData.append('categoria', document.getElementById("categoria").value);
+formData.append('tempo_uso', document.getElementById("tempoUso").value);
+formData.append('prefere_troca', document.getElementById("troca").value);
+formData.append('status_objeto', true);
+formData.append('foto', 'gggh');
+
+
+formData.append('arquivoFoto', arquivoInput.files[0]); 
+
+fetch('https://localhost:7132/objeto', { // Substitua pela URL local do seu projeto C#
+    method: 'POST',
+    body: formData
+})
+.then(res => res.json())
+.then(dados => console.log(dados))
+.catch(err => console.error(err));
+}
 
 if (nomeProduto) nomeProduto.addEventListener("keyup", validarNomeProduto);
 if (descricao) descricao.addEventListener("keyup", validarDescricao);
@@ -113,44 +133,7 @@ function validarTroca(){
     }
 }
 
-function enviarProduto() {
 
-    const dados = {
-        nome: nomeProduto.value,
-        tempoUso: tempoUso.value,
-        categoria: categoria.value,
-        descricao: descricao.value,
-        troca: troca.value
-    };
-
-    fetch("https://localhost:7132/objeto", {
-        method: "POST",
-        credentials:'include',
-        headers: {
-            "Content-Type": "application/json"
-        },
-        body: JSON.stringify({
-            nome:document.getElementById("nomeProduto"),
-            descricao:document.getElementById("descricao"),
-            categoria:document.getElementById("categoria"),
-            tempo_uso:document.getElementById("tempoUso"),
-            foto:document.getElementById("inputFoto"),
-            prefere_troca:document.getElementById("troca")
-         
-            })
-    })
-    .then(response => response.json())
-    .then(data => {
-        console.log("Sucesso:", data);
-        alert("Produto anunciado com sucesso!");
-        formProduto.reset();
-        limparBordas();
-    })
-    .catch(error => {
-        console.error("Erro:", error);
-        alert("Erro ao anunciar produto.");
-    });
-}
 
 // ===== ESTILO VISUAL =====
 
@@ -167,4 +150,5 @@ function limparBordas(){
     campos.forEach(campo => campo.style.border = "");
 }
 
-}                                                                                
+}  
+                                                                             
