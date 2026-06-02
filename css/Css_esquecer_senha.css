@@ -8,12 +8,11 @@
 
         body{
          
-             background: rgb(226, 234, 241);
+            background: #fffafa;
             display: flex;
             justify-content: center;
             align-items: center;
             min-height: 100vh;
-             text-decoration: none;
         }
 
         .interface{
@@ -112,6 +111,7 @@
         .v{
 
             width: 30%;
+            
 
         }
 

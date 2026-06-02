@@ -5,36 +5,36 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Inscrição-Desapega SENAI</title>
 
-    <link rel="stylesheet" href="css/estilo.css">
+    <link rel="stylesheet" href="css/formulario_login.css">
      <link rel="stylesheet" href="css/mobile.css">
     <link rel="icon" href="Img/possivel logo.png" type="image/x-icon">
 </head>
 <body>  
-<div class="Login-page">
-  <div class="Card">
+ 
+ 
+  <div class="container">
+    <div class="left">
+
+       
     <img src="Img/img_feira.png" alt="logo"  class="logo">
-
-    <form id="formFeira">
-      <div class="campo">
-        <label for="usuario">Nome</label>
-        <input type="text" id="usuario" placeholder="Digite seu usuário">
-        <small></small>
-      </div>
-
-      <div class="campo">
-        <label for="numMatricula">Número de Matrícula</label>
-        <input  id="numMatricula" placeholder="Digite o número de matrícula"oninput="this.value = this.value.replace(/[^0-9]/g, '')">
-        <small></small>
-      </div>
-      <button type="submit" class="botao">Salvar inscrição</button>
+    </div>
+    <form id="right">
+    <div class="input-box">
+    <label for="usuario">Nome</label>
+    <input type="text" id="usuario" placeholder="Digite seu usuário">
+    <small></small>
+    </div>
+    <div class="input-box">
+    <label for="numMatricula">Número de Matrícula</label>
+    <input  id="numMatricula" placeholder="Digite o número de matrícula"oninput="this.value = this.value.replace(/[^0-9]/g, '')"> 
+    <small></small>
+    </div>
+    <input type="submit" value="Entrar" class="btn">
     </form>
-  <br> 
-  <br>
-  
-    
-  
-</div>
-</div>
+     <br> 
+     <br>
+   </div>
+  </div>
 <script src="script.js"></script>
 </body>
 </html>
