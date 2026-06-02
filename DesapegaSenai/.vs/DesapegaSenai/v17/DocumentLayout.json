@@ -30,24 +30,8 @@
       "DocumentGroups": [
         {
           "DockedWidth": 200,
-<<<<<<< HEAD
-          "SelectedChildIndex": 3,
-          "Children": [
-            {
-              "$type": "Bookmark",
-              "Name": "ST:0:0:{cce594b6-0c39-4442-ba28-10c64ac7e89f}"
-=======
-<<<<<<< HEAD
-          "SelectedChildIndex": 3,
-=======
           "SelectedChildIndex": 2,
->>>>>>> 25f377ec133c96d27734945a50c6f261c9547fc7
           "Children": [
-            {
-              "$type": "Bookmark",
-              "Name": "ST:0:0:{56df62a4-05a3-4e5b-aa1a-99371ccfb997}"
->>>>>>> b9ba3b3558edbb547abe26e591c39fbed52bbf83
-            },
             {
               "$type": "Document",
               "DocumentIndex": 3,
@@ -80,7 +64,7 @@
               "RelativeDocumentMoniker": "DesapegaSenai\\Controllers\\ObjetoController.cs",
               "ToolTip": "C:\\Users\\manha.ceticc\\Documents\\GitHub\\Desapega_SENAI\\DesapegaSenai\\DesapegaSenai\\Controllers\\ObjetoController.cs",
               "RelativeToolTip": "DesapegaSenai\\Controllers\\ObjetoController.cs",
-              "ViewState": "AgIAAAgAAAAAAAAAAAAxwCIAAABBAAAAAAAAAA==",
+              "ViewState": "AgIAAFkAAAAAAAAAAAAwwCYAAABBAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
               "WhenOpened": "2026-05-29T13:48:17.456Z",
               "EditorCaption": ""
@@ -108,13 +92,10 @@
               "ViewState": "AgIAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
               "WhenOpened": "2026-05-29T13:22:06.116Z"
-<<<<<<< HEAD
-=======
             },
             {
               "$type": "Bookmark",
               "Name": "ST:0:0:{cce594b6-0c39-4442-ba28-10c64ac7e89f}"
->>>>>>> b9ba3b3558edbb547abe26e591c39fbed52bbf83
             }
           ]
         }
