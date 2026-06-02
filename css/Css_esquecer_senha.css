@@ -8,11 +8,12 @@
 
         body{
          
-            background: #fffafa;
+             background: rgb(226, 234, 241);
             display: flex;
             justify-content: center;
             align-items: center;
             min-height: 100vh;
+             text-decoration: none;
         }
 
         .interface{

@@ -11,7 +11,8 @@ body{
     display: flex;
     justify-content: center;
     align-items: center;
-    background: #fffafa;
+    background: rgb(226, 234, 241);
+    
 }
 
 .container{
@@ -144,6 +145,11 @@ body{
     text-align: center;
 }
 
+.social a{
+   text-decoration: none;
+}
+
+
 .social p{
     margin-bottom: 15px;
     color: #999;
@@ -155,6 +161,7 @@ body{
     cursor: pointer;
     color: #005CAA;
     transition: 0.3s;
+   
 }
 
 .social i:hover{
@@ -169,3 +176,22 @@ body{
     width: 100%;
     transition: 0.3s;
 }
+
+
+    .input-senha{
+            position: relative;
+        }
+
+        .input-senha input{
+            padding-right: 45px;
+        }
+
+        .input-senha i{
+            position: absolute;
+            right: 15px;
+            top: 50%;
+            transform: translateY(-50%);
+            cursor: pointer;
+            color: #777;
+            font-size: 20px;
+        }
