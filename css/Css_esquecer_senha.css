@@ -8,11 +8,12 @@
 
         body{
          
-            background: #fffafa;
+             background: rgb(226, 234, 241);
             display: flex;
             justify-content: center;
             align-items: center;
             min-height: 100vh;
+             text-decoration: none;
         }
 
         .interface{
@@ -106,6 +107,12 @@
 
         .botao:hover{
             background:#0056b3 ;
+        }
+
+        .v{
+
+            width: 30%;
+
         }
 
         small{
