@@ -60,6 +60,7 @@ formData.append('arquivoFoto', arquivoInput.files[0]);
 
 fetch('https://localhost:7132/objeto', { // Substitua pela URL local do seu projeto C#
     method: 'POST',
+    credentials: 'include',
     body: formData
 })
 .then(res => res.json())
