@@ -3,30 +3,26 @@
 
 //form Cadastrar Produto
 const formProduto = document.getElementById('formProduto');
-const arquivoInput = document.querySelector('#inputFoto');
+const inputFoto = document.getElementById("inputFoto");
 
-if (inputFoto) {
-  inputFoto.addEventListener("change", function () {
-    const arquivo = this.files[0];
+inputFoto.addEventListener("change", function () {
+  const arquivo = this.files[0];
 
-    if (!arquivo) return;
+  if (!arquivo) return;
 
-    const reader = new FileReader();
+  const reader = new FileReader();
 
-    reader.onload = function (e) {
-      const containerFoto = document.querySelector(".photo-upload");
+  reader.onload = function (e) {
+    const containerFoto = document.querySelector(".photo-upload");
 
-      if (containerFoto) {
-        containerFoto.innerHTML = `
-          <img src="${e.target.result}" 
-               style="width:100%; border-radius:8px; object-fit:cover;">
-        `;
-      }
-    };
+    containerFoto.innerHTML = `
+      <img src="${e.target.result}" class="preview-foto">
+      <input type="file" id="inputFoto" accept="image/*" style="display:none;">
+    `;
+  };
 
-    reader.readAsDataURL(arquivo);
-  });
-}
+  reader.readAsDataURL(arquivo);
+});
 
 if (formProduto) {
 
