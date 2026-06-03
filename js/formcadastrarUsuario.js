@@ -3,6 +3,17 @@ const myForm = document.getElementById('cadastrar');
 myForm.addEventListener('submit', function (event) {
 
     event.preventDefault();
+
+    const valido =
+        validarNomeProduto() &&
+        validarTempoUso() &&
+        validarCategoria() &&
+        validarDescricao() &&
+        validarTroca();
+
+    if (valido) {
+         enviarProduto();
+    }
     fetch('https://localhost:7132/usuario/cadastrar', {
         method: 'POST',
         credentials: 'include',
