@@ -5,36 +5,41 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Inscrição-Desapega SENAI</title>
 
-    <link rel="stylesheet" href="css/formulario_login.css">
+    <link rel="stylesheet" href="css/Css_esquecer_senha.css">
      <link rel="stylesheet" href="css/mobile.css">
     <link rel="icon" href="Img/possivel logo.png" type="image/x-icon">
 </head>
 <body>  
  
- 
-  <div class="container">
+    <div class="body">
+    <div class="">
     <div class="left">
 
        
-    <img src="Img/img_feira.png" alt="logo"  class="logo">
+    <img src="Img/img_feira.png" alt="logo"  class="tela-login ">
     </div>
-    <form id="right">
-    <div class="input-box">
+    <form id=".campo">
+    <div class="campo label">
     <label for="usuario">Nome</label>
     <input type="text" id="usuario" placeholder="Digite seu usuário">
     <small></small>
     </div>
-    <div class="input-box">
+    <div class="campo label">
     <label for="numMatricula">Número de Matrícula</label>
     <input  id="numMatricula" placeholder="Digite o número de matrícula"oninput="this.value = this.value.replace(/[^0-9]/g, '')"> 
+      
     <small></small>
     </div>
-    <input type="submit" value="Entrar" class="btn">
+    <input type="submit" value="Entrar" class="botao">
     </form>
      <br> 
-     <br>
+     <br> 
+    <p class="campo">
+     <a href="index.html" class="v">Voltar ao Início</a>
+    </p>  
    </div>
-  </div>
+   </div>
+   </div>
 <script src="script.js"></script>
 </body>
 </html>

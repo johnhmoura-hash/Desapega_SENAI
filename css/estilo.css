@@ -952,18 +952,18 @@ background-color: #0056b3;
 /* CARD */
 .produto-card-lateral {
     width: 350px;
-    padding: 30px;
-    border: 2px solid #2f5ea7;
+    padding: 50px;
     border-radius: 25px;
     background: white;
     display: flex;
     flex-direction: column;
     gap: 25px;
+    
 }
 
 .produto-titulo {
     color: #2f5ea7;
-    margin: 0;
+    margin: 0%;
 }
 
 /* USUÁRIO */
@@ -996,8 +996,8 @@ color: #000;
 }
 
 .produto-divisor {
-    height: 1px;
-    background: #ddd;
+    height: 50%;
+
 }
 
 /* BOTÕES */
