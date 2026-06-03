@@ -8,7 +8,7 @@
 
         body{
          
-            background: #fffafa;
+            background: rgb(226, 234, 241);;
             display: flex;
             justify-content: center;
             align-items: center;
@@ -110,10 +110,30 @@
 
         .v{
 
-            width: 30%;
-            
+       position: fixed;
+       margin-bottom: 20px;
+       padding: 4px ;
+       left: 40%;
+       background-color: #0066cc;
+       color: #ffffff;
+       text-decoration: none;
+       border-radius: 5px;
+       z-index: 1000;
 
         }
+
+
+        .botao-inicio {
+          position: fixed;
+          bottom: 20px;
+          right: 20px;
+          padding: 12px 20px;
+          background-color: #0066cc;
+          color: #ffffff;
+          text-decoration: none;
+          border-radius: 5px;
+          z-index: 1000;
+                }
 
         small{
             color: red;

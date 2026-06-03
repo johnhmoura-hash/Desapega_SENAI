@@ -11,12 +11,12 @@ body{
     display: flex;
     justify-content: center;
     align-items: center;
-     background: rgb(226, 234, 241);
-      text-decoration: none;
+    background: rgb(226, 234, 241);
+    text-decoration: none;
 }
 
 .container{
-    width: 950px;
+    width: 950px; 
     height: 680px;
     background: #fff;
     border-radius: 25px;
