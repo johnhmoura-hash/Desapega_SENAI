@@ -959,7 +959,8 @@ background-color: #0056b3;
 
 .pagina-produto {
     width: 1200px;
-    margin: 60px auto;
+    margin-left: 500px;
+   
 }
 
 /* TOPO */
@@ -972,6 +973,7 @@ background-color: #0056b3;
 .produto-imagem-foto {
     width: 420px;
     border-radius: 25px;
+  
 }
 
 /* CARD */
@@ -979,15 +981,15 @@ background-color: #0056b3;
     width: 350px;
     padding: 50px;
     border-radius: 25px;
-    background: white;
+    background:#ffffff ; 
     display: flex;
     flex-direction: column;
     gap: 25px;
-    
+    box-shadow: 0 4px 9px rgb(145, 145, 145);
 }
 
 .produto-titulo {
-    color: #2f5ea7;
+    color: #0056b3;
     margin: 0%;
 }
 
@@ -1062,15 +1064,16 @@ color: #000;
 }
 
 .produto-info-grid {
+    
     display: flex;
-    gap: 80px;
-    margin-top: 20px;
+    gap: 50px;
+    margin-top: 2px;
 }
 
 .produto-linha-final {
     margin-top: 20px;
     border-bottom: 1px solid #ccc;
-    width: 500px;
+    width: 430px;
 }
 
 
