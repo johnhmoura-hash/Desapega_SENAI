@@ -1,6 +1,7 @@
 ﻿using DesapegaSenai.Data;
 using DesapegaSenai.Models;
 using Microsoft.AspNetCore.Mvc;
+using Microsoft.EntityFrameworkCore.Query.SqlExpressions;
 
 namespace DesapegaSenai.Controllers
 {
@@ -46,36 +47,69 @@ namespace DesapegaSenai.Controllers
             return Created("Teste", objeto);
         }
 
-       /* [HttpPost("cadastroFoto")]
-        public async Task<IActionResult> Criar([FromForm] Objeto objeto)
+        /* [HttpPost("cadastroFoto")]
+         public async Task<IActionResult> Criar([FromForm] Objeto objeto)
+         {
+             if (objeto.ArquivoFoto != null)
+             {
+                 var nomeArquivo = Guid.NewGuid().ToString() + Path.GetExtension(objeto.ArquivoFoto.FileName);
+
+                 var caminho = Path.Combine("wwwroot/Uploads", nomeArquivo);
+
+                 using (var stream = new FileStream(caminho, FileMode.Create))
+                 {
+                     await objeto.ArquivoFoto.CopyToAsync(stream);
+                 }
+
+                 objeto.Foto = nomeArquivo;
+             }
+
+             _context.Objetos.Add(objeto);
+             await _context.SaveChangesAsync();
+
+             return Ok(objeto);
+         }
+        [HttpGet("download/{nomeArquivo}")]
+        public IActionResult Dowload(string nomeArquivo)
         {
-            if (objeto.ArquivoFoto != null)
-            {
-                var nomeArquivo = Guid.NewGuid().ToString() + Path.GetExtension(objeto.ArquivoFoto.FileName);
+            var caminho = Path.Combine("Uploads", nomeArquivo);
 
-                var caminho = Path.Combine("wwwroot/Uploads", nomeArquivo);
+            if (!System.IO.File.Exists(caminho))
+                return NotFound("Arquivo não encontrado");
 
-                using (var stream = new FileStream(caminho, FileMode.Create))
-                {
-                    await objeto.ArquivoFoto.CopyToAsync(stream);
-                }
+            var bytes = System.IO.File.ReadAllBytes(caminho);
 
-                objeto.Foto = nomeArquivo;
-            }
-
-            _context.Objetos.Add(objeto);
-            await _context.SaveChangesAsync();
-
-            return Ok(objeto);
+            return File(bytes, "application/octet-stream", nomeArquivo);
         }*/
 
-        [HttpGet]
-        public IActionResult BuscarObjeto()
+        [HttpGet("arquiv/{nomeArquivo}")]
+        public IActionResult ListaArquivo(string nomeArquivo)
         {
+            var pastaBase = Path.Combine(Directory.GetCurrentDirectory(), "wwwroot/uploads");
+            var caminho = Path.Combine(pastaBase, nomeArquivo);
 
+            if (!Directory.Exists(caminho))
+                return NotFound("Pasta não encontrada");
+
+                var nomePasta = Path.GetFileName(caminho);
+
+            return Ok(caminho);
+        }
+
+        [HttpGet]
+        public IActionResult BuscarObjeto(string nomeArquivo)
+        {
             var usuario = HttpContext.Session.GetString("Idusado");
             if (usuario == null)
                 return Unauthorized("Não autenticado");
+
+            var pastaBase = Path.Combine(Directory.GetCurrentDirectory(), "wwwroot/uploads");
+            var caminho = Path.Combine(pastaBase, nomeArquivo);
+
+            if (!Directory.Exists(caminho))
+                return NotFound("Pasta não encontrada");
+
+            var nomePasta = Path.GetFileName(caminho);
 
             var idUsuarioLogado = Request.Cookies["Idusado"];
             if (idUsuarioLogado != null)
@@ -92,7 +126,7 @@ namespace DesapegaSenai.Controllers
                                     o.Descricao,
                                     o.Categoria,
                                     o.Tempo_uso,
-                                    o.Foto,
+                                    Foto = $"{Request.Scheme}://{Request.Host}/uploads/{nomeArquivo}/{nomePasta}",
                                     o.Prefere_troca
                                 };
                 return Ok(resultado.ToList());
