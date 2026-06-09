@@ -1,7 +1,7 @@
 ﻿using DesapegaSenai.Data;
 using DesapegaSenai.Models;
 using Microsoft.AspNetCore.Mvc;
-using Microsoft.EntityFrameworkCore.Query.SqlExpressions;
+
 
 namespace DesapegaSenai.Controllers
 {
@@ -80,7 +80,7 @@ namespace DesapegaSenai.Controllers
             var bytes = System.IO.File.ReadAllBytes(caminho);
 
             return File(bytes, "application/octet-stream", nomeArquivo);
-        }*/
+        }
 
         [HttpGet("arquiv/{nomeArquivo}")]
         public IActionResult ListaArquivo(string nomeArquivo)
@@ -94,22 +94,15 @@ namespace DesapegaSenai.Controllers
                 var nomePasta = Path.GetFileName(caminho);
 
             return Ok(caminho);
-        }
+        }*/
 
-        [HttpGet]
-        public IActionResult BuscarObjeto(string nomeArquivo)
+        [HttpGet("perfil")]
+        public IActionResult BuscarObjetoPerfil()
         {
             var usuario = HttpContext.Session.GetString("Idusado");
             if (usuario == null)
                 return Unauthorized("Não autenticado");
 
-            var pastaBase = Path.Combine(Directory.GetCurrentDirectory(), "wwwroot/uploads");
-            var caminho = Path.Combine(pastaBase, nomeArquivo);
-
-            if (!Directory.Exists(caminho))
-                return NotFound("Pasta não encontrada");
-
-            var nomePasta = Path.GetFileName(caminho);
 
             var idUsuarioLogado = Request.Cookies["Idusado"];
             if (idUsuarioLogado != null)
@@ -126,7 +119,7 @@ namespace DesapegaSenai.Controllers
                                     o.Descricao,
                                     o.Categoria,
                                     o.Tempo_uso,
-                                    Foto = $"{Request.Scheme}://{Request.Host}/uploads/{nomeArquivo}/{nomePasta}",
+                                    Foto = $"{Request.Scheme}://{Request.Host}/uploads/{o.Foto}",
                                     o.Prefere_troca
                                 };
                 return Ok(resultado.ToList());
@@ -134,6 +127,22 @@ namespace DesapegaSenai.Controllers
             return Unauthorized("Não autenticado");
 
         }
+
+        [HttpGet]
+        public IActionResult BuscaObjetoPerfil()
+        {
+            var objeto = _context.Objetos.ToList();
+
+            for (int i = 0; i < objeto.Count; i++)
+            {
+
+                var pastaBase = Path.Combine(Directory.GetCurrentDirectory(), "wwwroot/uploads");
+                var caminho = Path.Combine(pastaBase, objeto[i].Foto);
+                objeto[i].Foto = $"{Request.Scheme}://{Request.Host}/uploads/{caminho}";
+            }
+            return Ok(objeto);
+        }
+
         [HttpPut]
         public IActionResult AtualizarObjeto(int id, Objeto objeto)
         {

@@ -58,29 +58,37 @@ function selecionar(botao, tipo) {
 
 
 document.addEventListener("DOMContentLoaded", function () {
-   
-    fetch('https://localhost:7132/objeto',{ 
-         credentials:"include"
-        })
 
-    .then(response =>
-        response.json())
-        .then(data => {
-            console.log(data);
-            if(data.length>0){
-           var resposta = document.getElementById("gallery-container");
-               
+    fetch('https://localhost:7132/objeto', {
+        credentials: "include"
+    })
+    .then(response => response.json())
+    .then(data => {
 
-         for (let i = 0; i < data.length; i++) {
+        console.log(data);
 
-    resposta.innerHTML += "<h3>"+data[i].objetos +"</h3>";
-    resposta.innerHTML += "<h3>" + data[i].descricao +"</h3>";
-    resposta.innerHTML += "<h3>" + data[i].tempo_uso +"</h3>";
-    resposta.innerHTML += `
-    <img src="https://localhost:7132/wwwroot/uploads/${data[i].foto}" alt="Foto">
-`;
-    
-         }}
-        
-        })
+        const resposta = document.getElementById("grid-produtos");
+
+        if (!resposta) {
+            console.error("Elemento #info não existe no HTML");
+            return;
+        }
+
+        resposta.innerHTML = "";
+
+        for (let i = 0; i < data.length; i++) {
+
+            resposta.innerHTML += `
+                <div class="carde">
+                    <div class="imagem-produto">
+                        <img src="${data[i].foto}" alt="Produto">
+                    </div>
+                    <div class="info">
+                        <h3>${data[i].nome}</h3>
+                        <span>${data[i].tempo_uso}</span>
+                    </div>
+                </div>
+            `;
+        }
+    });
 });

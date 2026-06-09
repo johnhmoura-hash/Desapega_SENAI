@@ -52,7 +52,7 @@ formData.append('status_objeto', true);
 formData.append('foto', 'gggh');
 
 
-formData.append('arquivoFoto', arquivoInput.files[0]); 
+formData.append('arquivoFoto', inputFoto.files[0]); 
 
 fetch('https://localhost:7132/objeto', { // Substitua pela URL local do seu projeto C#
     method: 'POST',

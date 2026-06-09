@@ -47,6 +47,8 @@ app.UseCors("PermitirTudo");
 
 app.UseSession();
 
+app.UseStaticFiles();
+
 app.UseAuthorization();
 
 app.MapControllers();
