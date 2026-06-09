@@ -630,23 +630,15 @@ main{
 }
 
 .info{
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-}
-
-.info h2{
-    margin: 0;
-}
-
-.info i,
-.info a{
-    margin-top: 5px;
+  max-width: 250%;
+  margin: 485px auto;
+  padding: 20px;
+  left: 19%;
+  gap: 20%;
+   
 }
 .info h2 {
-  display: flex;
-    align-items: center;
-    gap: 15px;
+  margin: 1;
   color: #000; 
 }
 
