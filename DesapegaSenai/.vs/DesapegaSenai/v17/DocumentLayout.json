@@ -3,7 +3,6 @@
   "WorkspaceRootPath": "C:\\Users\\manha.ceticc\\Documents\\GitHub\\Desapega_SENAI\\DesapegaSenai\\",
   "Documents": [
     {
-<<<<<<< HEAD
       "AbsoluteMoniker": "D:0:0:{4974C4DE-9B36-4CCF-8B2F-40A54739E552}|DesapegaSenai\\DesapegaSenai.csproj|c:\\users\\manha.ceticc\\documents\\github\\desapega_senai\\desapegasenai\\desapegasenai\\properties\\launchsettings.json||{90A6B3A7-C1A3-4009-A288-E2FF89E96FA0}",
       "RelativeMoniker": "D:0:0:{4974C4DE-9B36-4CCF-8B2F-40A54739E552}|DesapegaSenai\\DesapegaSenai.csproj|solutionrelative:desapegasenai\\properties\\launchsettings.json||{90A6B3A7-C1A3-4009-A288-E2FF89E96FA0}"
     },
@@ -11,8 +10,6 @@
       "AbsoluteMoniker": "D:0:0:{A2FE74E1-B743-11D0-AE1A-00A0C90FFFC3}|\u003CMiscFiles\u003E|C:\\Program Files\\dotnet\\sdk\\9.0.305\\Sdks\\Microsoft.NET.Sdk.StaticWebAssets\\targets\\Microsoft.NET.Sdk.StaticWebAssets.targets||{FA3CD31E-987B-443A-9B81-186104E8DAC1}|"
     },
     {
-=======
->>>>>>> bf8e7cd34adc00995803c7858ccafb18bcdcf560
       "AbsoluteMoniker": "D:0:0:{4974C4DE-9B36-4CCF-8B2F-40A54739E552}|DesapegaSenai\\DesapegaSenai.csproj|c:\\users\\manha.ceticc\\documents\\github\\desapega_senai\\desapegasenai\\desapegasenai\\controllers\\objetocontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
       "RelativeMoniker": "D:0:0:{4974C4DE-9B36-4CCF-8B2F-40A54739E552}|DesapegaSenai\\DesapegaSenai.csproj|solutionrelative:desapegasenai\\controllers\\objetocontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
@@ -36,16 +33,19 @@
       "DocumentGroups": [
         {
           "DockedWidth": 200,
-<<<<<<< HEAD
           "SelectedChildIndex": 3,
-=======
-          "SelectedChildIndex": 1,
->>>>>>> bf8e7cd34adc00995803c7858ccafb18bcdcf560
           "Children": [
+            {
+              "$type": "Bookmark",
+              "Name": "ST:0:0:{56df62a4-05a3-4e5b-aa1a-99371ccfb997}"
+            },
+            {
+              "$type": "Bookmark",
+              "Name": "ST:0:0:{cce594b6-0c39-4442-ba28-10c64ac7e89f}"
+            },
             {
               "$type": "Document",
               "DocumentIndex": 1,
-<<<<<<< HEAD
               "Title": "Microsoft.NET.Sdk.StaticWebAssets.targets",
               "DocumentMoniker": "C:\\Program Files\\dotnet\\sdk\\9.0.305\\Sdks\\Microsoft.NET.Sdk.StaticWebAssets\\targets\\Microsoft.NET.Sdk.StaticWebAssets.targets",
               "RelativeDocumentMoniker": "..\\..\\..\\..\\..\\..\\Program Files\\dotnet\\sdk\\9.0.305\\Sdks\\Microsoft.NET.Sdk.StaticWebAssets\\targets\\Microsoft.NET.Sdk.StaticWebAssets.targets",
@@ -53,8 +53,7 @@
               "RelativeToolTip": "..\\..\\..\\..\\..\\..\\Program Files\\dotnet\\sdk\\9.0.305\\Sdks\\Microsoft.NET.Sdk.StaticWebAssets\\targets\\Microsoft.NET.Sdk.StaticWebAssets.targets",
               "ViewState": "AgIAAFICAAAAAAAAAAAswKYCAAAEAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.003801|",
-              "WhenOpened": "2026-06-03T10:39:22.648Z",
-              "EditorCaption": ""
+              "WhenOpened": "2026-06-03T10:39:22.648Z"
             },
             {
               "$type": "Document",
@@ -72,8 +71,6 @@
             {
               "$type": "Document",
               "DocumentIndex": 3,
-=======
->>>>>>> bf8e7cd34adc00995803c7858ccafb18bcdcf560
               "Title": "Objeto.cs",
               "DocumentMoniker": "C:\\Users\\manha.ceticc\\Documents\\GitHub\\Desapega_SENAI\\DesapegaSenai\\DesapegaSenai\\Models\\Objeto.cs",
               "RelativeDocumentMoniker": "DesapegaSenai\\Models\\Objeto.cs",
@@ -85,28 +82,19 @@
             },
             {
               "$type": "Document",
-<<<<<<< HEAD
               "DocumentIndex": 2,
-=======
-              "DocumentIndex": 0,
->>>>>>> bf8e7cd34adc00995803c7858ccafb18bcdcf560
               "Title": "ObjetoController.cs",
               "DocumentMoniker": "C:\\Users\\manha.ceticc\\Documents\\GitHub\\Desapega_SENAI\\DesapegaSenai\\DesapegaSenai\\Controllers\\ObjetoController.cs",
               "RelativeDocumentMoniker": "DesapegaSenai\\Controllers\\ObjetoController.cs",
               "ToolTip": "C:\\Users\\manha.ceticc\\Documents\\GitHub\\Desapega_SENAI\\DesapegaSenai\\DesapegaSenai\\Controllers\\ObjetoController.cs",
               "RelativeToolTip": "DesapegaSenai\\Controllers\\ObjetoController.cs",
-<<<<<<< HEAD
               "ViewState": "AgIAAA8AAAAAAAAAAAAAACwAAAAZAAAAAAAAAA==",
-=======
-              "ViewState": "AgIAAAAAAAAAAAAAAAAAACoAAAAAAAAAAAAAAA==",
->>>>>>> bf8e7cd34adc00995803c7858ccafb18bcdcf560
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2026-05-29T13:48:17.456Z",
-              "EditorCaption": ""
+              "WhenOpened": "2026-05-29T13:48:17.456Z"
             },
             {
               "$type": "Document",
-              "DocumentIndex": 2,
+              "DocumentIndex": 4,
               "Title": "UsuarioController.cs",
               "DocumentMoniker": "C:\\Users\\manha.ceticc\\Documents\\GitHub\\Desapega_SENAI\\DesapegaSenai\\DesapegaSenai\\Controllers\\UsuarioController.cs",
               "RelativeDocumentMoniker": "DesapegaSenai\\Controllers\\UsuarioController.cs",
@@ -118,7 +106,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 3,
+              "DocumentIndex": 5,
               "Title": "Usuario.cs",
               "DocumentMoniker": "C:\\Users\\manha.ceticc\\Documents\\GitHub\\Desapega_SENAI\\DesapegaSenai\\DesapegaSenai\\Models\\Usuario.cs",
               "RelativeDocumentMoniker": "DesapegaSenai\\Models\\Usuario.cs",
@@ -127,14 +115,6 @@
               "ViewState": "AgIAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
               "WhenOpened": "2026-05-29T13:22:06.116Z"
-            },
-            {
-              "$type": "Bookmark",
-              "Name": "ST:0:0:{56df62a4-05a3-4e5b-aa1a-99371ccfb997}"
-            },
-            {
-              "$type": "Bookmark",
-              "Name": "ST:0:0:{cce594b6-0c39-4442-ba28-10c64ac7e89f}"
             }
           ]
         }
