@@ -182,7 +182,13 @@
     "HttpMethod": "GET",
     "IsController": true,
     "Order": 0,
-    "Parameters": [],
+    "Parameters": [
+      {
+        "Name": "nomeArquivo",
+        "Type": "System.String",
+        "IsRequired": false
+      }
+    ],
     "ReturnTypes": []
   },
   {
@@ -262,6 +268,22 @@
       {
         "Name": "id",
         "Type": "System.Int32",
+        "IsRequired": true
+      }
+    ],
+    "ReturnTypes": []
+  },
+  {
+    "ContainingType": "DesapegaSenai.Controllers.ObjetoController",
+    "Method": "ListaArquivo",
+    "RelativePath": "Objeto/arquiv/{nomeArquivo}",
+    "HttpMethod": "GET",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [
+      {
+        "Name": "nomeArquivo",
+        "Type": "System.String",
         "IsRequired": true
       }
     ],
