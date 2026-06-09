@@ -26,7 +26,7 @@ namespace DesapegaSenai.Models
             Descricao = descricao;
             Prefere_troca = prefere_troca;
             Status_objeto = status_objeto;
-            
+
         }
     }
 }
