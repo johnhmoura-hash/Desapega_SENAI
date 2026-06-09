@@ -7,81 +7,76 @@
     <link rel="stylesheet" href="css/estilo.css">
      <link href="https://cdn.jsdelivr.net/npm/remixicon/fonts/remixicon.css" rel="stylesheet">
      <link rel="icon" href="Img/possivel logo.png" type="image/x-icon">
+     <link rel="stylesheet" href="css/mobile.css">
 </head>
  <div class="faixatopo">
     
    </div>
-
-<header class="page">
-  <div class="container">
-
-    <div class="logo2">
-      <img src="Img/possivel logo.png" width="40">
-    </div>
-
-    <div class="pesquisar">
-      <input type="text" name="buscar" placeholder="Buscar...">
-    </div>
-
-    <div class="menu-toggle" id="menuToggle">
-      ☰
-    </div>
-
-    <nav class="menu" id="menu">
-
-      <div>
-        <a href="index.html">Início <i class="ri-home-line"></i></a>
-      </div>
-
-      <div>
-        <a href="Tela_perfil.html">Perfil <i class="ri-user-line"></i></a>
-      </div>
-
-      <div class="menu2 notificacao-wrapper">
-        <a href="#" id="btnNotificacao">
-          Notificações <i class="ri-notification-line"></i>
-        </a>
-
-        <div class="popup-notificacao" id="popupNotificacao">
-          <div class="popup-header">
-            <h4>Notificações</h4>
-          </div>
-
-          <div class="popup-body">
-            <div class="notificacao-item">
-              João curtiu seu produto
-              <span class="tempo">2 min atrás</span>
-            </div>
-
-            <div class="notificacao-item">
-              Nova mensagem recebida
-              <span class="tempo">10 min atrás</span>
-            </div>
-
-            <div class="notificacao-item">
-              Seu produto foi visualizado
-              <span class="tempo">1 hora atrás</span>
-            </div>
-          </div>
+    <header class="page">
+      <div class="container-login">
+        <div class="logo2">
+          <img src="Img/possivel logo.png" width="40">
         </div>
+
+        <div class="pesquisar">
+          <input type="text" name="buscar" placeholder="Buscar...">
+        </div>
+
+        <div class="menu-toggle" id="menuToggle">
+          ☰
+        </div>
+
+        <nav class="menu" id="menu">
+
+          <div class="menu2">
+            <a href="index.html">Início <i class="ri-home-line"></i></a>
+          </div>
+
+          <div class="menu2">
+            <a href="Tela_perfil.html">Perfil <i class="ri-user-line"></i></a>
+          </div>
+
+          <div class="menu2 notificacao-wrapper">
+            <a href="#" id="btnNotificacao">
+              Notificações <i class="ri-notification-line"></i>
+            </a>
+
+            <div class="popup-notificacao" id="popupNotificacao">
+              <div class="popup-header">
+                <h4>Notificações</h4>
+              </div>
+
+              <div class="popup-body">
+                <a class="notificacao-item" href="capinha.html">
+                  John publicou um novo produto
+                  <span class="tempo">2 min atrás</span>
+                </a>
+
+                <div class="notificacao-item">
+                  Nova mensagem recebida
+                  <span class="tempo">10 min atrás</span>
+                </div>
+
+                <div class="notificacao-item">
+                  Seu produto foi visualizado
+                  <span class="tempo">1 hora atrás</span>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <div class="menu2 chat-wrapper">
+            <a href="#" id="btnChat">
+              Chat <i class="ri-chat-3-line"></i>
+            </a>
+          </div>
+          <a href="tela_produto.html">Anunciar produto <i class="ri-add-line"></i></a>
+       
+        </nav>
       </div>
-
-      <div class="menu2 chat-wrapper">
-        <a href="#" id="btnChat">
-          Chat <i class="ri-chat-3-line"></i>
-        </a>
-      </div>
-
-      <div>
-        <a href="tela_produto.html">
-          Anunciar produto <i class="ri-add-line"></i>
-        </a>
-      </div>
-
-    </nav>
-
-  </div>
-</header>
+       <div class="overlay-menu" id="overlayMenu"></div>
+    </header>
+    <br><br>
 
 <div class="overlay-menu" id="overlayMenu"></div>
 </header>
@@ -123,11 +118,9 @@
     <div class="produto-inferior-area">
 
         <div class="produto-descricao-box">
-            <h3>Descrição</h3>
-            <p>
-              Raquete com estrutura resistente, cordas bem tensionadas e cabo com grip confortável. Ideal para treinos e partidas recreativas, oferecendo bom controle e durabilidade.
-
-Não tenho interesse em trocar por pontos.
+            <h3 >Descrição</h3>
+            <p id="Descricao">
+             
             </p>
         </div>
 
@@ -138,17 +131,17 @@ Não tenho interesse em trocar por pontos.
 
                 <div>
                     <small>tempo</small>
-                    <strong>2 meses</strong>
+                    <strong id="Tempo_uso"></strong>
                 </div>
 
                 <div>
                     <small>categoria</small>
-                    <strong>esporte</strong>
+                    <strong id="Categoria"></strong>
                 </div>
 
                 <div>
                     <small>trocas</small>
-                    <strong>produto</strong>
+                   <strong id="Prefere_troca"></strong>
                 </div>
 
             </div>

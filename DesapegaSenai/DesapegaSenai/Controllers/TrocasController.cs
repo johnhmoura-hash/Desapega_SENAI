@@ -40,7 +40,7 @@ namespace DesapegaSenai.Controllers
         [HttpPost]
         public IActionResult Trocar(Troca item)
         {
-            var email = HttpContext.Session.GetString("Email");
+            var email = HttpContext.Session.GetString("Idusado");
             if (email == null)
                 return Unauthorized("Não autenticado");
 
@@ -72,7 +72,7 @@ namespace DesapegaSenai.Controllers
         [HttpDelete("{id}")]
         public IActionResult Deletar(int id)
         {
-            var usuario = HttpContext.Session.GetString("Email");
+            var usuario = HttpContext.Session.GetString("Idusado");
             if (usuario == null)
                 return Unauthorized("Não autenticado");
 
