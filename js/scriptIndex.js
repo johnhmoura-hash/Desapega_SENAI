@@ -66,6 +66,7 @@ document.addEventListener("DOMContentLoaded", function () {
     .then(data => {
 
         console.log(data);
+        
 
         const resposta = document.getElementById("grid-produtos");
 
@@ -79,7 +80,8 @@ document.addEventListener("DOMContentLoaded", function () {
         for (let i = 0; i < data.length; i++) {
 
             resposta.innerHTML += `
-                <div class="carde">
+             
+            <div class="carde">
                     <div class="imagem-produto">
                         <img src="${data[i].foto}" alt="Produto">
                     </div>
@@ -88,7 +90,10 @@ document.addEventListener("DOMContentLoaded", function () {
                         <span>${data[i].tempo_uso}</span>
                     </div>
                 </div>
-            `;
+              
+                
+            `
+            console.log(document.getElementById("grid-produtos").innerHTML);;
         }
     });
 });

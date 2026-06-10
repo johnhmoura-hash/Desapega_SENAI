@@ -138,7 +138,8 @@ namespace DesapegaSenai.Controllers
 
                 var pastaBase = Path.Combine(Directory.GetCurrentDirectory(), "wwwroot/uploads");
                 var caminho = Path.Combine(pastaBase, objeto[i].Foto);
-                objeto[i].Foto = $"{Request.Scheme}://{Request.Host}/uploads/{caminho}";
+                var nomeArquivo = Path.GetFileName(objeto[i].Foto);
+                objeto[i].Foto = $"{Request.Scheme}://{Request.Host}/uploads/{nomeArquivo}";
             }
             return Ok(objeto);
         }

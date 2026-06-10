@@ -524,6 +524,7 @@ textarea.input-info {
     width:100%;
     height:100%;
     background:white; 
+    z-index: 1;
 }
 
 .imagem-produto img{
@@ -531,6 +532,7 @@ textarea.input-info {
     height:100%;
     object-fit:cover;
     display:block;
+    z-index: 1;
 }
 
 .sem-foto{
@@ -542,13 +544,12 @@ textarea.input-info {
 }
 
 .info{
-     position:absolute;
+      position:absolute;
     bottom:10px;
     left:10px;
     right:10px;
-    display:flex;
-    justify-content:space-between;
-    align-items:center;
+    z-index:999;
+    background:red;
 }
 
 .info h3{
