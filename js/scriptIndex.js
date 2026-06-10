@@ -79,7 +79,6 @@ document.addEventListener("DOMContentLoaded", function () {
 
         for (let i = 0; i < data.length; i++) {
 
-<<<<<<< HEAD
        resposta.innerHTML += `
         <div class="carde">
         <div class="imagem-produto">
@@ -93,22 +92,6 @@ document.addEventListener("DOMContentLoaded", function () {
         </div>
     </div>
 `;
-=======
-            resposta.innerHTML += `
-             
-            <div class="carde">
-                    <div class="imagem-produto">
-                        <img src="${data[i].foto}" alt="Produto">
-                    </div>
-                    <div class="infos">
-                        <h3>${data[i].nome}</h3>
-                        <span>${data[i].tempo_uso}</span>
-                    </div>
-                </div>
-              
-                
-            `
->>>>>>> de11e30cf59f221ccf9b029f3afe233bcc235db2
             console.log(document.getElementById("grid-produtos").innerHTML);;
         }
     });

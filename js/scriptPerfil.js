@@ -33,7 +33,7 @@ document.addEventListener("DOMContentLoaded", function () {
         }
     });
 
-fetch('https://localhost:7132/objeto/perfil', {
+    fetch('https://localhost:7132/objeto/perfil', {
         credentials: "include"
     })
     .then(response => response.json())
