@@ -35,14 +35,16 @@ form.addEventListener('submit', (e) =>{
             senha:document.getElementById("senha")
         })
     })
-    .then(response => response.json())
+    
     .then(data => {
         console.log("Sucesso:", data);
+        window.location.href='index.html'
        
        
     })
     .catch(error => {
         console.error("Erro:", error);
+        alert
     });
 
     }

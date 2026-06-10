@@ -1,0 +1,194 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Raquete-Desapega SENAI</title>
+    <link rel="stylesheet" href="css/estilo.css">
+     <link href="https://cdn.jsdelivr.net/npm/remixicon/fonts/remixicon.css" rel="stylesheet">
+     <link rel="icon" href="Img/possivel logo.png" type="image/x-icon">
+     <link rel="stylesheet" href="css/mobile.css">
+</head>
+ <div class="faixatopo">
+    
+   </div>
+    <header class="page">
+      <div class="container-login">
+        <div class="logo2">
+          <img src="Img/possivel logo.png" width="40">
+        </div>
+
+        <div class="pesquisar">
+          <input type="text" name="buscar" placeholder="Buscar...">
+        </div>
+
+        <div class="menu-toggle" id="menuToggle">
+          ☰
+        </div>
+
+        <nav class="menu" id="menu">
+
+          <div class="menu2">
+            <a href="index.html">Início <i class="ri-home-line"></i></a>
+          </div>
+
+          <div class="menu2">
+            <a href="Tela_perfil.html">Perfil <i class="ri-user-line"></i></a>
+          </div>
+
+          <div class="menu2 notificacao-wrapper">
+            <a href="#" id="btnNotificacao">
+              Notificações <i class="ri-notification-line"></i>
+            </a>
+
+            <div class="popup-notificacao" id="popupNotificacao">
+              <div class="popup-header">
+                <h4>Notificações</h4>
+              </div>
+
+              <div class="popup-body">
+                <a class="notificacao-item" href="capinha.html">
+                  John publicou um novo produto
+                  <span class="tempo">2 min atrás</span>
+                </a>
+
+                <div class="notificacao-item">
+                  Nova mensagem recebida
+                  <span class="tempo">10 min atrás</span>
+                </div>
+
+                <div class="notificacao-item">
+                  Seu produto foi visualizado
+                  <span class="tempo">1 hora atrás</span>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <div class="menu2 chat-wrapper">
+            <a href="#" id="btnChat">
+              Chat <i class="ri-chat-3-line"></i>
+            </a>
+          </div>
+          <a href="tela_produto.html">Anunciar produto <i class="ri-add-line"></i></a>
+       
+        </nav>
+      </div>
+       <div class="overlay-menu" id="overlayMenu"></div>
+    </header>
+    <br><br>
+
+<div class="overlay-menu" id="overlayMenu"></div>
+</header>
+<br><br><br>
+ <div class="pagina-produto">
+
+    <div class="produto-topo-area">
+
+      
+        <div class="produto-imagem-box">
+            <img src="Img/IMAGEM2.webp" alt="Produto" class="produto-imagem-foto">
+        </div>
+
+        <div class="produto-card-lateral">
+
+            <h2 class="produto-titulo">Raquete de tênis Profissional</h2>
+
+            <div class="produto-usuario-area">
+                <div class="produto-usuario-foto">
+              <img src="Img/aluno-foto.jpg" class="">
+              </div>
+                <span class="produto-usuario-nome">Luiz</span>
+                <button class="produto-botao-seguir">seguir</button>
+            </div>
+
+            <div class="produto-divisor"></div>
+
+             <button id="btnQuero" class="produto-botao-principal">Eu quero</button>
+
+            <button class="produto-botao-chat">
+                Chat <i class="ri-chat-3-line"></i>
+            </button>
+
+        </div>
+
+    </div>
+
+    <!-- PARTE DE BAIXO -->
+    <div class="produto-inferior-area">
+
+        <div class="produto-descricao-box">
+            <h3 >Descrição</h3>
+            <p id="Descricao">
+             
+            </p>
+        </div>
+
+        <div class="produto-info-box">
+            <h3>Informações<i class="ri-information-line"></i></h3>
+
+            <div class="produto-info-grid">
+
+                <div>
+                    <small>tempo</small>
+                    <strong id="Tempo_uso"></strong>
+                </div>
+
+                <div>
+                    <small>categoria</small>
+                    <strong id="Categoria"></strong>
+                </div>
+
+                <div>
+                    <small>trocas</small>
+                   <strong id="Prefere_troca"></strong>
+                </div>
+
+            </div>
+
+            <div class="produto-linha-final"></div>
+
+        </div>
+
+    </div>
+
+
+
+
+
+
+
+    
+</div>
+
+
+
+ 
+
+ 
+<div id="overlayTroca" class="overlay">
+  <div class="modal-troca">
+    <h2>Escolha um item para trocar</h2>
+
+    <select class="input-info" required>
+      <option value="" disabled selected>Categoria</option>
+      <option>Relógio</option>
+      <option>camisa vasco</option>
+      <option>dicionário de inglês</option>
+      <option>guarda chuva</option>
+    </select>
+    <div class="acoes">
+      
+  <button id="cancelarTroca" class="btn-cancelar">Cancelar</button>
+<button id="btnSelecionar" class="btn">Pontos</button>
+  <button id="enviarTroca" class="btn-enviar">Enviar proposta</button>
+
+      
+    </div>
+  </div>
+</div>
+</div>
+
+<script src="script.js"></script>
+</body>
+</html>

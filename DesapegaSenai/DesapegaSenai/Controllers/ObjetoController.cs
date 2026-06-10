@@ -2,6 +2,7 @@
 using DesapegaSenai.Models;
 using Microsoft.AspNetCore.Mvc;
 
+
 namespace DesapegaSenai.Controllers
 {
     [ApiController]
@@ -44,36 +45,62 @@ namespace DesapegaSenai.Controllers
             return Created("Teste", objeto);
         }
 
-       /* [HttpPost("cadastroFoto")]
-        public async Task<IActionResult> Criar([FromForm] Objeto objeto)
+        /* [HttpPost("cadastroFoto")]
+         public async Task<IActionResult> Criar([FromForm] Objeto objeto)
+         {
+             if (objeto.ArquivoFoto != null)
+             {
+                 var nomeArquivo = Guid.NewGuid().ToString() + Path.GetExtension(objeto.ArquivoFoto.FileName);
+
+                 var caminho = Path.Combine("wwwroot/Uploads", nomeArquivo);
+
+                 using (var stream = new FileStream(caminho, FileMode.Create))
+                 {
+                     await objeto.ArquivoFoto.CopyToAsync(stream);
+                 }
+
+                 objeto.Foto = nomeArquivo;
+             }
+
+             _context.Objetos.Add(objeto);
+             await _context.SaveChangesAsync();
+
+             return Ok(objeto);
+         }
+        [HttpGet("download/{nomeArquivo}")]
+        public IActionResult Dowload(string nomeArquivo)
         {
-            if (objeto.ArquivoFoto != null)
-            {
-                var nomeArquivo = Guid.NewGuid().ToString() + Path.GetExtension(objeto.ArquivoFoto.FileName);
+            var caminho = Path.Combine("Uploads", nomeArquivo);
 
-                var caminho = Path.Combine("wwwroot/Uploads", nomeArquivo);
+            if (!System.IO.File.Exists(caminho))
+                return NotFound("Arquivo não encontrado");
 
-                using (var stream = new FileStream(caminho, FileMode.Create))
-                {
-                    await objeto.ArquivoFoto.CopyToAsync(stream);
-                }
+            var bytes = System.IO.File.ReadAllBytes(caminho);
 
-                objeto.Foto = nomeArquivo;
-            }
+            return File(bytes, "application/octet-stream", nomeArquivo);
+        }
 
-            _context.Objetos.Add(objeto);
-            await _context.SaveChangesAsync();
+        [HttpGet("arquiv/{nomeArquivo}")]
+        public IActionResult ListaArquivo(string nomeArquivo)
+        {
+            var pastaBase = Path.Combine(Directory.GetCurrentDirectory(), "wwwroot/uploads");
+            var caminho = Path.Combine(pastaBase, nomeArquivo);
 
-            return Ok(objeto);
+            if (!Directory.Exists(caminho))
+                return NotFound("Pasta não encontrada");
+
+                var nomePasta = Path.GetFileName(caminho);
+
+            return Ok(caminho);
         }*/
 
-        [HttpGet]
-        public IActionResult BuscarObjeto()
+        [HttpGet("perfil")]
+        public IActionResult BuscarObjetoPerfil()
         {
-
             var usuario = HttpContext.Session.GetString("Idusado");
             if (usuario == null)
                 return Unauthorized("Não autenticado");
+
 
             var idUsuarioLogado = Request.Cookies["Idusado"];
             if (idUsuarioLogado != null)
@@ -90,7 +117,7 @@ namespace DesapegaSenai.Controllers
                                     o.Descricao,
                                     o.Categoria,
                                     o.Tempo_uso,
-                                    o.Foto,
+                                    Foto = $"{Request.Scheme}://{Request.Host}/uploads/{o.Foto}",
                                     o.Prefere_troca
                                 };
                 return Ok(resultado.ToList());
@@ -98,6 +125,22 @@ namespace DesapegaSenai.Controllers
             return Unauthorized("Não autenticado");
 
         }
+
+        [HttpGet]
+        public IActionResult BuscaObjetoPerfil()
+        {
+            var objeto = _context.Objetos.ToList();
+
+            for (int i = 0; i < objeto.Count; i++)
+            {
+
+                var pastaBase = Path.Combine(Directory.GetCurrentDirectory(), "wwwroot/uploads");
+                var caminho = Path.Combine(pastaBase, objeto[i].Foto);
+                objeto[i].Foto = $"{Request.Scheme}://{Request.Host}/uploads/{caminho}";
+            }
+            return Ok(objeto);
+        }
+
         [HttpPut]
         public IActionResult AtualizarObjeto(int id, Objeto objeto)
         {
