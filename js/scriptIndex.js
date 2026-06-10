@@ -85,9 +85,9 @@ document.addEventListener("DOMContentLoaded", function () {
                     <div class="imagem-produto">
                         <img src="${data[i].foto}" alt="Produto">
                     </div>
-                    <div class="info">
-                        <h3>OIOIOIOI</h3>
-                        <span>FFFFF</span>
+                    <div class="infos">
+                        <h3>${data[i].nome}</h3>
+                        <span>${data[i].tempo_uso}</span>
                     </div>
                 </div>
               

@@ -11,11 +11,7 @@ myForm.addEventListener('submit', function (event) {
     event.preventDefault();
 
     const valido =
-<<<<<<< HEAD
-           validarNome() &&
-=======
         validarNome() &&
->>>>>>> 7a656bf1bb8f6df16e8d62ecd10c00e59cdd744e
         validarMatricula() &&
         validarNumTelefone() &&
         validarEmail() &&

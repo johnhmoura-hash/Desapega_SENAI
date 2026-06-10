@@ -11,10 +11,7 @@ form.addEventListener('submit', (e) =>{
 
         validarEmail() &&
         validarSenha() 
-<<<<<<< HEAD
-=======
        
->>>>>>> 7a656bf1bb8f6df16e8d62ecd10c00e59cdd744e
 
     if (valido) {
            fetch("https://localhost:7132/usuario/login", {
