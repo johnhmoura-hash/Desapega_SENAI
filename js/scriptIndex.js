@@ -79,20 +79,19 @@ document.addEventListener("DOMContentLoaded", function () {
 
         for (let i = 0; i < data.length; i++) {
 
-            resposta.innerHTML += `
-             
-            <div class="carde">
-                    <div class="imagem-produto">
-                        <img src="${data[i].foto}" alt="Produto">
-                    </div>
-                    <div class="infos">
-                        <h3>${data[i].nome}</h3>
-                        <span>${data[i].tempo_uso}</span>
-                    </div>
-                </div>
-              
-                
-            `
+       resposta.innerHTML += `
+        <div class="carde">
+        <div class="imagem-produto">
+            <a href="produto.html" target="_blank">
+                <img src="${data[i].foto}" alt="Produto">
+            </a>
+        </div>
+        <div class="infos">
+            <h3>${data[i].nome}</h3>
+            <span>${data[i].tempo_uso}</span>
+        </div>
+    </div>
+`;
             console.log(document.getElementById("grid-produtos").innerHTML);;
         }
     });
