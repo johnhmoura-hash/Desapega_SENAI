@@ -542,7 +542,7 @@ textarea.input-info {
 }
 
 .info{
-     position:absolute;
+    position:absolute;
     bottom:10px;
     left:10px;
     right:10px;
@@ -557,6 +557,7 @@ textarea.input-info {
     border-radius:20px;
     font-size:14px;
     margin:0;
+    color: #000;
 }
 
 .info span{

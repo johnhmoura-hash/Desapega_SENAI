@@ -15,13 +15,8 @@ form.addEventListener('submit', (e) =>{
 
     const valido =0
 
-        validarNome() &&
-        validarMatricula() &&
-        validarNumTelefone() &&
         validarEmail() &&
-        validarConfirmarEmail()&&
-        validarSenha() &&
-        validarconfirmarSenha();
+        validarSenha() 
 
     if (valido) {
            fetch("https://localhost:7132/usuario/login", {

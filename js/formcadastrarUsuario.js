@@ -5,11 +5,13 @@ myForm.addEventListener('submit', function (event) {
     event.preventDefault();
 
     const valido =
-        validarNomeProduto() &&
-        validarTempoUso() &&
-        validarCategoria() &&
-        validarDescricao() &&
-        validarTroca();
+           validarNome() &&
+        validarMatricula() &&
+        validarNumTelefone() &&
+        validarEmail() &&
+        validarConfirmarEmail()&&
+        validarSenha() &&
+        validarconfirmarSenha();
 
     if (valido) {
          enviarProduto();
