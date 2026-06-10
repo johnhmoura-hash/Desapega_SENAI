@@ -111,7 +111,8 @@ namespace DesapegaSenai.Controllers
                                 where u.Matricula == int.Parse(idUsuarioLogado)
                                 select new
                                 {
-                                    Usuarios = u.Nome,
+                                    Usuarios = u.Nome,u.Pontos,
+                                    
 
                                     Objetos = o.Nome,
                                     o.Descricao,
