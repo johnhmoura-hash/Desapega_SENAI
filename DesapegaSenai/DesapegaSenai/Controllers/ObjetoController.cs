@@ -18,15 +18,13 @@ namespace DesapegaSenai.Controllers
 
         [HttpPost]
 
-        public async Task<IActionResult> CriarObjeto([FromForm] string nome, [FromForm] string descricao, [FromForm] string tempo_uso, [FromForm] string categoria, [FromForm] string prefere_troca, [FromForm] string foto, [FromForm] bool status_objeto, [FromForm] IFormFile arquivoFoto)
+        public async Task<IActionResult> CriarObjeto(Objeto objeto)
         {
 
-            Objeto objeto = new Objeto(nome, categoria, foto, tempo_uso, descricao, prefere_troca, status_objeto);                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                    
             var usuario = HttpContext.Session.GetString("Idusado");
             if (usuario == null)
                 return Unauthorized("Não autenticado");
 
-            objeto.ArquivoFoto = arquivoFoto;
             if (objeto.ArquivoFoto != null)
             {
                 var nomeArquivo = Guid.NewGuid().ToString() + Path.GetExtension(objeto.ArquivoFoto.FileName);
@@ -138,7 +136,8 @@ namespace DesapegaSenai.Controllers
 
                 var pastaBase = Path.Combine(Directory.GetCurrentDirectory(), "wwwroot/uploads");
                 var caminho = Path.Combine(pastaBase, objeto[i].Foto);
-                objeto[i].Foto = $"{Request.Scheme}://{Request.Host}/uploads/{caminho}";
+                var nomeArquivo = Path.GetFileName(objeto[i].Foto);
+                objeto[i].Foto = $"{Request.Scheme}://{Request.Host}/uploads/{nomeArquivo}";
             }
             return Ok(objeto);
         }
@@ -178,7 +177,7 @@ namespace DesapegaSenai.Controllers
             _context.Usuarios.Remove(objeto);
             _context.SaveChanges();
 
-            return Ok("Deletado com sucesso ");
+            return Ok("Deletado com sucesso "); 
         }
 
     }
