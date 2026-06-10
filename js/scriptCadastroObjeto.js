@@ -26,8 +26,7 @@ inputFoto.addEventListener("change", function () {
 
 if (formProduto) {
 
-formProduto.addEventListener('submit', (e) => {
-    e.preventDefault();
+formProduto.addEventListener('submit', (e) => {e.preventDefault();
 
     const valido =
         validarNomeProduto() &&
@@ -61,7 +60,7 @@ fetch('https://localhost:7132/objeto', { // Substitua pela URL local do seu proj
 })
 .then(res => res.json())
 .then(dados => console.log(dados))
-.catch(err => console.error(err));
+.catch(erro => console.error(erro));
 }
 
 if (nomeProduto) nomeProduto.addEventListener("keyup", validarNomeProduto);
