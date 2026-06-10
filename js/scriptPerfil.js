@@ -31,10 +31,18 @@ document.addEventListener("DOMContentLoaded", function () {
                 </div>
             `;
         }
+    });
 
+fetch('https://localhost:7132/objeto/perfil', {
+        credentials: "include"
+    })
+    .then(response => response.json())
+    .then(data => {
+
+        console.log(data);
          const resposta2 = document.getElementById("lin");
 
-        if (!resposta) {
+        if (!resposta2) {
             console.error("Elemento #info não existe no HTML");
             return;
         }
@@ -43,9 +51,9 @@ document.addEventListener("DOMContentLoaded", function () {
 
         for (let i = 0; i < data.length; i++) {
 
-            resposta.innerHTML += `
-                <h2>"${data[i].usuarios} "</h2>
-          <i class="ri-money-dollar-circle-line"></i><a>00,0</a>
+            resposta2.innerHTML += `
+                <h2>${data[i].usuarios}</h2>
+                <i class="ri-money-dollar-circle-line"></i><a>${data[i].pontos},0</a>
             `;
         }
     });
