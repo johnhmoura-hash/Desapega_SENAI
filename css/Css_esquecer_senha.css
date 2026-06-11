@@ -108,17 +108,16 @@
             background:#0056b3 ;
         }
 
-        .v{
+        .camp1 
+        { 
+          text-align: center;
+          color: #727272f5;
+        
 
-       position: fixed;
-       margin-bottom: 20px;
-       padding: 4px ;
-       left: 300px;
-       background-color: #0066cc;
-       color: #ffffff;
-       text-decoration: none;
-       border-radius: 5px;
-       z-index: 1000;
+        } 
+        .camp1 a
+        {
+         text-decoration: none;
 
         }
 
