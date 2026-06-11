@@ -94,14 +94,15 @@ namespace DesapegaSenai.Controllers
             return Ok(caminho);
         }*/
 
+        /*
         [HttpGet("perfil")]
         public IActionResult ListaProdutos()
         {
-                var resultado = from u in _context.Usuarios
-                                join o in _context.Objetos
-                                on u.Matricula equals o.Fk_usuarios_matricula
-                                select new
-                                {
+            var resultado = from u in _context.Usuarios
+                            join o in _context.Objetos
+                            on u.Matricula equals o.Fk_usuarios_matricula
+                            select new
+                            {
                                 id = o.Id,
                                 usuarios = u.Nome,
                                 pontos = u.Pontos,
@@ -113,8 +114,67 @@ namespace DesapegaSenai.Controllers
                                 prefere_troca = o.Prefere_troca
                             };
 
+            return Ok(resultado.ToList());
+        }*/
+        
+        [HttpGet("perfil")]
+        public IActionResult BuscarObjetoPerfil()
+        {
+            var usuario = HttpContext.Session.GetString("Idusado");
+            if (usuario == null)
+                return Unauthorized("Não autenticado");
+
+
+            var idUsuarioLogado = Request.Cookies["Idusado"];
+            if (idUsuarioLogado != null)
+            {
+                var resultado = from u in _context.Usuarios
+                                join o in _context.Objetos
+                                on u.Matricula equals o.Fk_usuarios_matricula
+                                where u.Matricula == int.Parse(idUsuarioLogado)
+                                select new
+                                {
+                                    Usuarios = u.Nome,u.Pontos,
+                                    
+
+                                    Objetos = o.Nome,
+                                    o.Descricao,
+                                    o.Categoria,
+                                    o.Tempo_uso,
+                                    Foto = $"{Request.Scheme}://{Request.Host}/uploads/{o.Foto}",
+                                    o.Prefere_troca
+                                };
                 return Ok(resultado.ToList());
             }
+            return Unauthorized("Não autenticado");
+
+        }
+
+
+        [HttpGet("perfil/{id}")]
+        public IActionResult ProdutoPorId(int id)
+        {
+            var resultado = (from u in _context.Usuarios
+                             join o in _context.Objetos
+                             on u.Matricula equals o.Fk_usuarios_matricula
+                             where o.Id == id
+                             select new
+                             {
+                                 usuarios = u.Nome,
+                                 pontos = u.Pontos,
+                                 objetos = o.Nome,
+                                 descricao = o.Descricao,
+                                 categoria = o.Categoria,
+                                 tempo_uso = o.Tempo_uso,
+                                 foto = $"{Request.Scheme}://{Request.Host}/uploads/{o.Foto}",
+                                 prefere_troca = o.Prefere_troca
+                             }).FirstOrDefault();
+
+            if (resultado == null)
+                return NotFound();
+
+            return Ok(resultado);
+        }
 
         [HttpGet]
         public IActionResult BuscaObjetoPerfil()

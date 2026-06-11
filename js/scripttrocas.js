@@ -1,9 +1,14 @@
 document.addEventListener("DOMContentLoaded", function () {
 
-fetch("https://localhost:7132/Objeto/perfil",{
-    Credentials: "include"})
+    const id = new URLSearchParams(window.location.search).get("id");
+
+    fetch(`https://localhost:7132/Objeto/perfil/${id}`, {
+        credentials: "include"
+    })
     .then(response => response.json())
     .then(data => {
+
+        console.log(data);
 
         const resposta = document.getElementById("pagina-produto");
 
@@ -12,87 +17,69 @@ fetch("https://localhost:7132/Objeto/perfil",{
             return;
         }
 
-        resposta.innerHTML = "";
+        resposta.innerHTML = `
+            <div class="produto-topo-area">
 
-        for (let i = 0; i < data.length; i++) {
-
-            resposta.innerHTML += `
-                <div class="produto-topo-area">
-
-                    <div class="produto-imagem-box">
-                        <img src="${data[i].Foto}">
-                    </div>
-
-                    <div class="produto-card-lateral">
-
-                        <h2 class="produto-titulo">${data[i].Objeto}</h2>
-
-                        <div class="produto-usuario-area">
-
-                            <div class="produto-usuario-foto">
-                                <img src="">
-                            </div>
-
-                            <span class="produto-usuario-nome">
-                                <p>${data[i].Usuario}</p>
-                            </span>
-
-                            <button class="produto-botao-seguir">seguir</button>
-                        </div>
-
-                        <div class="produto-divisor"></div>
-
-                        <button class="produto-botao-principal">Eu quero</button>
-
-                        <button class="produto-botao-chat">
-                            Chat <i class="ri-chat-3-line"></i>
-                        </button>
-
-                    </div>
+                <div class="produto-imagem-box">
+                    <img src="${data.foto}">
                 </div>
 
-                <div class="produto-inferior-area">
+                <div class="produto-card-lateral">
 
-                    <div class="produto-descricao-box">
-                        <h3>Descrição</h3>
-                        <p>${data[i].Descricao}</p>
+                    <h2 class="produto-titulo">${data.objetos}</h2>
+
+                    <div class="produto-usuario-area">
+                    <div class="produto-usuario-foto"> <img src=""> </div>
+                        <span class="produto-usuario-nome">
+                            <p>${data.usuarios}</p>
+                        </span>
+
                     </div>
 
-                    <div class="produto-info-box">
+                    <button class="produto-botao-principal">Eu quero</button>
+                    <button class="produto-botao-chat">Chat <i class="ri-chat-3-line"></i></button>
+                </div>
+            </div>
 
-                        <h3>Informações</h3>
+            <div class="produto-inferior-area">
 
-                        <div class="produto-info-grid">
+                <div class="produto-descricao-box">
+                    <h3>Descrição</h3>
+                    <p>${data.descricao}</p>
+                </div>
 
-                            <div>
-                                <small>tempo</small>
-                                <strong>${data[i].Tempo_uso}</strong>
-                            </div>
+                <div class="produto-info-box">
 
-                            <div>
-                                <small>categoria</small>
-                                <strong>${data[i].Categoria}</strong>
-                            </div>
+                    <h3>Informações</h3>
 
-                            <div>
-                                <small>trocas</small>
-                                <strong>${data[i].Prefere_troca}</strong>
-                            </div>
+                    <div class="produto-info-grid">
 
+                        <div>
+                            <small>tempo</small>
+                            <strong>${data.tempo_uso}</strong>
+                        </div>
+
+                        <div>
+                            <small>categoria</small>
+                            <strong>${data.categoria}</strong>
+                        </div>
+
+                        <div>
+                            <small>trocas</small>
+                            <strong>${data.prefere_troca}</strong>
                         </div>
 
                     </div>
 
                 </div>
-            `;
-        }
 
+            </div>
+        `;
     })
     .catch(error => {
         console.error("Erro no fetch:", error);
     });
-})
-
+});
 
 
 
