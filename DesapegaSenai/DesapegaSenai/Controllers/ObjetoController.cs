@@ -95,37 +95,26 @@ namespace DesapegaSenai.Controllers
         }*/
 
         [HttpGet("perfil")]
-        public IActionResult BuscarObjetoPerfil()
+        public IActionResult ListaProdutos()
         {
-            var usuario = HttpContext.Session.GetString("Idusado");
-            if (usuario == null)
-                return Unauthorized("Não autenticado");
-
-
-            var idUsuarioLogado = Request.Cookies["Idusado"];
-            if (idUsuarioLogado != null)
-            {
                 var resultado = from u in _context.Usuarios
                                 join o in _context.Objetos
                                 on u.Matricula equals o.Fk_usuarios_matricula
-                                where u.Matricula == int.Parse(idUsuarioLogado)
                                 select new
                                 {
-                                    Usuarios = u.Nome,u.Pontos,
-                                    
+                                id = o.Id,
+                                usuarios = u.Nome,
+                                pontos = u.Pontos,
+                                objetos = o.Nome,
+                                descricao = o.Descricao,
+                                categoria = o.Categoria,
+                                tempo_uso = o.Tempo_uso,
+                                foto = $"{Request.Scheme}://{Request.Host}/uploads/{o.Foto}",
+                                prefere_troca = o.Prefere_troca
+                            };
 
-                                    Objetos = o.Nome,
-                                    o.Descricao,
-                                    o.Categoria,
-                                    o.Tempo_uso,
-                                    Foto = $"{Request.Scheme}://{Request.Host}/uploads/{o.Foto}",
-                                    o.Prefere_troca
-                                };
                 return Ok(resultado.ToList());
             }
-            return Unauthorized("Não autenticado");
-
-        }
 
         [HttpGet]
         public IActionResult BuscaObjetoPerfil()
