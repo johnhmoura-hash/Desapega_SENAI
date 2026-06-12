@@ -160,6 +160,7 @@ namespace DesapegaSenai.Controllers
                              where o.Id == id
                              select new
                              {
+                                 id = o.Id,
                                  usuarios = u.Nome,
                                  pontos = u.Pontos,
                                  objetos = o.Nome,

@@ -36,7 +36,10 @@ document.addEventListener("DOMContentLoaded", function () {
 
                     </div>
 
-                    <button class="produto-botao-principal">Eu quero</button>
+                <button class="produto-botao-principal"
+onclick="window.location.href='trocas.html?id=${data.id}'">
+    Eu quero
+</button>
                     <button class="produto-botao-chat">Chat <i class="ri-chat-3-line"></i></button>
                 </div>
             </div>
@@ -79,7 +82,28 @@ document.addEventListener("DOMContentLoaded", function () {
     .catch(error => {
         console.error("Erro no fetch:", error);
     });
+
+
+
+
+
 });
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 
 
