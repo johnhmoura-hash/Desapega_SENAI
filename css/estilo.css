@@ -3,6 +3,11 @@ body{
     margin: 0;
    background: rgb(255, 255, 255);
 }
+
+.selecionado{
+    border: 3px solid green;
+}
+
 /* tela de filtro*/
 
 .input-selct{
