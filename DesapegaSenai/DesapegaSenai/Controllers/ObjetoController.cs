@@ -124,6 +124,15 @@ namespace DesapegaSenai.Controllers
             if (usuario == null)
                 return Unauthorized("Não autenticado");
 
+            int matricula = int.Parse(usuario);
+
+            var totalObjetos = _context.Objetos
+                .Count(o => o.Fk_usuarios_matricula == matricula);
+
+            var totalTrocas = _context.Trocas
+                .Count(t =>
+                    t.Fk_usuarios_remetente == matricula ||
+                    t.Fk_usuarios_destinatario == matricula);
 
             var idUsuarioLogado = Request.Cookies["Idusado"];
             if (idUsuarioLogado != null)
@@ -135,7 +144,9 @@ namespace DesapegaSenai.Controllers
                                 select new
                                 {
                                     Usuarios = u.Nome,u.Pontos,
-                                    
+
+                                    TotalObjetos = totalObjetos,
+                                    TotalTrocas = totalTrocas,
 
                                     Objetos = o.Nome,
                                     o.Descricao,
@@ -191,6 +202,27 @@ namespace DesapegaSenai.Controllers
                 objeto[i].Foto = $"{Request.Scheme}://{Request.Host}/uploads/{nomeArquivo}";
             }
             return Ok(objeto);
+        }
+
+        [HttpGet("categoria/{categoria}")]
+        public IActionResult BuscarPorCategoria(string categoria)
+        {
+            var resultado = from u in _context.Usuarios
+                            join o in _context.Objetos
+                            on u.Matricula equals o.Fk_usuarios_matricula
+                            select new
+                            {
+                                Usuario = u.Nome,
+                                o.Id,
+                                Objeto = o.Nome,
+                                o.Descricao,
+                                o.Categoria,
+                                o.Tempo_uso,
+                                Foto = $"{Request.Scheme}://{Request.Host}/uploads/{o.Foto}",
+                                o.Prefere_troca
+                            };
+
+            return Ok(resultado.ToList());
         }
 
         [HttpPut]

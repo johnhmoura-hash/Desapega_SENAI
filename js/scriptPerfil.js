@@ -41,20 +41,45 @@ document.addEventListener("DOMContentLoaded", function () {
 
         console.log(data);
          const resposta2 = document.getElementById("lin");
-
         if (!resposta2) {
             console.error("Elemento #info não existe no HTML");
             return;
         }
 
         resposta2.innerHTML = "";
-
-        for (let i = 0; i < data.length; i++) {
-
+        
             resposta2.innerHTML += `
-                <h2>${data[i].usuarios}</h2>
-                <i class="ri-money-dollar-circle-line"></i><a>${data[i].pontos},0</a>
+                <h2>${data[0].usuarios}</h2>
+                <i class="ri-money-dollar-circle-line"></i><a>${data[0].pontos},0</a>
+
             `;
+            
+    });
+     fetch('https://localhost:7132/objeto/perfil', {
+        credentials: "include"
+    })
+    .then(response => response.json())
+    .then(data => {
+
+        console.log(data);
+         const resposta3= document.getElementById("seguidores");
+        if (!resposta3) {
+            console.error("Elemento #info não existe no HTML");
+            return;
         }
+
+        
+        resposta3.innerHTML = "";
+        
+            resposta3.innerHTML += `
+                
+                Produtos cadastrados ${data[0].totalObjetos} 
+                &nbsp;&nbsp;
+                Trocados ${data[0].totalTrocas}
+                
+                
+
+            `;
+            
     });
 });

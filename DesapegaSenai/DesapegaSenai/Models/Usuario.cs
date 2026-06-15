@@ -13,5 +13,11 @@ namespace DesapegaSenai.Models
         public int Pontos { get; set; }
         public bool Status_usuario { get; set; }
 
+
+    }
+    public class EstatisticasUsuarioDTO
+    {
+        public int TotalObjetos { get; set; }
+        public int TotalTrocas { get; set; }
     }
 }
