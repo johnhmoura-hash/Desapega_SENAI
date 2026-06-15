@@ -99,6 +99,23 @@
 
 }
 
+.btn-sobre-foto{
+    position: absolute;
+    top: 10px;
+    right: 10px;
+
+    padding: 8px 15px;
+    border: none;
+    border-radius: 20px;
+
+    background: #f5822a;
+    color: white;
+    cursor: pointer;
+
+    z-index: 3;
+}
+
+
 .pesquisar input:hover{
   border-color: #0056b3;
   outline: none;
@@ -161,9 +178,7 @@ body{
     margin-top:200px;
 }
 
-.acoes{
 
-}
 
 .btn-quero{
     width:200px;
@@ -200,6 +215,8 @@ body{
 .btn-cancelar:hover{
     background:#fff5ee;
 }
+
+
 
 .cardr{
     position: relative;
