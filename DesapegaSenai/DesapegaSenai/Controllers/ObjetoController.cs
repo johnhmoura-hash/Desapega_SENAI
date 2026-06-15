@@ -94,6 +94,29 @@ namespace DesapegaSenai.Controllers
             return Ok(caminho);
         }*/
 
+        /*
+        [HttpGet("perfil")]
+        public IActionResult ListaProdutos()
+        {
+            var resultado = from u in _context.Usuarios
+                            join o in _context.Objetos
+                            on u.Matricula equals o.Fk_usuarios_matricula
+                            select new
+                            {
+                                id = o.Id,
+                                usuarios = u.Nome,
+                                pontos = u.Pontos,
+                                objetos = o.Nome,
+                                descricao = o.Descricao,
+                                categoria = o.Categoria,
+                                tempo_uso = o.Tempo_uso,
+                                foto = $"{Request.Scheme}://{Request.Host}/uploads/{o.Foto}",
+                                prefere_troca = o.Prefere_troca
+                            };
+
+            return Ok(resultado.ToList());
+        }*/
+        
         [HttpGet("perfil")]
         public IActionResult BuscarObjetoPerfil()
         {
@@ -125,6 +148,33 @@ namespace DesapegaSenai.Controllers
             }
             return Unauthorized("Não autenticado");
 
+        }
+
+
+        [HttpGet("perfil/{id}")]
+        public IActionResult ProdutoPorId(int id)
+        {
+            var resultado = (from u in _context.Usuarios
+                             join o in _context.Objetos
+                             on u.Matricula equals o.Fk_usuarios_matricula
+                             where o.Id == id
+                             select new
+                             {
+                                 id = o.Id,
+                                 usuarios = u.Nome,
+                                 pontos = u.Pontos,
+                                 objetos = o.Nome,
+                                 descricao = o.Descricao,
+                                 categoria = o.Categoria,
+                                 tempo_uso = o.Tempo_uso,
+                                 foto = $"{Request.Scheme}://{Request.Host}/uploads/{o.Foto}",
+                                 prefere_troca = o.Prefere_troca
+                             }).FirstOrDefault();
+
+            if (resultado == null)
+                return NotFound();
+
+            return Ok(resultado);
         }
 
         [HttpGet]
