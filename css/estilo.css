@@ -1,9 +1,11 @@
 body{
     font-family: Arial, Helvetica, sans-serif;
     margin: 0;
-    background: rgb(226, 234, 241);
+    background: rgb(246, 246, 255);
 
 }
+
+
 
 .selecionado{
     border: 3px solid green;
@@ -181,7 +183,7 @@ body{
   overflow: hidden;
   width: 100%;
   margin: 40px auto;
- max-width: 100%;
+  max-width: 100%;
 
   border: 2px solid #0056b3;
   border-radius: 18px ;
@@ -310,7 +312,7 @@ color: #0056b3;
 .box-produto {
   width: 100%;
   max-width: 480px;
-  border: 2px solid #3b82f6;
+  box-shadow: 0 10PX 25PX rgb(0,0,0,0.1);
   border-radius: 20px;
   padding: 25px;
   margin: 40px auto;
@@ -981,7 +983,10 @@ background-color: #0056b3;
   text-align: left;
 }
 
-
+.cam1{
+    color: #0056b3;
+    margin: 0%;
+}
 
 
 .pagina-produto {

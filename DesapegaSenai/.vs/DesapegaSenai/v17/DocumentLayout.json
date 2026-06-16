@@ -21,10 +21,13 @@
     {
       "AbsoluteMoniker": "D:0:0:{4974C4DE-9B36-4CCF-8B2F-40A54739E552}|DesapegaSenai\\DesapegaSenai.csproj|e:\\leticia victoria\\desapega_senai\\desapegasenai\\desapegasenai\\controllers\\objetocontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
       "RelativeMoniker": "D:0:0:{4974C4DE-9B36-4CCF-8B2F-40A54739E552}|DesapegaSenai\\DesapegaSenai.csproj|solutionrelative:desapegasenai\\controllers\\objetocontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+<<<<<<< HEAD
+=======
     },
     {
       "AbsoluteMoniker": "D:0:0:{4974C4DE-9B36-4CCF-8B2F-40A54739E552}|DesapegaSenai\\DesapegaSenai.csproj|e:\\leticia victoria\\desapega_senai\\desapegasenai\\desapegasenai\\properties\\launchsettings.json||{90A6B3A7-C1A3-4009-A288-E2FF89E96FA0}",
       "RelativeMoniker": "D:0:0:{4974C4DE-9B36-4CCF-8B2F-40A54739E552}|DesapegaSenai\\DesapegaSenai.csproj|solutionrelative:desapegasenai\\properties\\launchsettings.json||{90A6B3A7-C1A3-4009-A288-E2FF89E96FA0}"
+>>>>>>> 05f2c9552d94919ceeda295071a1350011dbd4f5
     }
   ],
   "DocumentGroupContainers": [
@@ -34,7 +37,11 @@
       "DocumentGroups": [
         {
           "DockedWidth": 200,
+<<<<<<< HEAD
+          "SelectedChildIndex": 2,
+=======
           "SelectedChildIndex": 0,
+>>>>>>> 05f2c9552d94919ceeda295071a1350011dbd4f5
           "Children": [
             {
               "$type": "Document",
@@ -87,6 +94,18 @@
             },
             {
               "$type": "Document",
+<<<<<<< HEAD
+              "DocumentIndex": 0,
+              "Title": "ObjetoController.cs",
+              "DocumentMoniker": "C:\\Users\\manha.ceticc\\Documents\\GitHub\\Desapega_SENAI\\DesapegaSenai\\DesapegaSenai\\Controllers\\ObjetoController.cs",
+              "RelativeDocumentMoniker": "DesapegaSenai\\Controllers\\ObjetoController.cs",
+              "ToolTip": "C:\\Users\\manha.ceticc\\Documents\\GitHub\\Desapega_SENAI\\DesapegaSenai\\DesapegaSenai\\Controllers\\ObjetoController.cs*",
+              "RelativeToolTip": "DesapegaSenai\\Controllers\\ObjetoController.cs*",
+              "ViewState": "AgIAALcAAAAAAAAAAADwv/QAAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2026-06-16T11:00:32.418Z",
+              "EditorCaption": ""
+=======
               "DocumentIndex": 1,
               "Title": "UsuarioController.cs",
               "DocumentMoniker": "E:\\leticia victoria\\Desapega_SENAI\\DesapegaSenai\\DesapegaSenai\\Controllers\\UsuarioController.cs",
@@ -112,6 +131,7 @@
             {
               "$type": "Bookmark",
               "Name": "ST:0:0:{56df62a4-05a3-4e5b-aa1a-99371ccfb997}"
+>>>>>>> 05f2c9552d94919ceeda295071a1350011dbd4f5
             }
           ]
         }

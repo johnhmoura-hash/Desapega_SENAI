@@ -97,27 +97,4 @@ resposta.innerHTML += `
         }
     });
 });
-async function buscarCategoria(categoria) {
 
-    const response = await fetch(
-        `https://localhost:7132/objeto/categoria/${categoria}`
-    );
-
-    const data = await response.json();
-
-    const grid = document.getElementById("grid-produtos");
-
-    grid.innerHTML = "";
-
-    data.forEach(objeto => {
-
-        grid.innerHTML += `
-            <div class="produto">
-                <img src="${objeto.foto}" width="200">
-                <h3>${objeto.nome}</h3>
-                <p>${objeto.categoria}</p>
-                <p>${objeto.descricao}</p>
-            </div>
-        `;
-    });
-}
