@@ -1172,6 +1172,7 @@ color: #000;
 }
 
 .btn-cancelar {
+  text-decoration: none;
   flex: 1;
   padding: 12px;
   border-radius: 8px;

@@ -34,10 +34,76 @@ fetch(`https://localhost:7132/Objeto/perfil/${id}` ,{
     `;
 });
 
+fetch("https://localhost:7132/Objeto/perfil",{
+    credentials:"include"
+})
+.then(response => response.json())
+.then(produtos => {
 
+    if(produtos.length > 0){
 
+        let primeiro = produtos[0];
 
+        document.getElementById("nomeUsuario").textContent = primeiro.usuarios;
+        document.getElementById("fotoProduto").src = primeiro.foto;
+        document.getElementById("nomeProduto").textContent = primeiro.objetos;
+        document.getElementById("tempoProduto").textContent = primeiro.tempo_uso;
+    }
 
 });
 
+
+
+
+fetch("https://localhost:7132/Objeto/perfil",{
+    credentials:"include"
+})
+.then(response => response.json())
+.then(produtos => {
+
+    let select = document.getElementById("meusProdutos");
+
+    produtos.forEach(produto => {
+
+        select.innerHTML += `
+            <option value="${produto.objetos}">
+                ${produto.objetos}
+            </option>
+        `;
+    });
+      select.addEventListener("change", function(){
+
+        let produtoSelecionado =
+            produtos.find(p => p.objetos === this.value);
+
+
+
+    document.getElementById("meusProdutos").addEventListener("change", function () {
+
+    let produtoSelecionado =
+        produtos.find(p => p.id == this.value);
+
+    if(produtoSelecionado){
+
+        document.getElementById("nomeUsuario").textContent =
+            produtoSelecionado.usuarios;
+
+        document.getElementById("fotoProduto").src =
+            produtoSelecionado.foto;
+
+        document.getElementById("nomeProduto").textContent =
+            produtoSelecionado.objetos;
+
+        document.getElementById("tempoProduto").textContent =
+            produtoSelecionado.tempo_uso;
+    }
+
+});
+  
+});
+
+});
+
+
+});
 
