@@ -115,8 +115,47 @@ namespace DesapegaSenai.Controllers
                             };
 
             return Ok(resultado.ToList());
-        }*/
+        }
+        [HttpGet("categoria/{categoria}")]
+        public IActionResult BuscarPorCategoria(string categoria)
+        {
+            var resultado = from u in _context.Usuarios
+                            join o in _context.Objetos
+                            on u.Matricula equals o.Fk_usuarios_matricula
+                            select new
+                            {
+                                Usuario = u.Nome,
+                                o.Id,
+                                Objeto = o.Nome,
+                                o.Descricao,
+                                o.Categoria,
+                                o.Tempo_uso,
+                                Foto = $"{Request.Scheme}://{Request.Host}/uploads/{o.Foto}",
+                                o.Prefere_troca
+                            };
+
+            return Ok(resultado.ToList());
+        }
         
+         */
+
+        [HttpGet]
+        public IActionResult BuscaObjetoPerfil()
+        {
+            var objeto = _context.Objetos.ToList();
+
+            for (int i = 0; i < objeto.Count; i++)
+            {
+
+                var pastaBase = Path.Combine(Directory.GetCurrentDirectory(), "wwwroot/uploads");
+                var caminho = Path.Combine(pastaBase, objeto[i].Foto);
+                var nomeArquivo = Path.GetFileName(objeto[i].Foto);
+                objeto[i].Foto = $"{Request.Scheme}://{Request.Host}/uploads/{nomeArquivo}";
+            }
+            return Ok(objeto);
+        }
+
+
         [HttpGet("perfil")]
         public IActionResult BuscarObjetoPerfil()
         {
@@ -188,41 +227,20 @@ namespace DesapegaSenai.Controllers
             return Ok(resultado);
         }
 
-        [HttpGet]
-        public IActionResult BuscaObjetoPerfil()
-        {
-            var objeto = _context.Objetos.ToList();
-
-            for (int i = 0; i < objeto.Count; i++)
-            {
-
-                var pastaBase = Path.Combine(Directory.GetCurrentDirectory(), "wwwroot/uploads");
-                var caminho = Path.Combine(pastaBase, objeto[i].Foto);
-                var nomeArquivo = Path.GetFileName(objeto[i].Foto);
-                objeto[i].Foto = $"{Request.Scheme}://{Request.Host}/uploads/{nomeArquivo}";
-            }
-            return Ok(objeto);
-        }
-
         [HttpGet("categoria/{categoria}")]
         public IActionResult BuscarPorCategoria(string categoria)
         {
-            var resultado = from u in _context.Usuarios
-                            join o in _context.Objetos
-                            on u.Matricula equals o.Fk_usuarios_matricula
-                            select new
-                            {
-                                Usuario = u.Nome,
-                                o.Id,
-                                Objeto = o.Nome,
-                                o.Descricao,
-                                o.Categoria,
-                                o.Tempo_uso,
-                                Foto = $"{Request.Scheme}://{Request.Host}/uploads/{o.Foto}",
-                                o.Prefere_troca
-                            };
+            var objetos = _context.Objetos
+                .Where(o => o.Categoria == categoria)
+                .ToList();
 
-            return Ok(resultado.ToList());
+            foreach (var objeto in objetos)
+            {
+                var nomeArquivo = Path.GetFileName(objeto.Foto);
+                objeto.Foto = $"{Request.Scheme}://{Request.Host}/uploads/{nomeArquivo}";
+            }
+
+            return Ok(objetos);
         }
 
         [HttpPut]
