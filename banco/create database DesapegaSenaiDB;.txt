@@ -1,0 +1,204 @@
+create database DesapegaSenaiDB;
+GO
+Use DesapegaSenaiDB;
+
+/* Lógico_1: */
+
+CREATE TABLE usuarios (
+    matricula int PRIMARY KEY,
+    nome VARCHAR(100),
+    telefone VARCHAR(100),
+    email VARCHAR(100),
+    senha VARCHAR(100),
+    pontos int,
+    status_usuario bit
+);
+
+CREATE TABLE objetos (
+    id int identity  PRIMARY KEY,
+    nome VARCHAR(100),
+    categoria VARCHAR(100),
+    tempo_uso VARCHAR(100),
+    descricao VARCHAR(100),
+    foto 	VARCHAR(255),
+    prefere_troca VARCHAR(100),
+    fk_usuarios_matricula int,
+    status_objeto bit
+);
+
+CREATE TABLE trocas (
+    id int identity  PRIMARY KEY,
+    data DATE,
+    status VARCHAR(100),
+    pontos_proposto int,
+    fk_usuarios_remetente int,
+    fk_objetos_remetente int,
+    fk_usuarios_destinatario int,
+    fk_objetos_destinatario int
+);
+
+CREATE TABLE mensagens (
+    id int identity PRIMARY KEY,
+    conteudo VARCHAR(100),
+    data_hr DATE,
+    fk_usuarios_remetente int,
+    fk_usuarios_destinatario int
+);
+
+CREATE TABLE notificacoes (
+    id int identity  PRIMARY KEY,
+    conteudo VARCHAR(100),
+    data DATE,
+    status VARCHAR(100),
+    fk_usuarios_matricula int
+);
+
+CREATE TABLE denuncias (
+    id int identity PRIMARY KEY,
+    data DATE,
+    destinatario VARCHAR(100),
+    fk_usuarios_matricula int,
+    fk_objetos_id int
+);
+ 
+ALTER TABLE objetos ADD CONSTRAINT FK_objetos_2
+    FOREIGN KEY (fk_usuarios_matricula)
+    REFERENCES usuarios (matricula)
+    ON DELETE NO ACTION;
+ 
+ALTER TABLE trocas ADD CONSTRAINT FK_trocas_remetente 
+    FOREIGN KEY ( fk_usuarios_remetente)
+    REFERENCES usuarios (matricula)
+    ON DELETE NO ACTION;
+
+ALTER TABLE trocas ADD CONSTRAINT FK_trocas_destinatario 
+    FOREIGN KEY ( fk_usuarios_destinatario)
+    REFERENCES usuarios (matricula)
+    ON DELETE NO ACTION;
+ 
+ALTER TABLE trocas ADD CONSTRAINT FK_trocas_objeto_destinatario 
+    FOREIGN KEY (fk_objetos_destinatario)
+    REFERENCES objetos (id)
+    ON DELETE NO ACTION;
+
+ALTER TABLE trocas ADD CONSTRAINT FK_trocas_objeto_remetente 
+    FOREIGN KEY (fk_objetos_remetente)
+    REFERENCES objetos (id)
+    ON DELETE NO ACTION;
+ 
+ALTER TABLE mensagens ADD CONSTRAINT FK_mensagens_remetente
+    FOREIGN KEY (fk_usuarios_remetente)
+    REFERENCES usuarios (matricula)
+    ON DELETE NO ACTION;
+
+    ALTER TABLE mensagens ADD CONSTRAINT FK_mensagens_destinatario
+    FOREIGN KEY (fk_usuarios_destinatario)
+    REFERENCES usuarios (matricula)
+    ON DELETE NO ACTION;
+ 
+ALTER TABLE notificacoes ADD CONSTRAINT FK_notificacoes_2
+    FOREIGN KEY (fk_usuarios_matricula)
+    REFERENCES usuarios (matricula)
+    ON DELETE NO ACTION;
+ 
+ALTER TABLE denuncias ADD CONSTRAINT FK_denuncias_2
+    FOREIGN KEY (fk_usuarios_matricula)
+    REFERENCES usuarios (matricula)
+    ON DELETE NO ACTION;
+ 
+ALTER TABLE denuncias ADD CONSTRAINT FK_denuncias_3
+    FOREIGN KEY (fk_objetos_id)
+    REFERENCES objetos (id)
+    ON DELETE NO ACTION;
+
+    USE DesapegaSenaiDB;
+GO
+
+USE DesapegaSenaiDB;
+GO
+
+-- USUÁRIOS
+INSERT INTO usuarios
+(matricula, nome, telefone, email, senha, pontos, status_usuario)
+VALUES
+(1001, 'João Silva', '79999990001', 'joao@senai.com', '123456', 150, 1),
+(1002, 'Maria Souza', '79999990002', 'maria@senai.com', '123456', 200, 1),
+(1003, 'Pedro Santos', '79999990003', 'pedro@senai.com', '123456', 80, 1),
+(1004, 'Ana Oliveira', '79999990004', 'ana@senai.com', '123456', 300, 1),
+(1005, 'Lucas Costa', '79999990005', 'lucas@senai.com', '123456', 120, 1);
+
+-- OBJETOS
+INSERT INTO objetos
+(nome, categoria, tempo_uso, descricao, foto, prefere_troca, fk_usuarios_matricula, status_objeto)
+VALUES
+('Notebook Dell', 'Eletrônicos', '2 anos', 'Notebook em ótimo estado', 'notebook.jpg', 'Celular', 1001, 1),
+('Bicicleta Caloi', 'Esporte', '1 ano', 'Bicicleta pouco usada', 'bike.jpg', 'Patins', 1002, 1),
+('Violão Giannini', 'Instrumentos', '3 anos', 'Violão conservado', 'violao.jpg', 'Teclado', 1003, 1),
+('Monitor LG 24', 'Eletrônicos', '1 ano', 'Monitor Full HD', 'monitor.jpg', 'Headset', 1004, 1),
+('Cadeira Gamer', 'Móveis', '8 meses', 'Cadeira confortável', 'cadeira.jpg', 'Mesa', 1005, 1);
+
+-- TROCAS
+INSERT INTO trocas
+(data, status, pontos_proposto,
+ fk_usuarios_remetente,
+ fk_objetos_remetente,
+ fk_usuarios_destinatario,
+ fk_objetos_destinatario)
+VALUES
+('2026-05-01', 'Pendente', 50, 1001, 1, 1002, 2),
+('2026-05-05', 'Aceita', 20, 1003, 3, 1004, 4),
+('2026-05-10', 'Recusada', 30, 1005, 5, 1001, 1);
+
+-- MENSAGENS
+INSERT INTO mensagens
+(conteudo, data_hr, fk_usuarios_remetente, fk_usuarios_destinatario)
+VALUES
+('Olá, aceita trocar?', '2026-05-01', 1001, 1002),
+('Tenho interesse na bicicleta.', '2026-05-02', 1003, 1002),
+('Podemos negociar.', '2026-05-03', 1004, 1003),
+('A troca foi concluída.', '2026-05-06', 1002, 1001),
+('Obrigado pela negociação.', '2026-05-07', 1001, 1002);
+
+-- NOTIFICAÇÕES
+INSERT INTO notificacoes
+(conteudo, data, status, fk_usuarios_matricula)
+VALUES
+('Você recebeu uma proposta.', '2026-05-01', 'Não lida', 1002),
+('Nova mensagem recebida.', '2026-05-02', 'Lida', 1003),
+('Troca aceita.', '2026-05-05', 'Lida', 1001),
+('Objeto favoritado.', '2026-05-06', 'Não lida', 1004),
+('Troca recusada.', '2026-05-10', 'Lida', 1005);
+
+-- DENÚNCIAS
+INSERT INTO denuncias
+(data, destinatario, fk_usuarios_matricula, fk_objetos_id)
+VALUES
+('2026-05-08', 'João Silva', 1002, 1),
+('2026-05-09', 'Pedro Santos', 1004, 3),
+('2026-05-10', 'Lucas Costa', 1001, 5);
+
+    INSERT INTO objetos
+(nome, categoria, tempo_uso, descricao, foto, prefere_troca, fk_usuarios_matricula, status_objeto)
+VALUES
+('Smartphone Samsung A54', 'Eletrônicos', '6 meses', 'Celular em perfeito estado', 'a54.jpg', 'Notebook', 1001, 1),
+
+('Mesa de Escritório', 'Móveis', '1 ano', 'Mesa de madeira para estudo ou trabalho', 'mesa.jpg', 'Cadeira Gamer', 1001, 1),
+
+('Headset HyperX Cloud', 'Eletrônicos', '8 meses', 'Headset com microfone e som estéreo', 'headset.jpg', 'Monitor', 1001, 1),
+
+('Livro Clean Code', 'Livros', '2 anos', 'Livro sobre boas práticas de programação', 'cleancode.jpg', 'Livro de Banco de Dados', 1001, 1),
+
+('PlayStation 4 Slim', 'Games', '3 anos', 'Console funcionando perfeitamente', 'ps4.jpg', 'Xbox One', 1001, 1);
+
+
+-- OBJETOS de Maria Souza
+INSERT INTO objetos
+(nome, categoria, tempo_uso, descricao, foto, prefere_troca, fk_usuarios_matricula, status_objeto)
+VALUES
+('Smartphone Samsung', 'Eletrônicos', '1 ano', 'Celular em ótimo estado', 'smartphone.jpg', 'Notebook', 1002, 1),
+('Patins Roller', 'Esporte', '6 meses', 'Patins pouco usados', 'patins.jpg', 'Bicicleta', 1002, 1),
+('Mesa de Escritório', 'Móveis', '2 anos', 'Mesa de madeira resistente', 'mesa.jpg', 'Cadeira Gamer', 1002, 1),
+('Livro Python Básico', 'Livros', '3 meses', 'Livro em excelente estado', 'livro_python.jpg', 'Violão', 1002, 1),
+('Headset Gamer', 'Eletrônicos', '8 meses', 'Headset com som estéreo', 'headset.jpg', 'Monitor', 1002, 1);
+
+
