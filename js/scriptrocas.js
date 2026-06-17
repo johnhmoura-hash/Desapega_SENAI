@@ -71,17 +71,12 @@ fetch("https://localhost:7132/Objeto/perfil",{
             </option>
         `;
     });
-      select.addEventListener("change", function(){
+select.addEventListener("change", function () {
 
-        let produtoSelecionado =
-            produtos.find(p => p.objetos === this.value);
-
-
-
-    document.getElementById("meusProdutos").addEventListener("change", function () {
+    console.log("Selecionado:", this.value);
 
     let produtoSelecionado =
-        produtos.find(p => p.id == this.value);
+        produtos.find(p => p.objetos === this.value);
 
     if(produtoSelecionado){
 
@@ -97,9 +92,6 @@ fetch("https://localhost:7132/Objeto/perfil",{
         document.getElementById("tempoProduto").textContent =
             produtoSelecionado.tempo_uso;
     }
-
-});
-  
 });
 
 });
