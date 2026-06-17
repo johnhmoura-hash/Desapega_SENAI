@@ -16,12 +16,22 @@ document.addEventListener("DOMContentLoaded", function () {
     .then(response => response.json())
     .then(data => {
 
-        console.log(data);
+        produtos = data;
 
-        const grid = document.getElementById("grid-produtos");
+        mostrarProdutos(produtos);
+    
+        
+    })
+    .catch(error => console.error(error));
+
+});
+
+function mostrarProdutos(lista){
+
+   const grid = document.getElementById("grid-produtos");
         grid.innerHTML = "";
 
-        data.forEach(produto => {
+        lista.forEach(produto => {
             grid.innerHTML += `
                 <div class="carde">
                     <div class="imagem-produto">
@@ -36,8 +46,37 @@ document.addEventListener("DOMContentLoaded", function () {
                     </div>
                 </div>
             `;
-        });
-    })
-    .catch(error => console.error(error));
+         });
+}
+
+document.getElementById("filtroTempo").addEventListener("change", function () {
+
+    const filtro = this.value;
+
+    if (filtro === "Todos") {
+        mostrarProdutos(produtos);
+        return;
+    }
+
+   const filtrados = produtos.filter(produto => {
+
+    const tempo = produto.tempo_uso;
+
+    if (filtro === "6 meses +") {
+
+        const meses = parseInt(tempo);
+
+        return tempo.includes("mes") && meses >= 6;
+    }
+
+    if (filtro === "1 ano +") {
+        return tempo.includes("ano");
+    }
+
+    return tempo === filtro;
+
+});
+
+    mostrarProdutos(filtrados);
 
 });
