@@ -1,7 +1,7 @@
 body{
     font-family: Arial, Helvetica, sans-serif;
     margin: 0;
-    background: rgb(246, 246, 255);
+    background: rgb(255, 255, 255);
 
 }
 
@@ -169,12 +169,6 @@ body{
 }
 
 /* slider*/
-.interface {
-  max-width: 1288px;
-  padding: 0 4%;
-  height: 400px;
-}
-
 
  .slider{
   
