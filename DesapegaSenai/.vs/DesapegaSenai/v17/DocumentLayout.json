@@ -46,7 +46,11 @@
               "RelativeToolTip": "DesapegaSenai\\Controllers\\MensagemController.cs",
               "ViewState": "AgIAACMAAAAAAAAAAAAAAA0AAAAJAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+<<<<<<< HEAD
               "WhenOpened": "2026-06-17T10:49:03.288Z",
+=======
+              "WhenOpened": "2026-06-17T10:40:18.348Z",
+>>>>>>> a520960774d06797a27b736dd5f8b252c071a192
               "EditorCaption": ""
             },
             {
@@ -59,7 +63,11 @@
               "RelativeToolTip": "DesapegaSenai\\Properties\\launchSettings.json",
               "ViewState": "AgIAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.001642|",
+<<<<<<< HEAD
               "WhenOpened": "2026-06-17T10:49:03.338Z"
+=======
+              "WhenOpened": "2026-06-17T10:40:18.383Z"
+>>>>>>> a520960774d06797a27b736dd5f8b252c071a192
             },
             {
               "$type": "Document",
@@ -71,7 +79,11 @@
               "RelativeToolTip": "DesapegaSenai\\Models\\Objeto.cs",
               "ViewState": "AgIAAAAAAAAAAAAAAAAAAAwAAAAbAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+<<<<<<< HEAD
               "WhenOpened": "2026-06-17T10:49:03.34Z"
+=======
+              "WhenOpened": "2026-06-17T10:40:18.385Z"
+>>>>>>> a520960774d06797a27b736dd5f8b252c071a192
             },
             {
               "$type": "Document",
@@ -83,7 +95,11 @@
               "RelativeToolTip": "DesapegaSenai\\Controllers\\ObjetoController.cs",
               "ViewState": "AgIAAHEAAAAAAAAAAAAwwIcAAAAwAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+<<<<<<< HEAD
               "WhenOpened": "2026-06-17T10:49:03.341Z"
+=======
+              "WhenOpened": "2026-06-17T10:40:18.386Z"
+>>>>>>> a520960774d06797a27b736dd5f8b252c071a192
             },
             {
               "$type": "Document",
@@ -95,7 +111,11 @@
               "RelativeToolTip": "DesapegaSenai\\Controllers\\UsuarioController.cs",
               "ViewState": "AgIAAAAAAAAAAAAAAAAAAEMAAAA6AAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+<<<<<<< HEAD
               "WhenOpened": "2026-06-17T10:49:03.343Z"
+=======
+              "WhenOpened": "2026-06-17T10:40:18.388Z"
+>>>>>>> a520960774d06797a27b736dd5f8b252c071a192
             },
             {
               "$type": "Document",
@@ -107,11 +127,15 @@
               "RelativeToolTip": "DesapegaSenai\\Models\\Usuario.cs",
               "ViewState": "AgIAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+<<<<<<< HEAD
               "WhenOpened": "2026-06-17T10:49:03.344Z"
             },
             {
               "$type": "Bookmark",
               "Name": "ST:0:0:{cce594b6-0c39-4442-ba28-10c64ac7e89f}"
+=======
+              "WhenOpened": "2026-06-17T10:40:18.389Z"
+>>>>>>> a520960774d06797a27b736dd5f8b252c071a192
             },
             {
               "$type": "Bookmark",
