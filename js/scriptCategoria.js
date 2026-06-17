@@ -67,7 +67,7 @@ document.getElementById("filtroTempo").addEventListener("change", function () {
         const meses = parseInt(tempo);
 
         return tempo.includes("mes") && meses >= 6;
-    }
+    } else  
 
     if (filtro === "1 ano +") {
         return tempo.includes("ano");
