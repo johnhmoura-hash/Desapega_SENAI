@@ -5,15 +5,23 @@
     {
 <<<<<<< HEAD
 =======
+<<<<<<< HEAD
+=======
+>>>>>>> d9a5ef1616444fa0da1647a2ce8329f68939d220
       "AbsoluteMoniker": "D:0:0:{4974C4DE-9B36-4CCF-8B2F-40A54739E552}|DesapegaSenai\\DesapegaSenai.csproj|c:\\users\\manha.ceticc\\documents\\github\\desapega_senai\\desapegasenai\\desapegasenai\\controllers\\mensagemcontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
       "RelativeMoniker": "D:0:0:{4974C4DE-9B36-4CCF-8B2F-40A54739E552}|DesapegaSenai\\DesapegaSenai.csproj|solutionrelative:desapegasenai\\controllers\\mensagemcontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
+<<<<<<< HEAD
+=======
 >>>>>>> 58a1c3fe1e9dec93fb238b6798e1786d2b27ef56
+>>>>>>> d9a5ef1616444fa0da1647a2ce8329f68939d220
       "AbsoluteMoniker": "D:0:0:{4974C4DE-9B36-4CCF-8B2F-40A54739E552}|DesapegaSenai\\DesapegaSenai.csproj|c:\\users\\manha.ceticc\\documents\\github\\desapega_senai\\desapegasenai\\desapegasenai\\controllers\\usuariocontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
       "RelativeMoniker": "D:0:0:{4974C4DE-9B36-4CCF-8B2F-40A54739E552}|DesapegaSenai\\DesapegaSenai.csproj|solutionrelative:desapegasenai\\controllers\\usuariocontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
+<<<<<<< HEAD
+=======
 <<<<<<< HEAD
       "AbsoluteMoniker": "D:0:0:{4974C4DE-9B36-4CCF-8B2F-40A54739E552}|DesapegaSenai\\DesapegaSenai.csproj|c:\\users\\manha.ceticc\\documents\\github\\desapega_senai\\desapegasenai\\desapegasenai\\controllers\\mensagemcontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
       "RelativeMoniker": "D:0:0:{4974C4DE-9B36-4CCF-8B2F-40A54739E552}|DesapegaSenai\\DesapegaSenai.csproj|solutionrelative:desapegasenai\\controllers\\mensagemcontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
@@ -21,6 +29,7 @@
     {
 =======
 >>>>>>> 58a1c3fe1e9dec93fb238b6798e1786d2b27ef56
+>>>>>>> d9a5ef1616444fa0da1647a2ce8329f68939d220
       "AbsoluteMoniker": "D:0:0:{4974C4DE-9B36-4CCF-8B2F-40A54739E552}|DesapegaSenai\\DesapegaSenai.csproj|c:\\users\\manha.ceticc\\documents\\github\\desapega_senai\\desapegasenai\\desapegasenai\\models\\usuario.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
       "RelativeMoniker": "D:0:0:{4974C4DE-9B36-4CCF-8B2F-40A54739E552}|DesapegaSenai\\DesapegaSenai.csproj|solutionrelative:desapegasenai\\models\\usuario.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
@@ -45,10 +54,14 @@
         {
           "DockedWidth": 200,
 <<<<<<< HEAD
+          "SelectedChildIndex": 0,
+=======
+<<<<<<< HEAD
           "SelectedChildIndex": 4,
 =======
           "SelectedChildIndex": 0,
 >>>>>>> 58a1c3fe1e9dec93fb238b6798e1786d2b27ef56
+>>>>>>> d9a5ef1616444fa0da1647a2ce8329f68939d220
           "Children": [
             {
               "$type": "Document",
@@ -61,6 +74,9 @@
               "ViewState": "AgIAACMAAAAAAAAAAAAAAA0AAAAJAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
 <<<<<<< HEAD
+              "WhenOpened": "2026-06-17T10:53:20.864Z",
+=======
+<<<<<<< HEAD
               "WhenOpened": "2026-06-17T12:33:05.761Z"
 =======
 <<<<<<< HEAD
@@ -68,6 +84,7 @@
 =======
               "WhenOpened": "2026-06-17T10:40:18.348Z",
 >>>>>>> a520960774d06797a27b736dd5f8b252c071a192
+>>>>>>> d9a5ef1616444fa0da1647a2ce8329f68939d220
               "EditorCaption": ""
 >>>>>>> 58a1c3fe1e9dec93fb238b6798e1786d2b27ef56
             },
@@ -82,6 +99,9 @@
               "ViewState": "AgIAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.001642|",
 <<<<<<< HEAD
+              "WhenOpened": "2026-06-17T10:53:20.911Z"
+=======
+<<<<<<< HEAD
               "WhenOpened": "2026-06-17T12:33:05.798Z"
 =======
 <<<<<<< HEAD
@@ -90,6 +110,7 @@
               "WhenOpened": "2026-06-17T10:40:18.383Z"
 >>>>>>> a520960774d06797a27b736dd5f8b252c071a192
 >>>>>>> 58a1c3fe1e9dec93fb238b6798e1786d2b27ef56
+>>>>>>> d9a5ef1616444fa0da1647a2ce8329f68939d220
             },
             {
               "$type": "Document",
@@ -102,6 +123,9 @@
               "ViewState": "AgIAAAAAAAAAAAAAAAAAAAwAAAAbAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
 <<<<<<< HEAD
+              "WhenOpened": "2026-06-17T10:53:20.911Z"
+=======
+<<<<<<< HEAD
               "WhenOpened": "2026-06-17T12:33:05.798Z"
 =======
 <<<<<<< HEAD
@@ -110,6 +134,7 @@
               "WhenOpened": "2026-06-17T10:40:18.385Z"
 >>>>>>> a520960774d06797a27b736dd5f8b252c071a192
 >>>>>>> 58a1c3fe1e9dec93fb238b6798e1786d2b27ef56
+>>>>>>> d9a5ef1616444fa0da1647a2ce8329f68939d220
             },
             {
               "$type": "Document",
@@ -121,6 +146,12 @@
               "RelativeToolTip": "DesapegaSenai\\Controllers\\ObjetoController.cs",
               "ViewState": "AgIAAHEAAAAAAAAAAAAwwIcAAAAwAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+<<<<<<< HEAD
+              "WhenOpened": "2026-06-17T10:53:20.911Z"
+            },
+            {
+              "$type": "Document",
+=======
 <<<<<<< HEAD
               "WhenOpened": "2026-06-17T12:33:05.798Z"
             },
@@ -136,6 +167,7 @@
             },
             {
               "$type": "Document",
+>>>>>>> d9a5ef1616444fa0da1647a2ce8329f68939d220
               "DocumentIndex": 1,
 >>>>>>> 58a1c3fe1e9dec93fb238b6798e1786d2b27ef56
               "Title": "UsuarioController.cs",
@@ -146,6 +178,9 @@
               "ViewState": "AgIAAAAAAAAAAAAAAAAAAEMAAAA6AAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
 <<<<<<< HEAD
+              "WhenOpened": "2026-06-17T10:53:20.911Z"
+=======
+<<<<<<< HEAD
               "WhenOpened": "2026-06-17T12:33:05.798Z",
               "EditorCaption": ""
 =======
@@ -155,6 +190,7 @@
               "WhenOpened": "2026-06-17T10:40:18.388Z"
 >>>>>>> a520960774d06797a27b736dd5f8b252c071a192
 >>>>>>> 58a1c3fe1e9dec93fb238b6798e1786d2b27ef56
+>>>>>>> d9a5ef1616444fa0da1647a2ce8329f68939d220
             },
             {
               "$type": "Document",
@@ -166,6 +202,9 @@
               "RelativeToolTip": "DesapegaSenai\\Models\\Usuario.cs",
               "ViewState": "AgIAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+<<<<<<< HEAD
+              "WhenOpened": "2026-06-17T10:53:20.927Z"
+=======
 <<<<<<< HEAD
               "WhenOpened": "2026-06-17T12:33:05.808Z"
 =======
@@ -179,17 +218,24 @@
               "WhenOpened": "2026-06-17T10:40:18.389Z"
 >>>>>>> a520960774d06797a27b736dd5f8b252c071a192
 >>>>>>> 58a1c3fe1e9dec93fb238b6798e1786d2b27ef56
+>>>>>>> d9a5ef1616444fa0da1647a2ce8329f68939d220
             },
             {
               "$type": "Bookmark",
               "Name": "ST:0:0:{56df62a4-05a3-4e5b-aa1a-99371ccfb997}"
 <<<<<<< HEAD
+=======
+<<<<<<< HEAD
+>>>>>>> d9a5ef1616444fa0da1647a2ce8329f68939d220
             },
             {
               "$type": "Bookmark",
               "Name": "ST:0:0:{cce594b6-0c39-4442-ba28-10c64ac7e89f}"
+<<<<<<< HEAD
+=======
 =======
 >>>>>>> 58a1c3fe1e9dec93fb238b6798e1786d2b27ef56
+>>>>>>> d9a5ef1616444fa0da1647a2ce8329f68939d220
             }
           ]
         }

@@ -65,7 +65,7 @@ document.addEventListener("DOMContentLoaded", function () {
     .then(response => response.json())
     .then(data => {
 
-        console.log(data);
+        
         
 
         const resposta = document.getElementById("grid-produtos");
@@ -93,7 +93,7 @@ resposta.innerHTML += `
     </div>
 </div>
 `;
-            console.log(document.getElementById("grid-produtos").innerHTML);;
+            ;
         }
     });
 });
