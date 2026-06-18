@@ -74,7 +74,6 @@ document.addEventListener("DOMContentLoaded", function () {
             resposta3.innerHTML += `
                 
                 Produtos cadastrados ${data[0].totalObjetos} 
-                &nbsp;&nbsp;
                 Trocados ${data[0].totalTrocas}
                 
                 
