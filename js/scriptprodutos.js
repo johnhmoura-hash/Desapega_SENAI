@@ -20,19 +20,31 @@ document.addEventListener("DOMContentLoaded", function () {
         resposta.innerHTML = `
             <div class="produto-topo-area">
 
+
+            
                 <div class="produto-imagem-box">
                     <img src="${data.foto}">
                 </div>
 
                 <div class="produto-card-lateral">
 
-                    <h2 class="produto-titulo">${data.objetos}</h2>
+                    <h3 class="produto-imagem-foto ">${data.objetos}</h3>
 
                     <div class="produto-usuario-area">
                     <div class="produto-usuario-foto"> <img src=""> </div>
                         <span class="produto-usuario-nome">
                             <p>${data.usuarios}</p>
+
+                                                 
+                
+                
                         </span>
+
+
+        
+                            
+
+         
 
                     </div>
 

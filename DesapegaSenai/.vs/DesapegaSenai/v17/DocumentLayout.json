@@ -1,8 +1,9 @@
 {
   "Version": 1,
-  "WorkspaceRootPath": "C:\\Users\\manha.ceticc\\Documents\\GitHub\\Desapega_SENAI\\DesapegaSenai\\",
+  "WorkspaceRootPath": "E:\\leticia victoria\\Desapega_SENAI\\DesapegaSenai\\",
   "Documents": [
     {
+<<<<<<< HEAD
       "AbsoluteMoniker": "D:0:0:{4974C4DE-9B36-4CCF-8B2F-40A54739E552}|DesapegaSenai\\DesapegaSenai.csproj|c:\\users\\manha.ceticc\\documents\\github\\desapega_senai\\desapegasenai\\desapegasenai\\controllers\\mensagemcontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
       "RelativeMoniker": "D:0:0:{4974C4DE-9B36-4CCF-8B2F-40A54739E552}|DesapegaSenai\\DesapegaSenai.csproj|solutionrelative:desapegasenai\\controllers\\mensagemcontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
@@ -21,6 +22,30 @@
     {
       "AbsoluteMoniker": "D:0:0:{4974C4DE-9B36-4CCF-8B2F-40A54739E552}|DesapegaSenai\\DesapegaSenai.csproj|c:\\users\\manha.ceticc\\documents\\github\\desapega_senai\\desapegasenai\\desapegasenai\\data\\desapegacontext.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
       "RelativeMoniker": "D:0:0:{4974C4DE-9B36-4CCF-8B2F-40A54739E552}|DesapegaSenai\\DesapegaSenai.csproj|solutionrelative:desapegasenai\\data\\desapegacontext.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+=======
+      "AbsoluteMoniker": "D:0:0:{4974C4DE-9B36-4CCF-8B2F-40A54739E552}|DesapegaSenai\\DesapegaSenai.csproj|e:\\leticia victoria\\desapega_senai\\desapegasenai\\desapegasenai\\controllers\\mensagemcontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{4974C4DE-9B36-4CCF-8B2F-40A54739E552}|DesapegaSenai\\DesapegaSenai.csproj|solutionrelative:desapegasenai\\controllers\\mensagemcontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{4974C4DE-9B36-4CCF-8B2F-40A54739E552}|DesapegaSenai\\DesapegaSenai.csproj|e:\\leticia victoria\\desapega_senai\\desapegasenai\\desapegasenai\\controllers\\usuariocontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{4974C4DE-9B36-4CCF-8B2F-40A54739E552}|DesapegaSenai\\DesapegaSenai.csproj|solutionrelative:desapegasenai\\controllers\\usuariocontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{4974C4DE-9B36-4CCF-8B2F-40A54739E552}|DesapegaSenai\\DesapegaSenai.csproj|e:\\leticia victoria\\desapega_senai\\desapegasenai\\desapegasenai\\models\\usuario.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{4974C4DE-9B36-4CCF-8B2F-40A54739E552}|DesapegaSenai\\DesapegaSenai.csproj|solutionrelative:desapegasenai\\models\\usuario.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{4974C4DE-9B36-4CCF-8B2F-40A54739E552}|DesapegaSenai\\DesapegaSenai.csproj|e:\\leticia victoria\\desapega_senai\\desapegasenai\\desapegasenai\\models\\objeto.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{4974C4DE-9B36-4CCF-8B2F-40A54739E552}|DesapegaSenai\\DesapegaSenai.csproj|solutionrelative:desapegasenai\\models\\objeto.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{4974C4DE-9B36-4CCF-8B2F-40A54739E552}|DesapegaSenai\\DesapegaSenai.csproj|e:\\leticia victoria\\desapega_senai\\desapegasenai\\desapegasenai\\controllers\\objetocontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{4974C4DE-9B36-4CCF-8B2F-40A54739E552}|DesapegaSenai\\DesapegaSenai.csproj|solutionrelative:desapegasenai\\controllers\\objetocontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{4974C4DE-9B36-4CCF-8B2F-40A54739E552}|DesapegaSenai\\DesapegaSenai.csproj|e:\\leticia victoria\\desapega_senai\\desapegasenai\\desapegasenai\\properties\\launchsettings.json||{90A6B3A7-C1A3-4009-A288-E2FF89E96FA0}",
+      "RelativeMoniker": "D:0:0:{4974C4DE-9B36-4CCF-8B2F-40A54739E552}|DesapegaSenai\\DesapegaSenai.csproj|solutionrelative:desapegasenai\\properties\\launchsettings.json||{90A6B3A7-C1A3-4009-A288-E2FF89E96FA0}"
+>>>>>>> 780fb635610e6dce023a9e037a3430b93571c7ef
     }
   ],
   "DocumentGroupContainers": [
@@ -30,7 +55,11 @@
       "DocumentGroups": [
         {
           "DockedWidth": 200,
+<<<<<<< HEAD
           "SelectedChildIndex": 2,
+=======
+          "SelectedChildIndex": 0,
+>>>>>>> 780fb635610e6dce023a9e037a3430b93571c7ef
           "Children": [
             {
               "$type": "Bookmark",
@@ -44,17 +73,24 @@
               "$type": "Document",
               "DocumentIndex": 0,
               "Title": "MensagemController.cs",
-              "DocumentMoniker": "C:\\Users\\manha.ceticc\\Documents\\GitHub\\Desapega_SENAI\\DesapegaSenai\\DesapegaSenai\\Controllers\\MensagemController.cs",
+              "DocumentMoniker": "E:\\leticia victoria\\Desapega_SENAI\\DesapegaSenai\\DesapegaSenai\\Controllers\\MensagemController.cs",
               "RelativeDocumentMoniker": "DesapegaSenai\\Controllers\\MensagemController.cs",
-              "ToolTip": "C:\\Users\\manha.ceticc\\Documents\\GitHub\\Desapega_SENAI\\DesapegaSenai\\DesapegaSenai\\Controllers\\MensagemController.cs",
+              "ToolTip": "E:\\leticia victoria\\Desapega_SENAI\\DesapegaSenai\\DesapegaSenai\\Controllers\\MensagemController.cs",
               "RelativeToolTip": "DesapegaSenai\\Controllers\\MensagemController.cs",
+<<<<<<< HEAD
               "ViewState": "AgIAAAYAAAAAAAAAAAAAABEAAAARAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
               "WhenOpened": "2026-06-18T13:24:22.022Z",
+=======
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAA0AAAAJAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2026-06-10T11:42:31.693Z",
+>>>>>>> 780fb635610e6dce023a9e037a3430b93571c7ef
               "EditorCaption": ""
             },
             {
               "$type": "Document",
+<<<<<<< HEAD
               "DocumentIndex": 1,
               "Title": "appsettings.json",
               "DocumentMoniker": "C:\\Users\\manha.ceticc\\Documents\\GitHub\\Desapega_SENAI\\DesapegaSenai\\DesapegaSenai\\appsettings.json",
@@ -65,10 +101,58 @@
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.001642|",
               "WhenOpened": "2026-06-18T13:24:15.92Z",
               "EditorCaption": ""
+=======
+              "DocumentIndex": 5,
+              "Title": "launchSettings.json",
+              "DocumentMoniker": "E:\\leticia victoria\\Desapega_SENAI\\DesapegaSenai\\DesapegaSenai\\Properties\\launchSettings.json",
+              "RelativeDocumentMoniker": "DesapegaSenai\\Properties\\launchSettings.json",
+              "ToolTip": "E:\\leticia victoria\\Desapega_SENAI\\DesapegaSenai\\DesapegaSenai\\Properties\\launchSettings.json",
+              "RelativeToolTip": "DesapegaSenai\\Properties\\launchSettings.json",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.001642|",
+              "WhenOpened": "2026-06-02T11:04:09.724Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 3,
+              "Title": "Objeto.cs",
+              "DocumentMoniker": "E:\\leticia victoria\\Desapega_SENAI\\DesapegaSenai\\DesapegaSenai\\Models\\Objeto.cs",
+              "RelativeDocumentMoniker": "DesapegaSenai\\Models\\Objeto.cs",
+              "ToolTip": "E:\\leticia victoria\\Desapega_SENAI\\DesapegaSenai\\DesapegaSenai\\Models\\Objeto.cs",
+              "RelativeToolTip": "DesapegaSenai\\Models\\Objeto.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAwAAAAbAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2026-06-02T11:04:09.74Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 4,
+              "Title": "ObjetoController.cs",
+              "DocumentMoniker": "E:\\leticia victoria\\Desapega_SENAI\\DesapegaSenai\\DesapegaSenai\\Controllers\\ObjetoController.cs",
+              "RelativeDocumentMoniker": "DesapegaSenai\\Controllers\\ObjetoController.cs",
+              "ToolTip": "E:\\leticia victoria\\Desapega_SENAI\\DesapegaSenai\\DesapegaSenai\\Controllers\\ObjetoController.cs",
+              "RelativeToolTip": "DesapegaSenai\\Controllers\\ObjetoController.cs",
+              "ViewState": "AgIAAHEAAAAAAAAAAAAwwIcAAAAwAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2026-06-02T11:04:09.74Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 1,
+              "Title": "UsuarioController.cs",
+              "DocumentMoniker": "E:\\leticia victoria\\Desapega_SENAI\\DesapegaSenai\\DesapegaSenai\\Controllers\\UsuarioController.cs",
+              "RelativeDocumentMoniker": "DesapegaSenai\\Controllers\\UsuarioController.cs",
+              "ToolTip": "E:\\leticia victoria\\Desapega_SENAI\\DesapegaSenai\\DesapegaSenai\\Controllers\\UsuarioController.cs",
+              "RelativeToolTip": "DesapegaSenai\\Controllers\\UsuarioController.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAEMAAAA6AAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2026-06-02T11:04:09.74Z"
+>>>>>>> 780fb635610e6dce023a9e037a3430b93571c7ef
             },
             {
               "$type": "Document",
               "DocumentIndex": 2,
+<<<<<<< HEAD
               "Title": "Program.cs",
               "DocumentMoniker": "C:\\Users\\manha.ceticc\\Documents\\GitHub\\Desapega_SENAI\\DesapegaSenai\\DesapegaSenai\\Program.cs",
               "RelativeDocumentMoniker": "DesapegaSenai\\Program.cs",
@@ -104,6 +188,20 @@
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
               "WhenOpened": "2026-06-18T13:23:53.793Z",
               "EditorCaption": ""
+=======
+              "Title": "Usuario.cs",
+              "DocumentMoniker": "E:\\leticia victoria\\Desapega_SENAI\\DesapegaSenai\\DesapegaSenai\\Models\\Usuario.cs",
+              "RelativeDocumentMoniker": "DesapegaSenai\\Models\\Usuario.cs",
+              "ToolTip": "E:\\leticia victoria\\Desapega_SENAI\\DesapegaSenai\\DesapegaSenai\\Models\\Usuario.cs",
+              "RelativeToolTip": "DesapegaSenai\\Models\\Usuario.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2026-06-02T11:04:09.74Z"
+            },
+            {
+              "$type": "Bookmark",
+              "Name": "ST:0:0:{56df62a4-05a3-4e5b-aa1a-99371ccfb997}"
+>>>>>>> 780fb635610e6dce023a9e037a3430b93571c7ef
             }
           ]
         }
