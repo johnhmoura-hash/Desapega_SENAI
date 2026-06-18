@@ -28,5 +28,10 @@ namespace DesapegaSenai.Models
             Status_objeto = status_objeto;
 
         }
+
+        public Objeto()
+        {
+        }
+
     }
 }

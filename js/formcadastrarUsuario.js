@@ -10,7 +10,7 @@ myForm.addEventListener('submit', function (event) {
 
     event.preventDefault();
 
-    const valido =
+   /* const valido =
         validarNome() &&
         validarMatricula() &&
         validarNumTelefone() &&
@@ -22,8 +22,8 @@ myForm.addEventListener('submit', function (event) {
     if (valido) {
          enviarProduto();
     }
-});
-function enviarProduto(){
+
+function enviarProduto(){*/
     fetch('https://localhost:7132/usuario/cadastrar', {
         method: 'POST',
         credentials: 'include',
@@ -53,8 +53,31 @@ function enviarProduto(){
     .catch(error => {
        
     });
-}
+});
+if (numTelefone) numTelefone.addEventListener("keyup", validarNumTelefone);
+function validarNumTelefone() {
 
+    const numLimpo = numTelefone.value.replace(/\D/g, '');
+
+    if (numLimpo === '') {
+        validarErro(numTelefone, 'Campo obrigatório');
+       return false;
+
+    } else if (numLimpo.length !== 11) { 
+        validarErro(numTelefone, 'Formato incorreto');
+        return false;
+
+    } else {
+        
+        numTelefone.value = numLimpo.replace(
+            /^(\d{2})(\d{5})(\d{4})$/,
+            "($1) $2-$3"
+        );
+
+    }
+
+}
+/*
 if (nome) nome.addEventListener("keyup", validarNome);
 if (senha) senha.addEventListener("keyup", validarSenha);
 if (numMatricula) numMatricula.addEventListener("keyup", validarMatricula);
@@ -205,4 +228,11 @@ function validarSucesso(input){
 
 function isEmail(email) {
     return /^[a-zA-Z0-9._%+-]+@[a-zA-Z0-9-]+\.senai\.br$/.test(email);
+}*/
+function validarSucesso(input){
+    const campo = input.parentElement;
+    const small = campo.querySelector("small");
+
+    small.innerText = "";
+    campo.className = "campo success";
 }
