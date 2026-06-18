@@ -22,6 +22,8 @@ myForm.addEventListener('submit', function (event) {
     if (valido) {
          enviarProduto();
     }
+});
+function enviarProduto(){
     fetch('https://localhost:7132/usuario/cadastrar', {
         method: 'POST',
         credentials: 'include',
@@ -51,9 +53,7 @@ myForm.addEventListener('submit', function (event) {
     .catch(error => {
        
     });
-
-});
-
+}
 
 if (nome) nome.addEventListener("keyup", validarNome);
 if (senha) senha.addEventListener("keyup", validarSenha);

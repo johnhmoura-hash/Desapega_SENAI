@@ -111,9 +111,6 @@ ALTER TABLE denuncias ADD CONSTRAINT FK_denuncias_3
     REFERENCES objetos (id)
     ON DELETE NO ACTION;
 
-    USE DesapegaSenaiDB;
-GO
-
 USE DesapegaSenaiDB;
 GO
 
@@ -133,9 +130,9 @@ INSERT INTO objetos
 VALUES
 ('Notebook Dell', 'Eletrônicos', '2 anos', 'Notebook em ótimo estado', 'notebook.jpg', 'Celular', 1001, 1),
 ('Bicicleta Caloi', 'Esporte', '1 ano', 'Bicicleta pouco usada', 'bike.jpg', 'Patins', 1002, 1),
-('Violão Giannini', 'Instrumentos', '3 anos', 'Violão conservado', 'violao.jpg', 'Teclado', 1003, 1),
+('Violão Giannini', 'Outros', '3 anos', 'Violão conservado', 'violao.jpg', 'Teclado', 1003, 1),
 ('Monitor LG 24', 'Eletrônicos', '1 ano', 'Monitor Full HD', 'monitor.jpg', 'Headset', 1004, 1),
-('Cadeira Gamer', 'Móveis', '8 meses', 'Cadeira confortável', 'cadeira.jpg', 'Mesa', 1005, 1);
+('Cadeira Gamer', 'Objetos', '8 meses', 'Cadeira confortável', 'cadeira.jpg', 'Mesa', 1005, 1);
 
 -- TROCAS
 INSERT INTO trocas
@@ -177,28 +174,86 @@ VALUES
 ('2026-05-09', 'Pedro Santos', 1004, 3),
 ('2026-05-10', 'Lucas Costa', 1001, 5);
 
-    INSERT INTO objetos
+-- OBJETOS ADICIONAIS DE JOÃO
+INSERT INTO objetos
 (nome, categoria, tempo_uso, descricao, foto, prefere_troca, fk_usuarios_matricula, status_objeto)
 VALUES
 ('Smartphone Samsung A54', 'Eletrônicos', '6 meses', 'Celular em perfeito estado', 'a54.jpg', 'Notebook', 1001, 1),
-
-('Mesa de Escritório', 'Móveis', '1 ano', 'Mesa de madeira para estudo ou trabalho', 'mesa.jpg', 'Cadeira Gamer', 1001, 1),
-
+('Mesa de Escritório', 'Objetos', '1 ano', 'Mesa de madeira para estudo ou trabalho', 'mesa.jpg', 'Cadeira Gamer', 1001, 1),
 ('Headset HyperX Cloud', 'Eletrônicos', '8 meses', 'Headset com microfone e som estéreo', 'headset.jpg', 'Monitor', 1001, 1),
+('Livro Clean Code', 'Livraria', '2 anos', 'Livro sobre boas práticas de programação', 'cleancode.jpg', 'Livro de Banco de Dados', 1001, 1),
+('PlayStation 4 Slim', 'Eletrônicos', '3 anos', 'Console funcionando perfeitamente', 'ps4.jpg', 'Xbox One', 1001, 1);
 
-('Livro Clean Code', 'Livros', '2 anos', 'Livro sobre boas práticas de programação', 'cleancode.jpg', 'Livro de Banco de Dados', 1001, 1),
-
-('PlayStation 4 Slim', 'Games', '3 anos', 'Console funcionando perfeitamente', 'ps4.jpg', 'Xbox One', 1001, 1);
-
-
--- OBJETOS de Maria Souza
+-- OBJETOS DE MARIA SOUZA
 INSERT INTO objetos
 (nome, categoria, tempo_uso, descricao, foto, prefere_troca, fk_usuarios_matricula, status_objeto)
 VALUES
 ('Smartphone Samsung', 'Eletrônicos', '1 ano', 'Celular em ótimo estado', 'smartphone.jpg', 'Notebook', 1002, 1),
 ('Patins Roller', 'Esporte', '6 meses', 'Patins pouco usados', 'patins.jpg', 'Bicicleta', 1002, 1),
-('Mesa de Escritório', 'Móveis', '2 anos', 'Mesa de madeira resistente', 'mesa.jpg', 'Cadeira Gamer', 1002, 1),
-('Livro Python Básico', 'Livros', '3 meses', 'Livro em excelente estado', 'livro_python.jpg', 'Violão', 1002, 1),
+('Mesa de Escritório', 'Objetos', '2 anos', 'Mesa de madeira resistente', 'mesa.jpg', 'Cadeira Gamer', 1002, 1),
+('Livro Python Básico', 'Livraria', '3 meses', 'Livro em excelente estado', 'livro_python.jpg', 'Violão', 1002, 1),
 ('Headset Gamer', 'Eletrônicos', '8 meses', 'Headset com som estéreo', 'headset.jpg', 'Monitor', 1002, 1);
+
+-- OBJETOS DE PEDRO SANTOS
+INSERT INTO objetos
+(nome, categoria, tempo_uso, descricao, foto, prefere_troca, fk_usuarios_matricula, status_objeto)
+VALUES
+('Mochila Escolar', 'Papelaria', '1 ano', 'Mochila em bom estado', 'mochila.jpg', 'Livro', 1003, 1),
+('Camisa Polo', 'Vestuário', '6 meses', 'Camisa pouco usada', 'camisa.jpg', 'Boné', 1003, 1),
+('Luminária LED', 'Objetos', '8 meses', 'Luminária para mesa de estudos', 'luminaria.jpg', 'Relógio', 1003, 1),
+('Caderno Universitário', 'Papelaria', '2 meses', 'Caderno novo', 'caderno.jpg', 'Canetas', 1003, 1),
+('Tênis Esportivo', 'Moda', '1 ano', 'Tênis confortável', 'tenis.jpg', 'Mochila', 1003, 1);
+
+-- OBJETOS DE ANA OLIVEIRA
+INSERT INTO objetos
+(nome, categoria, tempo_uso, descricao, foto, prefere_troca, fk_usuarios_matricula, status_objeto)
+VALUES
+('Tablet Samsung', 'Eletrônicos', '1 ano', 'Tablet funcionando perfeitamente', 'tablet.jpg', 'Notebook', 1004, 1),
+('Vestido Social', 'Moda', '4 meses', 'Vestido usado apenas uma vez', 'vestido.jpg', 'Bolsa', 1004, 1),
+('Quadro Decorativo', 'Objetos', '1 ano', 'Quadro moderno', 'quadro.jpg', 'Luminária', 1004, 1),
+('Livro de Matemática', 'Livraria', '2 anos', 'Livro em ótimo estado', 'matematica.jpg', 'Livro de Física', 1004, 1),
+('Bola de Futebol', 'Esporte', '5 meses', 'Bola oficial', 'bola.jpg', 'Chuteira', 1004, 1);
+
+-- OBJETOS DE LUCAS COSTA
+INSERT INTO objetos
+(nome, categoria, tempo_uso, descricao, foto, prefere_troca, fk_usuarios_matricula, status_objeto)
+VALUES
+('Jaqueta Jeans', 'Moda', '1 ano', 'Jaqueta conservada', 'jaqueta.jpg', 'Camisa', 1005, 1),
+('Skate', 'Esporte', '8 meses', 'Skate pouco usado', 'skate.jpg', 'Patins', 1005, 1),
+('Organizador de Mesa', 'Papelaria', '3 meses', 'Organizador para escritório', 'organizador.jpg', 'Caderno', 1005, 1),
+('Relógio de Parede', 'Objetos', '2 anos', 'Relógio funcionando perfeitamente', 'relogio.jpg', 'Quadro', 1005, 1),
+('Caixa Organizadora', 'Objetos', '6 meses', 'Caixa para armazenar materiais', 'caixa.jpg', 'Prateleira', 1005, 1);
+
+
+
+
+
+
+-- OBJETOS DE PAPELARIA E LIVRARIA PARA MARIA SOUZA (1002)
+
+INSERT INTO objetos
+(nome, categoria, tempo_uso, descricao, foto, prefere_troca, fk_usuarios_matricula, status_objeto)
+VALUES
+-- Papelaria
+('Kit Canetas Stabilo', 'Papelaria', '3 meses', 'Conjunto com 10 canetas coloridas', 'stabilo.jpg', 'Caderno Universitário', 1002, 1),
+
+('Caderno Universitário 10 Matérias', 'Papelaria', 'Novo', 'Caderno sem uso com capa dura', 'caderno.jpg', 'Canetas Coloridas', 1002, 1),
+
+('Estojo Escolar', 'Papelaria', '6 meses', 'Estojo grande com divisórias', 'estojo.jpg', 'Agenda', 1002, 1),
+
+('Agenda 2026', 'Papelaria', 'Novo', 'Agenda anual organizada', 'agenda.jpg', 'Bloco de Anotações', 1002, 1),
+
+('Calculadora Científica Casio', 'Papelaria', '1 ano', 'Calculadora científica em ótimo estado', 'calculadora.jpg', 'Livro de Matemática', 1002, 1),
+
+-- Livraria
+('Livro Dom Casmurro', 'Livraria', '2 anos', 'Clássico de Machado de Assis', 'dom_casmurro.jpg', 'Livro de Romance', 1002, 1),
+
+('Livro Algoritmos e Lógica de Programação', 'Livraria', '1 ano', 'Livro para iniciantes em programação', 'algoritmos.jpg', 'Livro de Banco de Dados', 1002, 1),
+
+('Livro Banco de Dados', 'Livraria', '8 meses', 'Fundamentos de modelagem e SQL', 'banco_dados.jpg', 'Livro de Programação Web', 1002, 1),
+
+('Livro Programação em Python', 'Livraria', '6 meses', 'Guia completo de Python para iniciantes', 'python.jpg', 'Livro Java', 1002, 1),
+
+('Livro Engenharia de Software', 'Livraria', '1 ano', 'Conceitos e práticas de desenvolvimento de software', 'eng_software.jpg', 'Livro de Gestão de Projetos', 1002, 1);
 
 

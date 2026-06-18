@@ -65,8 +65,6 @@ document.addEventListener("DOMContentLoaded", function () {
     .then(response => response.json())
     .then(data => {
 
-        
-        
 
         const resposta = document.getElementById("grid-produtos");
 
