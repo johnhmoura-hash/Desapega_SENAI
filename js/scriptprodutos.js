@@ -1,3 +1,22 @@
+
+async function abrirTroca(idProdutoDesejado){
+
+    const resposta = await fetch(
+        "https://localhost:7132/Objeto/perfil",
+        { credentials:"include" }
+    );
+
+    const meusProdutos = await resposta.json();
+
+    if(meusProdutos.length === 0){
+
+        document.getElementById("popup-sem-produto").style.display = "flex";
+        return;
+    }
+
+    window.location.href = `trocas.html?id=${idProdutoDesejado}`;
+}
+
 document.addEventListener("DOMContentLoaded", function () {
 
     const id = new URLSearchParams(window.location.search).get("id");
@@ -8,15 +27,13 @@ document.addEventListener("DOMContentLoaded", function () {
     .then(response => response.json())
     .then(data => {
 
-        console.log(data);
+            const resposta = document.getElementById("pagina-produto");
 
-        const resposta = document.getElementById("pagina-produto");
-
-        if (!resposta) {
-            console.error("Elemento pagina-produto não existe");
-            return;
-        }
-
+    if (!resposta) {
+        console.error("Elemento pagina-produto não existe");
+        return;
+    }
+            
         resposta.innerHTML = `
             <div class="produto-topo-area">
 
@@ -48,8 +65,8 @@ document.addEventListener("DOMContentLoaded", function () {
 
                     </div>
 
-                <button class="produto-botao-principal"
-onclick="window.location.href='trocas.html?id=${data.id}'">
+<button class="produto-botao-principal"
+onclick="abrirTroca(${data.id})">
     Eu quero
 </button>
                     <button class="produto-botao-chat">Chat <i class="ri-chat-3-line"></i></button>

@@ -9,6 +9,7 @@
      <link href="https://cdn.jsdelivr.net/npm/remixicon/fonts/remixicon.css" rel="stylesheet">
      <link rel="icon" href="Img/possivel logo.png" type="image/x-icon">
      <link rel="stylesheet" href="css/mobile.css">
+      <link rel="stylesheet" href="css/popup.css">
 </head>
  <div class="faixatopo">
     
@@ -92,7 +93,22 @@
 </div>
 
 
+<div id="popup-sem-produto" class="popup">
+    <div class="popup-conteudo">
+        <h3>Ops!</h3>
 
+        <img src="Img/notfund.png" alt="Nenhum objeto encontrado">
+        <p>Você precisa cadastrar um produto antes de solicitar uma troca.</p>
+
+        <button onclick="document.getElementById('popup-sem-produto').style.display='none'">
+            Fechar
+        </button>
+
+        <a href="tela_produto.html">
+            Anunciar produto
+        </a>
+    </div>
+</div>
  
 
  
