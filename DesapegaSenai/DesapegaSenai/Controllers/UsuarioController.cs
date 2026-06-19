@@ -35,10 +35,11 @@ namespace DesapegaSenai.Controllers
                     Secure = true,
                     SameSite = SameSiteMode.None
                 });
-                return Ok("Loging realizado com sucesso");
+
+            return Ok("Login realizado com sucesso");
         }
 
-        
+
         [HttpPost("cadastrar")]
         public IActionResult CadastraCliente(Usuario usuario)
         {
