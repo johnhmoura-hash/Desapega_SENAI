@@ -17,18 +17,21 @@ form.addEventListener('submit', (e) =>{
         })
     })
     .then(response => {
-    console.log(response);
 
-     if (response.status == 401) {
-            alert("Email ou senha incorreta");
+        if (!response.ok) {
+            throw new Error("Email ou senha incorretos");
         }
-        response.text();
-    })
-      .then(data => {
 
-            window.location.href = "index.html";
-        })
-    
+        return response.text();
+    })
+    .then(data => {
+        window.location.href = "index.html";
+    })
+    .catch(error => {
+        alert(error.message);
+    });
     
 });
+
+
 

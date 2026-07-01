@@ -53,7 +53,7 @@ formData.append('foto', 'gggh');
 
 formData.append('arquivoFoto', inputFoto.files[0]); 
 
-fetch('https://localhost:7132/objeto', { // Substitua pela URL local do seu projeto C#
+fetch('https://localhost:7132/objeto', { 
     method: 'POST',
     credentials: 'include',
     body: formData

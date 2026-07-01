@@ -25,6 +25,8 @@ namespace DesapegaSenai.Controllers
             if (usuario == null)
                 return Unauthorized("Não autenticado");
 
+            int matricula = int.Parse(usuario);
+
             if (objeto.ArquivoFoto != null)
             {
                 var nomeArquivo = Guid.NewGuid().ToString() + Path.GetExtension(objeto.ArquivoFoto.FileName);
@@ -37,107 +39,27 @@ namespace DesapegaSenai.Controllers
                 }
 
                 objeto.Foto = nomeArquivo;
-                objeto.Fk_usuarios_matricula = int.Parse(usuario);
+               
             }
+           
+            objeto.Fk_usuarios_matricula = matricula;
+            _context.Objetos.Add(objeto);
+
+            var usuarioBd = _context.Usuarios
+                .FirstOrDefault(u => u.Matricula == matricula);
+
+            if(usuarioBd != null)
+            {
+                usuarioBd.Pontos += 2;
+            }
+
 
             _context.Add(objeto);
             _context.SaveChanges();
             return Created("Teste", objeto);
         }
 
-        /* [HttpPost("cadastroFoto")]
-         public async Task<IActionResult> Criar([FromForm] Objeto objeto)
-         {
-             if (objeto.ArquivoFoto != null)
-             {
-                 var nomeArquivo = Guid.NewGuid().ToString() + Path.GetExtension(objeto.ArquivoFoto.FileName);
-
-                 var caminho = Path.Combine("wwwroot/Uploads", nomeArquivo);
-
-                 using (var stream = new FileStream(caminho, FileMode.Create))
-                 {
-                     await objeto.ArquivoFoto.CopyToAsync(stream);
-                 }
-
-                 objeto.Foto = nomeArquivo;
-             }
-
-             _context.Objetos.Add(objeto);
-             await _context.SaveChangesAsync();
-
-             return Ok(objeto);
-         }
-        [HttpGet("download/{nomeArquivo}")]
-        public IActionResult Dowload(string nomeArquivo)
-        {
-            var caminho = Path.Combine("Uploads", nomeArquivo);
-
-            if (!System.IO.File.Exists(caminho))
-                return NotFound("Arquivo não encontrado");
-
-            var bytes = System.IO.File.ReadAllBytes(caminho);
-
-            return File(bytes, "application/octet-stream", nomeArquivo);
-        }
-
-        [HttpGet("arquiv/{nomeArquivo}")]
-        public IActionResult ListaArquivo(string nomeArquivo)
-        {
-            var pastaBase = Path.Combine(Directory.GetCurrentDirectory(), "wwwroot/uploads");
-            var caminho = Path.Combine(pastaBase, nomeArquivo);
-
-            if (!Directory.Exists(caminho))
-                return NotFound("Pasta não encontrada");
-
-                var nomePasta = Path.GetFileName(caminho);
-
-            return Ok(caminho);
-        }*/
-
-        /*
-        [HttpGet("perfil")]
-        public IActionResult ListaProdutos()
-        {
-            var resultado = from u in _context.Usuarios
-                            join o in _context.Objetos
-                            on u.Matricula equals o.Fk_usuarios_matricula
-                            select new
-                            {
-                                id = o.Id,
-                                usuarios = u.Nome,
-                                pontos = u.Pontos,
-                                objetos = o.Nome,
-                                descricao = o.Descricao,
-                                categoria = o.Categoria,
-                                tempo_uso = o.Tempo_uso,
-                                foto = $"{Request.Scheme}://{Request.Host}/uploads/{o.Foto}",
-                                prefere_troca = o.Prefere_troca
-                            };
-
-            return Ok(resultado.ToList());
-        }
-        [HttpGet("categoria/{categoria}")]
-        public IActionResult BuscarPorCategoria(string categoria)
-        {
-            var resultado = from u in _context.Usuarios
-                            join o in _context.Objetos
-                            on u.Matricula equals o.Fk_usuarios_matricula
-                            select new
-                            {
-                                Usuario = u.Nome,
-                                o.Id,
-                                Objeto = o.Nome,
-                                o.Descricao,
-                                o.Categoria,
-                                o.Tempo_uso,
-                                Foto = $"{Request.Scheme}://{Request.Host}/uploads/{o.Foto}",
-                                o.Prefere_troca
-                            };
-
-            return Ok(resultado.ToList());
-        }
         
-         */
 
         [HttpGet]
         public IActionResult BuscaObjetoPerfil()
@@ -156,49 +78,51 @@ namespace DesapegaSenai.Controllers
         }
 
 
-        [HttpGet("perfil")]
-        public IActionResult BuscarObjetoPerfil()
+       [HttpGet("perfil")]
+public IActionResult BuscarObjetoPerfil()
+{
+    var usuario = HttpContext.Session.GetString("Idusado");
+
+    if (usuario == null)
+        return Unauthorized("Não autenticado");
+
+    int matricula = int.Parse(usuario);
+
+    var usuarioBd = _context.Usuarios
+        .FirstOrDefault(u => u.Matricula == matricula);
+
+    if (usuarioBd == null)
+        return NotFound();
+
+    var objetos = _context.Objetos
+        .Where(o => o.Fk_usuarios_matricula == matricula)
+        .Select(o => new
         {
-            var usuario = HttpContext.Session.GetString("Idusado");
-            if (usuario == null)
-                return Unauthorized("Não autenticado");
+            o.Nome,
+            o.Descricao,
+            o.Categoria,
+            o.Tempo_uso,
+            Foto = $"{Request.Scheme}://{Request.Host}/uploads/{o.Foto}",
+            o.Prefere_troca
+        })
+        .ToList();
 
-            int matricula = int.Parse(usuario);
+    var totalObjetos = objetos.Count;
 
-            var totalObjetos = _context.Objetos
-                .Count(o => o.Fk_usuarios_matricula == matricula);
+    var totalTrocas = _context.Trocas
+        .Count(t =>
+            t.Fk_usuarios_remetente == matricula ||
+            t.Fk_usuarios_destinatario == matricula);
 
-            var totalTrocas = _context.Trocas
-                .Count(t =>
-                    t.Fk_usuarios_remetente == matricula ||
-                    t.Fk_usuarios_destinatario == matricula);
-
-            var idUsuarioLogado = Request.Cookies["Idusado"];
-            if (idUsuarioLogado != null)
-            {
-                var resultado = from u in _context.Usuarios
-                                join o in _context.Objetos
-                                on u.Matricula equals o.Fk_usuarios_matricula
-                                where u.Matricula == int.Parse(idUsuarioLogado)
-                                select new
-                                {
-                                    Usuarios = u.Nome,u.Pontos,
-
-                                    TotalObjetos = totalObjetos,
-                                    TotalTrocas = totalTrocas,
-
-                                    Objetos = o.Nome,
-                                    o.Descricao,
-                                    o.Categoria,
-                                    o.Tempo_uso,
-                                    Foto = $"{Request.Scheme}://{Request.Host}/uploads/{o.Foto}",
-                                    o.Prefere_troca
-                                };
-                return Ok(resultado.ToList());
-            }
-            return Unauthorized("Não autenticado");
-
-        }
+    return Ok(new
+    {
+        Nome = usuarioBd.Nome,
+        usuarioBd.Pontos,
+        TotalObjetos = totalObjetos,
+        TotalTrocas = totalTrocas,
+        Objetos = objetos
+    });
+}
 
 
         [HttpGet("perfil/{id}")]
@@ -283,4 +207,97 @@ namespace DesapegaSenai.Controllers
 
     }
 }
+/* [HttpPost("cadastroFoto")]
+         public async Task<IActionResult> Criar([FromForm] Objeto objeto)
+         {
+             if (objeto.ArquivoFoto != null)
+             {
+                 var nomeArquivo = Guid.NewGuid().ToString() + Path.GetExtension(objeto.ArquivoFoto.FileName);
+
+                 var caminho = Path.Combine("wwwroot/Uploads", nomeArquivo);
+
+                 using (var stream = new FileStream(caminho, FileMode.Create))
+                 {
+                     await objeto.ArquivoFoto.CopyToAsync(stream);
+                 }
+
+                 objeto.Foto = nomeArquivo;
+             }
+
+             _context.Objetos.Add(objeto);
+             await _context.SaveChangesAsync();
+
+             return Ok(objeto);
+         }
+        [HttpGet("download/{nomeArquivo}")]
+        public IActionResult Dowload(string nomeArquivo)
+        {
+            var caminho = Path.Combine("Uploads", nomeArquivo);
+
+            if (!System.IO.File.Exists(caminho))
+                return NotFound("Arquivo não encontrado");
+
+            var bytes = System.IO.File.ReadAllBytes(caminho);
+
+            return File(bytes, "application/octet-stream", nomeArquivo);
+        }
+
+        [HttpGet("arquiv/{nomeArquivo}")]
+        public IActionResult ListaArquivo(string nomeArquivo)
+        {
+            var pastaBase = Path.Combine(Directory.GetCurrentDirectory(), "wwwroot/uploads");
+            var caminho = Path.Combine(pastaBase, nomeArquivo);
+
+            if (!Directory.Exists(caminho))
+                return NotFound("Pasta não encontrada");
+
+                var nomePasta = Path.GetFileName(caminho);
+
+            return Ok(caminho);
+        }*/
+
+/*
+[HttpGet("perfil")]
+public IActionResult ListaProdutos()
+{
+    var resultado = from u in _context.Usuarios
+                    join o in _context.Objetos
+                    on u.Matricula equals o.Fk_usuarios_matricula
+                    select new
+                    {
+                        id = o.Id,
+                        usuarios = u.Nome,
+                        pontos = u.Pontos,
+                        objetos = o.Nome,
+                        descricao = o.Descricao,
+                        categoria = o.Categoria,
+                        tempo_uso = o.Tempo_uso,
+                        foto = $"{Request.Scheme}://{Request.Host}/uploads/{o.Foto}",
+                        prefere_troca = o.Prefere_troca
+                    };
+
+    return Ok(resultado.ToList());
+}
+[HttpGet("categoria/{categoria}")]
+public IActionResult BuscarPorCategoria(string categoria)
+{
+    var resultado = from u in _context.Usuarios
+                    join o in _context.Objetos
+                    on u.Matricula equals o.Fk_usuarios_matricula
+                    select new
+                    {
+                        Usuario = u.Nome,
+                        o.Id,
+                        Objeto = o.Nome,
+                        o.Descricao,
+                        o.Categoria,
+                        o.Tempo_uso,
+                        Foto = $"{Request.Scheme}://{Request.Host}/uploads/{o.Foto}",
+                        o.Prefere_troca
+                    };
+
+    return Ok(resultado.ToList());
+}
+
+ */
 
