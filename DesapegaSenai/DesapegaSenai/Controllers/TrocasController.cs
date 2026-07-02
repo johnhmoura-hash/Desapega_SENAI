@@ -20,21 +20,35 @@ namespace DesapegaSenai.Controllers
         }
 
 
-        [HttpGet()]
+        [HttpGet]
         public IActionResult Trocas()
         {
-            return Ok(_context.Trocas.ToList());
-        }
+            var usuario = HttpContext.Session.GetString("Idusado");
 
-        [HttpGet("{id}")]
-        public IActionResult BuscarPorId(int id)
-        {
-            var troca = _context.Trocas.Find(id);
+            if (usuario == null)
+                return Unauthorized();
 
-            if (troca == null)
-                return NotFound();
+            int matricula = int.Parse(usuario);
 
-            return Ok(troca);
+            var trocas = (
+                from t in _context.Trocas
+                join u in _context.Usuarios
+                    on t.Fk_usuarios_remetente equals u.Matricula
+                join o in _context.Objetos
+                    on t.Fk_objetos_remetente equals o.Id
+                where t.Fk_usuarios_destinatario == matricula
+                      && t.Status == "Pendente"
+                select new
+                {
+                    t.Id,
+                    NomeRemetente = u.Nome,
+                    ProdutoOferecido = o.Nome,
+                    t.Data,
+                    t.Status
+                }
+            ).ToList();
+
+            return Ok(trocas);
         }
 
         [HttpPost]
@@ -71,6 +85,7 @@ namespace DesapegaSenai.Controllers
 
             return Ok(item);
         }
+
 
         [HttpDelete("{id}")]
         public IActionResult Deletar(int id)
