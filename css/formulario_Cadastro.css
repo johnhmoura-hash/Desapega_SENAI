@@ -123,6 +123,23 @@ body{
     outline: none;
 }
 
+ .input
+ {
+    width: 100%;
+    padding: px;
+    border: none;
+    background: #f1f1f1;
+    border-radius: 8px;
+    font-size: 16px;
+    outline: none;  
+ }
+    
+small
+{
+    color: #FF7F27;
+}
+
+
 .btn input{
     width: 100%;
     padding: 15px;
@@ -167,6 +184,8 @@ body{
 .social i:hover{
     transform: scale(1.2);
 }
+
+
 /* IMAGEM LADO ESQUERDO */
 .img-left{
     width: 150%;

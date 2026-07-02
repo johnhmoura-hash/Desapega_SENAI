@@ -36,7 +36,11 @@ myForm.addEventListener('submit', function (event) {
             Email: document.getElementById("email").value,
             Telefone: document.getElementById("numTelefone").value,
             Senha: document.getElementById("senha").value,
+<<<<<<< HEAD
 
+=======
+            
+>>>>>>> dd66a1b1e410c31c74ba95b7264a55a3281356e8
         }),
     })
 
@@ -80,7 +84,7 @@ function validarNumTelefone() {
     }
 
 }
-/*
+
 if (nome) nome.addEventListener("keyup", validarNome);
 if (senha) senha.addEventListener("keyup", validarSenha);
 if (numMatricula) numMatricula.addEventListener("keyup", validarMatricula);
@@ -113,7 +117,7 @@ function validarMatricula(){
         validarErro(numMatricula, 'Campo obrigatório')
         return false;
     } else if(numMatriculaValor.length !== 7){
-        validarErro(numMatricula, 'A matrícula deve conter 7 números')
+        validarErro(numMatricula, 'A matrícula deve conter 10 números')
         return false;
     }else{
         validarSucesso(numMatricula)
@@ -231,8 +235,13 @@ function validarSucesso(input){
 
 function isEmail(email) {
     return /^[a-zA-Z0-9._%+-]+@[a-zA-Z0-9-]+\.senai\.br$/.test(email);
+<<<<<<< HEAD
 }*/
 function validarSucesso(input) {
+=======
+}
+function validarSucesso(input){
+>>>>>>> dd66a1b1e410c31c74ba95b7264a55a3281356e8
     const campo = input.parentElement;
     const small = campo.querySelector("small");
 
