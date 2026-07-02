@@ -36,7 +36,7 @@ function enviarProduto(){*/
             Email: document.getElementById("email").value,
             Telefone: document.getElementById("numTelefone").value,
             Senha: document.getElementById("senha").value,
-            Status_usuario: true,
+            
         }),
     })
       

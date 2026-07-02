@@ -1,95 +1,82 @@
-
 const btnNotificacao = document.getElementById("btnNotificacao");
 const popupNotificacao = document.getElementById("popupNotificacao");
+const listaNotificacoes = document.getElementById("listaNotificacoes");
 
-const btnChat = document.getElementById("btnChat");
-const popupChat = document.getElementById("popupChat");
+async function carregarNotificacoes() {
 
-btnNotificacao.addEventListener("click", function(e) {
-  e.preventDefault();
-  popupNotificacao.classList.toggle("ativo");
-  popupChat.classList.remove("ativo");
-});
+    try {
 
-btnChat.addEventListener("click", function(e) {
-  e.preventDefault();
-  popupChat.classList.toggle("ativo");
-  popupNotificacao.classList.remove("ativo");
-});
+        const response = await fetch("https://localhost:7132/Trocas", {
+            credentials: "include"
+        });
 
-document.addEventListener("click", function(e) {
-  if (!btnNotificacao.contains(e.target) && 
-      !popupNotificacao.contains(e.target) &&
-      !btnChat.contains(e.target) &&
-      !popupChat.contains(e.target)) {
+        if (!response.ok)
+            throw new Error("Erro ao buscar notificações.");
 
-    popupNotificacao.classList.remove("ativo");
-    popupChat.classList.remove("ativo");
-  }
-});
+        const trocas = await response.json();
 
+        console.log("Trocas recebidas:", trocas);
 
-const perguntas = document.querySelectorAll(".pergunta");
-const chatMensagens = document.getElementById("chatMensagens");
+        listaNotificacoes.innerHTML = "";
 
-perguntas.forEach(pergunta => {
-  pergunta.addEventListener("click", function() {
+        if (trocas.length === 0) {
 
-    // Mensagem do usuário
-    const userMsg = document.createElement("div");
-    userMsg.classList.add("mensagem", "user-msg");
-    userMsg.innerText = this.innerText;
-    chatMensagens.appendChild(userMsg);
+            listaNotificacoes.innerHTML = `
+                <div class="notificacao-vazia">
+                    Nenhuma notificação.
+                </div>
+            `;
 
-    // Resposta automática
-    setTimeout(() => {
-      const botMsg = document.createElement("div");
-      botMsg.classList.add("mensagem", "bot");
+            return;
+        }
 
-      if (this.innerText.includes("disponível")) {
-        botMsg.innerText = "Sim, o produto ainda está disponível 😊";
-      } 
-      else if (this.innerText.includes("frete")) {
-        botMsg.innerText = "O frete é calculado no momento da compra.";
-      } 
-      else if (this.innerText.includes("fotos")) {
-        botMsg.innerText = "Claro! Vou enviar mais fotos agora 📸";
-      } 
-      else {
-        botMsg.innerText = "Obrigado pelo contato!";
-      }
+        trocas.forEach(troca => {
 
-      chatMensagens.appendChild(botMsg);
-      chatMensagens.scrollTop = chatMensagens.scrollHeight;
+            listaNotificacoes.innerHTML += `
+                <div class="notificacao-item"
+                     onclick="window.location.href='troca.html?idTroca=${troca.id}'">
 
-    }, 800);
+                    <strong>${troca.nomeRemetente}</strong>
+                    quer trocar um produto
+                    
 
-    chatMensagens.scrollTop = chatMensagens.scrollHeight;
-  });
-});
+                    <span class="tempo">${troca.data}</span>
+                </div>
+            `;
+        });
 
-document.addEventListener("DOMContentLoaded", function () {
+    } catch (erro) {
 
-  const overlayChat = document.getElementById("overlayChat");
-  const btnChat = document.getElementById("btnChat");
-  const fecharChat = document.getElementById("fecharChat");
+        console.error(erro);
 
-  // Abrir popup
-  btnChat.addEventListener("click", function (e) {
-    e.preventDefault();
-    overlayChat.style.display = "flex";
-  });
-
-  // Fechar no X
-  fecharChat.addEventListener("click", function () {
-    overlayChat.style.display = "none";
-  });
-
-  // Fechar clicando fora
-  overlayChat.addEventListener("click", function (e) {
-    if (e.target === overlayChat) {
-      overlayChat.style.display = "none";
+        listaNotificacoes.innerHTML = `
+            <div class="notificacao-vazia">
+                Erro ao carregar notificações.
+            </div>
+        `;
     }
-  });
+}
+
+btnNotificacao.addEventListener("click", function (e) {
+
+    e.preventDefault();
+
+    popupNotificacao.classList.toggle("ativo");
+
+    if (popupNotificacao.classList.contains("ativo")) {
+        carregarNotificacoes();
+    }
+
+});
+
+document.addEventListener("click", function (e) {
+
+    if (
+        !btnNotificacao.contains(e.target) &&
+        !popupNotificacao.contains(e.target)
+    ) {
+
+        popupNotificacao.classList.remove("ativo");
+    }
 
 });

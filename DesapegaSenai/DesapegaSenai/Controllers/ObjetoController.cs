@@ -98,6 +98,7 @@ public IActionResult BuscarObjetoPerfil()
         .Where(o => o.Fk_usuarios_matricula == matricula)
         .Select(o => new
         {
+            o.Id,
             o.Nome,
             o.Descricao,
             o.Categoria,
