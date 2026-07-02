@@ -126,8 +126,8 @@ namespace DesapegaSenai.Controllers
                     u.Nome,
                     u.Email,
                     u.Telefone,
-                    u.Foto_usuario
-                })
+                    u.Foto_usuario 
+        })
                 .FirstOrDefault();
 
             return Ok(usuario);

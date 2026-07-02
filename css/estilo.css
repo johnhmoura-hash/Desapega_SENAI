@@ -343,7 +343,7 @@ color: #0056b3;
   margin-bottom: 20px;
   position: relative;
 
-    display: flex;
+  display: flex;
   justify-content: center;
   align-items: center;
   overflow: hidden; 
@@ -1485,4 +1485,36 @@ justify-content: center;
 }
 
 
+.photo {
+  width:150px;
+    height:150px;
+    margin:20px auto;
+    border-radius:50%;
+    background:#c7d7ea;
 
+    display:flex;
+    justify-content:center;
+    align-items:center;
+
+    position:relative;
+    overflow:hidden;
+}
+.preview-fotos {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  border-radius: 50%;
+}
+.fotoperfil {
+  position:absolute;
+    inset:0;
+
+    display:flex;
+    justify-content:center;
+    align-items:center;
+
+    cursor:pointer;
+    font-size:40px;
+    color:#555;
+    background:rgba(255,255,255,.25);
+}

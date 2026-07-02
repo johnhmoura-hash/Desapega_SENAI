@@ -10,20 +10,20 @@ myForm.addEventListener('submit', function (event) {
 
     event.preventDefault();
 
-   /* const valido =
-        validarNome() &&
-        validarMatricula() &&
-        validarNumTelefone() &&
-        validarEmail() &&
-        validarConfirmarEmail()&&
-        validarSenha() &&
-        validarconfirmarSenha();
-
-    if (valido) {
-         enviarProduto();
-    }
-
-function enviarProduto(){*/
+    /* const valido =
+         validarNome() &&
+         validarMatricula() &&
+         validarNumTelefone() &&
+         validarEmail() &&
+         validarConfirmarEmail()&&
+         validarSenha() &&
+         validarconfirmarSenha();
+ 
+     if (valido) {
+          enviarProduto();
+     }
+ 
+ function enviarProduto(){*/
     fetch('https://localhost:7132/usuario/cadastrar', {
         method: 'POST',
         credentials: 'include',
@@ -36,23 +36,26 @@ function enviarProduto(){*/
             Email: document.getElementById("email").value,
             Telefone: document.getElementById("numTelefone").value,
             Senha: document.getElementById("senha").value,
-            Status_usuario: true,
+
         }),
     })
-      
-    .then(response => response.json())
-    .then(data => {
 
-        console.log("Sucesso:", data);
+        .then(response => response.json())
+        .then(data => {
 
-        alert("Conta criada com sucesso!");
+            console.log("Sucesso:", data);
 
-        myForm.reset();
+            
+            alert("Conta criada com sucesso!");
+            console.log("Sucesso:", data);
 
-    })
-    .catch(error => {
-       
-    });
+
+
+
+        })
+        .catch(error => {
+
+        });
 });
 if (numTelefone) numTelefone.addEventListener("keyup", validarNumTelefone);
 function validarNumTelefone() {
@@ -61,14 +64,14 @@ function validarNumTelefone() {
 
     if (numLimpo === '') {
         validarErro(numTelefone, 'Campo obrigatório');
-       return false;
+        return false;
 
-    } else if (numLimpo.length !== 11) { 
+    } else if (numLimpo.length !== 11) {
         validarErro(numTelefone, 'Formato incorreto');
         return false;
 
     } else {
-        
+
         numTelefone.value = numLimpo.replace(
             /^(\d{2})(\d{5})(\d{4})$/,
             "($1) $2-$3"
@@ -229,7 +232,7 @@ function validarSucesso(input){
 function isEmail(email) {
     return /^[a-zA-Z0-9._%+-]+@[a-zA-Z0-9-]+\.senai\.br$/.test(email);
 }*/
-function validarSucesso(input){
+function validarSucesso(input) {
     const campo = input.parentElement;
     const small = campo.querySelector("small");
 
