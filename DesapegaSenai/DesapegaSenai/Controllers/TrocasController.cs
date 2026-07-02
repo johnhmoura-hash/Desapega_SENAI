@@ -40,12 +40,15 @@ namespace DesapegaSenai.Controllers
         [HttpPost]
         public IActionResult Trocar(Troca item)
         {
-            var email = HttpContext.Session.GetString("Idusado");
-            if (email == null)
+            var matricula = HttpContext.Session.GetString("Idusado");
+
+            if (matricula == null)
                 return Unauthorized("Não autenticado");
 
+            int matriculaUsuario = int.Parse(matricula);
+
             var usuario = _context.Usuarios
-                .FirstOrDefault(u => u.Email == email);
+                .FirstOrDefault(u => u.Matricula == matriculaUsuario);
 
             if (usuario == null)
                 return Unauthorized();
