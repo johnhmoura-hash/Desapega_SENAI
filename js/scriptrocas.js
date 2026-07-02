@@ -61,43 +61,44 @@ fetch("https://localhost:7132/Objeto/perfil",{
 
 
 
-fetch("https://localhost:7132/Objeto/perfil",{
-    credentials:"include"
+fetch("https://localhost:7132/Objeto/perfil", {
+    credentials: "include"
 })
 .then(response => response.json())
 .then(dados => {
 
     console.log(dados);
-console.log(dados.objetos);
+    console.log(dados.objetos);
 
     let select = document.getElementById("meusProdutos");
 
+    dados.objetos.forEach(produto => {
 
-    
- dados.objetos.forEach(produto => {
+        select.innerHTML += `
+            <option value="${produto.id}">
+                ${produto.nome}
+            </option>
+        `;
+    });
 
-    select.innerHTML += `
-        <option value="${produto.nome}">
-            ${produto.nome}
-        </option>
-    `;
-});
-select.addEventListener("change", function () {
+    select.addEventListener("change", function () {
 
-    console.log("Selecionado:", this.value);
+        console.log("ID selecionado:", this.value);
 
-produtoSelecionado =
-    dados.objetos.find(p => p.nome === this.value);
+        produtoSelecionado =
+            dados.objetos.find(p => p.id == this.value);
 
-    if(produtoSelecionado){
+        console.log(produtoSelecionado);
 
-    document.getElementById("nomeUsuario").textContent =
-    dados.nome;
-    document.getElementById("fotoProduto").src =
-            produtoSelecionado.foto;
-   
-    }
-});
+        if (produtoSelecionado) {
+
+            document.getElementById("nomeUsuario").textContent =
+                dados.nome;
+
+            document.getElementById("fotoProduto").src =
+                produtoSelecionado.foto;
+        }
+    });
 
 });
 
@@ -118,6 +119,8 @@ btnTrocar.addEventListener("click", function () {
     produtoDestino,
     pontosPropostos
 });
+
+console.log(produtoSelecionado);
 
     fetch("https://localhost:7132/Trocas", {
 
@@ -166,14 +169,6 @@ btnTrocar.addEventListener("click", function () {
         alert("Troca enviada com sucesso!");
 
     })
-
-  .catch(error => {
-
-    console.error("Erro:", error);
-
-    alert(error.message);
-
-});
 
 });
 
