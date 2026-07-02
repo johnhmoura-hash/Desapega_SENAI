@@ -35,51 +35,65 @@
          
     <div class="input-box">
       <label for="usuario">Nome</label>
+      <div class="input">
       <input type="text" id="nome" placeholder="Digite seu usuário">
       <small class="erro"></small>
+      </div>
     </div>
 
     <div class="input-box">
       <label for="numMatricula">Número de Matrícula</label>
-      <input  id="numMatricula" placeholder="Digite o número de matrícula"oninput="this.value = this.value.replace(/[^0-9]/g, '')">
+      <div class="input">
+      <input  id="numMatricula"  maxlength="10" placeholder="Digite o número de matrícula"oninput="this.value = this.value.replace(/[^0-9]/g, '')">
       <small></small>
+      </div>
     </div>
       
     <div class="input-box">
       <label for="numTelefone">Número de Telefone</label>
-      <input  id="numTelefone" placeholder="Digite o número de telefone" oninput="this.value = this.value.replace(/[^0-9]/g, '')">
-     
+     <div class="input">
+      <input  id="numTelefone" maxlength="11" placeholder="Digite o número de telefone" oninput="this.value = this.value.replace(/[^0-9]/g, '')">
       <small></small>
+      </div>
     </div>
   
     <div class="input-box">
       <label for="email">Email</label>
+      <div class="input">
       <input type="email" id="email" placeholder="Digite o seu email">
       <small></small>
+      </div>
     </div>
 
     <div class="input-box">
       <label for="emailConfirmar"> Confirmar Email</label>
+    <div class="input">
       <input type="email" id="emailConfirmar" placeholder="Confirme seu email">
       <small></small>
+      </div>
     </div>
 
     <div class="input-box">
       <label for="senha">Senha</label>
       <div class="input-senha">
-      <input type="password" id="senha" placeholder="Digite sua senha">
+      <div class="input">
+      <input type="password" id="senha" maxlength="8" placeholder="Digite sua senha">
       <i id="versenha" class="ri-eye-line"></i>
       </div>
       <small></small>
+      </div>
     </div>
 
     <div class="input-box">
+
       <label for="confirmarSenha">Confirmar senha</label>
-      <div class="input-senha">
-      <input type="password" id="confirmarSenha" placeholder="Confirme sua senha">
-       <i id="verconfirmesenha" class="ri-eye-line"></i> 
-      </div>
+      <div class="input-senha">   
+      <div class="input">
+      <input type="password" id="confirmarSenha" maxlength="8" placeholder="Confirme sua senha">
+      <i id="verconfirmesenha" class="ri-eye-line"></i> 
       <small></small>
+      </div>
+      </div>
     </div>
 
     <div class="btn">

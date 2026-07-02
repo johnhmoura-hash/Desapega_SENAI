@@ -77,7 +77,7 @@ function validarNumTelefone() {
     }
 
 }
-/*
+
 if (nome) nome.addEventListener("keyup", validarNome);
 if (senha) senha.addEventListener("keyup", validarSenha);
 if (numMatricula) numMatricula.addEventListener("keyup", validarMatricula);
@@ -110,7 +110,7 @@ function validarMatricula(){
         validarErro(numMatricula, 'Campo obrigatório')
         return false;
     } else if(numMatriculaValor.length !== 7){
-        validarErro(numMatricula, 'A matrícula deve conter 7 números')
+        validarErro(numMatricula, 'A matrícula deve conter 10 números')
         return false;
     }else{
         validarSucesso(numMatricula)
@@ -228,7 +228,7 @@ function validarSucesso(input){
 
 function isEmail(email) {
     return /^[a-zA-Z0-9._%+-]+@[a-zA-Z0-9-]+\.senai\.br$/.test(email);
-}*/
+}
 function validarSucesso(input){
     const campo = input.parentElement;
     const small = campo.querySelector("small");

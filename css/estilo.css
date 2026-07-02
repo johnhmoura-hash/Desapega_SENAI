@@ -1456,14 +1456,13 @@ justify-content: center;
 
 .sem-objetos{
     height: 70vh;
-
-    display: flex;
+    margin-left: 650px;
     flex-direction: column;
-
     justify-content: center;
     align-items: center;
-
     text-align: center;
+
+   
 }
 .sem-objetos h2{
   font-family: 'Fredoka', sans-serif;
@@ -1472,7 +1471,12 @@ justify-content: center;
 
 .sem-objetos img{
     width: 220px;
-    margin-bottom: 20px;
+   
+  
+  
+    
+    
+    
 }
 .btn-anunciar{
     display: inline-block;
