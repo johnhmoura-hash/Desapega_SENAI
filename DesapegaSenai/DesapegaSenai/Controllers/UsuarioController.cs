@@ -1,6 +1,7 @@
 ﻿using Microsoft.AspNetCore.Mvc;
 using DesapegaSenai.Data;
 using DesapegaSenai.Models;
+using DesapegaSenai.DTOs;
 namespace DesapegaSenai.Controllers
 {
     [ApiController]
@@ -41,8 +42,17 @@ namespace DesapegaSenai.Controllers
 
 
         [HttpPost("cadastrar")]
-        public IActionResult CadastraCliente(Usuario usuario)
+        public IActionResult CadastraCliente(UsuarioDTO dto)
         {
+            Usuario usuario = new Usuario(
+            dto.Matricula,
+            dto.Nome,
+            dto.Telefone,
+            dto.Email,
+            dto.Senha,
+            true,
+            0
+            );
             _context.Add(usuario);
             _context.SaveChanges();
             return Created("a", usuario);
@@ -60,22 +70,68 @@ namespace DesapegaSenai.Controllers
 
 
 
-        [HttpPut("Atualizar/{id}")]
-        public IActionResult AtualizarPessoas(int id, Usuario usuario)
+        [HttpPut("Atualizar")]
+        public async Task<IActionResult> AtualizarPessoas([FromForm] Usuario usuario)
         {
-            var UsuarioBd = _context.Usuarios.Find(id);
+            var usuarioId = HttpContext.Session.GetString("Idusado");
+            if (usuarioId == null)
+                return Unauthorized("Não autenticado");
 
-            if (UsuarioBd == null)
-                return NotFound("Pessoa não encontrada.");
+            int matricula = int.Parse(usuarioId);
 
-            UsuarioBd.Nome = usuario.Nome;
-            UsuarioBd.Senha = usuario.Senha;
-            UsuarioBd.Email = usuario.Email;
+            var usuarioBd = _context.Usuarios.Find(matricula);
+
+            if (usuarioBd == null)
+                return NotFound("Usuário não encontrado.");
+
+            usuarioBd.Nome = usuario.Nome;
+            usuarioBd.Email = usuario.Email;
+            usuarioBd.Senha = usuario.Senha;
+            usuarioBd.Telefone = usuario.Telefone;
+
+            if (usuario.ArquivoFoto != null)
+            {
+                var nomeArquivo = Guid.NewGuid() + Path.GetExtension(usuario.ArquivoFoto.FileName);
+
+                var caminho = Path.Combine("wwwroot", "Uploads", nomeArquivo);
+
+                using (var stream = new FileStream(caminho, FileMode.Create))
+                {
+                    await usuario.ArquivoFoto.CopyToAsync(stream);
+                }
+
+                // Atualiza a foto do usuário
+                usuarioBd.Foto_usuario = nomeArquivo;
+            }
+
             _context.SaveChanges();
 
-            return Ok("Atualizado");
+            return Ok(usuarioBd);
         }
 
+        [HttpGet("perfil")]
+        public IActionResult Perfil()
+        {
+            var idUsuario = HttpContext.Session.GetString("Idusado");
+
+            if (idUsuario == null)
+                return Unauthorized();
+
+            int matricula = int.Parse(idUsuario);
+
+            var usuario = _context.Usuarios
+                .Where(u => u.Matricula == matricula)
+                .Select(u => new
+                {
+                    u.Nome,
+                    u.Email,
+                    u.Telefone,
+                    u.Foto_usuario
+                })
+                .FirstOrDefault();
+
+            return Ok(usuario);
+        }
 
         [HttpDelete("Deletar/{id}")]
         public IActionResult DeletarPessoas(int id)

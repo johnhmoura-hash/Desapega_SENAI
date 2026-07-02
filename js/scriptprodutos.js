@@ -6,15 +6,15 @@ async function abrirTroca(idProdutoDesejado){
         { credentials:"include" }
     );
 
-    const meusProdutos = await resposta.json();
+  const meusProdutos = await resposta.json();
 
-    if(meusProdutos.length === 0){
+if (!meusProdutos.objetos || meusProdutos.objetos.length === 0) {
 
-        document.getElementById("popup-sem-produto").style.display = "flex";
-        return;
-    }
+    document.getElementById("popup-sem-produto").style.display = "flex";
+    return;
+}
 
-    window.location.href = `trocas.html?id=${idProdutoDesejado}`;
+window.location.href = `trocas.html?id=${idProdutoDesejado}`;
 }
 
 document.addEventListener("DOMContentLoaded", function () {

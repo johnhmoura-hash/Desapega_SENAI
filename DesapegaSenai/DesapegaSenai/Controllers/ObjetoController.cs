@@ -135,6 +135,7 @@ public IActionResult BuscarObjetoPerfil()
                              select new
                              {
                                  id = o.Id,
+                                 usuarioDestino = u.Matricula,
                                  usuarios = u.Nome,
                                  pontos = u.Pontos,
                                  objetos = o.Nome,
