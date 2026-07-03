@@ -121,14 +121,7 @@ document.addEventListener("DOMContentLoaded", function () {
                         }
                     );
 
-                    const texto = await response.text();
-
-                    console.log(texto);
-
-                    if (!response.ok) {
-                        alert(texto);
-                        return;
-                    }
+                
 
 
                 }
@@ -136,6 +129,37 @@ document.addEventListener("DOMContentLoaded", function () {
 
             });
         });
+
+           fetch('https://localhost:7132/objeto/perfil', {
+        credentials: "include"
+    })
+    .then(response => response.json())
+    .then(data => {
+
+        const resposta = document.getElementById("grid-produtos");
+
+        if (!resposta) {
+            console.error("Elemento #info não existe no HTML");
+            return;
+        }
+
+        resposta.innerHTML = "";
+
+        for (let i = 0; i < data.objetos.length; i++) {
+
+            resposta.innerHTML += `
+                <div class="carde">
+                    <div class="imagem-produto">
+                        <img src="${data.objetos[i].foto}" alt="Produto">
+                    </div>
+                    <div class="infos">
+                        <h3>${data.objetos[i].nome}</h3>
+                        <span>${data.objetos[i].tempo_uso}</span>
+                    </div>
+                </div>
+            `;
+        }
+    });
 });
 
 //     fetch(`https://localhost:7132/usuario/atualizar`, {
