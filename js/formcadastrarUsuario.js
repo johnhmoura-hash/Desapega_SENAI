@@ -10,20 +10,20 @@ myForm.addEventListener('submit', function (event) {
 
     event.preventDefault();
 
-   /* const valido =
-        validarNome() &&
-        validarMatricula() &&
-        validarNumTelefone() &&
-        validarEmail() &&
-        validarConfirmarEmail()&&
-        validarSenha() &&
-        validarconfirmarSenha();
-
-    if (valido) {
-         enviarProduto();
-    }
-
-function enviarProduto(){*/
+    /* const valido =
+         validarNome() &&
+         validarMatricula() &&
+         validarNumTelefone() &&
+         validarEmail() &&
+         validarConfirmarEmail()&&
+         validarSenha() &&
+         validarconfirmarSenha();
+ 
+     if (valido) {
+          enviarProduto();
+     }
+ 
+ function enviarProduto(){*/
     fetch('https://localhost:7132/usuario/cadastrar', {
         method: 'POST',
         credentials: 'include',
@@ -36,23 +36,30 @@ function enviarProduto(){*/
             Email: document.getElementById("email").value,
             Telefone: document.getElementById("numTelefone").value,
             Senha: document.getElementById("senha").value,
+<<<<<<< HEAD
+
+=======
             
+>>>>>>> dd66a1b1e410c31c74ba95b7264a55a3281356e8
         }),
     })
-      
-    .then(response => response.json())
-    .then(data => {
 
-        console.log("Sucesso:", data);
+        .then(response => response.json())
+        .then(data => {
 
-        alert("Conta criada com sucesso!");
+            console.log("Sucesso:", data);
 
-        myForm.reset();
+            
+            alert("Conta criada com sucesso!");
+            console.log("Sucesso:", data);
 
-    })
-    .catch(error => {
-       
-    });
+
+
+
+        })
+        .catch(error => {
+
+        });
 });
 if (numTelefone) numTelefone.addEventListener("keyup", validarNumTelefone);
 function validarNumTelefone() {
@@ -61,14 +68,14 @@ function validarNumTelefone() {
 
     if (numLimpo === '') {
         validarErro(numTelefone, 'Campo obrigatório');
-       return false;
+        return false;
 
-    } else if (numLimpo.length !== 11) { 
+    } else if (numLimpo.length !== 11) {
         validarErro(numTelefone, 'Formato incorreto');
         return false;
 
     } else {
-        
+
         numTelefone.value = numLimpo.replace(
             /^(\d{2})(\d{5})(\d{4})$/,
             "($1) $2-$3"
@@ -77,7 +84,7 @@ function validarNumTelefone() {
     }
 
 }
-/*
+
 if (nome) nome.addEventListener("keyup", validarNome);
 if (senha) senha.addEventListener("keyup", validarSenha);
 if (numMatricula) numMatricula.addEventListener("keyup", validarMatricula);
@@ -110,7 +117,7 @@ function validarMatricula(){
         validarErro(numMatricula, 'Campo obrigatório')
         return false;
     } else if(numMatriculaValor.length !== 7){
-        validarErro(numMatricula, 'A matrícula deve conter 7 números')
+        validarErro(numMatricula, 'A matrícula deve conter 10 números')
         return false;
     }else{
         validarSucesso(numMatricula)
@@ -228,8 +235,13 @@ function validarSucesso(input){
 
 function isEmail(email) {
     return /^[a-zA-Z0-9._%+-]+@[a-zA-Z0-9-]+\.senai\.br$/.test(email);
+<<<<<<< HEAD
 }*/
+function validarSucesso(input) {
+=======
+}
 function validarSucesso(input){
+>>>>>>> dd66a1b1e410c31c74ba95b7264a55a3281356e8
     const campo = input.parentElement;
     const small = campo.querySelector("small");
 
