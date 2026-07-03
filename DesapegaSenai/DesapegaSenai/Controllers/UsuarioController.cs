@@ -68,10 +68,8 @@ namespace DesapegaSenai.Controllers
             return Ok("Logout realizado com sucesso!");
         }
 
-
-
         [HttpPut("Atualizar")]
-        public async Task<IActionResult> AtualizarPessoas([FromForm] Usuario usuario)
+        public async Task<IActionResult> AtualizarUsuario([FromForm] EditarUsuarioDTO usuario)
         {
             var usuarioId = HttpContext.Session.GetString("Idusado");
             if (usuarioId == null)
@@ -86,7 +84,6 @@ namespace DesapegaSenai.Controllers
 
             usuarioBd.Nome = usuario.Nome;
             usuarioBd.Email = usuario.Email;
-            usuarioBd.Senha = usuario.Senha;
             usuarioBd.Telefone = usuario.Telefone;
 
             if (usuario.ArquivoFoto != null)
@@ -108,6 +105,8 @@ namespace DesapegaSenai.Controllers
 
             return Ok(usuarioBd);
         }
+
+
 
         [HttpGet("perfil")]
         public IActionResult Perfil()

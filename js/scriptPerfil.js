@@ -74,6 +74,32 @@ document.addEventListener("DOMContentLoaded", function () {
                 Trocados ${data.totalTrocas}
                       
             `;
+
+
+            
+    });
+    fetch('https://localhost:7132/usuario/perfil', {
+        credentials: "include"
+    })
+    .then(response => response.json())
+    .then(data => {
+
+         const resposta3= document.getElementById("fotoPerfil");
+        if (!resposta3) {
+            console.error("Elemento #info não existe no HTML");
+            return;
+        }
+
+        
+        resposta3.innerHTML = "";
+        
+            resposta3.innerHTML += `
+                
+               <img src="${data.foto_usuario}">
+                      
+            `;
+
+            
             
     });
 });

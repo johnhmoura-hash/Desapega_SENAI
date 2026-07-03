@@ -25,7 +25,7 @@ document.addEventListener("DOMContentLoaded", function () {
                     class="preview-foto"
                 >
 
-                <label for="inputFoto" class="fotoperfil">
+                <label for="inputFoto" class="fotoeditperfil">
                     <i class="ri-camera-line"></i>
                 </label>
 
@@ -72,7 +72,7 @@ document.addEventListener("DOMContentLoaded", function () {
                     document.getElementById("previewFotos").src = e.target.result;
 
                     // Esconde o ícone da câmera
-                    document.querySelector(".fotoperfil").style.display = "none";
+                    document.querySelector(".fotoeditperfil").style.display = "none";
                 };
 
                 reader.readAsDataURL(arquivo);
@@ -113,7 +113,7 @@ document.addEventListener("DOMContentLoaded", function () {
                     }
 
                     const response = await fetch(
-                        "https://localhost:7132/usuario/atualizar",
+                        "https://localhost:7132/usuario/Atualizar",
                         {
                             method: "PUT",
                             credentials: "include",
