@@ -34,7 +34,7 @@ async function carregarNotificacoes() {
 
             listaNotificacoes.innerHTML += `
                 <div class="notificacao-item"
-                     onclick="window.location.href='troca.html?idTroca=${troca.id}'">
+                     onclick="window.location.href='aceitartrocas.html?idTroca=${troca.id}'">
 
                     <strong>${troca.nomeRemetente}</strong>
                     quer trocar um produto

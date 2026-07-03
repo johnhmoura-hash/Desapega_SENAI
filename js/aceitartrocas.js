@@ -1,9 +1,14 @@
 document.addEventListener("DOMContentLoaded", function () {
 
      const id = new URLSearchParams(window.location.search).get("id");
-
+console.log(idTroca);
     console.log("ID:", id);
 
+
+
+
+
+    
 fetch(`https://localhost:7132/Objeto/perfil/${id}` ,{
  credentials: "include"})
 .then(response => response.json())
@@ -96,6 +101,14 @@ select.addEventListener("change", function () {
 
 });
 
+
+const btnPontos = document.getElementById("btnPontos");
+
+if (data.pontos_proposto == 2) {
+    btnPontos.style.display = "block";
+} else {
+    btnPontos.style.display = "none";
+}
 
 });
 
