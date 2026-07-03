@@ -1,8 +1,9 @@
 {
   "Version": 1,
-<<<<<<< HEAD
   "WorkspaceRootPath": "C:\\Users\\manha.ceticc\\Documents\\GitHub\\Desapega_SENAI\\DesapegaSenai\\",
   "Documents": [],
+<<<<<<< HEAD
+=======
 =======
 <<<<<<< HEAD
   "WorkspaceRootPath": "C:\\Users\\manha.ceticc\\Documents\\GitHub\\Desapega_SENAI\\DesapegaSenai\\",
@@ -37,6 +38,7 @@
   ],
 >>>>>>> aa9c73aadaec5f750a0b40c5f07bbaa09a8fbc22
 >>>>>>> dc363ed6503a5b5449cddd7cbca22b3d6f0df183
+>>>>>>> 6f7a7c23bc6d1e65c0ff826068787ec9ffcb5280
   "DocumentGroupContainers": [
     {
       "Orientation": 0,
@@ -44,7 +46,6 @@
       "DocumentGroups": [
         {
           "DockedWidth": 200,
-<<<<<<< HEAD
           "SelectedChildIndex": -1,
 =======
 <<<<<<< HEAD
@@ -53,6 +54,8 @@
             {
               "$type": "Bookmark",
               "Name": "ST:0:0:{cce594b6-0c39-4442-ba28-10c64ac7e89f}"
+<<<<<<< HEAD
+=======
 =======
           "SelectedChildIndex": 0,
 >>>>>>> dc363ed6503a5b5449cddd7cbca22b3d6f0df183
@@ -68,6 +71,7 @@
 =======
 >>>>>>> aa9c73aadaec5f750a0b40c5f07bbaa09a8fbc22
 >>>>>>> dc363ed6503a5b5449cddd7cbca22b3d6f0df183
+>>>>>>> 6f7a7c23bc6d1e65c0ff826068787ec9ffcb5280
             }
           ]
         }
