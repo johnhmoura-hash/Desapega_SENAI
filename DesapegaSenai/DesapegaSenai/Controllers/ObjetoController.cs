@@ -140,6 +140,7 @@ public IActionResult BuscarObjetoPerfil()
                                  usuarios = u.Nome,
                                  pontos = u.Pontos,
                                  objetos = o.Nome,
+                                 foto_usuario = $"{Request.Scheme}://{Request.Host}/uploads/{u.Foto_usuario}",
                                  descricao = o.Descricao,
                                  categoria = o.Categoria,
                                  tempo_uso = o.Tempo_uso,

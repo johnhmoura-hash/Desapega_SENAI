@@ -33,7 +33,15 @@ document.addEventListener("DOMContentLoaded", function () {
         console.error("Elemento pagina-produto não existe");
         return;
     }
-            
+           
+    const api = "https://localhost:7132/uploads";
+const fotoPerfil = data.foto_usuario
+    ? `${api}/${data.foto_usuario}`
+    : "Img/usuario.png";
+
+
+console.log(data.foto_usuario);
+console.log(data);
         resposta.innerHTML = `
             <div class="produto-topo-area">
 
@@ -48,7 +56,9 @@ document.addEventListener("DOMContentLoaded", function () {
                     <h3 class="produto-imagem-foto ">${data.objetos}</h3>
 
                     <div class="produto-usuario-area">
-                    <div class="produto-usuario-foto"> <img src="${data.foto_usuario}"> </div>
+                    <div class="produto-usuario-foto">
+    <img src="${fotoPerfil}">
+</div>
                         <span class="produto-usuario-nome">
                             <p>${data.usuarios}</p>
 
