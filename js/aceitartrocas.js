@@ -1,114 +1,63 @@
 document.addEventListener("DOMContentLoaded", function () {
 
-     const id = new URLSearchParams(window.location.search).get("id");
-console.log(idTroca);
-    console.log("ID:", id);
+    const idTroca = new URLSearchParams(window.location.search).get("idTroca");
 
+    console.log("ID da troca:", idTroca);
 
+    fetch(`https://localhost:7132/Trocas/${idTroca}`, {
+        credentials: "include"
+    })
+    .then(r => r.json())
+    .then(data => {
 
+        console.log(data);
 
+        const api = "https://localhost:7132/uploads";
+        const fotoPadrao = "Img/usuario.png";
 
-    
-fetch(`https://localhost:7132/Objeto/perfil/${id}` ,{
- credentials: "include"})
-.then(response => response.json())
-.then(data => {
-
-       console.log(data);
-
-    document.getElementById("produto-desejado").innerHTML = `
-            
-           <div class="usuario">
-            <img src="" class="foto-perfil">
-            <span>${data.usuarios}</span>
-        </div>
-
-        <div class="cardr">
-            <div class="imagem">
-                <img src="${data.foto}">
+        document.getElementById("produto-desejado").innerHTML = `
+            <div class="usuario">
+                <img src="${data.fotoPerfilRemetente ? `${api}/${data.fotoPerfilRemetente}` : fotoPadrao}"
+                     class="foto-perfil">
+                <span>${data.remetente}</span>
             </div>
 
-            <div class="infos">
-                <h3>${data.objetos}</h3>
-                <span>${data.tempo_uso}</span>
+            <div class="cardr">
+                <div class="imagem">
+                    <img src="${api}/${data.fotoRemetente}">
+                </div>
+
+                <div class="infos">
+                    <h3>${data.produtoRemetente}</h3>
+                    <span>${data.tempoRemetente}</span>
+                </div>
             </div>
-        </div>
-
-            </div>
-
-    `;
-});
-
-fetch("https://localhost:7132/Objeto/perfil",{
-    credentials:"include"
-})
-.then(response => response.json())
-.then(produtos => {
-
-    if(produtos.length > 0){
-
-        let primeiro = produtos[0];
-
-        document.getElementById("nomeUsuario").textContent = primeiro.usuarios;
-        document.getElementById("fotoProduto").src = primeiro.foto;
-        document.getElementById("nomeProduto").textContent = primeiro.objetos;
-        document.getElementById("tempoProduto").textContent = primeiro.tempo_uso;
-    }
-
-});
-
-
-
-
-fetch("https://localhost:7132/Objeto/perfil",{
-    credentials:"include"
-})
-.then(response => response.json())
-.then(produtos => {
-
-    let select = document.getElementById("meusProdutos");
-
-    produtos.forEach(produto => {
-
-        select.innerHTML += `
-            <option value="${produto.objetos}">
-                ${produto.objetos}
-            </option>
         `;
-    });
-select.addEventListener("change", function () {
 
-    console.log("Selecionado:", this.value);
-
-    let produtoSelecionado =
-        produtos.find(p => p.objetos === this.value);
-
-    if(produtoSelecionado){
+        document.getElementById("fotoPerfilDestinatario").src =
+            data.fotoPerfilDestinatario
+                ? `${api}/${data.fotoPerfilDestinatario}`
+                : fotoPadrao;
 
         document.getElementById("nomeUsuario").textContent =
-            produtoSelecionado.usuarios;
+            data.destinatario;
 
         document.getElementById("fotoProduto").src =
-            produtoSelecionado.foto;
+            `${api}/${data.fotoDestinatario}`;
 
         document.getElementById("nomeProduto").textContent =
-            produtoSelecionado.objetos;
+            data.produtoDestinatario;
 
         document.getElementById("tempoProduto").textContent =
-            produtoSelecionado.tempo_uso;
-    }
-});
+            data.tempoDestinatario;
+
+        const btnPontos = document.getElementById("btnPontos");
+
+        btnPontos.style.display =
+            data.pontos_proposto == 2 ? "block" : "none";
+    })
+    .catch(err => {
+        console.error(err);
+    });
 
 });
-
-
-const btnPontos = document.getElementById("btnPontos");
-
-if (data.pontos_proposto == 2) {
-    btnPontos.style.display = "block";
-} else {
-    btnPontos.style.display = "none";
-}
-
-});
-

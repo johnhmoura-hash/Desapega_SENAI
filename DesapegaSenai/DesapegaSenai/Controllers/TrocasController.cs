@@ -51,6 +51,64 @@ namespace DesapegaSenai.Controllers
             return Ok(trocas);
         }
 
+
+        [HttpGet("{id}")]
+        public IActionResult BuscarTroca(int id)
+        {
+            var usuario = HttpContext.Session.GetString("Idusado");
+
+            if (usuario == null)
+                return Unauthorized();
+
+            int matricula = int.Parse(usuario);
+
+            var troca = (
+                from t in _context.Trocas
+
+                join ur in _context.Usuarios
+                    on t.Fk_usuarios_remetente equals ur.Matricula
+
+                join ud in _context.Usuarios
+                    on t.Fk_usuarios_destinatario equals ud.Matricula
+
+                join or in _context.Objetos
+                    on t.Fk_objetos_remetente equals or.Id
+
+                join od in _context.Objetos
+                    on t.Fk_objetos_destinatario equals od.Id
+
+                where t.Id == id
+
+                select new
+                {
+                    t.Id,
+                    t.Pontos_proposto,
+
+                    Remetente = ur.Nome,
+                    FotoPerfilRemetente = ur.Foto_usuario,
+
+                    Destinatario = ud.Nome,
+                    FotoPerfilDestinatario = ud.Foto_usuario,
+
+                    ProdutoRemetente = or.Nome,
+                    FotoRemetente = or.Foto,
+                    TempoRemetente = or.Tempo_uso,
+
+                    ProdutoDestinatario = od.Nome,
+                    FotoDestinatario = od.Foto,
+                    TempoDestinatario = od.Tempo_uso
+                }
+
+            ).FirstOrDefault();
+
+            if (troca == null)
+                return NotFound();
+
+            return Ok(troca);
+        }
+
+
+
         [HttpPost]
         public IActionResult Trocar(Troca item)
         {
