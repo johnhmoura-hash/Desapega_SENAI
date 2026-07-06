@@ -14,19 +14,7 @@ using System.Reflection;
 [assembly: System.Reflection.AssemblyCompanyAttribute("DesapegaSenai")]
 [assembly: System.Reflection.AssemblyConfigurationAttribute("Debug")]
 [assembly: System.Reflection.AssemblyFileVersionAttribute("1.0.0.0")]
-<<<<<<< HEAD
-[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0+d17d36cc1dc30ae1cb83c10e69dac91a92969f21")]
-=======
-<<<<<<< HEAD
-[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0+aa9c73aadaec5f750a0b40c5f07bbaa09a8fbc22")]
-=======
-<<<<<<< HEAD
-[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0+d17d36cc1dc30ae1cb83c10e69dac91a92969f21")]
-=======
-[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0+8d6c03d87eea3f2462fa283212551b9e1d4e9f50")]
->>>>>>> aa9c73aadaec5f750a0b40c5f07bbaa09a8fbc22
->>>>>>> dc363ed6503a5b5449cddd7cbca22b3d6f0df183
->>>>>>> 7b8784979ed70bec22c9c8d4c89a654cea623232
+[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0+01b684838fdcdbb9ba00ed2af89177806a0da20c")]
 [assembly: System.Reflection.AssemblyProductAttribute("DesapegaSenai")]
 [assembly: System.Reflection.AssemblyTitleAttribute("DesapegaSenai")]
 [assembly: System.Reflection.AssemblyVersionAttribute("1.0.0.0")]
