@@ -100,9 +100,7 @@ public IActionResult BuscarObjetoPerfil()
              {
                  o.Id,
                  o.Nome,
-
                  Foto_usuario = $"{Request.Scheme}://{Request.Host}/uploads/{usuarioBd.Foto_usuario}",
-
                  o.Descricao,
                  o.Categoria,
                  o.Tempo_uso,
@@ -121,7 +119,7 @@ public IActionResult BuscarObjetoPerfil()
     return Ok(new
     {
         Nome = usuarioBd.Nome,
-        usuarioBd.Pontos,
+        usuarioBd.Pontos,usuarioBd.Foto_usuario,
         TotalObjetos = totalObjetos,
         TotalTrocas = totalTrocas,
         Objetos = objetos
