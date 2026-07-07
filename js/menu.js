@@ -22,7 +22,7 @@ async function carregarNotificacoes() {
               onclick="window.location.href='aceitartrocas.html?id=${troca.id}'">
 
                 <strong>${troca.nomeRemetente}</strong>
-                quer trocar o produto
+                Fez uma proposta ||
                 <strong>${troca.produtoOferecido}</strong>
 
             </div>
