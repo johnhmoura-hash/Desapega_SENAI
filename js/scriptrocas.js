@@ -48,13 +48,14 @@ fetch("https://localhost:7132/Objeto/perfil",{
 })
 .then(response => response.json())
 .then(dados => {
-console.log(document.getElementById("minhaFoto"));
     if (dados.objetos.length > 0) {
 
         let primeiro = dados.objetos[0];
 
         document.getElementById("nomeUsuario").textContent = dados.nome;
         document.getElementById("fotoProduto").src = primeiro.foto;
+        document.getElementById("minhaFoto").src =
+    `https://localhost:7132/uploads/${dados.foto_usuario}`; 
     }
 
 });
