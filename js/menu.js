@@ -1,7 +1,6 @@
 const btnNotificacao = document.getElementById("btnNotificacao");
 const popupNotificacao = document.getElementById("popupNotificacao");
 const listaNotificacoes = document.getElementById("listaNotificacoes");
-
 async function carregarNotificacoes() {
 
     const response = await fetch("https://localhost:7132/Trocas", {
@@ -10,13 +9,17 @@ async function carregarNotificacoes() {
 
     const trocas = await response.json();
 
+    console.log("Trocas:", trocas);
+
     listaNotificacoes.innerHTML = "";
 
     trocas.forEach(troca => {
 
+        console.log("Troca:", troca);
+
         listaNotificacoes.innerHTML += `
             <div class="notificacao-item"
-                 onclick="window.location.href='aceitartroca.html?id=${troca.id}'">
+              onclick="window.location.href='aceitartrocas.html?id=${troca.id}'">
 
                 <strong>${troca.nomeRemetente}</strong>
                 quer trocar o produto

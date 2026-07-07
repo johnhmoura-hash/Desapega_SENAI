@@ -33,7 +33,10 @@ document.addEventListener("DOMContentLoaded", function () {
         console.error("Elemento pagina-produto não existe");
         return;
     }
-            
+           
+
+console.log(data.foto_usuario);
+console.log(data);
         resposta.innerHTML = `
             <div class="produto-topo-area">
 
@@ -48,7 +51,9 @@ document.addEventListener("DOMContentLoaded", function () {
                     <h3 class="produto-imagem-foto ">${data.objetos}</h3>
 
                     <div class="produto-usuario-area">
-                    <div class="produto-usuario-foto"> <img src="${data.foto_usuario}"> </div>
+   <div class="produto-usuario-foto">
+    <img src="${data.foto_usuario}">
+</div>
                         <span class="produto-usuario-nome">
                             <p>${data.usuarios}</p>
 

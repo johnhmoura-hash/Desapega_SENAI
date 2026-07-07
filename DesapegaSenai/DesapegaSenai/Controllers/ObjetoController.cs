@@ -94,21 +94,24 @@ public IActionResult BuscarObjetoPerfil()
     if (usuarioBd == null)
         return NotFound();
 
-    var objetos = _context.Objetos
-        .Where(o => o.Fk_usuarios_matricula == matricula)
-        .Select(o => new
-        {
-            o.Id,
-            o.Nome,
-            o.Descricao,
-            o.Categoria,
-            o.Tempo_uso,
-            Foto = $"{Request.Scheme}://{Request.Host}/uploads/{o.Foto}",
-            o.Prefere_troca
-        })
-        .ToList();
+            var objetos = _context.Objetos
+             .Where(o => o.Fk_usuarios_matricula == matricula)
+             .Select(o => new
+             {
+                 o.Id,
+                 o.Nome,
 
-    var totalObjetos = objetos.Count;
+                 Foto_usuario = $"{Request.Scheme}://{Request.Host}/uploads/{usuarioBd.Foto_usuario}",
+
+                 o.Descricao,
+                 o.Categoria,
+                 o.Tempo_uso,
+                 Foto = $"{Request.Scheme}://{Request.Host}/uploads/{o.Foto}",
+                 o.Prefere_troca
+             })
+             .ToList();
+
+            var totalObjetos = objetos.Count;
 
     var totalTrocas = _context.Trocas
         .Count(t =>
@@ -140,6 +143,7 @@ public IActionResult BuscarObjetoPerfil()
                                  usuarios = u.Nome,
                                  pontos = u.Pontos,
                                  objetos = o.Nome,
+                                 foto_usuario = $"{Request.Scheme}://{Request.Host}/uploads/{u.Foto_usuario}",
                                  descricao = o.Descricao,
                                  categoria = o.Categoria,
                                  tempo_uso = o.Tempo_uso,

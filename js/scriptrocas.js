@@ -22,10 +22,10 @@ produtoDestino = data.id;
 
     document.getElementById("produto-desejado").innerHTML = `
             
-           <div class="usuario">
-            <img src="" class="foto-perfil">
-            <span>${data.usuarios}</span>
-        </div>
+       <div class="usuario">
+    <img src="${data.foto_usuario}" class="foto-perfil">
+    <p class="nome-usuario">${data.usuarios}</p>
+</div>
 
         <div class="cardr">
             <div class="imagem">
@@ -48,7 +48,7 @@ fetch("https://localhost:7132/Objeto/perfil",{
 })
 .then(response => response.json())
 .then(dados => {
-
+console.log(document.getElementById("minhaFoto"));
     if (dados.objetos.length > 0) {
 
         let primeiro = dados.objetos[0];
