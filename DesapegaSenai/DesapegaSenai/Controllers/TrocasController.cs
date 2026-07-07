@@ -162,5 +162,20 @@ namespace DesapegaSenai.Controllers
 
             return Ok();
         }
+
+        [HttpPut]
+        public IActionResult AtualizarTroca(int id, Troca troca)
+        {
+            var objBanco = _context.Trocas.Find(id);
+
+            if (objBanco == null)
+                return NotFound("Tarefa não encontrada");
+
+            objBanco.Status = troca.Status;
+           
+            _context.SaveChanges();
+            return Ok("Atualizado com sucesso!");
+        }
+
     }
 }
