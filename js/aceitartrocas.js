@@ -65,8 +65,6 @@ document.addEventListener("DOMContentLoaded", function () {
        
     function recusarTroca(){
 
-       
-console.log(idTroca);
         fetch(`https://localhost:7132/Trocas/${idTroca}`, { 
         method: 'DELETE',
         credentials: 'include',
@@ -86,7 +84,22 @@ console.log(idTroca);
     });
     }
     
+    document.getElementById("btnacitar").addEventListener("click",aceitarTroca);
+       
+    function aceitarTroca(){
 
-
+        fetch(`https://localhost:7132/Trocas/${idTroca}`, { 
+        method: 'PUT',
+        credentials: 'include',
+         headers: {
+            "Content-Type": "application/json"
+        },
+        body: JSON.stringify({
+            email:document.getElementById("email").value,
+            senha:document.getElementById("senha").value
+        })
+    
+    });
+    }
 
 });
