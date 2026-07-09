@@ -60,4 +60,46 @@ document.addEventListener("DOMContentLoaded", function () {
         console.error(err);
     });
 
+
+    document.getElementById("btn-cancelar").addEventListener("click",recusarTroca);
+       
+    function recusarTroca(){
+
+        fetch(`https://localhost:7132/Trocas/${idTroca}`, { 
+        method: 'DELETE',
+        credentials: 'include',
+    
+    })
+    .then(response => {
+        if (!response.ok) {
+            throw new Error("Erro ao excluir a proposta.");
+        }
+
+        alert("Proposta recusada com sucesso!");
+        window.location.href = "index.html";
+    })
+    .catch(error => {
+        console.error(error);
+        alert("Não foi possível excluir a proposta.");
+    });
+    }
+    
+    document.getElementById("btnacitar").addEventListener("click",aceitarTroca);
+       
+    function aceitarTroca(){
+
+        fetch(`https://localhost:7132/Trocas/${idTroca}`, { 
+        method: 'PUT',
+        credentials: 'include',
+         headers: {
+            "Content-Type": "application/json"
+        },
+        body: JSON.stringify({
+            email:document.getElementById("email").value,
+            senha:document.getElementById("senha").value
+        })
+    
+    });
+    }
+
 });
