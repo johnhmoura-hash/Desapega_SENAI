@@ -54,7 +54,7 @@ document.addEventListener("DOMContentLoaded", function () {
         const btnPontos = document.getElementById("btnPontos");
 
         btnPontos.style.display =
-            data.pontos_proposto == 2 ? "block" : "none";
+            data.pontos_proposto == true ? "block" : "none";
     })
     .catch(err => {
         console.error(err);
@@ -66,8 +66,14 @@ document.addEventListener("DOMContentLoaded", function () {
     function recusarTroca(){
 
         fetch(`https://localhost:7132/Trocas/${idTroca}`, { 
-        method: 'DELETE',
+        method: 'PUT',
         credentials: 'include',
+         headers: {
+            "Content-Type": "application/json"
+        },
+        body: JSON.stringify({
+            status:"Recusada"
+        })
     
     })
     .then(response => {
@@ -84,7 +90,7 @@ document.addEventListener("DOMContentLoaded", function () {
     });
     }
     
-    document.getElementById("btnacitar").addEventListener("click",aceitarTroca);
+    document.getElementById("btnAceitar").addEventListener("click",aceitarTroca);
        
     function aceitarTroca(){
 
@@ -95,11 +101,21 @@ document.addEventListener("DOMContentLoaded", function () {
             "Content-Type": "application/json"
         },
         body: JSON.stringify({
-            email:document.getElementById("email").value,
-            senha:document.getElementById("senha").value
+            status:"Aceita"
         })
-    
+       
+    }).then(response => {
+        if (!response.ok) {
+            throw new Error("Erro ao aceitar a proposta.");
+        }
+
+        alert("Proposta aceita com sucesso!");
+        window.location.href = "index.html";
+    })
+    .catch(error => {
+        console.error(error);
+        alert("Não foi possível aceitar a proposta.");
     });
-    }
+    } 
 
 });
