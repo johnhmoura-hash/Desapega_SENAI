@@ -65,17 +65,19 @@ document.addEventListener("DOMContentLoaded", function () {
     .then(response => response.json())
     .then(data => {
 
-
         const resposta = document.getElementById("grid-produtos");
 
         if (!resposta) {
             console.error("Elemento #info não existe no HTML");
             return;
         }
+        
 
         resposta.innerHTML = "";
-
+        
+        
         for (let i = 0; i < data.length; i++) {
+            if(data[i].status_objeto == true){
 
             resposta.innerHTML += `
             <div class="carde">
@@ -93,6 +95,7 @@ document.addEventListener("DOMContentLoaded", function () {
             `;
             ;
         }
+    }
     });
 });
 

@@ -164,52 +164,99 @@ namespace DesapegaSenai.Controllers
             return Ok();
         }
 
-        //[HttpPut("{id}")]
-        //public IActionResult AtualizarTroca(int id, Troca troca)
-        //{
-        //    var objBanco = _context.Trocas.Find(id);
+        [HttpPut("{id}")]
+        public IActionResult AtualizarTroca(int id, Troca troca)
+        {
+            var objBanco = _context.Trocas.Find(id);
 
-        //    if (objBanco == null)
-        //        return NotFound("Tarefa não encontrada");
+            if (objBanco == null)
+                return NotFound("Tarefa não encontrada");
 
-        //    objBanco.Status = troca.Status;
-           
-        //    if(troca.Status == "Aceita")
-        //    {
-        //        var objetoRemetente = _context.Objetos
-        //        .FirstOrDefault(o => o.Id == objBanco.Fk_objetos_remetente);
+            objBanco.Status = troca.Status;
 
-        //        var objetoDestinatario = _context.Objetos
-        //            .FirstOrDefault(o => o.Id == objBanco.Fk_objetos_destinatario);
-               
-        //        if (objetoRemetente == null || objetoDestinatario == null)
-        //        {
-        //            return BadRequest("Objeto não encontrado.");
-                
-        //        }
-        //        objetoRemetente.Status_objeto = false;
-        //        objetoDestinatario.Status_objeto = false;
+            if (troca.Status == "Aceita")
+            {
+                var objetoRemetente = _context.Objetos
+                .FirstOrDefault(o => o.Id == objBanco.Fk_objetos_remetente);
 
-        //        if (objBanco.Pontos_proposto == true)
-        //        {
-        //            var usuarioRemetente = _context.Usuarios
-        //                .FirstOrDefault(u => u.Matricula == objBanco.Fk_usuarios_remetente);
+                var objetoDestinatario = _context.Objetos
+                    .FirstOrDefault(o => o.Id == objBanco.Fk_objetos_destinatario);
 
-        //            var usuarioDestinatario = _context.Usuarios
-        //                .FirstOrDefault(u => u.Matricula == objBanco.Fk_usuarios_destinatario);
+                if (objetoRemetente == null || objetoDestinatario == null)
+                {
+                    return BadRequest("Objeto não encontrado.");
 
-        //            if (usuarioRemetente == null || usuarioDestinatario == null)
-        //                return BadRequest("Usuário não encontrado.");
+                }
+                objetoRemetente.Status_objeto = false;
+                objetoDestinatario.Status_objeto = false;
 
-        //            usuarioRemetente.Pontos -= 2;
-        //            usuarioDestinatario.Pontos += 2;
-        //        }
+                if (objBanco.Pontos_proposto == true)
+                {
+                    var usuarioRemetente = _context.Usuarios
+                        .FirstOrDefault(u => u.Matricula == objBanco.Fk_usuarios_remetente);
 
-        //    }
+                    var usuarioDestinatario = _context.Usuarios
+                        .FirstOrDefault(u => u.Matricula == objBanco.Fk_usuarios_destinatario);
 
-        //    _context.SaveChanges();
-        //    return Ok("Atualizado com sucesso!");
-        //}
+                    if (usuarioRemetente == null || usuarioDestinatario == null)
+                        return BadRequest("Usuário não encontrado.");
 
+                    usuarioRemetente.Pontos -= 2;
+                    usuarioDestinatario.Pontos += 2;
+
+                    var objetoRemetente2 = _context.Objetos
+                    .FirstOrDefault(o => o.Id == objBanco.Fk_objetos_remetente);
+
+                    if (objetoRemetente2 == null)
+                    {
+                        return BadRequest("Objeto não encontrado.");
+
+                    }
+                    objetoRemetente.Status_objeto = false;
+                }
+
+            }
+
+            _context.SaveChanges();
+            return Ok("Atualizado com sucesso!");
+        }
+
+        [HttpPut("pontos/{id}")]
+        public IActionResult AtualizarTrocaPontos(int id, Troca troca)
+        {
+            var objBanco = _context.Trocas.Find(id);
+
+            if (objBanco == null)
+                return NotFound("Tarefa não encontrada");
+
+            objBanco.Status = troca.Status;
+
+            if (troca.Status == "Aceita" && objBanco.Pontos_proposto == true)
+            {
+                var usuarioRemetente = _context.Usuarios
+                       .FirstOrDefault(u => u.Matricula == objBanco.Fk_usuarios_remetente);
+
+                var usuarioDestinatario = _context.Usuarios
+                    .FirstOrDefault(u => u.Matricula == objBanco.Fk_usuarios_destinatario);
+
+                if (usuarioRemetente == null || usuarioDestinatario == null)
+                    return BadRequest("Usuário não encontrado.");
+
+                usuarioRemetente.Pontos -= 2;
+                usuarioDestinatario.Pontos += 2;
+
+                var objetoRemetente2 = _context.Objetos
+                .FirstOrDefault(o => o.Id == objBanco.Fk_objetos_remetente);
+
+                if (objetoRemetente2 == null)
+                {
+                    return BadRequest("Objeto não encontrado.");
+
+                }
+                objetoRemetente2.Status_objeto = false;
+            }
+            _context.SaveChanges();
+            return Ok("Atualizado com sucesso!");
+        }
     }
 }

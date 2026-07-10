@@ -118,4 +118,33 @@ document.addEventListener("DOMContentLoaded", function () {
     });
     } 
 
+
+     document.getElementById("btnPontos").addEventListener("click",aceitarTroca);
+       
+    function aceitarTroca(){
+
+        fetch(`https://localhost:7132/Trocas/pontos/${idTroca}`, { 
+        method: 'PUT',
+        credentials: 'include',
+         headers: {
+            "Content-Type": "application/json"
+        },
+        body: JSON.stringify({
+           Status:"Aceita"
+        })
+       
+    }).then(response => {
+        if (!response.ok) {
+            throw new Error("Erro ao aceitar a proposta.");
+        }
+
+        alert("Proposta aceita com sucesso!");
+        window.location.href = "index.html";
+    })
+    .catch(error => {
+        console.error(error);
+        alert("Não foi possível aceitar a proposta.");
+    });
+    } 
+
 });

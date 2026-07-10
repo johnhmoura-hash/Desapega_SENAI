@@ -118,7 +118,7 @@ btnTrocar.addEventListener("click", function () {
     usuarioDestino,
     produtoRemetente: produtoSelecionado.id,
     produtoDestino,
-    pontosPropostos
+    
 });
 
 console.log(produtoSelecionado);
@@ -184,7 +184,7 @@ btnPontos.addEventListener("click", () => {
 
     btnPontos.classList.toggle("selecionado");
 
- console.log(pontosPropostos);
+
 });
 
 
