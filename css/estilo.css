@@ -48,6 +48,7 @@ body{
   display: flex;
   align-items: center;
   gap: 20px;
+  margin-left: 15px;
   margin-left: auto;
 }
 
@@ -92,42 +93,35 @@ body{
  
 }
 
-
-.pesquisar {
-  flex: 1;
-  max-width: 400px;
-}
-
-
-.pesquisar a {
-  text-decoration: none;
-  font-weight: 500;
-  margin-right: 15px;
-  border-radius: 10px;
-  border: 1px solid #a8a8a8; 
-  padding: 1vh;
-  color: #a8a8a8;
-}
-
-
-.pesquisar a:hover{
-  color: #005CAA;
-  border-color: #0056b3;
-
+.pesquisar{
+    flex: 1;
+    min-width: 0px;
+    max-width: 400px;
 }
 
 .pesquisar input{
-  border:1px solid #a8a8a8;
-  border-radius: 20px;
-  padding: 0.5vw;
-  outline: none;
-  width: 300px;
-
+    width: 100%;
+    border:1px solid #a8a8a8;
+    border-radius:20px;
+    padding:8px 15px;
+    outline:none;
 }
 
-.pesquisar input:hover{
-  border-color: #0056b3;
-  outline: none;
+@media (max-width: 768px){
+
+    .pesquisar{
+        max-width: 180px;
+    }
+
+    .menu{
+        gap: 8px;
+    }
+
+    .menu a{
+        padding: 6px 10px;
+        margin-right: 5px;
+        font-size: 14px;
+    }
 }
 
 /* categoria */
