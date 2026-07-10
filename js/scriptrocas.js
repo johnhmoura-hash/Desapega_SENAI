@@ -3,7 +3,7 @@ document.addEventListener("DOMContentLoaded", function () {
 let produtoSelecionado = null;
 let usuarioDestino = 0;
 let produtoDestino = 0;
-let pontosPropostos = 0;
+
 let usarPontos = false;
 
      const id = new URLSearchParams(window.location.search).get("id");
@@ -141,7 +141,7 @@ console.log(produtoSelecionado);
 
             fk_objetos_destinatario: produtoDestino,
 
-            pontos_proposto: pontosPropostos,
+            pontos_proposto:usarPontos,
 
              status: "Pendente"
 
@@ -184,7 +184,6 @@ btnPontos.addEventListener("click", () => {
 
     btnPontos.classList.toggle("selecionado");
 
-    pontosPropostos = usarPontos ? 2 : 0;
  console.log(pontosPropostos);
 });
 

@@ -1,0 +1,209 @@
+
+*{
+    margin:0;
+    padding:0;
+    box-sizing:border-box;
+    font-family:Verdana, Geneva, Tahoma, sans-serif;
+}
+
+.ranking-page{
+     width:95%;
+    max-width:1460px;
+    margin:40px auto;
+}
+
+.ranking-top{
+    margin-bottom:30px;
+}
+
+.ranking-select{
+   
+  width: 100%;
+  max-width: 150px;
+  height: 30px;
+  padding: 5px;
+  border-radius: 12px;
+  border: 1px solid #3b82f6;
+  outline: none;
+}
+
+
+.ranking-header{
+    display:grid;
+    grid-template-columns:2fr 1fr 1fr 140px;
+    align-items:center;
+    padding:0 20px;
+    margin-bottom:15px;
+}
+
+.ranking-user-title{
+    display:flex;
+    align-items:center;
+    gap:15px;
+}
+
+.ranking-user-title h3,
+.ranking-header h3{
+    font-size:22px;
+    font-weight:500;
+}
+
+.ranking-icon{
+    display:flex;
+    align-items:flex-end;
+    gap:4px;
+}
+
+.ranking-icon span:nth-child(1){
+    width:10px;
+    height:18px;
+    background:#d6a27a;
+}
+
+.ranking-icon span:nth-child(2){
+    width:10px;
+    height:28px;
+    background:#f4c430;
+}
+
+.ranking-icon span:nth-child(3){
+    width:10px;
+    height:22px;
+    background:#666;
+}
+
+.ranking-item{
+    display:grid;
+    grid-template-columns:80px 2fr 1fr 1fr 120px;
+    align-items:center;
+
+    height:72px;
+    padding:0 28px;
+    margin-bottom:16px;
+
+    border:1.5px solid;
+    border-radius:18px;
+}
+
+.ranking-position{
+    font-size:26px;
+    font-weight:600;
+}
+
+.ranking-name{
+    font-size:22px;
+}
+
+.ranking-value{
+    font-size:20px;
+    color:#666;
+}
+
+.ranking-btn{
+    width:90px;
+    height:36px;
+
+    border:none;
+    border-radius:10px;
+
+    background:#ff8a34;
+    color:#fff;
+    font-size:16px;
+    cursor:pointer;
+}
+
+.ranking-gold{
+    border-color:#f4b43a;
+}
+
+.ranking-gold .ranking-position{
+    color:#f4b43a;
+}
+
+.ranking-silver{
+    border-color:#7c7c7c;
+}
+
+.ranking-silver .ranking-position{
+    color:#7c7c7c;
+}
+
+.ranking-bronze{
+    border-color:#d6a27a;
+}
+
+.ranking-bronze .ranking-position{
+    color:#d6a27a;
+}
+
+.ranking-blue{
+    border-color:#2F80ED;
+}
+
+.ranking-blue .ranking-position{
+    color:#2F80ED;
+}
+
+@media (max-width: 1024px){
+
+    .ranking-user-title h3,
+    .ranking-header h3{
+        font-size:18px;
+    }
+
+    .ranking-position{
+        font-size:22px;
+    }
+
+    .ranking-name{
+        font-size:18px;
+    }
+
+    .ranking-value{
+        font-size:16px;
+    }
+
+    .ranking-btn{
+        width:80px;
+        height:34px;
+        font-size:14px;
+    }
+
+    .ranking-item{
+        grid-template-columns:70px 2fr 1fr 1fr 100px;
+        padding:0 20px;
+    }
+}
+
+/* Celulares */
+@media (max-width: 768px){
+
+    .ranking-user-title h3,
+    .ranking-header h3{
+        font-size:16px;
+    }
+
+    .ranking-position{
+        font-size:18px;
+    }
+
+    .ranking-name{
+        font-size:15px;
+    }
+
+    .ranking-value{
+        font-size:14px;
+    }
+
+    .ranking-btn{
+        width:70px;
+        height:30px;
+        font-size:13px;
+    }
+
+    .ranking-item{
+        grid-template-columns:55px 2fr 1fr 1fr 80px;
+        padding:0 15px;
+        height:60px;
+    }
+}
