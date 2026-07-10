@@ -111,10 +111,9 @@ public IActionResult BuscarObjetoPerfil()
 
             var totalObjetos = objetos.Count;
 
-    var totalTrocas = _context.Trocas
-        .Count(t =>
-            t.Fk_usuarios_remetente == matricula ||
-            t.Fk_usuarios_destinatario == matricula);
+            var totalTrocas = _context.Trocas.Count(t =>
+                        t.Fk_usuarios_remetente == matricula &&
+                        t.Status == "Aceita");
 
     return Ok(new
     {
