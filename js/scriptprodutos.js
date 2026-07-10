@@ -1,4 +1,3 @@
-
 async function abrirTroca(idProdutoDesejado){
 
     const resposta = await fetch(
@@ -6,15 +5,20 @@ async function abrirTroca(idProdutoDesejado){
         { credentials:"include" }
     );
 
-  const meusProdutos = await resposta.json();
+    const meusProdutos = await resposta.json();
 
-if (!meusProdutos.objetos || meusProdutos.objetos.length === 0) {
+    if (!meusProdutos.objetos || meusProdutos.objetos.length === 0) {
 
-    document.getElementById("popup-sem-produto").style.display = "flex";
-    return;
+        document.getElementById("popup-sem-produto").style.display = "flex";
+        return;
+    }
+
+    window.location.href = `trocas.html?id=${idProdutoDesejado}`;
 }
 
-window.location.href = `trocas.html?id=${idProdutoDesejado}`;
+// ADICIONE ESTA FUNÇÃO AQUI
+function abrirPerfil(idUsuario){
+    window.location.href = `perfilpessoas.html?id=${idUsuario}`;
 }
 
 document.addEventListener("DOMContentLoaded", function () {
@@ -27,55 +31,52 @@ document.addEventListener("DOMContentLoaded", function () {
     .then(response => response.json())
     .then(data => {
 
-            const resposta = document.getElementById("pagina-produto");
+        const resposta = document.getElementById("pagina-produto");
 
-    if (!resposta) {
-        console.error("Elemento pagina-produto não existe");
-        return;
-    }
-           
+        if (!resposta) {
+            console.error("Elemento pagina-produto não existe");
+            return;
+        }
 
-console.log(data.foto_usuario);
-console.log(data);
+        console.log(data.foto_usuario);
+        console.log(data);
+
         resposta.innerHTML = `
             <div class="produto-topo-area">
 
-
-            
                 <div class="produto-imagem-box">
                     <img src="${data.foto}">
                 </div>
 
                 <div class="produto-card-lateral">
 
-                    <h3 class="produto-imagem-foto ">${data.objetos}</h3>
+                    <h3 class="produto-imagem-foto">${data.objetos}</h3>
 
                     <div class="produto-usuario-area">
-   <div class="produto-usuario-foto">
-    <img src="${data.foto_usuario}">
-</div>
+
+                        <div class="produto-usuario-foto">
+                            <img src="${data.foto_usuario}">
+                        </div>
+
                         <span class="produto-usuario-nome">
-                            <p>${data.usuarios}</p>
-
-                                                 
-                
-                
+                            <p onclick="abrirPerfil(${data.id_usuario})">
+                                ${data.usuarios}
+                            </p>
                         </span>
-
-
-        
-                            
-
-         
 
                     </div>
 
-<button class="produto-botao-principal"
-onclick="abrirTroca(${data.id})">
-    Eu quero
-</button>
-                    <button class="produto-botao-chat">Chat <i class="ri-chat-3-line"></i></button>
+                    <button class="produto-botao-principal"
+                        onclick="abrirTroca(${data.id})">
+                        Eu quero
+                    </button>
+
+                    <button class="produto-botao-chat">
+                        Chat <i class="ri-chat-3-line"></i>
+                    </button>
+
                 </div>
+
             </div>
 
             <div class="produto-inferior-area">
@@ -117,96 +118,4 @@ onclick="abrirTroca(${data.id})">
         console.error("Erro no fetch:", error);
     });
 
-
-
-
-
 });
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-/*
-const btnQuero = document.getElementById("btnQuero");
-
-btnQuero.addEventListener("click", async () => {
-
-    const troca = {
-        Fk_objetos_remetente: Number(btnQuero.dataset.objetoRemetente),
-        Fk_objetos_destinatario: Number(btnQuero.dataset.objetoDestinatario),
-        Fk_usuarios_destinatario: Number(btnQuero.dataset.usuarioDestinatario)
-    };
-
-    try {
-
-        const resposta = await fetch(
-            "https://localhost:7132/Trocas",
-            {
-                method: "POST",
-                credentials: "include",
-                headers: {
-                    "Content-Type": "application/json"
-                },
-                body: JSON.stringify(troca)
-            }
-        );
-
-        const resultado = await resposta.text();
-
-        if (resposta.ok) {
-            alert("Troca solicitada com sucesso!");
-        } else {
-            alert(resultado);
-        }
-
-    } catch (erro) {
-        console.error(erro);
-        alert("Erro ao solicitar troca.");
-    }
-
-});
-
-
-const myForm = document.getElementById('Trocar');
-myForm.addEventListener('submit', function (event) {
-   
-    event.preventDefault();
-       fetch('http://localhost:7132/pessoa', {
-        method: 'POST', 
-        headers: {
-            'Content-Type': 'application/json',
-        },
-        body: JSON.stringify({
-            nome: document.getElementById("nome").value,
-            email: document.getElementById("email").value,
-            senha: document.getElementById("senha").value,
-        }),
-    }).
-        then(response => response.json())
-            .then(data => {
-            console.log("Sucesso:", data);
-            alert("Conta criada com sucesso!");
-            formProduto.reset();
-            limparBordas();
-    })
-});
-
-*/
-
-
