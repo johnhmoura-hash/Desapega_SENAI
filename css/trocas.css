@@ -1,5 +1,5 @@
 body{
-  font-family:Verdana, Geneva, Tahoma, sans-serif;
+  font-family:'Times New Roman', Times, serif;
 }
 
 .faixatopo{
@@ -107,6 +107,7 @@ body{
   outline: none;
 }
 body{
+    font-family: 'Helvetica, Arial, Georgia, Tahoma';
     height: 100vh;
     display: flex;
     justify-content: center;
