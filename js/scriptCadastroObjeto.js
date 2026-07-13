@@ -42,25 +42,65 @@ formProduto.addEventListener('submit', (e) => {e.preventDefault();
 function enviarProduto() {
 
     const formData = new FormData();
-formData.append('nome', document.getElementById("nomeProduto").value);
-formData.append('descricao', document.getElementById("descricao").value);
-formData.append('categoria', document.getElementById("categoria").value);
-formData.append('tempo_uso', document.getElementById("tempoUso").value);
-formData.append('prefere_troca', document.getElementById("troca").value);
-formData.append('status_objeto', true);
-formData.append('foto', 'gggh');
 
+    formData.append('nome', document.getElementById("nomeProduto").value);
+    formData.append('descricao', document.getElementById("descricao").value);
+    formData.append('categoria', document.getElementById("categoria").value);
+    formData.append('tempo_uso', document.getElementById("tempoUso").value);
+    formData.append('prefere_troca', document.getElementById("troca").value);
+    formData.append('status_objeto', true);
+    formData.append('foto', 'gggh');
+    formData.append('arquivoFoto', inputFoto.files[0]);
 
-formData.append('arquivoFoto', inputFoto.files[0]); 
+    fetch('https://localhost:7132/objeto', {
+        method: 'POST',
+        credentials: 'include',
+        body: formData
+    })
+    .then(async res => {
 
-fetch('https://localhost:7132/objeto', { 
-    method: 'POST',
-    credentials: 'include',
-    body: formData
-})
-.then(res => res.json())
-.then(dados => console.log(dados))
-.catch(erro => console.error(erro));
+    console.log("Status:", res.status);
+
+    let dados = {};
+
+    try {
+        dados = await res.json();
+    } catch (e) {
+        console.log("A resposta não é JSON.");
+    }
+
+    if (res.ok) {
+        console.log("Vou mostrar o toast");
+        mostrarToast("Produto cadastrado com sucesso!");
+            console.log("Vou mostrar o toast");
+            mostrarToast("Produto cadastrado com sucesso!");
+
+            formProduto.reset();
+
+            document.querySelector(".photo-upload").innerHTML = `
+                <i class="fa-solid fa-camera"></i>
+                <span>Adicionar foto</span>
+                <input type="file" id="inputFoto" accept="image/*" style="display:none;">
+            `;
+
+            setTimeout(() => {
+                
+            }, 2000);
+
+        } else {
+
+            mostrarToast(dados.mensagem || "Erro ao cadastrar o produto.", "erro");
+
+        }
+
+    })
+    .catch(erro => {
+
+        console.error(erro);
+        mostrarToast("Erro ao conectar ao servidor.", "erro");
+
+    });
+
 }
 
 if (nomeProduto) nomeProduto.addEventListener("keyup", validarNomeProduto);
@@ -147,4 +187,23 @@ function limparBordas(){
 }
 
 }  
-                                                                             
+
+
+function mostrarToast(mensagem, tipo = "sucesso") {
+
+    const toast = document.getElementById("toast");
+
+    toast.textContent = mensagem;
+
+    toast.className = "toast";
+
+    if (tipo === "erro") {
+        toast.classList.add("erro");
+    }
+
+    toast.classList.add("mostrar");
+
+    setTimeout(() => {
+        toast.classList.remove("mostrar");
+    }, 3000);
+}
