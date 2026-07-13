@@ -22,7 +22,11 @@
       "DocumentGroups": [
         {
           "DockedWidth": 200,
+<<<<<<< HEAD
           "SelectedChildIndex": 2,
+=======
+          "SelectedChildIndex": 1,
+>>>>>>> e7b9f1e27795ced7aded8014ca7cab898f3c03c2
           "Children": [
             {
               "$type": "Bookmark",
@@ -35,12 +39,21 @@
             {
               "$type": "Document",
               "DocumentIndex": 0,
+<<<<<<< HEAD
               "Title": "Notificacao.cs",
               "DocumentMoniker": "C:\\Users\\manha.ceticc\\Documents\\GitHub\\Desapega_SENAI\\DesapegaSenai\\DesapegaSenai\\Models\\Notificacao.cs",
               "RelativeDocumentMoniker": "DesapegaSenai\\Models\\Notificacao.cs",
               "ToolTip": "C:\\Users\\manha.ceticc\\Documents\\GitHub\\Desapega_SENAI\\DesapegaSenai\\DesapegaSenai\\Models\\Notificacao.cs*",
               "RelativeToolTip": "DesapegaSenai\\Models\\Notificacao.cs*",
               "ViewState": "AgIAAAAAAAAAAAAAAAAAAAcAAAAWAAAAAAAAAA==",
+=======
+              "Title": "ObjetoController.cs",
+              "DocumentMoniker": "C:\\Users\\manha.ceticc\\Documents\\GitHub\\Desapega_SENAI\\DesapegaSenai\\DesapegaSenai\\Controllers\\ObjetoController.cs",
+              "RelativeDocumentMoniker": "DesapegaSenai\\Controllers\\ObjetoController.cs",
+              "ToolTip": "C:\\Users\\manha.ceticc\\Documents\\GitHub\\Desapega_SENAI\\DesapegaSenai\\DesapegaSenai\\Controllers\\ObjetoController.cs",
+              "RelativeToolTip": "DesapegaSenai\\Controllers\\ObjetoController.cs",
+              "ViewState": "AgIAAL4AAAAAAAAAAAAowG8AAAAAAAAAAAAAAA==",
+>>>>>>> e7b9f1e27795ced7aded8014ca7cab898f3c03c2
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
               "WhenOpened": "2026-07-13T14:05:12.3Z",
               "EditorCaption": ""
@@ -55,6 +68,7 @@
               "RelativeToolTip": "DesapegaSenai\\Controllers\\NotificacaoController.cs",
               "ViewState": "AgIAACkAAAAAAAAAAAAwwC8AAAAMAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+<<<<<<< HEAD
               "WhenOpened": "2026-07-13T13:59:40.788Z",
               "EditorCaption": ""
             },
@@ -70,6 +84,13 @@
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
               "WhenOpened": "2026-07-13T13:49:28.201Z",
               "EditorCaption": ""
+=======
+              "WhenOpened": "2026-07-10T11:31:43.132Z"
+            },
+            {
+              "$type": "Bookmark",
+              "Name": "ST:0:0:{cce594b6-0c39-4442-ba28-10c64ac7e89f}"
+>>>>>>> e7b9f1e27795ced7aded8014ca7cab898f3c03c2
             }
           ]
         }
