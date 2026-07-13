@@ -142,6 +142,26 @@ namespace DesapegaSenai.Controllers
             _context.Trocas.Add(item);
             _context.SaveChanges();
 
+            var remetente = _context.Usuarios
+            .FirstOrDefault(u => u.Matricula == item.Fk_usuarios_remetente);
+             
+            if (remetente == null)
+            {
+                return BadRequest("Usuário remetente não encontrado.");
+            }
+
+            _context.Notificacoes.Add(new Notificacao
+            {
+                Conteudo = $"{remetente.Nome} quer trocar um produto com você.",
+                Data = DateOnly.FromDateTime(DateTime.Now),
+                Status = "Não lida",
+                Tipo = "NovaProposta",
+                Fk_usuarios_matricula = item.Fk_usuarios_destinatario,
+                Fk_troca_id = item.Id
+            });
+
+            _context.SaveChanges();
+
             return Ok(item);
         }
 
@@ -190,30 +210,40 @@ namespace DesapegaSenai.Controllers
                 objetoRemetente.Status_objeto = false;
                 objetoDestinatario.Status_objeto = false;
 
-                if (objBanco.Pontos_proposto == true)
+                var destinatario = _context.Usuarios
+                .FirstOrDefault(u => u.Matricula == objBanco.Fk_usuarios_destinatario);
+
+                if(destinatario == null)
                 {
-                    var usuarioRemetente = _context.Usuarios
-                        .FirstOrDefault(u => u.Matricula == objBanco.Fk_usuarios_remetente);
-
-                    var usuarioDestinatario = _context.Usuarios
-                        .FirstOrDefault(u => u.Matricula == objBanco.Fk_usuarios_destinatario);
-
-                    if (usuarioRemetente == null || usuarioDestinatario == null)
-                        return BadRequest("Usuário não encontrado.");
-
-                    usuarioRemetente.Pontos -= 2;
-                    usuarioDestinatario.Pontos += 2;
-
-                    var objetoRemetente2 = _context.Objetos
-                    .FirstOrDefault(o => o.Id == objBanco.Fk_objetos_remetente);
-
-                    if (objetoRemetente2 == null)
-                    {
-                        return BadRequest("Objeto não encontrado.");
-
-                    }
-                    objetoRemetente.Status_objeto = false;
+                    return BadRequest("destinatario não encontrado.");
                 }
+                _context.Notificacoes.Add(new Notificacao
+                {
+                    Conteudo = $"{destinatario.Nome} aceitou sua proposta de troca.",
+                    Data = DateOnly.FromDateTime(DateTime.Now),
+                    Status = "Aceita",
+                    Fk_usuarios_matricula = objBanco.Fk_usuarios_remetente,
+                    Fk_troca_id = objBanco.Id
+                });
+            }
+                if (troca.Status == "Recusada")
+            {
+                var destinatario = _context.Usuarios
+               .FirstOrDefault(u => u.Matricula == objBanco.Fk_usuarios_destinatario);
+
+                if (destinatario == null)
+                {
+                    return BadRequest("destinatario não encontrado.");
+                }
+                _context.Notificacoes.Add(new Notificacao
+                {
+                    Conteudo = $"{destinatario.Nome} recusou sua proposta de troca.",
+                    Data = DateOnly.FromDateTime(DateTime.Now),
+                    Status = "Recusada",
+                    Fk_usuarios_matricula = objBanco.Fk_usuarios_remetente,
+                    Fk_troca_id = objBanco.Id
+                });
+
 
             }
 
@@ -254,6 +284,23 @@ namespace DesapegaSenai.Controllers
 
                 }
                 objetoRemetente2.Status_objeto = false;
+                _context.Notificacoes.Add(new Notificacao
+                {
+                    Conteudo = "Sua troca por pontos foi aceita.",
+                    Data = DateOnly.FromDateTime(DateTime.Now),
+                    Status = "Não lida",
+                    Fk_usuarios_matricula = objBanco.Fk_usuarios_remetente
+                });
+            }
+             if (troca.Status == "Recusada")
+            {
+                _context.Notificacoes.Add(new Notificacao
+                {
+                    Conteudo = "Sua troca por pontos foi recusada.",
+                    Data = DateOnly.FromDateTime(DateTime.Now),
+                    Status = "Não lida",
+                    Fk_usuarios_matricula = objBanco.Fk_usuarios_remetente
+                });
             }
             _context.SaveChanges();
             return Ok("Atualizado com sucesso!");
