@@ -103,6 +103,7 @@ public IActionResult BuscarObjetoPerfil()
                  Foto_usuario = $"{Request.Scheme}://{Request.Host}/uploads/{usuarioBd.Foto_usuario}",
                  o.Descricao,
                  o.Categoria,
+                 o.Status_objeto,
                  o.Tempo_uso,
                  Foto = $"{Request.Scheme}://{Request.Host}/uploads/{o.Foto}",
                  o.Prefere_troca
@@ -111,10 +112,10 @@ public IActionResult BuscarObjetoPerfil()
 
             var totalObjetos = objetos.Count;
 
-    var totalTrocas = _context.Trocas
+            var totalTrocas = _context.Trocas
         .Count(t =>
             t.Fk_usuarios_remetente == matricula ||
-            t.Fk_usuarios_destinatario == matricula);
+            t.Fk_usuarios_destinatario == matricula && t.Status == "Aceita");
 
     return Ok(new
     {
@@ -208,8 +209,27 @@ public IActionResult BuscarObjetoPerfil()
 
             return Ok("Deletado com sucesso "); 
         }
+        
+        [HttpGet("ranking")]
+        public IActionResult Ranking()
+        { 
+            var ranking = _context.Usuarios
+                .Select(u => new
+                {
+                    nome = u.Nome,
+                    totalObjetos = _context.Objetos.Count(o => o.Fk_usuarios_matricula == u.Matricula),
+                    totalTrocas = _context.Trocas.Count(t =>
+                        t.Fk_usuarios_remetente == u.Matricula &&
+                        t.Status == "Aceita")
+                })
+                .OrderByDescending(x => x.totalObjetos)
+                .ToList();
 
+            return Ok(ranking);
+        }
     }
+
+    
 }
 /* [HttpPost("cadastroFoto")]
          public async Task<IActionResult> Criar([FromForm] Objeto objeto)

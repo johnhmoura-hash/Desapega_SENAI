@@ -5,21 +5,18 @@ const listaNotificacoes = document.getElementById("listaNotificacoes");
 async function carregarNotificacoes() {
 
     try {
-
-        const response = await fetch("https://localhost:7132/Trocas", {
+        const response = await fetch("https://localhost:7132/notificacao", {
             credentials: "include"
         });
 
         if (!response.ok)
             throw new Error("Erro ao buscar notificações.");
 
-        const trocas = await response.json();
-
-        console.log("Trocas recebidas:", trocas);
+        const notificacoes = await response.json();
 
         listaNotificacoes.innerHTML = "";
 
-        if (trocas.length === 0) {
+        if (notificacoes.length === 0) {
 
             listaNotificacoes.innerHTML = `
                 <div class="notificacao-vazia">
@@ -30,21 +27,24 @@ async function carregarNotificacoes() {
             return;
         }
 
-        trocas.forEach(troca => {
+       notificacoes.forEach(n => {
+console.log(n);
+console.log(n.status);
+    if (n.status === "Não lida") {
 
-            listaNotificacoes.innerHTML += `
-                <div class="notificacao-item"
-                     onclick="window.location.href='aceitartrocas.html?idTroca=${troca.id}'">
+        listaNotificacoes.innerHTML += `
+            <div class="notificacao-item"
+                onclick="window.location.href='aceitartrocas.html?idTroca=${n.fk_troca_id}'">
 
-                    <strong>${troca.nomeRemetente}</strong>
-                    quer trocar um produto
-                    
+                ${n.conteudo}
 
-                    <span class="tempo">${troca.data}</span>
-                </div>
-            `;
-        });
+                <span class="tempo">${n.data}</span>
+            </div>
+        `;
 
+    } 
+
+});
     } catch (erro) {
 
         console.error(erro);

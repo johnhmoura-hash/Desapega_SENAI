@@ -6,7 +6,7 @@ document.addEventListener("DOMContentLoaded", function () {
     })
     .then(response => response.json())
     .then(data => {
-
+console.log(data.objetos);
         const resposta = document.getElementById("grid-produtos");
 
         if (!resposta) {
@@ -17,7 +17,7 @@ document.addEventListener("DOMContentLoaded", function () {
         resposta.innerHTML = "";
 
         for (let i = 0; i < data.objetos.length; i++) {
-
+            if(data.objetos[i].status_objeto == true){
             resposta.innerHTML += `
                 <div class="carde">
                     <div class="imagem-produto">
@@ -29,6 +29,7 @@ document.addEventListener("DOMContentLoaded", function () {
                     </div>
                 </div>
             `;
+            }
         }
     });
 
