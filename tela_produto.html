@@ -3,6 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <title>Produto-Desapega SENAI</title>
+     <link rel="stylesheet" href="css/alerta.css">
     <link rel="stylesheet" href="css/estilo.css">
      <link rel="stylesheet" href="css/mobile.css">
      <link href="https://cdn.jsdelivr.net/npm/remixicon/fonts/remixicon.css" rel="stylesheet">
@@ -138,12 +139,15 @@
         <option>Outros</option>
       </select>
   <br>
-      <button class="botao2" type="submit">Anunciar</button>
+      <input class="botao2" type="submit" value="Anunciar">
   </form>
 </div>
 
-<div id="toast" class="toast"></div>
+<div id="toast" class="toast">
+    <span id="toastMensagem"></span>
+</div>
 
+<script src="js/alerta.js"></script>
 <script src="js/scriptCadastroObjeto.js"></script>
 <script src="js/scriptPopup.js"></script>
   <script src="js/resp.js"></script>
