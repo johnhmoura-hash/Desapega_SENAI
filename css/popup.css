@@ -1,95 +1,92 @@
-body{
-    font-family:'Helvetica, Arial, Georgia, Tahoma';
-}
 
 
-.popup{
+.popup-notificacao{
+    position: absolute;
+    top: 45px;
+    right: 0;
+    width: 360px;
+    max-height: 450px;
+    overflow-y: auto;
+
+    background: #fff;
+    border-radius: 15px;
+    box-shadow: 0 10px 30px rgba(0,0,0,.15);
+
     display: none;
-    position: fixed;
-    top: 0;
-    left: 0;
+}
 
-    width: 100vw;
-    height: 100vh;
+.popup-notificacao.ativo{
+    display: block;
+    animation: aparecer .25s ease;
+}
 
-    background: rgba(0,0,0,0.5);
+.popup-header{
+    padding: 18px;
+    border-bottom: 1px solid #eee;
+}
 
-    justify-content: center;
+.popup-header h4{
+    margin: 0;
+    color: #888787;
+}
+
+.popup-body{
+    padding: 15px;
+
+    display: flex;
+    flex-direction: column;
+    gap: 12px;
+}
+
+.item-notificacao{
+    display: flex;
+    justify-content: space-between;
     align-items: center;
+    gap: 15px;
 
-    z-index: 9999;
-}
-.popup img{
-     width: 240px;
-    margin-bottom: 40px;
-}
+    padding: 14px 16px;
 
-.popup-conteudo{
-    background: white;
-    width: 400px;
-    max-width: 90%;
+    background: #fff;
+    border-radius: 12px;
 
-    padding: 30px;
-    border-radius: 20px;
+    border: 1px solid #ececec;
 
-    text-align: center;
+    transition: all .25s ease;
 }
 
-.popup-conteudo h3{
+.item-notificacao:hover{
+    transform: translateY(-6px);
+    box-shadow: 0 10px 20px rgba(0,0,0,.12);
+}
+
+.nao-lida{
+   
+    background: #fffaf5;
+}
+
+.btnExcluir{
+    background: transparent;
+    border: none;
+
     color: #FF7F27;
-    font-size: 24px;
-    margin-bottom: 15px;
-}
-
-.popup-conteudo p{
-    color: #555;
-    font-size: 16px;
-    line-height: 1.5;
-    margin-bottom: 20px;
-}
-
-.popup-conteudo button{
-    background: #FF7F27;
-    color: white;
-
-    border: none;
-    border-radius: 12px;
-
-    padding: 12px 25px;
+    font-size: 22px;
 
     cursor: pointer;
-    font-size: 15px;
-    font-weight: bold;
 
-    transition: 0.2s;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    transition: .2s;
 }
 
-
-.popup a{
-    background: #0056b3;
-    color: white;
-
-    border: none;
-    border-radius: 12px;
-
-    padding: 12px 25px;
-    text-decoration: none;
-    cursor: pointer;
-    font-size: 15px;
-    font-weight: bold;
-
-    transition: 0.2s;
+.btnExcluir:hover{
+    color: #ff5b00;
+    transform: scale(1.15);
 }
-
-
-
-@keyframes aparecer{
-    from{
-        opacity: 0;
-        transform: translateY(-15px);
-    }
-    to{
-        opacity: 1;
-        transform: translateY(0);
-    }
+.item-notificacao span{
+    flex: 1;
+    color: #444;
+    line-height: 1.4;
+    font-size: 14px;
 }
