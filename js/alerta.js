@@ -1,18 +1,18 @@
-function mostrarToast(mensagem, tipo = "sucesso") {
+function mostrarToast(mensagem, tipo = "info") {
+
+    console.log("ENTROU NO TOAST");
 
     const toast = document.getElementById("toast");
-
-    toast.textContent = mensagem;
+    const texto = document.getElementById("toastMensagem");
 
     toast.className = "toast";
+    toast.classList.add(tipo);
 
-    if(tipo === "erro"){
-        toast.classList.add("erro");
-    }
+    texto.textContent = mensagem;
 
-    toast.classList.add("mostrar");
+    toast.classList.add("show");
 
     setTimeout(() => {
-        toast.classList.remove("mostrar");
+        toast.classList.remove("show");
     }, 3000);
 }
