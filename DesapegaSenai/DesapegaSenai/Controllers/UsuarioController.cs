@@ -26,7 +26,7 @@ namespace DesapegaSenai.Controllers
             
                 if (usuarioBd.Count == 0)
 
-                    return Unauthorized("Email ou Senha Incorretas");
+                return Unauthorized("Email ou Senha Incorretas");
                 HttpContext.Session.SetString("Idusado", usuarioBd[0].Matricula.ToString());
                 Response.Cookies.Append("Idusado", usuarioBd[0].Matricula.ToString(),
 
@@ -107,6 +107,20 @@ namespace DesapegaSenai.Controllers
         }
 
 
+        [HttpGet]
+        public IActionResult Logado()
+        {
+            var idUsuario = HttpContext.Session.GetString("Idusado");
+
+            if (string.IsNullOrEmpty(idUsuario))
+                return Unauthorized();
+
+            return Ok(new
+            {
+                logado = true,
+                matricula = idUsuario
+            });
+        }
 
         [HttpGet("perfil")]
         public IActionResult Perfil()
@@ -146,6 +160,7 @@ namespace DesapegaSenai.Controllers
 
             return Ok("Deletado");
         }
+
 
     }
 }

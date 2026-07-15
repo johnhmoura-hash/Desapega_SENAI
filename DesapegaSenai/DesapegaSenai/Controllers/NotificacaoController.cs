@@ -46,29 +46,41 @@ namespace DesapegaSenai.Controllers
             int matricula = int.Parse(usuario);
 
             var notificacoes = (
-    from n in _context.Notificacoes
-    join u in _context.Usuarios
-        on n.Fk_usuarios_matricula equals u.Matricula
-    where n.Fk_usuarios_matricula == matricula
-    orderby n.Data descending
-    select new
-    {
-        n.Id,
-        n.Conteudo,
-        n.Data,
-        n.Status,
-        n.Tipo,  
-        n.Fk_troca_id,
-        Nome = u.Nome
+                    from n in _context.Notificacoes
+                    join u in _context.Usuarios
+                    on n.Fk_usuarios_matricula equals u.Matricula
+                    where n.Fk_usuarios_matricula == matricula
+                    orderby n.Data descending
+                    select new
+                        {
+                            n.Id,
+                            n.Conteudo,
+                            n.Data,
+                            n.Status,
+                            n.Tipo,  
+                            n.Fk_troca_id,
+                            Nome = u.Nome
 
 
 
-    }
+                        }
 ).ToList();
 
             return Ok(notificacoes);
         }
 
+        [HttpDelete("{id}")]
+        public IActionResult Excluir(int id)
+        {
+            var notificacao = _context.Notificacoes.Find(id);
 
+            if (notificacao == null)
+                return NotFound();
+
+            _context.Notificacoes.Remove(notificacao);
+            _context.SaveChanges();
+
+            return Ok();
+        }
     }
 }
