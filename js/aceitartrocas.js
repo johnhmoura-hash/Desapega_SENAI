@@ -90,9 +90,9 @@ document.addEventListener("DOMContentLoaded", function () {
     });
     }
     
-    document.getElementById("btnAceitar").addEventListener("click",aceitarTroca);
+    document.getElementById("btnAceitar").addEventListener("click",aceitarTrocaObjeto);
        
-    function aceitarTroca(){
+    function aceitarTrocaObjeto(){
 
         fetch(`https://localhost:7132/Trocas/${idTroca}`, { 
         method: 'PUT',
@@ -119,9 +119,9 @@ document.addEventListener("DOMContentLoaded", function () {
     } 
 
 
-     document.getElementById("btnPontos").addEventListener("click",aceitarTroca);
+     document.getElementById("btnPontos").addEventListener("click",aceitarTrocaPontos);
        
-    function aceitarTroca(){
+    function aceitarTrocaPontos(){
 
         fetch(`https://localhost:7132/Trocas/pontos/${idTroca}`, { 
         method: 'PUT',

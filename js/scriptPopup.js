@@ -27,24 +27,56 @@ async function carregarNotificacoes() {
             return;
         }
 
-       notificacoes.forEach(n => {
-console.log(n);
-console.log(n.status);
-    if (n.status === "Não lida") {
+        notificacoes.forEach(n => {
+             console.log(n);
 
-        listaNotificacoes.innerHTML += `
-            <div class="notificacao-item"
-                onclick="window.location.href='aceitartrocas.html?idTroca=${n.fk_troca_id}'">
+            const item = document.createElement("div");
+            item.classList.add("item-notificacao");
+            item.innerHTML = `
+        
+       <span> ${n.conteudo}</span>
+         <button class="btnExcluir">
+        <i class="ri-delete-bin-line"></i>
+         </button>       
+    `
+    item.querySelector(".btnExcluir").addEventListener("click", async (e) => {
 
-                ${n.conteudo}
+    e.stopPropagation();
 
-                <span class="tempo">${n.data}</span>
-            </div>
-        `;
+    const resposta = await fetch(`https://localhost:7132/notificacao/${n.id}`,{
+        method:"DELETE",
+        credentials:"include"
+    });
 
-    } 
+    if(resposta.ok){
+        item.remove();
+    }
+});;
 
-});
+            if (n.status === "Não lida") {
+                item.classList.add("nao-lida");
+            }
+
+            if (n.tipo === "NovaProposta") {
+
+                item.style.cursor = "pointer";
+
+                item.onclick = () => {
+                    location.href = `aceitartrocas.html?idTroca=${n.fk_troca_id}`;
+                };
+
+            } else {
+
+                item.style.cursor = "default";
+
+            }
+
+            listaNotificacoes.appendChild(item);
+
+        });
+
+        
+
     } catch (erro) {
 
         console.error(erro);

@@ -1,6 +1,3 @@
-
-
-
 //form Cadastrar Produto
 const formProduto = document.getElementById('formProduto');
 const inputFoto = document.getElementById("inputFoto");
@@ -26,7 +23,12 @@ inputFoto.addEventListener("change", function () {
 
 if (formProduto) {
 
-formProduto.addEventListener('submit', (e) => {e.preventDefault();
+formProduto.addEventListener('submit', function(e) {
+
+    e.preventDefault();
+    e.stopPropagation();
+
+    console.log("Submit bloqueado");
 
     const valido =
         validarNomeProduto() &&
@@ -36,10 +38,20 @@ formProduto.addEventListener('submit', (e) => {e.preventDefault();
         validarTroca();
 
     if (valido) {
-         enviarProduto();
+        enviarProduto();
     }
+
+    return false;
 });
+
+
 function enviarProduto() {
+
+        if (!inputFoto.files[0]) {
+        mostrarToast("Adicione uma foto do produto antes de anunciar.", "erro");
+        return;
+    }
+
 
     const formData = new FormData();
 
@@ -69,35 +81,39 @@ function enviarProduto() {
         console.log("A resposta não é JSON.");
     }
 
-    if (res.ok) {
-        console.log("Vou mostrar o toast");
-        mostrarToast("Produto cadastrado com sucesso!");
-            console.log("Vou mostrar o toast");
-            mostrarToast("Produto cadastrado com sucesso!");
+  if (res.ok) {
 
-            formProduto.reset();
+    console.log("Entrou no res.ok");
 
-            document.querySelector(".photo-upload").innerHTML = `
-                <i class="fa-solid fa-camera"></i>
-                <span>Adicionar foto</span>
-                <input type="file" id="inputFoto" accept="image/*" style="display:none;">
-            `;
+    mostrarToast("Produto cadastrado com sucesso!", "sucesso");
 
-            setTimeout(() => {
-                
-            }, 2000);
+     
 
-        } else {
+    formProduto.reset();
 
-            mostrarToast(dados.mensagem || "Erro ao cadastrar o produto.", "erro");
+    console.log("Depois do toast");
 
-        }
+    document.querySelector(".photo-upload").innerHTML = `
+        <i class="fa-solid fa-camera"></i>
+        <span>Adicionar foto</span>
+        <input type="file" id="inputFoto" accept="image/*" style="display:none;">
+    `;
+
+} else {
+
+    console.log("Entrou no else");
+
+    mostrarToast(dados.mensagem || "Erro ao cadastrar o produto.", "erro");
+
+}
 
     })
     .catch(erro => {
+        
+   console.error(erro);
+    console.log("Entrou no catch");
 
-        console.error(erro);
-        mostrarToast("Erro ao conectar ao servidor.", "erro");
+    mostrarToast("Erro ao conectar ao servidor.", "erro");
 
     });
 
@@ -189,21 +205,3 @@ function limparBordas(){
 }  
 
 
-function mostrarToast(mensagem, tipo = "sucesso") {
-
-    const toast = document.getElementById("toast");
-
-    toast.textContent = mensagem;
-
-    toast.className = "toast";
-
-    if (tipo === "erro") {
-        toast.classList.add("erro");
-    }
-
-    toast.classList.add("mostrar");
-
-    setTimeout(() => {
-        toast.classList.remove("mostrar");
-    }, 3000);
-}
