@@ -16,6 +16,47 @@ namespace DesapegaSenai.Controllers
         }
 
 
+
+        [HttpGet("perfil/{id}")]
+        public IActionResult PerfilUsuario(int id)
+        {
+            var usuario = _context.Usuarios
+                .FirstOrDefault(u => u.Matricula == id);
+
+            if (usuario == null)
+                return NotFound("Usuário não encontrado.");
+
+            var objetos = _context.Objetos
+                .Where(o => o.Fk_usuarios_matricula == id)
+                .Select(o => new
+                {
+                    o.Id,
+                    o.Nome,
+                    o.Tempo_uso,
+                    o.Status_objeto,
+                    Foto = $"{Request.Scheme}://{Request.Host}/uploads/{o.Foto}"
+                })
+                .ToList();
+
+            var totalTrocas = _context.Trocas.Count(t =>
+                t.Fk_usuarios_remetente == id ||
+                t.Fk_usuarios_destinatario == id);
+
+            return Ok(new
+            {
+                nome = usuario.Nome,
+                pontos = usuario.Pontos,
+                foto_usuario = $"{Request.Scheme}://{Request.Host}/uploads/{usuario.Foto_usuario}",
+                totalObjetos = objetos.Count,
+                totalTrocas = totalTrocas,
+                objetos = objetos
+            });
+        }
+
+
+
+
+
         [HttpPost("login")]
         public IActionResult Login(Login login){
             
