@@ -612,8 +612,8 @@ textarea.input-info {
 .btn-config{
     position: absolute;
     
-    top: 17px;
-    right: 15px;
+    
+    right: 1px;
     width: 45px;
     height: 45px;
     border: none;
@@ -632,6 +632,48 @@ textarea.input-info {
     
    
     transform: rotate(45deg);
+}
+.config-menu{
+    position:absolute;
+    top:17px;
+    right:15px;
+    z-index:1000;
+}
+
+.config-dropdown{
+    position:absolute;
+    top:45px;
+    right:0;
+    width:220px;
+    background:#fff;
+    border-radius:10px;
+    box-shadow:0 5px 15px rgba(0,0,0,.2);
+
+    display:none;
+    overflow:hidden;
+}
+
+.config-menu:hover .config-dropdown{
+    display:block;
+}
+
+.config-dropdown a{
+    display:flex;
+    align-items:center;
+    gap:10px;
+    padding:14px 18px;
+    text-decoration:none;
+    color:#333;
+    transition:.2s;
+}
+
+.config-dropdown a:hover{
+    background:#f3f3f3;
+}
+
+.config-dropdown i{
+    font-size:20px;
+    color:#ff7a00;
 }
 
 .perfil-container {
