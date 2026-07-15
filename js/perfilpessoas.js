@@ -1,107 +1,65 @@
+document.addEventListener("DOMContentLoaded", () => {
 
-document.addEventListener("DOMContentLoaded", function () {
+    const params = new URLSearchParams(window.location.search);
+    const idUsuario = params.get("id");
 
-    fetch('https://localhost:7132/objeto/perfil', {
+    fetch(`https://localhost:7132/usuario/perfil/${idUsuario}`, {
         credentials: "include"
     })
-    .then(response => response.json())
-    .then(data => {
+    .then(res => {
+        if (!res.ok)
+            throw new Error("Erro ao carregar perfil");
 
-        const resposta = document.getElementById("grid-produtos");
-
-        if (!resposta) {
-            console.error("Elemento #info não existe no HTML");
-            return;
-        }
-
-        resposta.innerHTML = "";
-
-        for (let i = 0; i < data.objetos.length; i++) {
-
-            resposta.innerHTML += `
-                <div class="carde">
-                    <div class="imagem-produto">
-                        <img src="${data.objetos[i].foto}" alt="Produto">
-                    </div>
-                    <div class="infos">
-                        <h3>${data.objetos[i].nome}</h3>
-                        <span>${data.objetos[i].tempo_uso}</span>
-                    </div>
-                </div>
-            `;
-        }
-    });
-
-    fetch('https://localhost:7132/objeto/perfil', {
-        credentials: "include"
+        return res.json();
     })
-    .then(response => response.json())
     .then(data => {
 
-         const resposta2 = document.getElementById("lin");
-        if (!resposta2) {
-            console.error("Elemento #info não existe no HTML");
-            return;
-        }
 
-        resposta2.innerHTML = "";
+console.log(data);
         
-            resposta2.innerHTML += `
-                <h2>${data.nome}</h2>
-                <i class="ri-money-dollar-circle-line"></i><a>${data.pontos},0</a>
+        document.getElementById("fotoPerfil").innerHTML = `
+            <img src="${data.foto_usuario}">
+        `;
 
-            `;
+        document.getElementById("lin").innerHTML = `
+            <h2>${data.nome}</h2>
             
-    });
-     fetch('https://localhost:7132/objeto/perfil', {
-        credentials: "include"
+        `;
+
+        document.getElementById("seguidores").innerHTML = `
+            Produtos cadastrados ${data.totalObjetos}
+            Trocados ${data.totalTrocas}
+        `;
+
+        const grid = document.getElementById("grid-produtos");
+        grid.innerHTML = "";
+
+        data.objetos.forEach(produto => {
+
+            if (produto.status_objeto) {
+
+                grid.innerHTML += `
+                    <a href="produto.html?id=${produto.id}" class="card-link">
+                        <div class="carde">
+
+                            <div class="imagem-produto">
+                                <img src="${produto.foto}">
+                            </div>
+
+                            <div class="infos">
+                                <h3>${produto.nome}</h3>
+                                <span>${produto.tempo_uso}</span>
+                            </div>
+
+                        </div>
+                    </a>
+                `;
+
+            }
+
+        });
+
     })
-    .then(response => response.json())
-    .then(data => {
+    .catch(err => console.error(err));
 
-         const resposta3= document.getElementById("seguidores");
-        if (!resposta3) {
-            console.error("Elemento #info não existe no HTML");
-            return;
-        }
-
-        
-        resposta3.innerHTML = "";
-        
-            resposta3.innerHTML += `
-                
-                Produtos cadastrados ${data.totalObjetos} 
-                Trocados ${data.totalTrocas}
-                      
-            `;
-
-
-            
-    });
-    fetch('https://localhost:7132/usuario/perfil', {
-        credentials: "include"
-    })
-    .then(response => response.json())
-    .then(data => {
-
-         const resposta3= document.getElementById("fotoPerfil");
-        if (!resposta3) {
-            console.error("Elemento #info não existe no HTML");
-            return;
-        }
-
-        
-        resposta3.innerHTML = "";
-        
-            resposta3.innerHTML += `
-                
-               <img src="${data.foto_usuario}">
-                      
-            `;
-
-            
-            
-    });
 });
-
-
