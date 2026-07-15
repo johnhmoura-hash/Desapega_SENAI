@@ -55,20 +55,26 @@ document.addEventListener("DOMContentLoaded", function () {
 
                     <h3 class="produto-imagem-foto">${data.objetos}</h3>
 
-                    <div class="produto-usuario-area">
+<div class="produto-usuario-area">
 
-                        <div class="produto-usuario-foto">
-                            <img src="${data.foto_usuario}">
-                        </div>
+    <div class="produto-usuario-foto">
+        <img src="${data.foto_usuario}">
+    </div>
 
-  <span class="produto-usuario-nome"
-      onclick="abrirPerfil(${data.usuarioDestino})">
-    ${data.usuarios}
-</span>
+    <div class="produto-usuario-info">
 
-                        
-                        
-                    </div>
+        <span class="produto-usuario-nome">
+            ${data.usuarios}
+        </span>
+
+        <button class="btn-ver-perfil"
+            onclick="abrirPerfil(${data.usuarioDestino})">
+            <i class="">Perfil</i>
+        </button>
+
+    </div>
+
+</div>
 
                     <button class="produto-botao-principal"
                         onclick="abrirTroca(${data.id})">

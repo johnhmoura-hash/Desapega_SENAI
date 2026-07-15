@@ -23,8 +23,7 @@ console.log(data);
 
         document.getElementById("lin").innerHTML = `
             <h2>${data.nome}</h2>
-            <i class="ri-money-dollar-circle-line"></i>
-            <a>${data.pontos},0</a>
+            
         `;
 
         document.getElementById("seguidores").innerHTML = `

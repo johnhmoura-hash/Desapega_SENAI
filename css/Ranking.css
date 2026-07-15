@@ -104,13 +104,20 @@
     height:36px;
 
     border:none;
-    border-radius:10px;
+    border-radius:20px;
 
-    background:#ff8a34;
-    color:#fff;
+   border: 1px solid #f5822a;
+    color:#f5822a;
     font-size:16px;
     cursor:pointer;
 }
+
+.ranking-btn:hover{
+   border: 1px solid #0056b3;
+    color:#0056b3;
+   
+}
+
 
 .ranking-gold{
     border-color:#f4b43a;
