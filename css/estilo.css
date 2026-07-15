@@ -1,5 +1,5 @@
 body{
-   font-family:Verdana, Geneva, Tahoma, sans-serif;
+font-family:Verdana, Geneva, Tahoma, sans-serif;
     margin: 0;
     background: rgb(255, 255, 255);
 
@@ -1084,10 +1084,33 @@ background-color: #0056b3;
 }
 
 /* USUÁRIO */
-.produto-usuario-area {
-    display: flex;
-    align-items: center;
-    gap: 10px;
+
+
+.produto-usuario-info{
+    display:flex;
+    align-items:center;
+    gap:145.1px;
+}
+
+.btn-ver-perfil{
+     margin-left: auto;
+    padding: 5px 15px;
+    border-radius: 20px;
+    border: 1px solid #777777;
+    background: transparent;
+    color: #7e7e7e;
+    cursor: pointer;
+}
+
+.btn-ver-perfil:hover{
+    border: 1px solid #0056b3;
+    color: #0056b3;
+}
+
+.produto-usuario-area{
+    display:flex;
+    align-items:center;
+    gap:12px;
 }
 
 .produto-usuario-area a{
@@ -1102,19 +1125,11 @@ color: #000;
     border-radius: 50%;
 }
 
-.produto-usuario-nome p{
+.produto-usuario-nome{
     cursor: pointer;
+    color: #666; /* ou a cor que você quiser */
 }
 
-.produto-botao-seguir {
-    margin-left: auto;
-    padding: 5px 15px;
-    border-radius: 20px;
-    border: 1px solid #f58220;
-    background: transparent;
-    color: #f58220;
-    cursor: pointer;
-}
 
 .produto-divisor {
     height: 50%;
