@@ -1,3 +1,7 @@
+function abrirPerfil(idUsuario){
+    window.location.href = `perfilpessoas.html?id=${idUsuario}`;
+}
+
 document.addEventListener("DOMContentLoaded", function () {
 
     let produtoSelecionado = null;
@@ -19,9 +23,19 @@ document.addEventListener("DOMContentLoaded", function () {
 
             document.getElementById("produto-desejado").innerHTML = `
             
-       <div class="usuario">
+  <div class="usuario">
+
     <img src="${data.foto_usuario}" class="foto-perfil">
-    <p class="nome-usuario">${data.usuarios}</p>
+
+    <p class="nome-usuario">
+        ${data.usuarios}
+    </p>
+
+    <button class="btn-ver-perfil"
+        onclick="abrirPerfil(${data.usuarioDestino})">
+        <i class="ri-user-line">Perfil</i>
+    </button>
+
 </div>
 
         <div class="cardr">
