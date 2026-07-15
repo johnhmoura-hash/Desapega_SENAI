@@ -31,7 +31,10 @@ document.addEventListener("DOMContentLoaded", function () {
     .then(response => response.json())
     .then(data => {
 
-        const resposta = document.getElementById("pagina-produto");
+    console.log(data);
+    console.log("id_usuario:", data.id_usuario);
+
+    const resposta = document.getElementById("pagina-produto");
 
         if (!resposta) {
             console.error("Elemento pagina-produto não existe");
@@ -58,12 +61,13 @@ document.addEventListener("DOMContentLoaded", function () {
                             <img src="${data.foto_usuario}">
                         </div>
 
-                        <span class="produto-usuario-nome">
-                            <p onclick="abrirPerfil(${data.id_usuario})">
-                                ${data.usuarios}
-                            </p>
-                        </span>
+  <span class="produto-usuario-nome"
+      onclick="abrirPerfil(${data.usuarioDestino})">
+    ${data.usuarios}
+</span>
 
+                        
+                        
                     </div>
 
                     <button class="produto-botao-principal"
