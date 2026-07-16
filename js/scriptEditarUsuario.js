@@ -17,6 +17,7 @@ document.addEventListener("DOMContentLoaded", function () {
 
             resposta.innerHTML += `
 
+
             <div class="photo">
 
                 <img
@@ -37,6 +38,7 @@ document.addEventListener("DOMContentLoaded", function () {
                 >
 
             </div>
+
             <div class="grupo">
               <label>Nome</label>
               <input type="text" id="nome" value="${data.nome}">

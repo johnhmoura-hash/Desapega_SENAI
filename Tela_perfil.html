@@ -1,6 +1,7 @@
 <!DOCTYPE html>
 <html lang="en">
-  <head>
+
+<head>
   <meta charset="UTF-8">
   <link href="https://fonts.googleapis.com/css2?family=Yuji+Syuku&display=swap" rel="stylesheet">
   <link href="https://cdn.jsdelivr.net/npm/remixicon/fonts/remixicon.css" rel="stylesheet">
@@ -13,102 +14,106 @@
   <link rel="stylesheet" href="css/mobile.css">
 </head>
 
- <body>
-   <div class="faixatopo">
-    
-   </div>
+<body>
+  <div class="faixatopo">
 
-      <header class="page">
-      <div class="container-login">
-        <div class="logo2">
-          <img src="Img/possivel logo.png" width="40">
-        </div>
+  </div>
 
-        <div class="pesquisar">
-          <input type="text" name="buscar" placeholder="Buscar...">
-        </div>
-
-        <div class="menu-toggle" id="menuToggle">
-          ☰
-        </div>
-
-        <nav class="menu" id="menu">
-
-          <div class="menu2">     
-            <a href="index.html">Início <i class="ri-home-line"></i></a>
-          </div>
-
-          <div class="menu2">
-            <a href="Tela_perfil.html">Perfil <i class="ri-user-line"></i></a>
-          </div>
-
-   <div class="menu2 notificacao-wrapper">
-
-    <a href="#" id="btnNotificacao">
-        Notificações <i class="ri-notification-line"></i>
-    </a>
-
-    <div class="popup-notificacao" id="popupNotificacao">
-
-        <div class="popup-header">
-            <h4>Notificações</h4>
-        </div>
-
-        <div class="popup-body" id="listaNotificacoes">
-        </div>
-
-    </div>
-
-</div>
-          
-
-          <div class="menu2 chat-wrapper">
-            <a href="#" id="btnChat">
-              Chat <i class="ri-chat-3-line"></i>
-            </a>
-          </div>
-          <a href="tela_produto.html">Anunciar produto <i class="ri-add-line"></i></a>
-       
-        </nav>
+  <header class="page">
+    <div class="container-login">
+      <div class="logo2">
+        <img src="Img/possivel logo.png" width="40">
       </div>
-       <div class="overlay-menu" id="overlayMenu"></div>
-    </header>
+
+      <div class="pesquisar">
+        <input type="text" name="buscar" placeholder="Buscar...">
+      </div>
+
+      <div class="menu-toggle" id="menuToggle">
+        ☰
+      </div>
+
+      <nav class="menu" id="menu">
+
+        <div class="menu2">
+          <a href="index.html" >
+            Início <i class="ri-home-line"></i>
+          </a>
+        </div>
+
+        <div class="menu2">
+          <a href="Tela_perfil.html" class="ativo">
+            Perfil <i class="ri-user-line"></i>
+          </a>
+        </div>
+
+        <div class="menu2 notificacao-wrapper">
+
+          <a href="#" id="btnNotificacao">
+            Notificações <i class="ri-notification-line"></i>
+          </a>
+
+          <div class="popup-notificacao" id="popupNotificacao">
+
+            <div class="popup-header">
+              <h4>Notificações</h4>
+            </div>
+
+            <div class="popup-body" id="listaNotificacoes">
+            </div>
+
+          </div>
+
+        </div>
+
+
+        <div class="menu2 chat-wrapper">
+          <a href="#" id="btnChat">
+            Chat <i class="ri-chat-3-line"></i>
+          </a>
+        </div>
+        <a href="tela_produto.html">Anunciar produto <i class="ri-add-line"></i></a>
+
+      </nav>
+    </div>
+    <div class="overlay-menu" id="overlayMenu"></div>
+  </header>
 
   <div class="all">
 
- <div class="logoperfil">
-    <img src="Img/banner perfil.png" alt="">
+    <div class="logoperfil">
+      <img src="Img/banner perfil.png" alt="">
 
-    <div class="config-menu">
-    <button class="btn-config">
-        <i class="ri-settings-3-line"></i>
-    </button>
+      <div class="config-menu">
+        <button class="btn-config">
+          <i class="ri-settings-3-line"></i>
+        </button>
 
-    <div class="config-dropdown">
-        <a href="historico_trocas.html">
+        <div class="config-dropdown">
+          <a href="historico_trocas.html">
             <i class="ri-history-line"></i>
             Histórico de Trocas
-        </a>
+          </a>
 
-        <a href="termos_uso.html">
+          <a href="termos_uso.html">
             <i class="ri-file-list-3-line"></i>
             Termos de Uso
-        </a>
+          </a>
 
-        <a href="" id="logout">
+          <a href="" id="logout">
             <i class="ri-logout-box-r-line"></i>
             Logout
-        </a>
+          </a>
+        </div>
+      </div>
     </div>
-</div>
-</div>
 
-     <div class="perfil-container">
+    <div class="perfil-container">
 
-      <div class="perfil-esquerda"> 
-        
+      <div class="perfil-esquerda">
+
         <div class="fotoperfil" id="fotoPerfil">
-         <i class="ri-account-circle-fill"></i>
+          <i class="ri-account-circle-fill"></i>
         </div>
 
         <div class="lin" id="lin"></div>
@@ -118,33 +123,107 @@
       <br><br>
       <div class="perfil-direita">
         <div class="seguidores" id="seguidores"></div>
-        <button class="editar" >
-          <a href="test.html">Editar</a>
+        <button class="editar">
+          <a href="editarPerfil.html">Editar</a>
         </button>
       </div>
 
     </div>
-  
+
     <br><br><br><br><br>
-  <div class="corcinza">
- <h2>Meus Produtos</h2>
- </div>
- <br>
-   <main> 
-        
+    <div class="corcinza">
+      <h2>Meus Produtos</h2>
+    </div>
+    <br>
+    <main>
+
       <div class="interface">
         <div class="grid-produtos" id="grid-produtos">
 
-        </div> 
-      </div>       
+        </div>
+      </div>
     </main>
     <script src="js/resp.js"></script>
     <script src="js/scriptPopup.js"></script>
     <script src="js/scriptPerfil.js"></script>
     <script src="js/menu.js"></script>
+<<<<<<< HEAD
+    <!-- <script src="js/scriptPopup.js"></script> -->
+=======
 <!-- <script src="js/scriptPopup.js"></script> -->
+
+<!-- RODAPÉ -->
+  <footer class="rodape">
+
+    <div class="rodape-container">
+
+      <div class="rodape-coluna">
+        <h3>Categorias</h3>
+        <a href="tela_categoria.html?categoria=Papelaria">Papelaria</a>
+        <a href="tela_categoria.html?categoria=Acessórios">Acessórios</a>
+        <a href="tela_categoria.html?categoria=Livraria">Livraria</a>
+        <a href="tela_categoria.html?categoria=Eletrônicos">Eletrônicos</a>
+        <a href="tela_categoria.html?categoria=Vestuário">Vestuário</a>
+        <a href="tela_categoria.html?categoria=Esporte">Esportes</a>
+        <a href="tela_categoria.html?categoria=Objetos">Objetos</a>
+        <a href="tela_categoria.html?categoria=Outros">Outros</a>
+      </div>
+
+      <div class="rodape-coluna">
+        <h3>Destaques</h3>
+        <a href="#">Itens mais recentes</a>
+        <a href="#">Mais procurados</a>
+        <a href="#">Trocas disponíveis</a>
+        <a href="#">Anunciar produto</a>
+        <a href="#">Ver todos</a>
+      </div>
+
+      <div class="rodape-coluna">
+        <h3>Utilidades</h3>
+        <a href="como_anunciar.html">Como anunciar</a>
+        <a href="como_trocar.html">Como trocar</a>
+        <a href="termos_uso.html">Termos de uso</a>
+        <a href="politica_privacidade.html">Política de Privacidade</a>
+      </div>
+
+      <div class="rodape-coluna">
+        <h3>Minha Conta</h3>
+        <a href="Tela_perfil.html">Meu Perfil</a>
+        <a href="#">Meus anúncios</a>
+        <a href="#">Minhas trocas</a>
+        <a href="#">Mensagens</a>
+        <a href="#">Configurações</a>
+      </div>
+
+
+
+      <div class="rodape-info">
+
+        <p>
+          O <strong>Desapega SENAI</strong> é uma plataforma criada para facilitar a
+          troca de materiais entre estudantes, promovendo economia,
+          sustentabilidade e colaboração dentro da comunidade escolar.
+        </p>
+
+        <p>
+          Aqui você encontra livros, materiais escolares, eletrônicos, roupas,
+          acessórios e diversos outros produtos anunciados pelos próprios alunos.
+          Nossa missão é incentivar o reaproveitamento de itens e tornar o acesso
+          aos materiais mais fácil e econômico.
+        </p>
+
+      </div>
+
+      <div class="rodape-copy">
+        <img src="Img/possivel logo.png" alt="Logo" width="45">
+        <div>
+          <p><strong>Desapega SENAI © 2026</strong> - Todos os direitos reservados.</p>
+          <p>Projeto desenvolvido para incentivar a economia compartilhada entre estudantes.</p>
+        </div>
+      </div>
+
+  </footer>
+>>>>>>> dffd06336133d49e52775d19801140aa45b832f2
 </body>
+
 </html>
-
-
-
