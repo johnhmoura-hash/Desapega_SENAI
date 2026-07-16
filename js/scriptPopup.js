@@ -28,7 +28,7 @@ async function carregarNotificacoes() {
         }
 
         notificacoes.forEach(n => {
-             console.log(n);
+            console.log(n);
 
             const item = document.createElement("div");
             item.classList.add("item-notificacao");
@@ -39,19 +39,19 @@ async function carregarNotificacoes() {
         <i class="ri-delete-bin-line"></i>
          </button>       
     `
-    item.querySelector(".btnExcluir").addEventListener("click", async (e) => {
+            item.querySelector(".btnExcluir").addEventListener("click", async (e) => {
 
-    e.stopPropagation();
+                e.stopPropagation();
 
-    const resposta = await fetch(`https://localhost:7132/notificacao/${n.id}`,{
-        method:"DELETE",
-        credentials:"include"
-    });
+                const resposta = await fetch(`https://localhost:7132/notificacao/${n.id}`, {
+                    method: "DELETE",
+                    credentials: "include"
+                });
 
-    if(resposta.ok){
-        item.remove();
-    }
-});;
+                if (resposta.ok) {
+                    item.remove();
+                }
+            });;
 
             if (n.status === "Não lida") {
                 item.classList.add("nao-lida");
@@ -75,7 +75,7 @@ async function carregarNotificacoes() {
 
         });
 
-        
+
 
     } catch (erro) {
 
@@ -94,6 +94,7 @@ btnNotificacao.addEventListener("click", function (e) {
     e.preventDefault();
 
     popupNotificacao.classList.toggle("ativo");
+    btnNotificacao.classList.toggle("ativo-popup");
 
     if (popupNotificacao.classList.contains("ativo")) {
         carregarNotificacoes();
@@ -109,6 +110,7 @@ document.addEventListener("click", function (e) {
     ) {
 
         popupNotificacao.classList.remove("ativo");
+        btnNotificacao.classList.remove("ativo-popup");
     }
 
 });
