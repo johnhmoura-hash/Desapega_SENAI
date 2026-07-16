@@ -221,8 +221,9 @@ public IActionResult BuscarObjetoPerfil()
                     totalTrocas = _context.Trocas.Count(t =>
                         t.Fk_usuarios_remetente == u.Matricula &&
                         t.Status == "Aceita")
-                })
-                .OrderByDescending(x => x.totalObjetos)
+                    
+        })             
+                .OrderByDescending(x => x.totalTrocas)
                 .ToList();
 
             return Ok(ranking);
