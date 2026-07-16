@@ -1,73 +1,89 @@
 <!DOCTYPE html>
 <html lang="pt-BR">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Chat</title>
-
-    <link rel="stylesheet" href="css/teste.css">
-
-    <link rel="stylesheet"
-        href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css">
+  <meta charset="UTF-8">
+  <link href="https://fonts.googleapis.com/css2?family=Yuji+Syuku&display=swap" rel="stylesheet">
+  <link href="https://cdn.jsdelivr.net/npm/remixicon/fonts/remixicon.css" rel="stylesheet">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Principal-Desapega SENAI</title>
+  <link rel="stylesheet" href="css/estilo.css">
+  <link rel="stylesheet" href="css/popup.css">
+  <link rel="stylesheet" href="css/teste.css">
+  <link rel="stylesheet" href="css/notificacao.css">
+  <link rel="icon" href="Img/possivel logo.png" type="image/x-icon">
+  <link rel="stylesheet" href="css/mobile.css">
 </head>
 
 <body>
+  <div class="faixatopo">
+    <br>
+  </div>
 
-<header>
+  <header class="page">
+    <div class="container-login">
+      <div class="logo2">
+        <img src="Img/possivel logo.png" width="40">
+      </div>
 
-    <div class="logo">
-        <i class="fa-solid fa-rotate"></i>
-    </div>
+      <div class="pesquisar">
+        <input type="text" name="buscar" placeholder="Buscar...">
+      </div>
 
-    <div class="menu">
+      <div class="menu-toggle" id="menuToggle">
+        ☰
+      </div>
 
-        <div class="search">
-            <i class="fa fa-search"></i>
-            <input type="text" placeholder="Buscar...">
+      <nav class="menu" id="menu">
+
+        <div>
+          <a href="index.html" >
+            Início <i class="ri-home-line"></i>
+          </a>
         </div>
 
-        <button class="btn-menu">Perfil</button>
-        <button class="btn-menu">Notificações</button>
-        <button class="btn-menu">Chat</button>
-        <button class="btn-menu">Anunciar produto</button>
+        <div class="">
+          <a href="Tela_perfil.html" >
+            Perfil <i class="ri-user-line"></i>
+          </a>
+        </div>
 
+        <div class=" notificacao-wrapper">
+
+          <a href="#" id="btnNotificacao">
+            Notificações <i class="ri-notification-line" ></i>
+          </a>
+
+          <div class="popup-notificacao" id="popupNotificacao">
+
+            <div class="popup-header">
+              <h4>Notificações</h4>
+            </div>
+
+            <div class="popup-body" id="listaNotificacoes">
+            </div>
+
+          </div>
+
+        </div>
+
+
+        <div class="menu2 chat-wrapper">
+          <a href="teste-chat.html" id="btnChat" class="ativo">
+            Chat <i class="ri-chat-3-line"></i>
+          </a>
+        </div>
+        <a href="tela_produto.html">Anunciar produto <i class="ri-add-line"></i></a>
+
+      </nav>
     </div>
+    <div class="overlay-menu" id="overlayMenu"></div>
+  </header>
 
-</header>
+<body>
 
 <div class="container">
 
-    <aside class="sidebar">
-
-        <h2>Chat</h2>
-
-        <div class="contact">
-            <div class="avatar">
-                <i class="fa fa-user"></i>
-            </div>
-
-            <div>
-                <strong>Jonh Bonfim</strong><br>
-                <small>Livro de java / mais</small>
-            </div>
-        </div>
-
-        <div class="contact">
-            <div class="avatar">
-                <i class="fa fa-user"></i>
-            </div>
-
-            <div>
-                <strong>Jaqueline</strong><br>
-                <small>Bola</small>
-            </div>
-        </div>
-
-        <div class="contact-search">
-            <input type="text" placeholder="Buscar...">
-        </div>
-
-    </aside>
+    <aside class="sidebar" id="sidebar"></aside>
 
     <main class="chat">
 
@@ -115,6 +131,6 @@
     </main>
 
 </div>
-
+<script src="js/scriptChat.js"></script>
 </body>
 </html>
