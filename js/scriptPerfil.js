@@ -106,3 +106,21 @@ console.log(data.objetos);
 });
 
 
+const btnLogout = document.getElementById("logout");
+
+if (btnLogout) {
+    btnLogout.addEventListener("click", async function (e) {
+        e.preventDefault();
+
+        const resposta = await fetch("https://localhost:7132/usuario/logout", {
+            method: "POST",
+            credentials: "include"
+        });
+
+        if (resposta.ok) {
+            window.location.href = "Tela_login.html";
+        } else {
+            alert("Erro ao fazer logout.");
+        }
+    });
+}

@@ -5,26 +5,26 @@
     <meta charset="UTF-8">
     <link href="https://cdn.jsdelivr.net/npm/remixicon/fonts/remixicon.css" rel="stylesheet">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Perfil - Desapega SENAI</title>
-
+    <title>Raking-Desapega SENAI</title>
     <link rel="stylesheet" href="css/estilo.css">
     <link rel="icon" href="Img/possivel logo.png" type="image/x-icon">
+    <link rel="stylesheet" href="css/mobile.css">
+    <link rel="stylesheet" href="css/Ranking.css">
 </head>
 
 <body>
-
-    <div class="faixatopo"></div>
+    <div class="faixatopo">
+        <br>
+    </div>
 
     <header class="page">
-
         <div class="container-login">
-
             <div class="logo2">
                 <img src="Img/possivel logo.png" width="40">
             </div>
 
             <div class="pesquisar">
-                <input type="text" placeholder="Buscar...">
+                <input type="text" name="buscar" placeholder="Buscar...">
             </div>
 
             <div class="menu-toggle" id="menuToggle">
@@ -53,7 +53,8 @@
                             <h4>Notificações</h4>
                         </div>
 
-                        <div class="popup-body" id="listaNotificacoes"></div>
+                        <div class="popup-body" id="listaNotificacoes">
+                        </div>
 
                     </div>
 
@@ -64,70 +65,30 @@
                         Chat <i class="ri-chat-3-line"></i>
                     </a>
                 </div>
-
-                <a href="tela_produto.html">
-                    Anunciar produto <i class="ri-add-line"></i>
-                </a>
+                <a href="tela_produto.html">Anunciar produto <i class="ri-add-line"></i></a>
 
             </nav>
-
         </div>
-
         <div class="overlay-menu" id="overlayMenu"></div>
-
     </header>
 
-    <div class="all">
 
-        <div class="logoperfil">
+    <div class="ranking-page">
 
-            <img src="Img/banner perfil.png" alt="Banner">
-
+        <div class="ranking-top">
+            <select class="ranking-select">
+                <option value="5">5 meses</option>
+                <option value="10">10 meses</option>
+                <option value="20">20 meses</option>
+            </select>
         </div>
 
-        <div class="perfil-container">
-
-            <div class="perfil-esquerda">
-
-                <div class="fotoperfil" id="fotoPerfil">
-                    <i class="ri-account-circle-fill"></i>
-                </div>
-
-                <div class="lin" id="lin"></div>
-
-            </div>
-
-            <div class="perfil-direita">
-
-                <div class="seguidores" id="seguidores"></div>
-
-            </div>
-
-        </div>
-
-        <br><br><br><br><br>
-
-        <div class="corcinza">
-            <h2>Produtos</h2>
-        </div>
-
-        <br>
-
-        <main>
-
-            <div class="interface">
-
-                <div class="grid-produtos" id="grid-produtos">
-
-                </div>
-
-            </div>
-
-        </main>
+ 
 
     </div>
 
-    <script src="js/perfilpessoas.js"></script>
+
+    <script src="js/scriptRanking.js"></script>
     <script src="js/resp.js"></script>
     <script src="js/scriptPopup.js"></script>
     <script src="js/menu.js"></script>
