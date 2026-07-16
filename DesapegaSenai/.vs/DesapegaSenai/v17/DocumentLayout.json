@@ -37,19 +37,15 @@
       "DocumentGroups": [
         {
           "DockedWidth": 200,
-          "SelectedChildIndex": 1,
+          "SelectedChildIndex": 0,
           "Children": [
-            {
-              "$type": "Bookmark",
-              "Name": "ST:0:0:{56df62a4-05a3-4e5b-aa1a-99371ccfb997}"
-            },
             {
               "$type": "Document",
               "DocumentIndex": 0,
               "Title": "ObjetoController.cs",
               "DocumentMoniker": "C:\\Users\\manha.ceticc\\AppData\\Local\\SourceServer\\7d95bb59796b9ff5b76af7f6593d2a25a8ad55dd07edd43aec8aabd5bcac78ab\\DesapegaSenai\\DesapegaSenai\\Controllers\\ObjetoController.cs",
               "ToolTip": "C:\\Users\\manha.ceticc\\AppData\\Local\\SourceServer\\7d95bb59796b9ff5b76af7f6593d2a25a8ad55dd07edd43aec8aabd5bcac78ab\\DesapegaSenai\\DesapegaSenai\\Controllers\\ObjetoController.cs",
-              "ViewState": "AgIAADEAAAAAAAAAAAAQwEIAAAAMAAAAAAAAAA==",
+              "ViewState": "AgIAAB4AAAAAAAAAAAAAAEIAAAAMAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
               "WhenOpened": "2026-07-15T10:51:23.836Z",
               "EditorCaption": ""
@@ -100,8 +96,7 @@
               "RelativeToolTip": "DesapegaSenai\\Controllers\\ObjetoController.cs",
               "ViewState": "AgIAAHEAAAAAAAAAAAAwwIcAAAAwAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2026-06-02T11:04:09.74Z",
-              "EditorCaption": ""
+              "WhenOpened": "2026-06-02T11:04:09.74Z"
             },
             {
               "$type": "Document",
@@ -113,8 +108,7 @@
               "RelativeToolTip": "DesapegaSenai\\Controllers\\UsuarioController.cs",
               "ViewState": "AgIAAAUAAAAAAAAAAAAQwD4AAAAMAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2026-06-02T11:04:09.74Z",
-              "EditorCaption": ""
+              "WhenOpened": "2026-06-02T11:04:09.74Z"
             },
             {
               "$type": "Document",
@@ -127,6 +121,10 @@
               "ViewState": "AgIAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
               "WhenOpened": "2026-06-02T11:04:09.74Z"
+            },
+            {
+              "$type": "Bookmark",
+              "Name": "ST:0:0:{56df62a4-05a3-4e5b-aa1a-99371ccfb997}"
             }
           ]
         }
