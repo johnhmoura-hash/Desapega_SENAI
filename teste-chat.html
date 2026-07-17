@@ -1,0 +1,136 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8">
+  <link href="https://fonts.googleapis.com/css2?family=Yuji+Syuku&display=swap" rel="stylesheet">
+  <link href="https://cdn.jsdelivr.net/npm/remixicon/fonts/remixicon.css" rel="stylesheet">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Principal-Desapega SENAI</title>
+  <link rel="stylesheet" href="css/estilo.css">
+  <link rel="stylesheet" href="css/popup.css">
+  <link rel="stylesheet" href="css/teste.css">
+  <link rel="stylesheet" href="css/notificacao.css">
+  <link rel="icon" href="Img/possivel logo.png" type="image/x-icon">
+  <link rel="stylesheet" href="css/mobile.css">
+</head>
+
+<body>
+  <div class="faixatopo">
+    <br>
+  </div>
+
+  <header class="page">
+    <div class="container-login">
+      <div class="logo2">
+        <img src="Img/possivel logo.png" width="40">
+      </div>
+
+      <div class="pesquisar">
+        <input type="text" name="buscar" placeholder="Buscar...">
+      </div>
+
+      <div class="menu-toggle" id="menuToggle">
+        ☰
+      </div>
+
+      <nav class="menu" id="menu">
+
+        <div>
+          <a href="index.html" >
+            Início <i class="ri-home-line"></i>
+          </a>
+        </div>
+
+        <div class="">
+          <a href="Tela_perfil.html" >
+            Perfil <i class="ri-user-line"></i>
+          </a>
+        </div>
+
+        <div class=" notificacao-wrapper">
+
+          <a href="#" id="btnNotificacao">
+            Notificações <i class="ri-notification-line" ></i>
+          </a>
+
+          <div class="popup-notificacao" id="popupNotificacao">
+
+            <div class="popup-header">
+              <h4>Notificações</h4>
+            </div>
+
+            <div class="popup-body" id="listaNotificacoes">
+            </div>
+
+          </div>
+
+        </div>
+
+
+        <div class="menu2 chat-wrapper">
+          <a href="teste-chat.html" id="btnChat" class="ativo">
+            Chat <i class="ri-chat-3-line"></i>
+          </a>
+        </div>
+        <a href="tela_produto.html">Anunciar produto <i class="ri-add-line"></i></a>
+
+      </nav>
+    </div>
+    <div class="overlay-menu" id="overlayMenu"></div>
+  </header>
+
+<body>
+
+<div class="container">
+
+    <aside class="sidebar" id="sidebar"></aside>
+
+    <main class="chat">
+
+        <div class="chat-header">
+
+            <div class="avatar">
+                <i class="fa fa-user"></i>
+            </div>
+
+            <strong>John Bonfim</strong>
+
+        </div>
+
+        <div class="chat-body">
+
+            <div class="message left">
+                oi, ainda está disponivel a bola?
+                <small>20/08</small>
+            </div>
+
+            <div class="message right">
+                óla, sim, tem interesse?
+                <small>20/08</small>
+            </div>
+
+ 
+           <div class="message left">
+    se eu perguntei é porque eu tenho
+      <small>20/08</small>
+</div>
+
+
+        </div>
+
+        <div class="chat-footer">
+
+            <input type="text" placeholder="Mensagem">
+
+            <button class="send">
+                <i class="fa-solid fa-paper-plane"></i>
+            </button>
+
+        </div>
+
+    </main>
+
+</div>
+<script src="js/scriptChat.js"></script>
+</body>
+</html>
