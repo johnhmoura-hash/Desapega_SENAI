@@ -1,8 +1,8 @@
-async function abrirTroca(idProdutoDesejado){
+async function abrirTroca(idProdutoDesejado) {
 
     const resposta = await fetch(
         "https://localhost:7132/Objeto/perfil",
-        { credentials:"include" }
+        { credentials: "include" }
     );
 
     const meusProdutos = await resposta.json();
@@ -17,7 +17,7 @@ async function abrirTroca(idProdutoDesejado){
 }
 
 // ADICIONE ESTA FUNÇÃO AQUI
-function abrirPerfil(idUsuario){
+function abrirPerfil(idUsuario) {
     window.location.href = `perfilpessoas.html?id=${idUsuario}`;
 }
 
@@ -28,23 +28,23 @@ document.addEventListener("DOMContentLoaded", function () {
     fetch(`https://localhost:7132/Objeto/perfil/${id}`, {
         credentials: "include"
     })
-    .then(response => response.json())
-    .then(data => {
+        .then(response => response.json())
+        .then(data => {
 
-    console.log(data);
-    console.log("id_usuario:", data.id_usuario);
+            console.log(data);
+            console.log("id_usuario:", data.id_usuario);
 
-    const resposta = document.getElementById("pagina-produto");
+            const resposta = document.getElementById("pagina-produto");
 
-        if (!resposta) {
-            console.error("Elemento pagina-produto não existe");
-            return;
-        }
+            if (!resposta) {
+                console.error("Elemento pagina-produto não existe");
+                return;
+            }
 
-        console.log(data.foto_usuario);
-        console.log(data);
+            console.log(data.foto_usuario);
+            console.log(data);
 
-        resposta.innerHTML = `
+            resposta.innerHTML = `
             <div class="produto-topo-area">
 
                 <div class="produto-imagem-box">
@@ -123,9 +123,9 @@ document.addEventListener("DOMContentLoaded", function () {
 
             </div>
         `;
-    })
-    .catch(error => {
-        console.error("Erro no fetch:", error);
-    });
+        })
+        .catch(error => {
+            console.error("Erro no fetch:", error);
+        });
 
 });

@@ -226,6 +226,15 @@ namespace DesapegaSenai.Controllers
                     Fk_usuarios_matricula = objBanco.Fk_usuarios_remetente,
                     Fk_troca_id = objBanco.Id
                 });
+                var mensagem = new Mensagem
+                {
+                    Fk_usuarios_remetente = objBanco.Fk_usuarios_remetente,
+                    Fk_usuarios_destinatario = objBanco.Fk_usuarios_destinatario,
+                    Conteudo = "Sua troca foi aceita! Agora vocês podem conversar.",
+                    Data_hr = DateTime.Now
+                };
+
+                _context.Mensagens.Add(mensagem);
             }
             if (troca.Status == "Recusada")
             {
