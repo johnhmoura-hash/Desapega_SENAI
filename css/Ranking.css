@@ -127,6 +127,51 @@
     color:#f4b43a;
 }
 
+
+.ranking-gold .ranking-btn{
+    border-color:#f4b43a;
+    color:#f4b43a;
+}
+
+.ranking-gold .ranking-btn:hover{
+    background:#f4b43a;
+    color:#fff;
+}
+
+.ranking-silver .ranking-btn{
+    border-color:#7c7c7c;
+    color:#7c7c7c;
+}
+
+.ranking-silver .ranking-btn:hover{
+    background:#7c7c7c;
+    color:#fff;
+}
+
+.ranking-bronze .ranking-btn{
+    border-color:#d6a27a;
+    color:#d6a27a;
+}
+
+.ranking-bronze .ranking-btn:hover{
+    background:#d6a27a;
+    color:#fff;
+}
+
+.ranking-blue .ranking-btn{
+    border-color:#2F80ED;
+    color:#2F80ED;
+}
+
+.ranking-blue .ranking-btn:hover{
+    background:#2F80ED;
+    color:#fff;
+}
+
+
+
+
+
 .ranking-silver{
     border-color:#7c7c7c;
 }
