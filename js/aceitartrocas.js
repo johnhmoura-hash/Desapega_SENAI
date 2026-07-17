@@ -2,7 +2,7 @@ document.addEventListener("DOMContentLoaded", function () {
 
     const idTroca = new URLSearchParams(window.location.search).get("idTroca");
 
-    console.log("ID da troca:", idTroca);
+   
 
     fetch(`https://localhost:7132/Trocas/${idTroca}`, {
         credentials: "include"
