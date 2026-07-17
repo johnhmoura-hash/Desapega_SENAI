@@ -18,17 +18,23 @@ console.log(data.objetos);
 
         for (let i = 0; i < data.objetos.length; i++) {
             if(data.objetos[i].status_objeto == true){
-            resposta.innerHTML += `
-                <div class="carde">
-                    <div class="imagem-produto">
-                        <img src="${data.objetos[i].foto}" alt="Produto">
-                    </div>
-                    <div class="infos">
-                        <h3>${data.objetos[i].nome}</h3>
-                        <span>${data.objetos[i].tempo_uso}</span>
-                    </div>
-                </div>
-            `;
+           resposta.innerHTML += `
+    <div class="carde">
+        <div class="imagem-produto">
+
+            <button class="btn-excluir" data-id="${data.objetos[i].id}">
+                <i class="ri-delete-bin-line"></i>
+            </button>
+
+            <img src="${data.objetos[i].foto}" alt="Produto">
+        </div>
+
+        <div class="infos">
+            <h3>${data.objetos[i].nome}</h3>
+            <span>${data.objetos[i].tempo_uso}</span>
+        </div>
+    </div>
+`;
             }
         }
     });
@@ -124,3 +130,38 @@ if (btnLogout) {
         }
     });
 }
+
+let idProdutoExcluir = null;
+
+document.addEventListener("click", function(e){
+
+    const btn = e.target.closest(".btn-excluir");
+
+    if(!btn) return;
+
+    idProdutoExcluir = btn.dataset.id;
+
+    document.getElementById("popupExcluir").style.display = "flex";
+});
+
+document.getElementById("cancelarExclusao").addEventListener("click", () => {
+    document.getElementById("popupExcluir").style.display = "none";
+});
+
+document.getElementById("confirmarExclusao").addEventListener("click", async () => {
+
+    const resposta = await fetch(
+        `https://localhost:7132/Objeto/${idProdutoExcluir}`,
+        {
+            method: "DELETE",
+            credentials: "include"
+        }
+    );
+
+    if(resposta.ok){
+
+        document.getElementById("popupExcluir").style.display = "none";
+
+        location.reload();
+    }
+});

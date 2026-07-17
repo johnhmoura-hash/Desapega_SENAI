@@ -1,3 +1,8 @@
+function abrirPerfil(idUsuario){
+    window.location.href = `perfilpessoas.html?id=${idUsuario}`;
+}
+
+
 document.addEventListener("DOMContentLoaded", function () {
 
     fetch('https://localhost:7132/objeto/ranking', {
@@ -14,22 +19,34 @@ document.addEventListener("DOMContentLoaded", function () {
 
 
             resposta.innerHTML = "";
+for (let i = 0; i < data.length; i++) {
 
-            for (let i = 0; i < data.length; i++) {
+    let classeRanking = "ranking-blue";
 
-                resposta.innerHTML += `
-                
-            <div class="ranking-item ranking-gold">
-            <span class="ranking-position">#${[i + 1]}</span>
+    if (i === 0) {
+        classeRanking = "ranking-gold";
+    } else if (i === 1) {
+        classeRanking = "ranking-silver";
+    } else if (i === 2) {
+        classeRanking = "ranking-bronze";
+    }
+
+    resposta.innerHTML += `
+        <div class="ranking-item ${classeRanking}">
+            <span class="ranking-position">#${i + 1}</span>
             <span class="ranking-name">${data[i].nome}</span>
             <span class="ranking-value">${data[i].totalObjetos}</span>
             <span class="ranking-value">${data[i].totalTrocas}</span>
-            <button class="ranking-btn">Perfil</button>
-            </div>
+            <button class="ranking-btn"
+    onclick="abrirPerfil(${data[i].usuarioDestino})">
+    Perfil
+</button>
+        </div>
+    `;
+}
 
-                      
-            `;
-            }
+
+
 
 
         });
