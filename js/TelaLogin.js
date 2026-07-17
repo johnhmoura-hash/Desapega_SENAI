@@ -101,6 +101,9 @@ function isEmail(email) {
 }
 
 
+// Logout 
+
+
  
 
 

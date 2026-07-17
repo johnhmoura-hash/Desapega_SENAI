@@ -1,117 +1,118 @@
 <!DOCTYPE html>
 <html lang="pt-br">
+
 <head>
-    <meta charset="UTF-8">
-    <title>Produto-Desapega SENAI</title>
-     <link rel="stylesheet" href="css/alerta.css">
-    <link rel="stylesheet" href="css/estilo.css">
-     <link rel="stylesheet" href="css/mobile.css">
-     <link href="https://cdn.jsdelivr.net/npm/remixicon/fonts/remixicon.css" rel="stylesheet">
-     <link rel="icon" href="Img/possivel logo.png" type="image/x-icon">
-     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta charset="UTF-8">
+  <link href="https://fonts.googleapis.com/css2?family=Yuji+Syuku&display=swap" rel="stylesheet">
+  <link href="https://cdn.jsdelivr.net/npm/remixicon/fonts/remixicon.css" rel="stylesheet">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Principal-Desapega SENAI</title>
+  <link rel="stylesheet" href="css/estilo.css">
+  <link rel="stylesheet" href="css/popup.css">
+  <link rel="stylesheet" href="css/notificacao.css">
+  <link rel="icon" href="Img/possivel logo.png" type="image/x-icon">
+  <link rel="stylesheet" href="css/mobile.css">
 </head>
+
 <body>
- <div class="faixatopo">
-    
-   </div>
-   
-    <header class="page">
-      <div class="container-login">
-        <div class="logo2">
-          <img src="Img/possivel logo.png" width="40">
-        </div>
+  <div class="faixatopo">
 
-        <div class="pesquisar">
-          <input type="text" name="buscar" placeholder="Buscar...">
-        </div>
-
-        <div class="menu-toggle" id="menuToggle">
-          ☰
-        </div>
-
-        <nav class="menu" id="menu">
-
-          <div class="menu2">     
-            <a href="index.html">Início <i class="ri-home-line"></i></a>
-          </div>
-
-          <div class="menu2">
-            <a href="Tela_perfil.html">Perfil <i class="ri-user-line"></i></a>
-          </div>
-
-   <div class="menu2 notificacao-wrapper">
-
-    <a href="#" id="btnNotificacao">
-        Notificações <i class="ri-notification-line"></i>
-    </a>
-
-    <div class="popup-notificacao" id="popupNotificacao">
-
-        <div class="popup-header">
-            <h4>Notificações</h4>
-        </div>
-
-        <div class="popup-body" id="listaNotificacoes">
-        </div>
-
-    </div>
-
-</div>
-          
-
-          <div class="menu2 chat-wrapper">
-            <a href="#" id="btnChat">
-              Chat <i class="ri-chat-3-line"></i>
-            </a>
-          </div>
-          <a href="tela_produto.html">Anunciar produto <i class="ri-add-line"></i></a>
-       
-        </nav>
-      </div>
-       <div class="overlay-menu" id="overlayMenu"></div>
-    </header>
-    <br><br>
-
-<div class="box-produto">
-
-  <form class="form-produto" id="formProduto">
-    
-  <div class="ajustep">
-  <div class="photo-upload">
-    <label for="inputFoto" class="btn-foto">
-      <i class="ri-camera-line"></i>
-    </label>
-
-    <input
-      type="file"
-      id="inputFoto"
-      accept="image/*"
-      style="display: none;"
-    >
   </div>
-</div>
 
-    <label>Informações ⓘ</label>
+  <header class="page">
+    <div class="container-login">
+      <div class="logo2">
+        <img src="Img/possivel logo.png" width="40">
+      </div>
 
-    <label for="nomeProduto" ></label>
-    <input type="text" class="input-info" id="nomeProduto" placeholder="Produto">
-    <span></span>
-  
+      <div class="pesquisar">
+        <input type="text" name="buscar" placeholder="Buscar...">
+      </div>
 
-    <select class="input-info" id="tempoUso" >
-      <option value="" disabled selected>Tempo de uso</option>
-      <option>1 mês</option>
-      <option>2 meses</option>
-      <option>3 meses</option>
-      <option>4 meses</option>
-      <option>5 meses</option>
-      <option>6 meses +</option>
-      <option>1 ano +</option>
-    </select>
+      <div class="menu-toggle" id="menuToggle">
+        ☰
+      </div>
 
-    <select class="input-info" id="categoria" >
-      <option value="" disabled selected>Categoria</option>
-      <option>Papelaria </option>
+      <nav class="menu" id="menu">
+
+        <div class="menu2">
+          <a href="index.html">Início <i class="ri-home-line"></i></a>
+        </div>
+
+        <div class="menu2">
+          <a href="Tela_perfil.html">Perfil <i class="ri-user-line"></i></a>
+        </div>
+
+        <div class="menu2 notificacao-wrapper">
+
+          <a href="#" id="btnNotificacao">
+            Notificações <i class="ri-notification-line"></i>
+          </a>
+
+          <div class="popup-notificacao" id="popupNotificacao">
+
+            <div class="popup-header">
+              <h4>Notificações</h4>
+            </div>
+
+            <div class="popup-body" id="listaNotificacoes">
+            </div>
+
+          </div>
+
+        </div>
+
+
+        <div class="menu2 chat-wrapper">
+          <a href="#" id="btnChat">
+            Chat <i class="ri-chat-3-line"></i>
+          </a>
+        </div>
+        <a href="tela_produto.html" class="ativo">
+          Anunciar produto <i class="ri-add-line"></i>
+        </a>
+
+      </nav>
+    </div>
+    <div class="overlay-menu" id="overlayMenu"></div>
+  </header>
+  <br><br>
+
+  <div class="box-produto">
+
+    <form class="form-produto" id="formProduto">
+
+      <div class="ajustep">
+        <div class="photo-upload">
+          <label for="inputFoto" class="btn-foto">
+            <i class="ri-camera-line"></i>
+          </label>
+
+          <input type="file" id="inputFoto" accept="image/*" style="display: none;">
+        </div>
+      </div>
+
+      <label>Informações ⓘ</label>
+
+      <label for="nomeProduto"></label>
+      <input type="text" class="input-info" id="nomeProduto" placeholder="Produto">
+      <span></span>
+
+
+      <select class="input-info" id="tempoUso">
+        <option value="" disabled selected>Tempo de uso</option>
+        <option>1 mês</option>
+        <option>2 meses</option>
+        <option>3 meses</option>
+        <option>4 meses</option>
+        <option>5 meses</option>
+        <option>6 meses +</option>
+        <option>1 ano +</option>
+      </select>
+
+      <select class="input-info" id="categoria">
+        <option value="" disabled selected>Categoria</option>
+        <option>Papelaria </option>
         <option>Acessórios </option>
         <option>Eletrônicos </option>
         <option>Esporte</option>
@@ -119,15 +120,15 @@
         <option>Livraria</option>
         <option>Objetos</option>
         <option>Outros</option>
-    </select>
+      </select>
 
-    <textarea class="input-info" placeholder="Descrição" id="descricao"></textarea>
-    <span>Você receberá <i class="ri-money-dollar-circle-line"></i><a>2,00</a></span>
+      <textarea class="input-info" placeholder="Descrição" id="descricao"></textarea>
+      <span>Você receberá <i class="ri-money-dollar-circle-line"></i><a>2,00</a></span>
 
-  <h3>Preferências de trocas</h3>
-      
-  <br>
-      <select class="input-info" id="troca" >
+      <h3>Preferências de trocas</h3>
+
+      <br>
+      <select class="input-info" id="troca">
         <option value="" disabled selected>Produto p/ troca</option>
         <option>Papelaria </option>
         <option>Acessórios </option>
@@ -138,20 +139,21 @@
         <option>Objetos</option>
         <option>Outros</option>
       </select>
-  <br>
+      <br>
       <input class="botao2" type="submit" value="Anunciar">
-  </form>
-</div>
+    </form>
+  </div>
 
-<div id="toast" class="toast">
+  <div id="toast" class="toast">
     <span id="toastMensagem"></span>
-</div>
+  </div>
 
-<script src="js/alerta.js"></script>
-<script src="js/scriptCadastroObjeto.js"></script>
-<script src="js/scriptPopup.js"></script>
+  <script src="js/alerta.js"></script>
+  <script src="js/scriptCadastroObjeto.js"></script>
+  <script src="js/scriptPopup.js"></script>
   <script src="js/resp.js"></script>
 
 
 </body>
+
 </html>

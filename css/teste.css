@@ -1,0 +1,343 @@
+
+/*================ LAYOUT ================*/
+
+.container{
+
+    width:98%;
+    height:calc(100vh - 80px);
+
+    margin:10px auto;
+
+    display:flex;
+    gap:20px;
+
+}
+
+/*================ CONTATOS ================*/
+
+.sidebar{
+
+    width:320px;
+    min-width:320px;
+    height:100%;
+
+    background:#fff;
+
+    border:2px solid #2d64d6;
+    border-radius:20px;
+
+    display:flex;
+    flex-direction:column;
+
+    overflow:hidden;
+
+}
+
+.sidebar h2{
+
+    padding:20px;
+
+    color:#2d64d6;
+
+    border-bottom:1px solid #ddd;
+
+}
+
+.contact{
+
+    display:flex;
+
+    align-items:center;
+
+    padding:15px;
+
+    cursor:pointer;
+
+    transition:.3s;
+
+}
+
+.contact:hover{
+
+    background:#f2f2f2;
+
+}
+
+.avatar{
+
+    width:45px;
+    height:45px;
+
+    border-radius:50%;
+
+    background:#9b9b9b;
+
+    display:flex;
+    justify-content:center;
+    align-items:center;
+
+    color:#fff;
+
+    margin-right:12px;
+
+}
+
+.contact strong{
+
+    font-size:16px;
+
+}
+
+.contact small{
+
+    color:#666;
+
+}
+
+.contact-search{
+
+    margin-top:auto;
+
+    padding:15px;
+
+}
+
+.contact-search input{
+
+    width:100%;
+    height:38px;
+
+    border-radius:20px;
+
+    border:1px solid #ccc;
+
+    padding:0 15px;
+
+    outline:none;
+
+}
+
+/*================ CHAT ================*/
+
+.chat{
+
+    flex:1;
+
+    height:100%;
+
+    background:#fff;
+
+    border-radius:20px;
+
+    overflow:hidden;
+
+    display:flex;
+
+    flex-direction:column;
+
+}
+
+/*================ CABEÇALHO CHAT ================*/
+
+.chat-header{
+
+    height:70px;
+
+    background:#f58217;
+
+    color:#fff;
+
+    display:flex;
+
+    align-items:center;
+
+    padding:0 25px;
+
+    font-weight:bold;
+
+}
+
+/*================ MENSAGENS ================*/
+
+.chat-body{
+
+    flex:1;
+
+    background:#ececec;
+
+    padding:25px;
+
+    overflow-y:auto;
+
+    display:flex;
+
+    flex-direction:column;
+
+    gap:18px;
+
+}
+
+.message{
+
+    max-width:320px;
+
+    padding:14px 18px;
+
+    border-radius:18px;
+
+    word-wrap:break-word;
+
+}
+
+.message small{
+
+    display:block;
+
+    margin-top:8px;
+
+    font-size:12px;
+
+}
+
+.left{
+
+    align-self:flex-start;
+
+    background:#f58217;
+
+    color:#fff;
+
+}
+
+.right{
+
+    align-self:flex-end;
+
+    background:#2d64d6;
+
+    color:#fff;
+
+}
+
+/*================ RODAPÉ ================*/
+
+.chat-footer{
+
+    background:#fff;
+
+    padding:15px;
+
+    display:flex;
+
+    align-items:center;
+
+    gap:10px;
+
+}
+
+.chat-footer input{
+
+    flex:1;
+
+    height:45px;
+
+    border:1px solid #ccc;
+
+    border-radius:10px;
+
+    outline:none;
+
+    padding:0 15px;
+
+    font-size:15px;
+
+}
+
+.send{
+
+    width:50px;
+
+    height:45px;
+
+    border:none;
+
+    border-radius:10px;
+
+    background:#f58217;
+
+    color:#fff;
+
+    cursor:pointer;
+
+    font-size:18px;
+
+    transition:.3s;
+
+}
+
+.send:hover{
+
+    background:#db6d06;
+
+}
+
+/*================ SCROLL ================*/
+
+.chat-body::-webkit-scrollbar{
+
+    width:8px;
+
+}
+
+.chat-body::-webkit-scrollbar-thumb{
+
+    background:#bbb;
+
+    border-radius:10px;
+
+}
+
+.chat-body::-webkit-scrollbar-track{
+
+    background:transparent;
+
+}
+
+/*================ RESPONSIVO ================*/
+
+@media (max-width:900px){
+
+    .sidebar{
+
+        width:280px;
+        min-width:280px;
+
+    }
+
+}
+
+@media (max-width:700px){
+
+    .container{
+
+        flex-direction:column;
+
+        height:auto;
+
+    }
+
+    .sidebar{
+
+        width:100%;
+        min-width:100%;
+        height:250px;
+
+    }
+
+    .chat{
+
+        height:calc(100vh - 350px);
+
+    }
+
+}
