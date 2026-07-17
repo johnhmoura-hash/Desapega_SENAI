@@ -26,6 +26,33 @@ namespace DesapegaSenai.Controllers
             return Ok(mensagens);
         }
 
+        [HttpGet("conversas")]
+        public IActionResult BuscarConversas()
+        {
+            var usuario = HttpContext.Session.GetString("Idusuado");
+            if (usuario == null)
+                return Unauthorized("Não autenticado");
+
+            int usuarioID = int.Parse(usuario);
+
+            var conversas = _context.Mensagens
+                .Where(m => m.Fk_usuarios_remetente == usuarioID ||
+                            m.Fk_usuarios_destinatario == usuarioID)
+                .ToList()
+                .GroupBy(m =>
+                    m.Fk_usuarios_remetente == usuarioID
+                        ? m.Fk_usuarios_destinatario
+                        : m.Fk_usuarios_remetente)
+                .Select(g => new
+                {
+                    Usuario = g.Key,
+                    UltimaMensagem = g.OrderByDescending(x => x.Data_hr).First().Conteudo
+                });
+
+            return Ok(conversas);
+        }
+
+
         [HttpGet("{id}")]
         public IActionResult GetMensagem(int id)
         {
@@ -33,11 +60,19 @@ namespace DesapegaSenai.Controllers
             if (usuario == null)
                 return Unauthorized("Não autenticado");
 
-            var mensagem = _context.Mensagens.Find(id);
-            if (mensagem == null)
-                return NotFound();
+            int usuarioID = int.Parse(usuario);
 
-            return Ok(mensagem);
+            var mensagens = _context.Mensagens
+       .Where(m =>
+           (m.Fk_usuarios_remetente == usuarioID &&
+            m.Fk_usuarios_destinatario == id)
+           ||
+           (m.Fk_usuarios_remetente == id &&
+            m.Fk_usuarios_destinatario == usuarioID))
+       .OrderBy(m => m.Data_hr)
+       .ToList();
+
+            return Ok(mensagens);
         } 
 
         [HttpPost]
@@ -47,9 +82,11 @@ namespace DesapegaSenai.Controllers
             if (usuario == null)
                 return Unauthorized("Não autenticado");
 
+            mensagem.Data_hr = DateTime.Now;
+
             _context.Mensagens.Add(mensagem);
             _context.SaveChanges();
-            return CreatedAtAction(nameof(GetMensagem), new { id = mensagem.Id }, mensagem);
+            return Ok();
         }
 
         [HttpDelete("{id}")]
