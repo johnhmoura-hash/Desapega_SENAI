@@ -14,9 +14,9 @@ document.addEventListener("DOMContentLoaded", () => {
 
     carregarConversas();
 
-if (!idUsuario) {
+    if (!idUsuario) {
 
-    chat.innerHTML = `
+        chat.innerHTML = `
         <div class="sem-chat">
             <i class="ri-chat-3-line"></i>
 
@@ -26,19 +26,19 @@ if (!idUsuario) {
         </div>
     `;
 
-    txtMensagem.style.display = "none";
-    btnEnviar.style.display = "none";
+        txtMensagem.style.display = "none";
+        btnEnviar.style.display = "none";
 
-} else {
+    } else {
 
-    txtMensagem.style.display = "block";
-    btnEnviar.style.display = "block";
+        txtMensagem.style.display = "block";
+        btnEnviar.style.display = "block";
 
-    carregarMensagens();
+        carregarMensagens();
 
-    setInterval(carregarMensagens, 3000);
+        setInterval(carregarMensagens, 3000);
 
-}
+    }
 
 
     if (idUsuario) {
@@ -134,6 +134,16 @@ if (!idUsuario) {
             mensagens.forEach(m => {
 
                 chat.innerHTML += `
+
+                <div class="chat-header">
+
+            <div class="avatar">
+                <i class="fa fa-user"></i>
+            </div>
+
+            <strong>John Bonfim</strong>
+             </div>
+             
                     <div class="message ${m.minhaMensagem ? "right" : "left"}">
 
                         <p>${m.conteudo}</p>
@@ -200,16 +210,16 @@ if (!idUsuario) {
         }
 
     }
-   function formatarData(data) {
+    function formatarData(data) {
 
-    const d = new Date(data);
-    const hoje = new Date();
+        const d = new Date(data);
+        const hoje = new Date();
 
-    if (d.toDateString() === hoje.toDateString()) {
-        return "Hoje";
+        if (d.toDateString() === hoje.toDateString()) {
+            return "Hoje";
+        }
+
+        return d.toLocaleDateString("pt-BR");
     }
-
-    return d.toLocaleDateString("pt-BR");
-}
 
 });
