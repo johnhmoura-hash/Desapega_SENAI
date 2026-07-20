@@ -84,12 +84,15 @@
 
   .menu{
     position: absolute;
-    top: 100%;
-    right: 30%;
+    width: 520px;
+    top: 110%;
     justify-content: center;
     display: grid;
     border-radius: 5%;
     background: white;
+    display: flex;
+    flex-direction: column;
+    gap: 19px;
     box-shadow: 0 4px 10px rgba(0,0,0,.1);
     max-height: 0;
     overflow: hidden;
@@ -103,7 +106,6 @@
   }
 
   .menu a{
-    margin: 5px 10px;
     text-align: center;
   }
 }
