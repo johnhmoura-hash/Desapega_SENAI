@@ -64,22 +64,19 @@
 }
 
 .avatar{
-
     width:45px;
     height:45px;
-
     border-radius:50%;
-
-    background:#9b9b9b;
-
-    display:flex;
-    justify-content:center;
-    align-items:center;
-
-    color:#fff;
-
+    overflow:hidden;
+    flex-shrink:0;
     margin-right:12px;
+}
 
+.avatar img{
+    width:100%;
+    height:100%;
+    object-fit:cover;
+    display:block;
 }
 
 .contact strong{
@@ -217,6 +214,54 @@
 
     color:#fff;
 
+}
+.sem-chat,
+.sem-conversa{
+
+    width:100%;
+    height:100%;
+
+    display:flex;
+    flex-direction:column;
+
+    justify-content:center;
+    align-items:center;
+
+    text-align:center;
+
+    color:#777;
+
+    padding:30px;
+}
+
+.sem-chat i{
+
+    font-size:70px;
+
+    color:#2d64d6;
+
+    margin-bottom:20px;
+}
+
+.sem-chat h2,
+.sem-conversa h3{
+
+    margin-bottom:10px;
+}
+
+.btn-novo{
+
+    margin-top:20px;
+
+    padding:10px 20px;
+
+    background:#2d64d6;
+
+    color:white;
+
+    text-decoration:none;
+
+    border-radius:8px;
 }
 
 /*================ RODAPÉ ================*/
