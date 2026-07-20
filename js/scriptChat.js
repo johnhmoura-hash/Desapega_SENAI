@@ -116,6 +116,7 @@ document.addEventListener("DOMContentLoaded", () => {
 
     }
 
+
     async function carregarMensagens() {
 
         try {
@@ -127,31 +128,34 @@ document.addEventListener("DOMContentLoaded", () => {
             if (!response.ok)
                 throw new Error(response.status);
 
-            const mensagens = await response.json();
-            console.log(mensagens)
-            chat.innerHTML = "";
+            const dados = await response.json();
 
-            mensagens.forEach(m => {
+            document.getElementById("nomeContato").textContent = dados.contato.nome;
+            document.getElementById("fotoContato").src =
+                `https://localhost:7132/uploads/${dados.contato.foto}`;
+
+            const chatBody = document.getElementById("chat-body");
+            chatBody.innerHTML = "";
+
+            dados.mensagens.forEach(m => {
+
+                chatBody.innerHTML += `
+        <div class="message ${m.minhaMensagem ? "right" : "left"}">
+            <p>${m.conteudo}</p>
+            <small>${formatarData(m.data_hr)}</small>
+        </div>
+    `;
+
+            });
+
+            dados.mensagens.forEach(m => {
 
                 chat.innerHTML += `
-
-                <div class="chat-header">
-
-            <div class="avatar">
-                <i class="fa fa-user"></i>
-            </div>
-
-            <strong>John Bonfim</strong>
-             </div>
-             
-                    <div class="message ${m.minhaMensagem ? "right" : "left"}">
-
-                        <p>${m.conteudo}</p>
-
-                       <small>${formatarData(m.data_hr)}</small>
-
-                    </div>
-                `;
+                <div class="message ${m.minhaMensagem ? "right" : "left"}">
+                    <p>${m.conteudo}</p>
+                    <small>${formatarData(m.data_hr)}</small>
+                </div>
+            `;
 
             });
 
