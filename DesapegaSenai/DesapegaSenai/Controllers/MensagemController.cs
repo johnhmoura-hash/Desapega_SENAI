@@ -122,6 +122,7 @@ namespace DesapegaSenai.Controllers
                 },
                 Mensagens = mensagens
             });
+        }
 
             [HttpPost]
             public IActionResult EnviarMensagem([FromBody] Mensagem mensagem)
@@ -155,4 +156,3 @@ namespace DesapegaSenai.Controllers
             }
         }
     }
-}
