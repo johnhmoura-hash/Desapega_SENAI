@@ -78,6 +78,12 @@ namespace DesapegaSenai.Controllers
 
             int usuarioID = int.Parse(usuario);
 
+            var outroUsuario = _context.Usuarios
+       .FirstOrDefault(u => u.Matricula == id);
+
+            if (outroUsuario == null)
+                return NotFound("Usuário não encontrado.");
+
             var mensagens = _context.Mensagens
                 .Where(m =>
                     (m.Fk_usuarios_remetente == usuarioID &&
@@ -118,34 +124,35 @@ namespace DesapegaSenai.Controllers
             });
 
             [HttpPost]
-        public IActionResult EnviarMensagem([FromBody] Mensagem mensagem)
-        {
-            var usuario = HttpContext.Session.GetString("Idusado");
-            if (usuario == null)
-                return Unauthorized("Não autenticado");
+            public IActionResult EnviarMensagem([FromBody] Mensagem mensagem)
+            {
+                var usuario = HttpContext.Session.GetString("Idusado");
+                if (usuario == null)
+                    return Unauthorized("Não autenticado");
 
-            mensagem.Fk_usuarios_remetente = int.Parse(usuario);
-            mensagem.Data_hr = DateTime.Now;
+                mensagem.Fk_usuarios_remetente = int.Parse(usuario);
+                mensagem.Data_hr = DateTime.Now;
 
-            _context.Mensagens.Add(mensagem);
-            _context.SaveChanges();
-            return Ok();
-        }
+                _context.Mensagens.Add(mensagem);
+                _context.SaveChanges();
+                return Ok();
+            }
 
-        [HttpDelete("{id}")]
-        public IActionResult DeleteMensagem(int id)
-        {
-            var usuario = HttpContext.Session.GetString("Idusado");
-            if (usuario == null)
-                return Unauthorized("Não autenticado");
+            [HttpDelete("{id}")]
+            public IActionResult DeleteMensagem(int id)
+            {
+                var usuario = HttpContext.Session.GetString("Idusado");
+                if (usuario == null)
+                    return Unauthorized("Não autenticado");
 
-            var mensagem = _context.Mensagens.Find(id);
-            if (mensagem == null)
-                return NotFound();
+                var mensagem = _context.Mensagens.Find(id);
+                if (mensagem == null)
+                    return NotFound();
 
-            _context.Mensagens.Remove(mensagem);
-            _context.SaveChanges();
-            return NoContent();
+                _context.Mensagens.Remove(mensagem);
+                _context.SaveChanges();
+                return NoContent();
+            }
         }
     }
 }
