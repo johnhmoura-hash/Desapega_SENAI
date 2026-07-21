@@ -8,18 +8,24 @@ async function abrirTroca(idProdutoDesejado) {
     const meusProdutos = await resposta.json();
 
     if (!meusProdutos.objetos || meusProdutos.objetos.length === 0) {
-
         document.getElementById("popup-sem-produto").style.display = "flex";
         return;
     }
 
-    window.location.href = `trocas.html?id=${idProdutoDesejado}`;
-}
+    const overlay = document.getElementById("overlayTroca");
+    const modal = document.querySelector(".modal-troca");
 
-// ADICIONE ESTA FUNÇÃO AQUI
-function abrirPerfil(idUsuario) {
-    window.location.href = `perfilpessoas.html?id=${idUsuario}`;
-}
+    modal.innerHTML = `
+        <iframe
+            src="trocas.html?id=${idProdutoDesejado}"
+            width="100%"
+            height="300"
+            frameborder="0">
+        </iframe>
+    `;
+
+    overlay.style.display = "flex";
+} 
 
 document.addEventListener("DOMContentLoaded", function () {
 

@@ -57,9 +57,9 @@ font-family:Verdana, Geneva, Tahoma, sans-serif;
   font-weight: 500;
   margin-right: 15px;
   border-radius: 10px;
-  border: 1px solid #a8a8a8; 
+  border: 1px solid #1429ec; 
   padding: 1vh;
-  color: #a8a8a8;
+  color: #FF7F27;
 }
 
 .menu a:hover{
@@ -1452,28 +1452,29 @@ background-color: #0056b3;
 
 
 /* OVERLAY */
-.overlay {
-  position: fixed;
-  top: 0;
-  left: 0;
-  width: 100%;
-  height: 100%;
-  background: rgba(0,0,0,0.5);
-  display: none;
-  align-items: center;
-  justify-content: center;
-  z-index: 999;
+.overlay{
+    display: none;
+    position: fixed;
+    inset: 0;
+    background: rgba(0,0,0,.6);
+    justify-content: center;
+    align-items: center;
+    z-index: 9999;
 }
 
-/* MODAL */
-.modal-troca {
-  background: #fff;
-  width: 500px;
-  max-width: 90%;
-  border-radius: 16px;
-  padding: 25px;
-  box-shadow: 0 10px 30px rgba(0,0,0,0.2);
-  text-align: center;
+.modal-troca{
+    width: 95vw;
+    max-width: 1200px;
+    height: 90vh;
+    background: white;
+    border-radius: 15px;
+    overflow: hidden;
+}
+
+.modal-troca iframe{
+    width: 100%;
+    height: 100%;
+    border: none;
 }
 
 /* GRID ITENS */
