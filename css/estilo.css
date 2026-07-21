@@ -57,9 +57,9 @@ font-family:Verdana, Geneva, Tahoma, sans-serif;
   font-weight: 500;
   margin-right: 15px;
   border-radius: 10px;
-  border: 1px solid #1429ec; 
+  border: 1px solid #b4b4b4; 
   padding: 1vh;
-  color: #FF7F27;
+  color: #b4b4b4;
 }
 
 .menu a:hover{
@@ -148,13 +148,13 @@ font-family:Verdana, Geneva, Tahoma, sans-serif;
     width: 120px;
     padding: 18px;
     background: #0056b3;
-    border-radius: 25px;
+    border-radius: 15px;
     box-shadow: 0 4px 5px #a8a8a8;
     border: 1px solid #005CAA;
     display: flex;
     align-items: center;
     justify-content: center;
-    gap: 8px;
+    gap: 10px;
     height: 29px;
     overflow: hidden;
 }
