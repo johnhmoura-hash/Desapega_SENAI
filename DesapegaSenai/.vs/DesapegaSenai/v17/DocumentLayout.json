@@ -12,13 +12,6 @@
           "SelectedChildIndex": -1,
           "Children": [
             {
-<<<<<<< HEAD
-              "$type": "Bookmark",
-              "Name": "ST:0:0:{56df62a4-05a3-4e5b-aa1a-99371ccfb997}"
-            },
-            {
-=======
->>>>>>> 5a88fcd0aae9352cfb944e2ce32aa6b685a90cac
               "$type": "Bookmark",
               "Name": "ST:0:0:{cce594b6-0c39-4442-ba28-10c64ac7e89f}"
             }
