@@ -243,6 +243,32 @@ public IActionResult BuscarObjetoPerfil()
 
             return Ok(ranking);
         }
+
+        [HttpGet("pesquisa")]
+        public IActionResult BusacraObjetos(string? pesquisa)
+        {
+            var objetos = _context.Objetos.AsQueryable();
+               
+             if(!string.IsNullOrWhiteSpace(pesquisa))
+            {
+                pesquisa = pesquisa.ToLower();
+
+                objetos = objetos.Where(o =>
+                o.Nome.ToLower().Contains(pesquisa) ||
+                o.Descricao.ToLower().Contains(pesquisa));
+            }
+
+            var lista = objetos.ToList();
+
+            foreach (var objeto in lista)
+            {
+                var nomeArquivo = Path.GetFileName(objeto.Foto);
+                objeto.Foto = $"{Request.Scheme}://{Request.Host}/uploads/{nomeArquivo}";
+            }
+
+
+            return Ok(objetos.ToList());
+        }
     }
 
     

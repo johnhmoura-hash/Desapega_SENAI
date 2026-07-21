@@ -1,3 +1,8 @@
+document.getElementById("btnCancelar").addEventListener("click", () => {
+    window.parent.document.getElementById("overlayTroca").style.display = "none";
+});
+
+
 function abrirPerfil(idUsuario){
     window.location.href = `perfilpessoas.html?id=${idUsuario}`;
 }
