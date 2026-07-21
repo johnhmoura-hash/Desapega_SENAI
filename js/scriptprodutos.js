@@ -1,3 +1,7 @@
+
+function abrirPerfil(idUsuario) {
+    window.location.href = `perfilpessoas.html?id=${idUsuario}`;
+}
 async function abrirTroca(idProdutoDesejado) {
 
     const resposta = await fetch(
