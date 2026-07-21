@@ -57,9 +57,9 @@ font-family:Verdana, Geneva, Tahoma, sans-serif;
   font-weight: 500;
   margin-right: 15px;
   border-radius: 10px;
-  border: 1px solid #a8a8a8; 
+  border: 1px solid #1429ec; 
   padding: 1vh;
-  color: #a8a8a8;
+  color: #FF7F27;
 }
 
 .menu a:hover{
@@ -531,6 +531,7 @@ textarea.input-info {
     height:100%;
     background:white; 
     z-index: 1;
+    
 }
 
 .imagem-produto img{
@@ -578,6 +579,93 @@ textarea.input-info {
     font-size:12px;
     width:fit-content;
 }
+
+.btn-excluir{
+    position: absolute;
+    top: 10px;
+    right: 10px;
+
+    width: 40px;
+    height: 40px;
+
+    border: none;
+    border-radius: 50%;
+
+    background: rgba(253, 253, 253, 0.9);
+    color: #ff7a00;
+
+    cursor: pointer;
+    z-index: 10;
+
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    font-size: 20px;
+}
+
+.btn-excluir:hover{
+    transform: scale(1.1);
+}
+
+
+.popup-excluir{
+    position:fixed;
+    inset:0;
+    background:rgba(0,0,0,.45);
+    display:none;
+    justify-content:center;
+    align-items:center;
+    z-index:99999;
+}
+
+.popup-box{
+    width:360px;
+    background:#fff;
+    border-radius:15px;
+    padding:30px;
+    text-align:center;
+}
+
+.popup-box i{
+    font-size:60px;
+    color:#ff7a00;
+}
+
+.popup-box h3{
+    margin:15px 0 10px;
+}
+
+.popup-box p{
+    color:#666;
+    line-height:1.5;
+}
+
+.acoes-popup{
+    display:flex;
+    justify-content:center;
+    gap:15px;
+    margin-top:25px;
+}
+
+#cancelarExclusao,
+#confirmarExclusao{
+    padding:10px 20px;
+    border:none;
+    border-radius:8px;
+    cursor:pointer;
+    font-size:15px;
+}
+
+#cancelarExclusao{
+    background:#ddd;
+}
+
+#confirmarExclusao{
+    background:#ff7a00;
+    color:#fff;
+}
+
 
 @media (max-width:768px){
     .infos{
@@ -1364,28 +1452,29 @@ background-color: #0056b3;
 
 
 /* OVERLAY */
-.overlay {
-  position: fixed;
-  top: 0;
-  left: 0;
-  width: 100%;
-  height: 100%;
-  background: rgba(0,0,0,0.5);
-  display: none;
-  align-items: center;
-  justify-content: center;
-  z-index: 999;
+.overlay{
+    display: none;
+    position: fixed;
+    inset: 0;
+    background: rgba(0,0,0,.6);
+    justify-content: center;
+    align-items: center;
+    z-index: 9999;
 }
 
-/* MODAL */
-.modal-troca {
-  background: #fff;
-  width: 500px;
-  max-width: 90%;
-  border-radius: 16px;
-  padding: 25px;
-  box-shadow: 0 10px 30px rgba(0,0,0,0.2);
-  text-align: center;
+.modal-troca{
+    width: 95vw;
+    max-width: 1200px;
+    height: 90vh;
+    background: white;
+    border-radius: 15px;
+    overflow: hidden;
+}
+
+.modal-troca iframe{
+    width: 100%;
+    height: 100%;
+    border: none;
 }
 
 /* GRID ITENS */
@@ -1652,6 +1741,20 @@ width: 100%;
 
 /* BOTÃO HAMBURGUER */
 
+a.ativo
+ {
+   color: #0056b3;
+   border-color: #0056b3;
+   
+ }
+#btnNotificacao:focus-visible,
+#btnNotificacao:focus {
+    color: #005CAA;
+    border-color: #005CAA;
+    outline: none;
+}
+
+ 
 .menu-toggle {
   display: none;
   font-size: 28px;
@@ -1665,7 +1768,8 @@ width: 100%;
 .menu {
   display: flex;
   align-items: center;
-  gap: 20px;
+  gap: 10px;
+
 }
 
 

@@ -1,25 +1,31 @@
-async function abrirTroca(idProdutoDesejado){
+async function abrirTroca(idProdutoDesejado) {
 
     const resposta = await fetch(
         "https://localhost:7132/Objeto/perfil",
-        { credentials:"include" }
+        { credentials: "include" }
     );
 
     const meusProdutos = await resposta.json();
 
     if (!meusProdutos.objetos || meusProdutos.objetos.length === 0) {
-
         document.getElementById("popup-sem-produto").style.display = "flex";
         return;
     }
 
-    window.location.href = `trocas.html?id=${idProdutoDesejado}`;
-}
+    const overlay = document.getElementById("overlayTroca");
+    const modal = document.querySelector(".modal-troca");
 
-// ADICIONE ESTA FUNÇÃO AQUI
-function abrirPerfil(idUsuario){
-    window.location.href = `perfilpessoas.html?id=${idUsuario}`;
-}
+    modal.innerHTML = `
+        <iframe
+            src="trocas.html?id=${idProdutoDesejado}"
+            width="100%"
+            height="300"
+            frameborder="0">
+        </iframe>
+    `;
+
+    overlay.style.display = "flex";
+} 
 
 document.addEventListener("DOMContentLoaded", function () {
 
@@ -28,23 +34,23 @@ document.addEventListener("DOMContentLoaded", function () {
     fetch(`https://localhost:7132/Objeto/perfil/${id}`, {
         credentials: "include"
     })
-    .then(response => response.json())
-    .then(data => {
+        .then(response => response.json())
+        .then(data => {
 
-    console.log(data);
-    console.log("id_usuario:", data.id_usuario);
+            console.log(data);
+            console.log("id_usuario:", data.id_usuario);
 
-    const resposta = document.getElementById("pagina-produto");
+            const resposta = document.getElementById("pagina-produto");
 
-        if (!resposta) {
-            console.error("Elemento pagina-produto não existe");
-            return;
-        }
+            if (!resposta) {
+                console.error("Elemento pagina-produto não existe");
+                return;
+            }
 
-        console.log(data.foto_usuario);
-        console.log(data);
+            console.log(data.foto_usuario);
+            console.log(data);
 
-        resposta.innerHTML = `
+            resposta.innerHTML = `
             <div class="produto-topo-area">
 
                 <div class="produto-imagem-box">
@@ -123,9 +129,9 @@ document.addEventListener("DOMContentLoaded", function () {
 
             </div>
         `;
-    })
-    .catch(error => {
-        console.error("Erro no fetch:", error);
-    });
+        })
+        .catch(error => {
+            console.error("Erro no fetch:", error);
+        });
 
 });

@@ -199,34 +199,75 @@ public IActionResult BuscarObjetoPerfil()
             if (usuario == null)
                 return Unauthorized("Não autenticado");
 
-            var objeto = _context.Usuarios.Find(id);
+            int matricula = int.Parse(usuario);
+
+            var objeto = _context.Objetos.FirstOrDefault(o =>
+                o.Id == id &&
+                o.Fk_usuarios_matricula == matricula);
 
             if (objeto == null)
-                return NotFound("Tarefa não encontrado");
+                return NotFound("Produto não encontrado.");
 
-            _context.Usuarios.Remove(objeto);
+            var usuarioBd = _context.Usuarios
+                .FirstOrDefault(u => u.Matricula == matricula);
+
+            if (usuarioBd != null)
+            {
+                usuarioBd.Pontos = Math.Max(0, usuarioBd.Pontos - 2);
+            }
+
+            _context.Objetos.Remove(objeto);
             _context.SaveChanges();
 
-            return Ok("Deletado com sucesso "); 
+            return Ok("Produto deletado com sucesso.");
         }
-        
+
         [HttpGet("ranking")]
         public IActionResult Ranking()
         { 
             var ranking = _context.Usuarios
                 .Select(u => new
                 {
+                    usuarioDestino = u.Matricula,
                     nome = u.Nome,
                     totalObjetos = _context.Objetos.Count(o => o.Fk_usuarios_matricula == u.Matricula),
                     totalTrocas = _context.Trocas.Count(t =>
                         t.Fk_usuarios_remetente == u.Matricula &&
                         t.Status == "Aceita")
-                    
-        })             
+
+
+                })
                 .OrderByDescending(x => x.totalTrocas)
+                .ThenByDescending(x => x.totalObjetos)  
                 .ToList();
 
             return Ok(ranking);
+        }
+
+        [HttpGet("pesquisa")]
+        public IActionResult BusacraObjetos(string? pesquisa)
+        {
+            var objetos = _context.Objetos.AsQueryable();
+               
+             if(!string.IsNullOrWhiteSpace(pesquisa))
+            {
+                pesquisa = pesquisa.ToLower();
+
+                objetos = objetos.Where(o =>
+                o.Nome.ToLower().Contains(pesquisa) ||
+                o.Descricao.ToLower().Contains(pesquisa));
+            }
+
+            var lista = objetos.ToList();
+
+            foreach (var objeto in lista)
+            {
+                var nomeArquivo = Path.GetFileName(objeto.Foto);
+                objeto.Foto = $"{Request.Scheme}://{Request.Host}/uploads/{nomeArquivo}";
+            }
+
+
+            return Ok(objetos.ToList());
         }
     }
 
