@@ -7,6 +7,8 @@ document.addEventListener("DOMContentLoaded", () => {
     const chat = document.getElementById("chat-body");
     const txtMensagem = document.getElementById("txtMensagem");
     const btnEnviar = document.getElementById("btnEnviar");
+    const heardChat = document.getElementById("chat-header");
+    let ultimoIdMensagem = 0;
 
     const idUsuario = new URLSearchParams(window.location.search).get("id");
 
@@ -28,25 +30,24 @@ document.addEventListener("DOMContentLoaded", () => {
 
         txtMensagem.style.display = "none";
         btnEnviar.style.display = "none";
+        heardChat.style.display = "none";
+
+
 
     } else {
 
         txtMensagem.style.display = "block";
         btnEnviar.style.display = "block";
+        heardChat.style.display = "block";
+
+
+        chat.innerHTML = "";
+        ultimoIdMensagem = 0;
 
         carregarMensagens();
 
-        setInterval(carregarMensagens, 3000);
-
     }
 
-
-    if (idUsuario) {
-        carregarMensagens();
-
-        // Atualiza as mensagens a cada 3 segundos
-        setInterval(carregarMensagens, 3000);
-    }
 
     btnEnviar?.addEventListener("click", enviarMensagem);
 
@@ -121,46 +122,39 @@ document.addEventListener("DOMContentLoaded", () => {
 
         try {
 
-            const response = await fetch(`https://localhost:7132/mensagem/${idUsuario}`, {
-                credentials: "include"
-            });
+            const response = await fetch(
+                `https://localhost:7132/mensagem/${idUsuario}?ultimoId=${ultimoIdMensagem}`,
+                {
+                    credentials: "include"
+                }
+            );
 
             if (!response.ok)
                 throw new Error(response.status);
 
             const dados = await response.json();
 
+            heardChat.style.display = "flex";
+
             document.getElementById("nomeContato").textContent = dados.contato.nome;
             document.getElementById("fotoContato").src =
                 `https://localhost:7132/uploads/${dados.contato.foto}`;
 
-            const chatBody = document.getElementById("chat-body");
-            chatBody.innerHTML = "";
-
             dados.mensagens.forEach(m => {
 
-                chatBody.innerHTML += `
+                chat.innerHTML += `
         <div class="message ${m.minhaMensagem ? "right" : "left"}">
             <p>${m.conteudo}</p>
             <small>${formatarData(m.data_hr)}</small>
         </div>
     `;
 
+                ultimoIdMensagem = m.id;
             });
 
-            dados.mensagens.forEach(m => {
-
-                chat.innerHTML += `
-                <div class="message ${m.minhaMensagem ? "right" : "left"}">
-                    <p>${m.conteudo}</p>
-                    <small>${formatarData(m.data_hr)}</small>
-                </div>
-            `;
-
-            });
-
-            chat.scrollTop = chat.scrollHeight;
-
+            if (dados.mensagens.length > 0) {
+                chat.scrollTop = chat.scrollHeight;
+            }
         }
         catch (e) {
 
