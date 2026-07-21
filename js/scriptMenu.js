@@ -21,3 +21,24 @@ async function carregarMenu() {
 }
 
 carregarMenu();
+
+document.addEventListener("DOMContentLoaded", function () {
+
+    const inputPesquisa = document.getElementById("pesquisar");
+
+    if (!inputPesquisa) return;
+
+    inputPesquisa.addEventListener("keydown", function (event) {
+
+        if (event.key === "Enter") {
+
+            const texto = this.value.trim();
+
+            if (texto === "") return;
+
+            window.location.href = `tela_categoria.html?pesquisa=${encodeURIComponent(texto)}`;
+        }
+
+    });
+
+});

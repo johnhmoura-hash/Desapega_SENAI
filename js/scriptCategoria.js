@@ -2,37 +2,41 @@ document.addEventListener("DOMContentLoaded", function () {
 
     const params = new URLSearchParams(window.location.search);
     const categoria = params.get("categoria");
+    const pesquisa = params.get("pesquisa");
+let url = "";
 
-    if (!categoria) {
-        console.error("Categoria não informada.");
-        return;
-    }
-
+if (categoria) {
     document.getElementById("titulo-categoria").textContent = categoria;
 
-    fetch(`https://localhost:7132/objeto/categoria/${encodeURIComponent(categoria)}`, {
-        credentials: "include"
-    })
-    .then(response => response.json())
-    .then(data => {
+    url = `https://localhost:7132/objeto/categoria/${encodeURIComponent(categoria)}`;
+}
+else if (pesquisa) {
+    document.getElementById("titulo-categoria").textContent = `Resultados para "${pesquisa}"`;
 
-        produtos = data;
+    url = `https://localhost:7132/objeto/pesquisa?pesquisa=${encodeURIComponent(pesquisa)}`;
+}
+console.log(url);
+fetch(url, {
+    credentials: "include"
+})
+.then(response => response.json())
+.then(data => {
+    produtos = data;
+    mostrarProdutos(produtos);
+})
+.catch(error => console.error(error));
 
-        mostrarProdutos(produtos);
-    
-        
-    })
-    .catch(error => console.error(error));
 
 });
 
-function mostrarProdutos(lista){
 
-   const grid = document.getElementById("grid-produtos");
-        grid.innerHTML = "";
+function mostrarProdutos(lista) {
 
-        lista.forEach(produto => {
-            grid.innerHTML += `
+    const grid = document.getElementById("grid-produtos");
+    grid.innerHTML = "";
+
+    lista.forEach(produto => {
+        grid.innerHTML += `
                 <div class="carde">
                     <div class="imagem-produto">
                         <a href="produto.html?id=${produto.id}">
@@ -46,7 +50,7 @@ function mostrarProdutos(lista){
                     </div>
                 </div>
             `;
-         });
+    });
 }
 
 document.getElementById("filtroTempo").addEventListener("change", function () {
@@ -58,28 +62,28 @@ document.getElementById("filtroTempo").addEventListener("change", function () {
         return;
     }
 
-   const filtrados = produtos.filter(produto => {
+    const filtrados = produtos.filter(produto => {
 
-    const tempo = produto.tempo_uso;
+        const tempo = produto.tempo_uso;
 
-    if (filtro === "6 meses +") {
+        if (filtro === "6 meses +") {
 
-        const meses = parseInt(tempo);
+            const meses = parseInt(tempo);
 
-        return tempo.includes("mes") && meses >= 6;
-    } else  
+            return tempo.includes("mes") && meses >= 6;
+        } else
 
-    if (filtro === "1 ano +") {
-        return tempo.includes("ano");
-    }
+            if (filtro === "1 ano +") {
+                return tempo.includes("ano");
+            }
 
-    return tempo === filtro;
+        return tempo === filtro;
 
-});
+    });
 
     mostrarProdutos(filtrados);
 
-     if (filtrados.length === 0) {
+    if (filtrados.length === 0) {
 
         document.getElementById("grid-produtos").innerHTML = `
             <div class="sem-objetos">

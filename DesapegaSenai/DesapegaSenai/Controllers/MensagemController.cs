@@ -39,6 +39,7 @@ namespace DesapegaSenai.Controllers
             var conversas = _context.Mensagens
                 .Where(m => m.Fk_usuarios_remetente == usuarioID ||
                             m.Fk_usuarios_destinatario == usuarioID)
+  
                 .ToList()
                 .GroupBy(m =>
                     m.Fk_usuarios_remetente == usuarioID
@@ -46,7 +47,10 @@ namespace DesapegaSenai.Controllers
                         : m.Fk_usuarios_remetente)
                 .Select(g =>
                 {
-                    var ultima = g.OrderByDescending(x => x.Data_hr).First();
+                    var ultima = g
+                    .OrderByDescending(x => x.Data_hr)
+                    .ThenByDescending(x => x.Id)
+                    .First();
 
                     var outroUsuario = _context.Usuarios
                         .FirstOrDefault(u => u.Matricula == g.Key);
@@ -65,6 +69,7 @@ namespace DesapegaSenai.Controllers
                     };
                 })
                 .OrderByDescending(c => c.Data);
+
 
             return Ok(conversas);
         }
