@@ -37,12 +37,8 @@
       "DocumentGroups": [
         {
           "DockedWidth": 200,
-          "SelectedChildIndex": 2,
+          "SelectedChildIndex": 1,
           "Children": [
-            {
-              "$type": "Bookmark",
-              "Name": "ST:0:0:{56df62a4-05a3-4e5b-aa1a-99371ccfb997}"
-            },
             {
               "$type": "Document",
               "DocumentIndex": 1,
@@ -51,8 +47,7 @@
               "ToolTip": "C:\\Users\\manha.ceticc\\AppData\\Local\\SourceServer\\7d95bb59796b9ff5b76af7f6593d2a25a8ad55dd07edd43aec8aabd5bcac78ab\\DesapegaSenai\\DesapegaSenai\\Controllers\\ObjetoController.cs",
               "ViewState": "AgIAADcAAAAAAAAAAAAQwEIAAAAMAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2026-07-15T10:51:23.836Z",
-              "EditorCaption": ""
+              "WhenOpened": "2026-07-15T10:51:23.836Z"
             },
             {
               "$type": "Document",
@@ -126,6 +121,10 @@
               "ViewState": "AgIAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
               "WhenOpened": "2026-06-02T11:04:09.74Z"
+            },
+            {
+              "$type": "Bookmark",
+              "Name": "ST:0:0:{56df62a4-05a3-4e5b-aa1a-99371ccfb997}"
             }
           ]
         }
