@@ -1,7 +1,14 @@
+<<<<<<< HEAD
+
+function abrirPerfil(idUsuario) {
+    window.location.href = `perfilpessoas.html?id=${idUsuario}`;
+}
+=======
 function abrirPerfil(idUsuario) {
     window.location.href = `perfilpessoas.html?id=${idUsuario}`;
 }
 
+>>>>>>> ea24045d7a01da1d9aabc33383d20c4b47131747
 async function abrirTroca(idProdutoDesejado) {
 
     const resposta = await fetch(

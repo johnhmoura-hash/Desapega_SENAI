@@ -84,13 +84,13 @@
 
   .menu{
     position: absolute;
-    width: 520px;
-    top: 110%;
+    width: 510px;
+    top: 100%;
     justify-content: center;
     display: grid;
+    grid-template-columns: repeat(2, 1fr);
     border-radius: 5%;
     background: white;
-    display: flex;
     flex-direction: column;
     gap: 19px;
     box-shadow: 0 4px 10px rgba(0,0,0,.1);
@@ -106,7 +106,9 @@
   }
 
   .menu a{
+    justify-content: center;
     text-align: center;
+    padding: 5px;
   }
 }
 
