@@ -1,7 +1,6 @@
 {
   "Version": 1,
   "WorkspaceRootPath": "C:\\Users\\manha.ceticc\\Documents\\GitHub\\Desapega_SENAI\\DesapegaSenai\\",
-<<<<<<< HEAD
   "Documents": [
     {
       "AbsoluteMoniker": "D:0:0:{4974C4DE-9B36-4CCF-8B2F-40A54739E552}|DesapegaSenai\\DesapegaSenai.csproj|c:\\users\\manha.ceticc\\documents\\github\\desapega_senai\\desapegasenai\\desapegasenai\\controllers\\mensagemcontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
@@ -31,9 +30,6 @@
       "RelativeMoniker": "D:0:0:{4974C4DE-9B36-4CCF-8B2F-40A54739E552}|DesapegaSenai\\DesapegaSenai.csproj|solutionrelative:desapegasenai\\properties\\launchsettings.json||{90A6B3A7-C1A3-4009-A288-E2FF89E96FA0}"
     }
   ],
-=======
-  "Documents": [],
->>>>>>> 1cd86ac8e838d37c0a5640e35b51bb765e8bdd2d
   "DocumentGroupContainers": [
     {
       "Orientation": 0,
@@ -41,17 +37,8 @@
       "DocumentGroups": [
         {
           "DockedWidth": 200,
-<<<<<<< HEAD
-          "SelectedChildIndex": 3,
+          "SelectedChildIndex": 1,
           "Children": [
-            {
-              "$type": "Bookmark",
-              "Name": "ST:0:0:{56df62a4-05a3-4e5b-aa1a-99371ccfb997}"
-            },
-            {
-              "$type": "Bookmark",
-              "Name": "ST:0:0:{cce594b6-0c39-4442-ba28-10c64ac7e89f}"
-            },
             {
               "$type": "Document",
               "DocumentIndex": 1,
@@ -70,11 +57,11 @@
               "Title": "MensagemController.cs",
               "DocumentMoniker": "C:\\Users\\manha.ceticc\\Documents\\GitHub\\Desapega_SENAI\\DesapegaSenai\\DesapegaSenai\\Controllers\\MensagemController.cs",
               "RelativeDocumentMoniker": "DesapegaSenai\\Controllers\\MensagemController.cs",
-              "ToolTip": "C:\\Users\\manha.ceticc\\Documents\\GitHub\\Desapega_SENAI\\DesapegaSenai\\DesapegaSenai\\Controllers\\MensagemController.cs*",
-              "RelativeToolTip": "DesapegaSenai\\Controllers\\MensagemController.cs*",
-              "ViewState": "AgIAAEYAAAAAAAAAAAAAAE0AAABAAAAAAAAAAA==",
+              "ToolTip": "C:\\Users\\manha.ceticc\\Documents\\GitHub\\Desapega_SENAI\\DesapegaSenai\\DesapegaSenai\\Controllers\\MensagemController.cs",
+              "RelativeToolTip": "DesapegaSenai\\Controllers\\MensagemController.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAA0AAAAJAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2026-06-10T11:42:31.693Z",
+              "WhenOpened": "2026-07-22T10:37:26.079Z",
               "EditorCaption": ""
             },
             {
@@ -87,7 +74,7 @@
               "RelativeToolTip": "DesapegaSenai\\Properties\\launchSettings.json",
               "ViewState": "AgIAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.001642|",
-              "WhenOpened": "2026-06-02T11:04:09.724Z"
+              "WhenOpened": "2026-07-22T10:37:26.081Z"
             },
             {
               "$type": "Document",
@@ -99,7 +86,7 @@
               "RelativeToolTip": "DesapegaSenai\\Models\\Objeto.cs",
               "ViewState": "AgIAAAAAAAAAAAAAAAAAAAwAAAAbAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2026-06-02T11:04:09.74Z"
+              "WhenOpened": "2026-07-22T10:37:26.082Z"
             },
             {
               "$type": "Document",
@@ -111,7 +98,7 @@
               "RelativeToolTip": "DesapegaSenai\\Controllers\\ObjetoController.cs",
               "ViewState": "AgIAAHEAAAAAAAAAAAAwwIcAAAAwAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2026-06-02T11:04:09.74Z"
+              "WhenOpened": "2026-07-22T10:37:26.083Z"
             },
             {
               "$type": "Document",
@@ -123,7 +110,7 @@
               "RelativeToolTip": "DesapegaSenai\\Controllers\\UsuarioController.cs",
               "ViewState": "AgIAAAUAAAAAAAAAAAAQwD4AAAAMAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2026-06-02T11:04:09.74Z"
+              "WhenOpened": "2026-07-22T10:37:26.084Z"
             },
             {
               "$type": "Document",
@@ -135,14 +122,15 @@
               "RelativeToolTip": "DesapegaSenai\\Models\\Usuario.cs",
               "ViewState": "AgIAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2026-06-02T11:04:09.74Z"
-=======
-          "SelectedChildIndex": -1,
-          "Children": [
+              "WhenOpened": "2026-07-22T10:37:26.085Z"
+            },
             {
               "$type": "Bookmark",
               "Name": "ST:0:0:{cce594b6-0c39-4442-ba28-10c64ac7e89f}"
->>>>>>> 1cd86ac8e838d37c0a5640e35b51bb765e8bdd2d
+            },
+            {
+              "$type": "Bookmark",
+              "Name": "ST:0:0:{56df62a4-05a3-4e5b-aa1a-99371ccfb997}"
             }
           ]
         }
