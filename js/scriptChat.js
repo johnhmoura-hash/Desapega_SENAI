@@ -1,6 +1,7 @@
 document.addEventListener("DOMContentLoaded", () => {
 
 
+
     const API_UPLOADS = `https://localhost:7132/uploads`;
 
     const sidebar = document.getElementById("sidebar2");
@@ -10,9 +11,8 @@ document.addEventListener("DOMContentLoaded", () => {
     const heardChat = document.getElementById("chat-header");
     let ultimoIdMensagem = 0;
 
-    const idUsuario = new URLSearchParams(window.location.search).get("id");
 
-    carregarConversas();
+    const idUsuario = new URLSearchParams(window.location.search).get("id");
 
     carregarConversas();
 
@@ -46,7 +46,13 @@ document.addEventListener("DOMContentLoaded", () => {
 
         carregarMensagens();
 
+        setInterval(() => {
+            carregarMensagens();
+            carregarConversas();
+        }, 3000);
+
     }
+
 
 
     btnEnviar?.addEventListener("click", enviarMensagem);
@@ -121,6 +127,7 @@ document.addEventListener("DOMContentLoaded", () => {
     async function carregarMensagens() {
 
         try {
+            console.log("Buscando mensagens. Último ID:", ultimoIdMensagem);
 
             const response = await fetch(
                 `https://localhost:7132/mensagem/${idUsuario}?ultimoId=${ultimoIdMensagem}`,
@@ -133,6 +140,9 @@ document.addEventListener("DOMContentLoaded", () => {
                 throw new Error(response.status);
 
             const dados = await response.json();
+
+            console.log(dados);
+            console.log(dados.mensagens);
 
             heardChat.style.display = "flex";
 
@@ -220,4 +230,69 @@ document.addEventListener("DOMContentLoaded", () => {
         return d.toLocaleDateString("pt-BR");
     }
 
+    const params = new URLSearchParams(window.location.search);
+
+    console.log(window.location.search);
+    console.log(params.get("mensagem"));
+
+    const mensagem = params.get("mensagem");
+
+    if (mensagem) {
+        txtMensagem.value = mensagem;
+    }
+
+
+
+
+    const inputPesquisa = document.getElementById("buscar");
+
+    if (!inputPesquisa) return;
+
+    inputPesquisa.addEventListener("input", buscarPessoa);
+
+    async function buscarPessoa() {
+        const texto = inputPesquisa.value.trim();
+
+        try {
+
+            const response = await fetch(`https://localhost:7132/mensagem/pesquisa?pesquisa=${encodeURIComponent(texto)}`,
+                {
+                    credentials: "include"
+                })
+
+            if (!response.ok)
+                throw new Error(response.status);
+
+            const usuarios = await response.json();
+            sidebar.innerHTML = "";
+
+            usuarios.forEachr(u => {
+
+                const foto = u.foto_usuario
+                    ? `${API_UPLOAS}/${u.foto_usuario}` : "imd/usuario.png";
+
+
+                sidebar.innerHTML += `
+                     <div class="contact"
+                    onclick="location.href='teste-chat.html?id=${u.matricula}'">
+
+                    <div class="avatar">
+                        <img src="${foto}">
+                    </div>
+
+                    <div>
+                        <strong>${u.nome}</strong>
+                    </div>
+
+                </div>
+                    `;
+            });
+        }
+        catch(e) {
+            (error => console.error(error));
+        }
+
+}
+      
 });
+
