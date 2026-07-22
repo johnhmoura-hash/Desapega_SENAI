@@ -57,15 +57,9 @@ font-family:Verdana, Geneva, Tahoma, sans-serif;
   font-weight: 500;
   margin-right: 15px;
   border-radius: 10px;
-<<<<<<< HEAD
-  border: 1px solid #b4b4b4; 
-  padding: 1vh;
-  color: #b4b4b4;
-=======
   border: 1px solid #a8a8a8; 
   padding: 1vh;
   color: #a8a8a8;
->>>>>>> ea24045d7a01da1d9aabc33383d20c4b47131747
 }
 
 .menu a:hover{
@@ -1482,6 +1476,8 @@ background-color: #0056b3;
     background: white;
     border-radius: 15px;
     overflow: hidden;
+
+      transform: translateY(70px); /* desce 25px */
 }
 
 .modal-troca iframe{
