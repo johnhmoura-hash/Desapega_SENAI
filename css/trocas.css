@@ -1,5 +1,14 @@
+
 body{
-    font-family:Verdana, Geneva, Tahoma, sans-serif;
+    font-family: 'Helvetica, Arial, Georgia, Tahoma';
+    height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+     margin: 0;
+    padding: 0;
+    background: transparent !important;
+    overflow: hidden;
 }
 
 .faixatopo{
@@ -105,14 +114,6 @@ body{
 .pesquisar input:hover{
   border-color: #0056b3;
   outline: none;
-}
-body{
-    font-family: 'Helvetica, Arial, Georgia, Tahoma';
-    height: 100vh;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    background: none;
 }
 
 .troca-bo{
@@ -277,3 +278,175 @@ body{
 
     z-index:10;
 }
+
+
+
+.infos{
+     position:absolute;
+    bottom:10px;
+    left:10px;
+    right:10px;
+    z-index:999;
+
+    display:flex;
+    align-items:center;
+    justify-content:space-between;
+   
+}
+ .infos h3{
+    background:white;
+    padding:6px 12px;
+    border-radius:20px;
+    font-size:14px;
+    margin:0;
+    width:fit-content;
+}
+
+.infos span{
+    background:white;
+    color:#ff7a00;
+    padding:6px 12px;
+    border-radius:20px;
+    font-size:12px;
+    width:fit-content;
+}
+
+.btn-excluir{
+    position: absolute;
+    top: 10px;
+    right: 10px;
+
+    width: 40px;
+    height: 40px;
+
+    border: none;
+    border-radius: 50%;
+
+    background: rgba(253, 253, 253, 0.9);
+    color: #ff7a00;
+
+    cursor: pointer;
+    z-index: 10;
+
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    font-size: 20px;
+}
+
+.btn-excluir:hover{
+    transform: scale(1.1);
+}
+
+
+.popup-excluir{
+    position:fixed;
+    inset:0;
+    background:rgba(0,0,0,.45);
+    display:none;
+    justify-content:center;
+    align-items:center;
+    z-index:99999;
+}
+
+.popup-box{
+    width:360px;
+    background:#fff;
+    border-radius:15px;
+    padding:30px;
+    text-align:center;
+}
+
+.popup-box i{
+    font-size:60px;
+    color:#ff7a00;
+}
+
+.popup-box h3{
+    margin:15px 0 10px;
+}
+
+.popup-box p{
+    color:#666;
+    line-height:1.5;
+}
+
+.acoes-popup{
+    display:flex;
+    justify-content:center;
+    gap:15px;
+    margin-top:25px;
+}
+
+
+.btn-ver-perfil{
+    padding:6px 15px;
+    border-radius:20px;
+    border:1px solid #777;
+    background:transparent;
+    color:#777;
+    cursor:pointer;
+    white-space:nowrap;
+}
+
+.btn-ver-perfil:hover{
+    border-color:#0056b3;
+    color:#0056b3;
+}
+
+
+.acoes {
+  display: flex;
+  justify-content: space-between;
+  gap: 10px;
+}
+
+.btn-cancelar {
+  text-decoration: none;
+  flex: 1;
+  padding: 12px;
+  border-radius: 20px;
+  border: 1px solid #ff7a00;
+  background: #f5f5f5;
+  cursor: pointer;
+}
+
+.btn-enviar {
+  flex: 1;
+  padding: 12px;
+  border-radius: 8px;
+  border: none;
+  background: #ff7a00;
+  color: #fff;
+  cursor: pointer;
+}
+
+.btn-pontos {
+  flex: 1;
+  padding: 12px;
+  border-radius: 8px;
+  border: none;
+  background: #6c63ff; /* roxo */
+  color: #fff;
+  cursor: pointer;
+  transition: 0.2s;
+}
+
+.btn-pontos:hover {
+  background: #0056b3;
+}
+
+
+.btn {
+  padding: 12px 20px;
+  border-radius: 8px;
+  border: 2px solid #ff7a00;
+  background: white;
+  color: #ff7a00;
+  cursor: pointer;
+  transition: 0.2s;
+}
+
+
+
