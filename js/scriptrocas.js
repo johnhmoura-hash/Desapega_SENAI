@@ -3,8 +3,8 @@ document.getElementById("btnCancelar").addEventListener("click", () => {
 });
 
 
-function abrirPerfil(idUsuario){
-    window.location.href = `perfilpessoas.html?id=${idUsuario}`;
+function abrirPerfil(idUsuario) {
+    window.parent.location.href = `perfilpessoas.html?id=${idUsuario}`;
 }
 
 document.addEventListener("DOMContentLoaded", function () {
@@ -40,6 +40,8 @@ document.addEventListener("DOMContentLoaded", function () {
         onclick="abrirPerfil(${data.usuarioDestino})">
         <i class="ri-user-line">Perfil</i>
     </button>
+
+    
 
 </div>
 
