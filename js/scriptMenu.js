@@ -17,9 +17,7 @@ async function carregarMenu() {
         `;
 
     }
-
 }
-
 carregarMenu();
 
 document.addEventListener("DOMContentLoaded", function () {

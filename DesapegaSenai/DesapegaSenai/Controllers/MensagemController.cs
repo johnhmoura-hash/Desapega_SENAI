@@ -75,7 +75,7 @@ namespace DesapegaSenai.Controllers
         }
 
         [HttpGet("{id}")]
-        public IActionResult GetMensagem(int id)
+        public IActionResult GetMensagem(int id, int ultimoId =0)
         {
             var usuario = HttpContext.Session.GetString("Idusado");
             if (usuario == null)
@@ -91,11 +91,14 @@ namespace DesapegaSenai.Controllers
 
             var mensagens = _context.Mensagens
                 .Where(m =>
-                    (m.Fk_usuarios_remetente == usuarioID &&
+                    ((m.Fk_usuarios_remetente == usuarioID &&
                      m.Fk_usuarios_destinatario == id)
                     ||
                     (m.Fk_usuarios_remetente == id &&
-                     m.Fk_usuarios_destinatario == usuarioID))
+                     m.Fk_usuarios_destinatario == usuarioID)
+                      )
+                     && m.Id > ultimoId
+                     )
                 .OrderBy(m => m.Data_hr)
                 .Select(m => new
                 {
