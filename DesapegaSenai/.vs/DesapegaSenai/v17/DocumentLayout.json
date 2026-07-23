@@ -1,9 +1,6 @@
 {
   "Version": 1,
   "WorkspaceRootPath": "C:\\Users\\manha.ceticc\\Documents\\GitHub\\Desapega_SENAI\\DesapegaSenai\\",
-<<<<<<< HEAD
-  "Documents": [],
-=======
   "Documents": [
     {
       "AbsoluteMoniker": "D:0:0:{4974C4DE-9B36-4CCF-8B2F-40A54739E552}|DesapegaSenai\\DesapegaSenai.csproj|c:\\users\\manha.ceticc\\documents\\github\\desapega_senai\\desapegasenai\\desapegasenai\\controllers\\mensagemcontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
@@ -33,7 +30,6 @@
       "RelativeMoniker": "D:0:0:{4974C4DE-9B36-4CCF-8B2F-40A54739E552}|DesapegaSenai\\DesapegaSenai.csproj|solutionrelative:desapegasenai\\properties\\launchsettings.json||{90A6B3A7-C1A3-4009-A288-E2FF89E96FA0}"
     }
   ],
->>>>>>> ea24045d7a01da1d9aabc33383d20c4b47131747
   "DocumentGroupContainers": [
     {
       "Orientation": 0,
@@ -41,21 +37,9 @@
       "DocumentGroups": [
         {
           "DockedWidth": 200,
-<<<<<<< HEAD
-          "SelectedChildIndex": 2,
+          "SelectedChildIndex": 1,
           "Children": [
             {
-              "$type": "Bookmark",
-              "Name": "ST:0:0:{56df62a4-05a3-4e5b-aa1a-99371ccfb997}"
-            },
-            {
-=======
-          "SelectedChildIndex": -1,
-          "Children": [
-            {
-<<<<<<< HEAD
-=======
->>>>>>> 6bc08e01f5f8c725a88a75e965eeee206da2b0c7
               "$type": "Document",
               "DocumentIndex": 1,
               "Title": "ObjetoController.cs",
@@ -143,18 +127,10 @@
             {
               "$type": "Bookmark",
               "Name": "ST:0:0:{cce594b6-0c39-4442-ba28-10c64ac7e89f}"
-<<<<<<< HEAD
-=======
             },
             {
->>>>>>> ea24045d7a01da1d9aabc33383d20c4b47131747
               "$type": "Bookmark",
               "Name": "ST:0:0:{56df62a4-05a3-4e5b-aa1a-99371ccfb997}"
-            },
-            {
-              "$type": "Bookmark",
-              "Name": "ST:0:0:{cce594b6-0c39-4442-ba28-10c64ac7e89f}"
->>>>>>> 6bc08e01f5f8c725a88a75e965eeee206da2b0c7
             }
           ]
         }
