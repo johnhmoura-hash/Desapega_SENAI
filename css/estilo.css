@@ -1476,6 +1476,8 @@ background-color: #0056b3;
     background: white;
     border-radius: 15px;
     overflow: hidden;
+
+      transform: translateY(70px); /* desce 25px */
 }
 
 .modal-troca iframe{

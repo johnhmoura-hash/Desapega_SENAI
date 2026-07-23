@@ -162,5 +162,42 @@ namespace DesapegaSenai.Controllers
                 _context.SaveChanges();
                 return NoContent();
             }
+
+
+        [HttpGet("pesquisa")]
+        public IActionResult BusacraPessoa(string? pesquisa)
+        {
+            var usuario = HttpContext.Session.GetString("Idusado");
+
+            if(usuario == null)
+            {
+                return Unauthorized("Não autenticado");
+            }
+
+            int usuarioId = int.Parse(usuario);
+
+            var usuarios = _context.Mensagens
+                .Where(m =>
+                m.Fk_usuarios_remetente == usuarioId ||
+                m.Fk_usuarios_destinatario == usuarioId)
+                .Select(m =>
+                m.Fk_usuarios_remetente == usuarioId
+                ? m.Fk_usuarios_destinatario
+                : m.Fk_usuarios_remetente)
+                .Distinct();
+
+            var resultado = _context.Usuarios
+                .Where(u => usuarios.Contains(u.Matricula));
+
+            if (!string.IsNullOrWhiteSpace(pesquisa))
+            {
+                pesquisa = pesquisa.ToLower();
+
+                resultado = resultado.Where(u =>
+                u.Nome.ToLower().Contains(pesquisa));
+            }
+         
+            return Ok(usuarios.ToList());
         }
     }
+}
