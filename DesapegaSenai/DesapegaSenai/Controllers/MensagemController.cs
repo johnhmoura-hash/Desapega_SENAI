@@ -197,7 +197,12 @@ namespace DesapegaSenai.Controllers
                 u.Nome.ToLower().Contains(pesquisa));
             }
          
-            return Ok(usuarios.ToList());
+            return Ok(resultado.Select(u => new
+            {
+                u.Matricula,
+                u.Nome,
+                u.Foto_usuario
+            }).ToList());
         }
     }
 }
