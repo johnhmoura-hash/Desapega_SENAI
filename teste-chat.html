@@ -1,5 +1,6 @@
 <!DOCTYPE html>
 <html lang="pt-BR">
+
 <head>
   <meta charset="UTF-8">
   <link href="https://fonts.googleapis.com/css2?family=Yuji+Syuku&display=swap" rel="stylesheet">
@@ -36,13 +37,13 @@
       <nav class="menu" id="menu">
 
         <div>
-          <a href="index.html" >
-            Início <i class="ri-home-line"></i>  
+          <a href="index.html">
+            Início <i class="ri-home-line"></i>
           </a>
         </div>
 
         <div class="">
-          <a href="Tela_perfil.html" >
+          <a href="Tela_perfil.html">
             Perfil <i class="ri-user-line"></i>
           </a>
         </div>
@@ -50,7 +51,7 @@
         <div class=" notificacao-wrapper">
 
           <a href="#" id="btnNotificacao">
-            Notificações <i class="ri-notification-line" ></i>
+            Notificações <i class="ri-notification-line"></i>
           </a>
 
           <div class="popup-notificacao" id="popupNotificacao">
@@ -79,58 +80,46 @@
     <div class="overlay-menu" id="overlayMenu"></div>
   </header>
 
-<body>
+  <body>
 
-<div class="container">
+    <div class="container">
 
-    <aside class="sidebar" id="sidebar"></aside>
+      <aside class="sidebar" id="sidebar">
 
-    <main class="chat">
+        <h2>Chat</h2>
 
-        <div class="chat-header">
-
-            <div class="avatar">
-                <i class="fa fa-user"></i>
-            </div>
-
-            <strong>John Bonfim</strong>
-
+        <div id="sidebar2"></div>
+        
+        <div class="contact-search">
+          <input type="text"  id="buscar" placeholder="Buscar...">
         </div>
 
-        <div class="chat-body">
+      </aside>
 
-            <div class="message left">
-                oi, ainda está disponivel a bola?
-                <small>20/08</small>
-            </div>
+      <main class="chat">
 
-            <div class="message right">
-                óla, sim, tem interesse?
-                <small>20/08</small>
-            </div>
+    <div id="chat-header" class="chat-header">
+        <img id="fotoContato" class="foto-contato" src="" alt="">
+        <span id="nomeContato"></span>
+    </div>
 
- 
-           <div class="message left">
-    se eu perguntei é porque eu tenho
-      <small>20/08</small>
-</div>
+    <div id="chat-body" class="chat-body"></div>
 
+    <div class="chat-footer">
+        <input id="txtMensagem" type="text">
+        <button id="btnEnviar" class="send">
+            Enviar
+        </button>
+    </div>
 
-        </div>
+</main>
 
-        <div class="chat-footer">
+    </div>
+    <script src="js/scriptChat.js"></script>
+    <script src="js/scriptMenu.js"></script>
+    <script src="js/scriptPopup.js"></script>
+    <script src="js/menu.js"></script>
+    <script src="js/resp.js"></script>
+  </body>
 
-            <input type="text" placeholder="Mensagem">
-
-            <button class="send">
-                <i class="fa-solid fa-paper-plane"></i>
-            </button>
-
-        </div>
-
-    </main>
-
-</div>
-<script src="js/scriptChat.js"></script>
-</body>
 </html>

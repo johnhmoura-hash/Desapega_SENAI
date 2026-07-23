@@ -140,6 +140,8 @@ font-family:Verdana, Geneva, Tahoma, sans-serif;
   flex-wrap: wrap;
   gap: 30px;
   justify-content: center;
+   
+ 
 }
 
 
@@ -147,20 +149,23 @@ font-family:Verdana, Geneva, Tahoma, sans-serif;
 .categoria{
     width: 120px;
     padding: 18px;
-    background: #0056b3;
-    border-radius: 25px;
+    background: #1565bb;
+    border-radius: 15px;
     box-shadow: 0 4px 5px #a8a8a8;
     border: 1px solid #005CAA;
     display: flex;
     align-items: center;
     justify-content: center;
-    gap: 8px;
+    gap: 10px;
     height: 29px;
     overflow: hidden;
+    transition: .2s;
+      
+ 
 }
 
 .categoria:hover{
-   transform:translateY(-5px);
+   transform: scale(1.15);
 }
 
 
@@ -520,10 +525,11 @@ textarea.input-info {
     height: 250px;
     border-radius: 20px;
     overflow: hidden;
+    transition: .2s;
 }
 
 .carde:hover{
-    transform:translateY(-5px);
+    transform: scale(1.02);
 }
 
 .imagem-produto{
@@ -1070,6 +1076,7 @@ color: #0056b3;
 
 .ajuste6{
 align-items: flex-end;
+
 }
 
 .produtocompras{
@@ -1469,6 +1476,8 @@ background-color: #0056b3;
     background: white;
     border-radius: 15px;
     overflow: hidden;
+
+      transform: translateY(70px); /* desce 25px */
 }
 
 .modal-troca iframe{
