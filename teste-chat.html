@@ -20,14 +20,14 @@
     <br>
   </div>
 
-  <header class="page">
+   <header class="page">
     <div class="container-login">
       <div class="logo2">
         <img src="Img/possivel logo.png" width="40">
       </div>
 
       <div class="pesquisar">
-        <input type="text" name="buscar" placeholder="Buscar...">
+        <input type="text" id="pesquisar" name="buscar" placeholder="Buscar...">
       </div>
 
       <div class="menu-toggle" id="menuToggle">
@@ -37,18 +37,25 @@
       <nav class="menu" id="menu">
 
         <div>
-          <a href="index.html">
+          <a href="index.html" >
             Início <i class="ri-home-line"></i>
           </a>
         </div>
 
         <div class="">
-          <a href="Tela_perfil.html">
+          <a href="Tela_perfil.html" >
             Perfil <i class="ri-user-line"></i>
           </a>
         </div>
 
-        <div class=" notificacao-wrapper">
+       
+        <div class="menu2 chat-wrapper" >
+          <a href="teste-chat.html" id="btnChat" class="ativo">
+            Chat <i class="ri-chat-3-line"></i>
+          </a>
+        </div>
+
+ <div class=" notificacao-wrapper">
 
           <a href="#" id="btnNotificacao">
             Notificações <i class="ri-notification-line"></i>
@@ -67,12 +74,6 @@
 
         </div>
 
-
-        <div class="menu2 chat-wrapper">
-          <a href="teste-chat.html" id="btnChat" class="ativo">
-            Chat <i class="ri-chat-3-line"></i>
-          </a>
-        </div>
         <a href="tela_produto.html">Anunciar produto <i class="ri-add-line"></i></a>
 
       </nav>
@@ -88,11 +89,12 @@
 
         <h2>Chat</h2>
 
-        <div id="sidebar2"></div>
-        
         <div class="contact-search">
           <input type="text"  id="buscar" placeholder="Buscar...">
         </div>
+
+        <div id="sidebar2"></div>
+        
 
       </aside>
 
