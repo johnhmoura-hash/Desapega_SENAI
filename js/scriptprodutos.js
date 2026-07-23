@@ -1,3 +1,7 @@
+function abrirPerfil(idUsuario) {
+    window.location.href = `perfilpessoas.html?id=${idUsuario}`;
+}
+
 async function abrirTroca(idProdutoDesejado) {
 
     const resposta = await fetch(
@@ -25,7 +29,7 @@ async function abrirTroca(idProdutoDesejado) {
     `;
 
     overlay.style.display = "flex";
-} 
+}
 
 document.addEventListener("DOMContentLoaded", function () {
 
@@ -87,7 +91,8 @@ document.addEventListener("DOMContentLoaded", function () {
                         Eu quero
                     </button>
 
-                    <button class="produto-botao-chat">
+                    <button class="produto-botao-chat" 
+                     onclick="abrirChat(${data.usuarioDestino}, '${data.objetos}')">
                         Chat <i class="ri-chat-3-line"></i>
                     </button>
 
@@ -134,4 +139,17 @@ document.addEventListener("DOMContentLoaded", function () {
             console.error("Erro no fetch:", error);
         });
 
+        
+
 });
+
+function abrirChat(idUsuario, nomeProduto) {
+
+    const mensagem = encodeURIComponent(
+        `Olá! Tenho interesse no produto "${nomeProduto}". Ele ainda está disponível?`
+    );
+    console.log(`teste-chat.html?id=${idUsuario}&mensagem=${mensagem}`);
+
+    window.location.href =
+        `teste-chat.html?id=${idUsuario}&mensagem=${mensagem}`;
+}

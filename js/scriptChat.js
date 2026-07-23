@@ -1,16 +1,18 @@
 document.addEventListener("DOMContentLoaded", () => {
 
 
+
     const API_UPLOADS = `https://localhost:7132/uploads`;
 
     const sidebar = document.getElementById("sidebar2");
     const chat = document.getElementById("chat-body");
     const txtMensagem = document.getElementById("txtMensagem");
     const btnEnviar = document.getElementById("btnEnviar");
+    const heardChat = document.getElementById("chat-header");
+    let ultimoIdMensagem = 0;
+
 
     const idUsuario = new URLSearchParams(window.location.search).get("id");
-
-    carregarConversas();
 
     carregarConversas();
 
@@ -28,25 +30,30 @@ document.addEventListener("DOMContentLoaded", () => {
 
         txtMensagem.style.display = "none";
         btnEnviar.style.display = "none";
+        heardChat.style.display = "none";
+
+
 
     } else {
 
         txtMensagem.style.display = "block";
         btnEnviar.style.display = "block";
+        heardChat.style.display = "block";
+
+
+        chat.innerHTML = "";
+        ultimoIdMensagem = 0;
 
         carregarMensagens();
 
-        setInterval(carregarMensagens, 3000);
+        setInterval(() => {
+            carregarMensagens();
+            carregarConversas();
+        }, 3000);
 
     }
 
 
-    if (idUsuario) {
-        carregarMensagens();
-
-        // Atualiza as mensagens a cada 3 segundos
-        setInterval(carregarMensagens, 3000);
-    }
 
     btnEnviar?.addEventListener("click", enviarMensagem);
 
@@ -120,47 +127,44 @@ document.addEventListener("DOMContentLoaded", () => {
     async function carregarMensagens() {
 
         try {
+            console.log("Buscando mensagens. Último ID:", ultimoIdMensagem);
 
-            const response = await fetch(`https://localhost:7132/mensagem/${idUsuario}`, {
-                credentials: "include"
-            });
+            const response = await fetch(
+                `https://localhost:7132/mensagem/${idUsuario}?ultimoId=${ultimoIdMensagem}`,
+                {
+                    credentials: "include"
+                }
+            );
 
             if (!response.ok)
                 throw new Error(response.status);
 
             const dados = await response.json();
 
+            console.log(dados);
+            console.log(dados.mensagens);
+
+            heardChat.style.display = "flex";
+
             document.getElementById("nomeContato").textContent = dados.contato.nome;
             document.getElementById("fotoContato").src =
                 `https://localhost:7132/uploads/${dados.contato.foto}`;
 
-            const chatBody = document.getElementById("chat-body");
-            chatBody.innerHTML = "";
-
             dados.mensagens.forEach(m => {
 
-                chatBody.innerHTML += `
+                chat.innerHTML += `
         <div class="message ${m.minhaMensagem ? "right" : "left"}">
             <p>${m.conteudo}</p>
             <small>${formatarData(m.data_hr)}</small>
         </div>
     `;
 
+                ultimoIdMensagem = m.id;
             });
 
-            dados.mensagens.forEach(m => {
-
-                chat.innerHTML += `
-                <div class="message ${m.minhaMensagem ? "right" : "left"}">
-                    <p>${m.conteudo}</p>
-                    <small>${formatarData(m.data_hr)}</small>
-                </div>
-            `;
-
-            });
-
-            chat.scrollTop = chat.scrollHeight;
-
+            if (dados.mensagens.length > 0) {
+                chat.scrollTop = chat.scrollHeight;
+            }
         }
         catch (e) {
 
@@ -226,4 +230,69 @@ document.addEventListener("DOMContentLoaded", () => {
         return d.toLocaleDateString("pt-BR");
     }
 
+    const params = new URLSearchParams(window.location.search);
+
+    console.log(window.location.search);
+    console.log(params.get("mensagem"));
+
+    const mensagem = params.get("mensagem");
+
+    if (mensagem) {
+        txtMensagem.value = mensagem;
+    }
+
+
+
+
+    const inputPesquisa = document.getElementById("buscar");
+
+    if (!inputPesquisa) return;
+
+    inputPesquisa.addEventListener("input", buscarPessoa);
+
+    async function buscarPessoa() {
+        const texto = inputPesquisa.value.trim();
+
+        try {
+
+            const response = await fetch(`https://localhost:7132/mensagem/pesquisa?pesquisa=${encodeURIComponent(texto)}`,
+                {
+                    credentials: "include"
+                })
+
+            if (!response.ok)
+                throw new Error(response.status);
+
+            const usuarios = await response.json();
+            sidebar.innerHTML = "";
+
+            usuarios.forEachr(u => {
+
+                const foto = u.foto_usuario
+                    ? `${API_UPLOAS}/${u.foto_usuario}` : "imd/usuario.png";
+
+
+                sidebar.innerHTML += `
+                     <div class="contact"
+                    onclick="location.href='teste-chat.html?id=${u.matricula}'">
+
+                    <div class="avatar">
+                        <img src="${foto}">
+                    </div>
+
+                    <div>
+                        <strong>${u.nome}</strong>
+                    </div>
+
+                </div>
+                    `;
+            });
+        }
+        catch(e) {
+            (error => console.error(error));
+        }
+
+}
+      
 });
+

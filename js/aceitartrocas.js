@@ -10,7 +10,7 @@ document.addEventListener("DOMContentLoaded", function () {
     .then(r => r.json())
     .then(data => {
 
-        console.log(data);
+        
 
         const api = "https://localhost:7132/uploads";
         const fotoPadrao = "Img/usuario.png";
