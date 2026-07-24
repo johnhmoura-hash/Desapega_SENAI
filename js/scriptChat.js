@@ -47,8 +47,13 @@ document.addEventListener("DOMContentLoaded", () => {
         carregarMensagens();
 
         setInterval(() => {
+
             carregarMensagens();
-            carregarConversas();
+
+            if (inputPesquisa.value.trim() === "") {
+                carregarConversas();
+            }
+
         }, 3000);
 
     }
@@ -251,7 +256,14 @@ document.addEventListener("DOMContentLoaded", () => {
     inputPesquisa.addEventListener("input", buscarPessoa);
 
     async function buscarPessoa() {
+
         const texto = inputPesquisa.value.trim();
+
+        if (texto === "") {
+            carregarConversas();
+            return;
+        }
+
 
         try {
 
@@ -264,12 +276,14 @@ document.addEventListener("DOMContentLoaded", () => {
                 throw new Error(response.status);
 
             const usuarios = await response.json();
+
+            console.log(usuarios);
             sidebar.innerHTML = "";
 
-            usuarios.forEachr(u => {
+            usuarios.forEach(u => {
 
                 const foto = u.foto_usuario
-                    ? `${API_UPLOAS}/${u.foto_usuario}` : "imd/usuario.png";
+                    ? `${API_UPLOADS}/${u.foto_usuario}` : "Img/usuario.png";
 
 
                 sidebar.innerHTML += `
@@ -288,11 +302,10 @@ document.addEventListener("DOMContentLoaded", () => {
                     `;
             });
         }
-        catch(e) {
-            (error => console.error(error));
+        catch (e) {
+            console.error(error);
         }
+    }
 
-}
-      
 });
 

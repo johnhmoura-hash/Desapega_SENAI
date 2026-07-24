@@ -25,13 +25,14 @@
 
  
   /* OVERLAY ESCURO */
-  .overlay-menu {
+.overlay-menu {
+    display: none;
     position: fixed;
     inset: 0;
-    background: rgba(0,0,0,0.4);
-    display: none;
-    z-index: 9997;
-  }
+    background: rgba(0,0,0,.5);
+    z-index: 998;
+}
+
 
   .overlay-menu.ativo {
     display: block;
@@ -44,6 +45,7 @@
 @media (max-width: 900px) {
 
   .container-login{
+     position: relative;
     display: flex;
     align-items: center;
     flex-wrap: nowrap; /* impede quebra de linha */
@@ -81,35 +83,62 @@
     margin-left: 0;
   }
     
+      .menu{
+        position: absolute;
+        top: calc(100% + 10px);
+        left: 0;
+        right: 0;
 
-  .menu{
-    position: absolute;
-    width: 510px;
-    top: 100%;
-    justify-content: center;
-    display: grid;
-    grid-template-columns: repeat(2, 1fr);
-    border-radius: 5%;
-    background: white;
-    flex-direction: column;
-    gap: 19px;
-    box-shadow: 0 4px 10px rgba(0,0,0,.1);
-    max-height: 0;
-    overflow: hidden;
-    transition: max-height .3s ease;
-  }
+        display: grid;
+        grid-template-columns: repeat(auto-fit,minmax(10px,2fr));
+         gap: 1px;
 
-  .menu.active{
-    padding: 5px;
-    max-height: 500px;
+        background: #fff;
+        border-radius: 12px;
+        padding: 18px;
+
+        box-shadow: 0 10px 25px rgba(0,0,0,.15);
+
+        opacity: 0;
+        visibility: hidden;
+        transform: translateY(-15px);
+        transition: .25s;
+        z-index: 2000;
+        
+    }
+
+     .menu.active{
+        opacity: 1;
+        visibility: visible;
+        transform: translateY(0);
+    }
+
+   @media (max-width: 900px){
+
+    .menu a{
+        display: flex;
+        align-items: center;
+        justify-content: center;
+
+        width: 100%;
+        height: 50px;
+
+        box-sizing: border-box;
+
+        text-decoration: none;
+        font-weight: 500;
+        border: 1px solid #a8a8a8;
+        border-radius: 10px;
+        color: #a8a8a8;
+
+        margin: 8px 0;
+        padding: 0 12px;
+    }
+
+}
+
     
-  }
 
-  .menu a{
-    justify-content: center;
-    text-align: center;
-    padding: 5px;
-  }
 }
 
   .chat-modal {
@@ -258,8 +287,9 @@ p{
 
   .box-produto {
     max-width: 100%;
-    width: 100%;
-    margin: 20px 0;
+    width: 80%;
+    left: 100px;
+    margin: 5px 0;
     border-radius: 0;
   }
 
