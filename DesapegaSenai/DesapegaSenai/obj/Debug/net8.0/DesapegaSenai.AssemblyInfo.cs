@@ -14,7 +14,11 @@ using System.Reflection;
 [assembly: System.Reflection.AssemblyCompanyAttribute("DesapegaSenai")]
 [assembly: System.Reflection.AssemblyConfigurationAttribute("Debug")]
 [assembly: System.Reflection.AssemblyFileVersionAttribute("1.0.0.0")]
+<<<<<<< HEAD
 [assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0+89e79f3f6d953a83dc9fe00d548a2cba057ae26a")]
+=======
+[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0+ed1845fd95c3a488513b7d1d4e6effd8dbd7b7e0")]
+>>>>>>> f007d1d5a607325c43380b036606c7dff005905d
 [assembly: System.Reflection.AssemblyProductAttribute("DesapegaSenai")]
 [assembly: System.Reflection.AssemblyTitleAttribute("DesapegaSenai")]
 [assembly: System.Reflection.AssemblyVersionAttribute("1.0.0.0")]
