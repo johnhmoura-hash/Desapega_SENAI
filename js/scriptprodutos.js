@@ -1,5 +1,6 @@
 function abrirPerfil(idUsuario) {
     window.location.href = `perfilpessoas.html?id=${idUsuario}`;
+
 }
 
 async function abrirTroca(idProdutoDesejado) {
@@ -42,7 +43,7 @@ document.addEventListener("DOMContentLoaded", function () {
         .then(data => {
 
             console.log(data);
-            console.log("id_usuario:", data.id_usuario);
+
 
             const resposta = document.getElementById("pagina-produto");
 
@@ -65,7 +66,7 @@ document.addEventListener("DOMContentLoaded", function () {
 
                     <h3 class="produto-imagem-foto">${data.objetos}</h3>
 
-<div class="produto-usuario-area">
+    <div class="produto-usuario-area">
 
     <div class="produto-usuario-foto">
         <img src="${data.foto_usuario}">
@@ -86,7 +87,7 @@ document.addEventListener("DOMContentLoaded", function () {
 
 </div>
 
-                    <button class="produto-botao-principal"
+          ${!data.meuProduto ? `<button class="produto-botao-principal"
                         onclick="abrirTroca(${data.id})">
                         Eu quero
                     </button>
@@ -95,6 +96,10 @@ document.addEventListener("DOMContentLoaded", function () {
                      onclick="abrirChat(${data.usuarioDestino}, '${data.objetos}')">
                         Chat <i class="ri-chat-3-line"></i>
                     </button>
+                    `: `
+                    <button class="produto-botao-principal"  onclick="abrirPerfil(${data.usuarioDestino})"disabled>
+                    Ir para seu perfil 
+                </button>`}
 
                 </div>
 
@@ -139,7 +144,7 @@ document.addEventListener("DOMContentLoaded", function () {
             console.error("Erro no fetch:", error);
         });
 
-        
+
 
 });
 
