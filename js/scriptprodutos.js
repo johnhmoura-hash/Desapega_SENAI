@@ -62,11 +62,15 @@ document.addEventListener("DOMContentLoaded", function () {
                     <img src="${data.foto}">
                 </div>
 
-                <div class="produto-card-lateral">
+               
+        
+          ${!data.meuProduto ? `
+             <div class="produto-card-lateral">
 
                     <h3 class="produto-imagem-foto">${data.objetos}</h3>
 
-    <div class="produto-usuario-area">
+    
+            <div class="produto-usuario-area">
 
     <div class="produto-usuario-foto">
         <img src="${data.foto_usuario}">
@@ -77,17 +81,15 @@ document.addEventListener("DOMContentLoaded", function () {
         <span class="produto-usuario-nome">
             ${data.usuarios}
         </span>
-
-        <button class="btn-ver-perfil"
+          <button class="btn-ver-perfil"
             onclick="abrirPerfil(${data.usuarioDestino})">
             <i class="">Perfil</i>
         </button>
-
-    </div>
-
 </div>
 
-          ${!data.meuProduto ? `<button class="produto-botao-principal"
+</div>
+ 
+            <button class="produto-botao-principal"
                         onclick="abrirTroca(${data.id})">
                         Eu quero
                     </button>
@@ -97,9 +99,39 @@ document.addEventListener("DOMContentLoaded", function () {
                         Chat <i class="ri-chat-3-line"></i>
                     </button>
                     `: `
-                    <button class="produto-botao-principal"  onclick="abrirPerfil(${data.usuarioDestino})"disabled>
+
+                    <div class="produto-card-lateral">
+
+                    <h3 class="produto-imagem-foto">${data.objetos}</h3>
+
+    
+            <div class="produto-usuario-area">
+
+    <div class="produto-usuario-foto">
+        <img src="${data.foto_usuario}">
+    </div>
+
+    <div class="produto-usuario-info">
+
+        <span class="produto-usuario-nome">
+            ${data.usuarios}
+        </span>
+          
+</div>
+
+</div>
+ 
+           
+
+                   
+
+
+                    <div>
+                    <a href= "Tela_perfil.html" class="produto-botao-principal">
                     Ir para seu perfil 
-                </button>`}
+                </a>
+                </div>
+                `}
 
                 </div>
 

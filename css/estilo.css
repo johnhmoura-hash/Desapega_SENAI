@@ -1277,13 +1277,20 @@ background-color: #0056b3;
     cursor:pointer;
 }
 
+
 .produto-botao-principal{
     background:#f58220;
     color:#fff;
     border:none;
     margin-top: 50px;
+    text-decoration: none;
+    display: block;
+    
 }
 
+.produto-botao-principal a{
+  align-items: center;
+}
 .produto-botao-chat{
     background:#fff;
     border:2px solid #f58220;
