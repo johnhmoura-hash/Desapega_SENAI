@@ -2,212 +2,320 @@
     margin:0;
     padding:0;
     box-sizing:border-box;
-    font-family:Arial, Helvetica, sans-serif;
+    font-family:Verdana, Geneva, Tahoma, sans-serif;
 }
-
 
 body{
-    background:#f5f5f5;
+    background:#f3f5f8;
 }
 
-
-.cabecalho{
-    background:#ff7a00;
-    color:#fff;
-    padding:20px 60px;
-    font-size:18px;
-    font-weight:bold;
-}
-
-
-.container{
+.containerr{
     width:90%;
+    max-width:1000px;
     margin:40px auto;
 }
 
-
-.perfil{
-    display:flex;
-    justify-content:space-between;
-    align-items:center;
-    margin-bottom:50px;
+h1{
+    margin-bottom:30px;
+    color:#0056b3;
 }
 
-
-.usuario{
+.historicor{
     display:flex;
-    align-items:center;
+    flex-direction:column;
     gap:20px;
 }
 
+.card-historicor{
 
-.usuario img{
-    width:120px;
-    height:120px;
-    border-radius:50%;
-    object-fit:cover;
-}
-
-
-.info h2{
-    font-size:38px;
-    margin-bottom:10px;
-}
-
-
-.info p{
-    font-size:22px;
-    color:#555;
-}
-
-
-.resumo{
-    display:flex;
-    gap:20px;
-}
-
-
-.box{
     background:#fff;
-    width:180px;
+    border-radius:18px;
     padding:20px;
-    text-align:center;
-    border-radius:12px;
-    box-shadow:0 3px 10px rgba(0,0,0,.1);
-}
 
-
-.box h3{
-    color:#666;
-    font-size:18px;
-    margin-bottom:10px;
-}
-
-
-.box span{
-    font-size:35px;
-    color:#ff7a00;
-    font-weight:bold;
-}
-
-
-.titulo{
-    margin:40px 0 20px;
-    color:#444;
-}
-
-
-.card{
-    background:#fff;
-    border-radius:15px;
     display:flex;
     justify-content:space-between;
     align-items:center;
-    padding:25px;
-    margin-bottom:20px;
-    box-shadow:0 3px 10px rgba(0,0,0,.08);
-}
 
+    box-shadow:0 8px 20px rgba(0,0,0,.08);
 
-.produto{
-    display:flex;
-    align-items:center;
-    gap:15px;
-}
-
-
-.produto img{
-    width:90px;
-    height:90px;
-    object-fit:cover;
-    border-radius:10px;
-}
-
-
-.produto h3{
-    margin-bottom:8px;
-}
-
-
-.produto p{
-    color:#666;
-}
-
-
-.troca{
-    font-size:40px;
-    color:#ff7a00;
-}
-
-
-.status{
-    text-align:center;
-}
-
-
-.status span{
-    display:inline-block;
-    padding:8px 18px;
-    border-radius:25px;
-    color:#fff;
-    font-weight:bold;
-    margin-bottom:10px;
-}
-
-
-.aceita{
-    background:#35b55b;
-}
-
-
-.pendente{
-    background:#f4a623;
-}
-
-
-.status p{
-    color:#666;
-    margin-bottom:15px;
-}
-
-
-.status button{
-    display:block;
-    width:120px;
-    padding:10px;
-    margin:8px auto;
-    border:none;
-    border-radius:8px;
-    background:#ff7a00;
-    color:white;
-    cursor:pointer;
     transition:.3s;
 }
 
-
-.status button:hover{
-    background:#e56d00;
+.card-historicor:hover{
+    transform:translateY(-3px);
 }
 
+.produtors{
 
-@media(max-width:900px){
-
-
-.perfil{
-    flex-direction:column;
-    gap:30px;
-}
-
-
-.card{
-    flex-direction:column;
+    display:flex;
+    align-items:center;
     gap:25px;
+
 }
 
+.produtor{
 
-.troca{
+    width:150px;
+    text-align:center;
+
+}
+
+.produtor img{
+
+    width:110px;
+    height:110px;
+
+    object-fit:cover;
+
+    border-radius:12px;
+}
+
+.produtor h3{
+
+    margin-top:10px;
+    font-size:17px;
+
+}
+
+.produtor span{
+
+    color:#777;
+    font-size:14px;
+
+}
+
+.setar{
+
+    font-size:35px;
+    color:#0056b3;
+
+}
+
+.sem-produtor{
+
+    display:flex;
+    flex-direction:column;
+    justify-content:center;
+    align-items:center;
+
+    width:150px;
+    height:110px;
+
+    background:#e8f3ff;
+
+    border-radius:12px;
+}
+
+.sem-produtor h2{
+
+    color:#0056b3;
+    font-size:32px;
+
+}
+
+.infors{
+
+    display:flex;
+    flex-direction:column;
+    gap:10px;
+
+}
+
+.infors p{
+
+    font-size:15px;
+
+}
+
+.trocar{
+
+    color:#0a8f3d;
+    font-weight:bold;
+
+}
+
+.pontors{
+
+    color:#ff7f27;
+    font-weight:bold;
+
+}
+
+.staturs{
+
+    margin-top:8px;
+
+    width:max-content;
+
+    padding:7px 15px;
+
+    border-radius:20px;
+
+    font-size:14px;
+
+    display:flex;
+    align-items:center;
+    gap:6px;
+
+}
+
+.concluidor{
+
+    background:#dcf8e7;
+    color:#18864a;
+
+}
+
+@media(max-width:768px){
+
+.card-historicor{
+
+    flex-direction:column;
+    gap:20px;
+    text-align:center;
+
+}
+
+.produtors{
+
+    flex-direction:column;
+
+}
+
+.setar{
+
     transform:rotate(90deg);
+
+}
+
+}
+
+/* ==========================
+   RODAPÉ
+========================== */
+
+.rodape{
+    background: #fff;
+    color: #333;
+    padding: 40px 12% 19px;
+    margin-top: 50px;
+    border-top: 2px solid #e5e5e5;
+   
+}
+
+.rodape-container{
+    display: flex;
+    justify-content: space-between;
+    flex-wrap: wrap;
+    gap: 40px;
+    margin-bottom: 35px;
+}
+
+.rodape-coluna{
+    display: flex;
+    flex-direction: column;
+    min-width: 170px;
+}
+
+.rodape-coluna h3{
+    color: #2d5ea8;
+    margin-bottom: 15px;
+    font-size: 20px;
+}
+
+.rodape-coluna a{
+    color: #555;
+    text-decoration: none;
+    margin: 6px 0;
+    transition: .3s;
+}
+
+.rodape-coluna a:hover{
+    color: #2d5ea8;
+    padding-left: 5px;
+}
+
+.rodape-info{
+    border-top: 1px solid #ddd;
+    border-bottom: 1px solid #ddd;
+    padding: 25px 0;
+    margin: 30px 0;
+    color: #666;
+    line-height: 1.8;
+}
+
+.rodape-copy{
+    display: flex;
+    align-items: center;
+    gap: 15px;
+}
+.rodape-copy img{
+    width: 50px;
+}
+
+.rodape-copy p{
+    margin: 3px 0;
+    color: #666;
+    font-size: 14px;
+}
+
+.rodape-copy2{
+    display:flex;
+    align-items:center;
+    justify-content:center;
+    gap:15px;
+    text-align:center;
+    width:100%;
+}
+
+.rodape-copy2 img{
+    width: 50px;
+}
+
+.rodape-copy2 p{
+    margin: 3px 0;
+    color: #666;
+    font-size: 14px;
 }
 
 
+/* Responsivo */
+
+@media (max-width:768px){
+
+    .rodape-container{
+        flex-direction: column;
+    }
+
+    .rodape-copy{
+        flex-direction: column;
+        text-align: center;
+    }
+
+
+}
+
+
+.pagina-ajuda{
+    max-width:1100px;
+    margin:40px auto;
+    padding:20px;
+    
+}
+
+.voltar{
+    color:#666;
+    margin-bottom:25px;
+}
+
+.voltar a{
+    text-decoration:none;
+    color:#0066cc;
+}
+
+.logo{
+    width: 44px;
+    height: auto;
+    position: relative;
+    top: -14px;
 }
