@@ -5,7 +5,6 @@
     {
       "AbsoluteMoniker": "D:0:0:{4974C4DE-9B36-4CCF-8B2F-40A54739E552}|DesapegaSenai\\DesapegaSenai.csproj|c:\\users\\manha.ceticc\\documents\\github\\desapega_senai\\desapegasenai\\desapegasenai\\controllers\\mensagemcontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
       "RelativeMoniker": "D:0:0:{4974C4DE-9B36-4CCF-8B2F-40A54739E552}|DesapegaSenai\\DesapegaSenai.csproj|solutionrelative:desapegasenai\\controllers\\mensagemcontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-<<<<<<< HEAD
     },
     {
       "AbsoluteMoniker": "D:0:0:{A2FE74E1-B743-11D0-AE1A-00A0C90FFFC3}|\u003CMiscFiles\u003E|C:\\Users\\manha.ceticc\\AppData\\Local\\SourceServer\\7d95bb59796b9ff5b76af7f6593d2a25a8ad55dd07edd43aec8aabd5bcac78ab\\DesapegaSenai\\DesapegaSenai\\Controllers\\ObjetoController.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
@@ -29,8 +28,6 @@
     {
       "AbsoluteMoniker": "D:0:0:{4974C4DE-9B36-4CCF-8B2F-40A54739E552}|DesapegaSenai\\DesapegaSenai.csproj|c:\\users\\manha.ceticc\\documents\\github\\desapega_senai\\desapegasenai\\desapegasenai\\properties\\launchsettings.json||{90A6B3A7-C1A3-4009-A288-E2FF89E96FA0}",
       "RelativeMoniker": "D:0:0:{4974C4DE-9B36-4CCF-8B2F-40A54739E552}|DesapegaSenai\\DesapegaSenai.csproj|solutionrelative:desapegasenai\\properties\\launchsettings.json||{90A6B3A7-C1A3-4009-A288-E2FF89E96FA0}"
-=======
->>>>>>> 89e79f3f6d953a83dc9fe00d548a2cba057ae26a
     }
   ],
   "DocumentGroupContainers": [
@@ -40,12 +37,15 @@
       "DocumentGroups": [
         {
           "DockedWidth": 200,
-          "SelectedChildIndex": 2,
+          "SelectedChildIndex": 3,
           "Children": [
             {
-<<<<<<< HEAD
               "$type": "Bookmark",
               "Name": "ST:0:0:{56df62a4-05a3-4e5b-aa1a-99371ccfb997}"
+            },
+            {
+              "$type": "Bookmark",
+              "Name": "ST:0:0:{cce594b6-0c39-4442-ba28-10c64ac7e89f}"
             },
             {
               "$type": "Document",
@@ -131,30 +131,6 @@
               "ViewState": "AgIAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
               "WhenOpened": "2026-06-02T11:04:09.74Z"
-            },
-            {
-=======
->>>>>>> 89e79f3f6d953a83dc9fe00d548a2cba057ae26a
-              "$type": "Bookmark",
-              "Name": "ST:0:0:{cce594b6-0c39-4442-ba28-10c64ac7e89f}"
-            },
-            {
-<<<<<<< HEAD
-              "$type": "Bookmark",
-              "Name": "ST:0:0:{56df62a4-05a3-4e5b-aa1a-99371ccfb997}"
-=======
-              "$type": "Document",
-              "DocumentIndex": 0,
-              "Title": "MensagemController.cs",
-              "DocumentMoniker": "C:\\Users\\manha.ceticc\\Documents\\GitHub\\Desapega_SENAI\\DesapegaSenai\\DesapegaSenai\\Controllers\\MensagemController.cs",
-              "RelativeDocumentMoniker": "DesapegaSenai\\Controllers\\MensagemController.cs",
-              "ToolTip": "C:\\Users\\manha.ceticc\\Documents\\GitHub\\Desapega_SENAI\\DesapegaSenai\\DesapegaSenai\\Controllers\\MensagemController.cs*",
-              "RelativeToolTip": "DesapegaSenai\\Controllers\\MensagemController.cs*",
-              "ViewState": "AgIAAJ0AAAAAAAAAAAAqwM0AAAAJAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2026-07-23T10:52:09.595Z",
-              "EditorCaption": ""
->>>>>>> d9d4992718578f941bef30354c82383af761ed34
             }
           ]
         }
