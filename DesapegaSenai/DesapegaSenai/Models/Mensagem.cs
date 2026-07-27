@@ -7,6 +7,7 @@
         public int Fk_usuarios_remetente { get; set; }
         public int Fk_usuarios_destinatario { get; set; }
         public string Conteudo { get; set; }
+        public bool Lida { get; set; }
 
     }
 }

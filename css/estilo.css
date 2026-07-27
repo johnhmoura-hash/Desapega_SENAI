@@ -1277,11 +1277,18 @@ background-color: #0056b3;
     cursor:pointer;
 }
 
+
 .produto-botao-principal{
     background:#f58220;
     color:#fff;
     border:none;
     margin-top: 50px;
+    text-decoration: none;
+    display: block;
+    
+}
+.produto-botao-principal a{
+  align-items: center;
 }
 
 .produto-botao-chat{
@@ -2048,7 +2055,29 @@ justify-content: center;
     background:transparent;
 }
 
+.badge{
+    position: absolute;
+    top: -5px;
+    right: -8px;
 
+    min-width: 18px;
+    height: 18px;
+
+    padding: 0 5px;
+
+    background: red;
+    color: white;
+
+    border-radius: 50px;
+
+    display: none;
+
+    align-items: center;
+    justify-content: center;
+
+    font-size: 11px;
+    font-weight: bold;
+}
 
 
 
