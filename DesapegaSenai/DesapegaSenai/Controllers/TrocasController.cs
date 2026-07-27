@@ -139,6 +139,18 @@ namespace DesapegaSenai.Controllers
             if (item.Fk_objetos_destinatario == 0)
                 return BadRequest("Objeto destinatário não informado.");
 
+            var objeto = _context.Objetos.Find(item.Fk_objetos_destinatario);
+
+            if (objeto == null)
+            {
+                return BadRequest("Objeto não encontrado");
+            }
+        
+            if (objeto.Fk_usuarios_matricula == matriculaUsuario)
+            {
+                return BadRequest("Você não pode solicitar troca do seu próprio produto.");
+            }
+
             _context.Trocas.Add(item);
             _context.SaveChanges();
 
