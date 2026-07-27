@@ -21,6 +21,13 @@
           "SelectedChildIndex": 0,
           "Children": [
             {
+<<<<<<< HEAD
+              "$type": "Bookmark",
+              "Name": "ST:0:0:{56df62a4-05a3-4e5b-aa1a-99371ccfb997}"
+            },
+            {
+=======
+>>>>>>> 8d0283f2a5691f3340c1f9efc2aaf653e14142f4
               "$type": "Document",
               "DocumentIndex": 0,
               "Title": "TrocasController.cs",
@@ -52,7 +59,11 @@
             },
             {
               "$type": "Bookmark",
+<<<<<<< HEAD
+              "Name": "ST:0:0:{cce594b6-0c39-4442-ba28-10c64ac7e89f}"
+=======
               "Name": "ST:0:0:{56df62a4-05a3-4e5b-aa1a-99371ccfb997}"
+>>>>>>> 8d0283f2a5691f3340c1f9efc2aaf653e14142f4
             }
           ]
         }
