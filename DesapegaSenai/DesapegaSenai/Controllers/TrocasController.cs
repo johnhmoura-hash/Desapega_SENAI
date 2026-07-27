@@ -53,6 +53,68 @@ namespace DesapegaSenai.Controllers
         }
 
 
+
+        [HttpGet("historico")]
+        public IActionResult Historico()
+        {
+            var usuario = HttpContext.Session.GetString("Idusado");
+
+            if (usuario == null)
+                return Unauthorized();
+
+            int matricula = int.Parse(usuario);
+
+            var historico =
+            (
+                from t in _context.Trocas
+
+                join ur in _context.Usuarios
+                    on t.Fk_usuarios_remetente equals ur.Matricula
+
+                join ud in _context.Usuarios
+                    on t.Fk_usuarios_destinatario equals ud.Matricula
+
+                join or in _context.Objetos
+                    on t.Fk_objetos_remetente equals or.Id
+
+                join od in _context.Objetos
+                    on t.Fk_objetos_destinatario equals od.Id into objDestino
+                from od in objDestino.DefaultIfEmpty()
+
+                where t.Fk_usuarios_remetente == matricula
+                   || t.Fk_usuarios_destinatario == matricula
+
+                orderby t.Data descending
+
+                select new
+                {
+                    t.Id,
+                    t.Data,
+                    t.Status,
+                    t.Pontos_proposto,
+
+                    t.Fk_usuarios_remetente,
+                    t.Fk_usuarios_destinatario,
+
+                    NomeRemetente = ur.Nome,
+                    NomeDestinatario = ud.Nome,
+
+                    ProdutoRemetente = or.Nome,
+                    FotoRemetente = or.Foto,
+
+                    ProdutoDestinatario = od != null ? od.Nome : null,
+                    FotoDestinatario = od != null ? od.Foto : null
+                }
+
+            ).ToList();
+
+            return Ok(historico);
+        }
+
+
+
+
+
         [HttpGet("{id}")]
         public IActionResult BuscarTroca(int id)
         {
