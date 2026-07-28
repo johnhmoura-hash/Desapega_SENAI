@@ -307,5 +307,33 @@ document.addEventListener("DOMContentLoaded", () => {
         }
     }
 
+    async function carregarIndicadorChat() {
+
+        const response = await fetch(
+            "https://localhost:7132/mensagem/naolidas",
+            {
+                credentials: "include"
+            }
+        );
+
+        const dados = await response.json();
+
+        const badge = document.getElementById("badgeChat");
+
+        if (!badge) {
+            return;
+        }
+
+        if (dados.quantidade > 0) {
+            badge.style.display = "flex";
+            badge.textContent = dados.quantidade;
+        } else {
+            badge.style.display = "none";
+        }
+    }
+    carregarIndicadorChat();
+
+    setInterval(carregarIndicadorChat, 5000);
+
 });
 
