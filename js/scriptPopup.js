@@ -34,7 +34,7 @@ async function carregarNotificacoes() {
             item.classList.add("item-notificacao");
             item.innerHTML = `
         
-       <span> ${n.conteudo}</span>
+        <span> ${n.conteudo}</span>
          <button class="btnExcluir">
         <i class="ri-delete-bin-line"></i>
          </button>       
@@ -112,5 +112,15 @@ document.addEventListener("click", function (e) {
         popupNotificacao.classList.remove("ativo");
         btnNotificacao.classList.remove("ativo-popup");
     }
+
+    document.getElementById("btnNotificacao").addEventListener("click", async () => {
+
+    carregarNotificacoes();
+    await fetch("https://localhost:7132/notificacao/lidas", {
+        method: "PUT",
+        credentials: "include"
+    });
+    document.getElementById("badgeNotificacao").style.display = "none";
+});
 
 });
