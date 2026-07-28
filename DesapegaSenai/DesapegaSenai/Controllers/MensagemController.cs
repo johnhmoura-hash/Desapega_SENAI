@@ -53,7 +53,14 @@ namespace DesapegaSenai.Controllers
                     .First();
 
                     var outroUsuario = _context.Usuarios
-                        .FirstOrDefault(u => u.Matricula == g.Key);
+    .Where(u => u.Matricula == g.Key)
+    .Select(u => new
+    {
+        u.Matricula,
+        u.Nome,
+        u.Foto_usuario
+    })
+    .FirstOrDefault();
 
 
                     if (outroUsuario == null)

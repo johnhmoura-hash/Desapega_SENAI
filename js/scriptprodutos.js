@@ -100,33 +100,27 @@ document.addEventListener("DOMContentLoaded", function () {
                     </button>
                     `: `
 
-                    <div class="produto-card-lateral">
+            <div class="produto-card-lateral">
 
-                    <h3 class="produto-imagem-foto">${data.objetos}</h3>
+            <h3 class="produto-imagem-foto">${data.objetos}</h3>
 
     
             <div class="produto-usuario-area">
 
-    <div class="produto-usuario-foto">
-        <img src="${data.foto_usuario}">
-    </div>
+            <div class="produto-usuario-foto">
+            <img src="${data.foto_usuario}">
+            </div>
 
-    <div class="produto-usuario-info">
+            <div class="produto-usuario-info">
 
-        <span class="produto-usuario-nome">
+            <span class="produto-usuario-nome">
             ${data.usuarios}
-        </span>
+            </span>
           
-</div>
+            </div>
 
 </div>
- 
-           
-
-                   
-
-
-                    <div>
+                <div>
                     <a href= "Tela_perfil.html" class="produto-botao-principal">
                     Ir para seu perfil 
                 </a>
