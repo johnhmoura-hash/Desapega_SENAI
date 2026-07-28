@@ -84,7 +84,7 @@ namespace DesapegaSenai.Controllers
                 where t.Fk_usuarios_remetente == matricula
                    || t.Fk_usuarios_destinatario == matricula
 
-                orderby t.Data descending
+                orderby t.Data descending, t.Id descending
 
                 select new
                 {

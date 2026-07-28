@@ -1,5 +1,6 @@
 
 body{
+  background: transparent !important;
     font-family:Verdana, Geneva, Tahoma, sans-serif;
 }
 .faixatopo{
@@ -288,3 +289,5 @@ body{
     border-radius:20px;
     font-size:12px;
 }
+
+
