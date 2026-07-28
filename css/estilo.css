@@ -1,3 +1,6 @@
+
+
+
 body{
 font-family:Verdana, Geneva, Tahoma, sans-serif;
     margin: 0;
@@ -99,9 +102,11 @@ font-family:Verdana, Geneva, Tahoma, sans-serif;
     flex: 1;
     min-width: 0px;
     max-width: 400px;
+    
 }
 
 .pesquisar input{
+  box-sizing:border-box;
     width: 100%;
     border:1px solid #a8a8a8;
     border-radius:20px;
@@ -300,23 +305,41 @@ color: #0056b3;
 }
 
 /*Tela produto*/
+
+
 .box-produto {
-  width: 100%;
-  max-width: 480px;
-  box-shadow: 0 10PX 25PX rgb(0,0,0,0.1);
-  border-radius: 20px;
-  padding: 25px;
-  margin: 40px auto;
-  background-color: #f8f9fb;
-  display: flex;
-  flex-direction: column;
-  align-items: center;
+    width: 800px;
+    min-height: 100px;
+    margin: 35px auto 50px;
+    padding: 0;
+    display: flex;
+    background: #ffffff;
+    border-radius: 20px;
+    overflow: hidden;
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.12);
+}
+
+
+.box-produto::before {
+    content: "Desapega SENAI";
+    width: 48%;
+    min-width: 320px;
+    background: #3968ad;
+    color: white;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-size: 25px;
+    font-weight: bold;
+    text-align: center;
+    flex-shrink: 0;
 }
 
 .box-produto span{
   color: rgb(145, 145, 145);
    font-size: 15px;
 }
+
 
 .photo-upload {
   width: 50%;
@@ -332,9 +355,10 @@ color: #0056b3;
   overflow: hidden; 
 }
 .ajustep{
-  display: flex;
-  justify-content: center;
-  align-items: center;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin-bottom: 5px;
 
 }
 .preview-foto {
@@ -364,7 +388,7 @@ color: #0056b3;
 .input-info {
   width: 100%;
   padding: 12px;
-  margin-bottom: 12px;
+  margin-bottom: 5px;
   border-radius: 12px;
   border: 1px solid #3b82f6;
   outline: none;

@@ -61,9 +61,22 @@ async function carregarNotificacoes() {
 
                 item.style.cursor = "pointer";
 
-                item.onclick = () => {
-                    location.href = `aceitartrocas.html?idTroca=${n.fk_troca_id}`;
-                };
+              item.onclick = () => {
+
+    const overlay = document.getElementById("overlayTroca");
+    const modal = document.querySelector(".modal-troca");
+
+    modal.innerHTML = `
+        <iframe
+            src="aceitartrocas.html?idTroca=${n.fk_troca_id}"
+            frameborder="0">
+        </iframe>
+    `;
+
+    overlay.style.display = "flex";
+
+    popupNotificacao.classList.remove("ativo");
+};
 
             } else {
 

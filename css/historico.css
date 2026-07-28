@@ -160,10 +160,18 @@ h1{
 }
 
 .concluidor{
-
     background:#dcf8e7;
     color:#18864a;
+}
 
+.recusador{
+    background:#ffe4e4;
+    color:#d62828;
+}
+
+.pendenter{
+    background:#fff3cd;
+    color:#b8860b;
 }
 
 @media(max-width:768px){
