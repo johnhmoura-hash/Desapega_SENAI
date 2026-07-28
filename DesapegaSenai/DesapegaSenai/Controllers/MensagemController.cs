@@ -53,7 +53,14 @@ namespace DesapegaSenai.Controllers
                     .First();
 
                     var outroUsuario = _context.Usuarios
-                        .FirstOrDefault(u => u.Matricula == g.Key);
+    .Where(u => u.Matricula == g.Key)
+    .Select(u => new
+    {
+        u.Matricula,
+        u.Nome,
+        u.Foto_usuario
+    })
+    .FirstOrDefault();
 
 
                     if (outroUsuario == null)
@@ -82,6 +89,18 @@ namespace DesapegaSenai.Controllers
                 return Unauthorized("Não autenticado");
 
             int usuarioID = int.Parse(usuario);
+
+            var mensagensNaoLidas = _context.Mensagens
+            .Where(m =>
+                m.Fk_usuarios_remetente == id &&
+                m.Fk_usuarios_destinatario == usuarioID &&
+                !m.Lida)
+            .ToList();
+
+            foreach (var msg in mensagensNaoLidas)
+            {
+                msg.Lida = true;
+            }
 
             var outroUsuario = _context.Usuarios
        .FirstOrDefault(u => u.Matricula == id);
@@ -132,7 +151,27 @@ namespace DesapegaSenai.Controllers
             });
         }
 
-            [HttpPost]
+        [HttpGet("naolidas")]
+        public IActionResult BuscarMensagensNaoLida()
+        {
+            var usuario = HttpContext.Session.GetString("Idusado");
+            if (usuario == null)
+                return Unauthorized("Não autenticado");
+
+            int usuarioID = int.Parse(usuario);
+
+            int qtddMensagens = _context.Mensagens.Count(m =>
+            m.Fk_usuarios_remetente == usuarioID &&
+            !m.Lida);
+
+            return Ok(new
+            {
+                qtddMensagens
+            });
+
+        }
+
+        [HttpPost]
             public IActionResult EnviarMensagem([FromBody] Mensagem mensagem)
             {
                 var usuario = HttpContext.Session.GetString("Idusado");
@@ -141,6 +180,7 @@ namespace DesapegaSenai.Controllers
 
                 mensagem.Fk_usuarios_remetente = int.Parse(usuario);
                 mensagem.Data_hr = DateTime.Now;
+                mensagem.Lida = false;
 
                 _context.Mensagens.Add(mensagem);
                 _context.SaveChanges();
