@@ -35,6 +35,28 @@ function mostrarProdutos(lista) {
     const grid = document.getElementById("grid-produtos");
     grid.innerHTML = "";
 
+
+    if (lista.length === 0) {
+
+        document.getElementById("grid-produtos").innerHTML = `
+            <div class="sem-objetos">
+                <img src="Img/notfund.png" alt="Nenhum objeto encontrado">
+
+                <h2> Nada encontrado</h2>
+
+                <p>
+                    Não existem objetos nesta categoria com o tempo de uso selecionado.
+                </p>
+
+                <a href="tela_produto.html" class="btn-anunciar">
+                    Anunciar produto
+                </a>
+            </div>
+        `;
+
+        return;
+    }
+
     lista.forEach(produto => {
         grid.innerHTML += `
                 <div class="carde">

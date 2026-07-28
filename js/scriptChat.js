@@ -95,6 +95,7 @@ document.addEventListener("DOMContentLoaded", () => {
                 return;
             }
 
+
             conversas.forEach(c => {
 
                 const foto = c.foto
@@ -226,6 +227,23 @@ document.addEventListener("DOMContentLoaded", () => {
         }
 
     }
+
+      btnEnviar?.addEventListener("keydown", function (event) {
+
+        if (event.key === "Enter") {
+
+            const texto = this.value.trim();
+
+            if (texto === "") return;
+
+            window.location.href = `tela_categoria.html?pesquisa=${encodeURIComponent(texto)}`;
+        }
+
+    });
+
+
+
+
     function formatarData(data) {
 
         const d = new Date(data);
