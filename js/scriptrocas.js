@@ -1,3 +1,8 @@
+function fecharModal() {
+    parent.document.getElementById("overlayTroca").style.display = "none";
+    parent.document.querySelector(".modal-troca").innerHTML = "";
+}
+
 document.getElementById("btnCancelar").addEventListener("click", () => {
     window.parent.document.getElementById("overlayTroca").style.display = "none";
 });
@@ -148,25 +153,26 @@ document.addEventListener("DOMContentLoaded", function () {
             })
 
         })
-    
 
-        .then(async response => {
 
-            const texto = await response.text();
+            .then(async response => {
 
-            if (!response.ok)
-                throw new Error(texto);
+                const texto = await response.text();
 
-            return texto;
+                if (!response.ok)
+                    throw new Error(texto);
 
-        })
+                return texto;
 
-        .then(data => {
+            })
 
-            alert("Troca enviada com sucesso!");
+            .then(data => {
 
-        })
-        })
+                alert("Troca enviada com sucesso!");
+                fecharModal()
+
+            })
+    })
 
     const btnPontos = document.getElementById("btnPontos");
 

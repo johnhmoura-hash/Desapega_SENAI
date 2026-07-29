@@ -10,6 +10,12 @@ async function abrirTroca(idProdutoDesejado) {
         { credentials: "include" }
     );
 
+    if (resposta.status === 401) {
+        alert("Faça login para realizar uma troca.");
+       
+        return;
+    }
+
     const meusProdutos = await resposta.json();
 
     if (!meusProdutos.objetos || meusProdutos.objetos.length === 0) {
@@ -42,8 +48,7 @@ document.addEventListener("DOMContentLoaded", function () {
         .then(response => response.json())
         .then(data => {
 
-            console.log(data);
-
+           
 
             const resposta = document.getElementById("pagina-produto");
 
@@ -52,8 +57,7 @@ document.addEventListener("DOMContentLoaded", function () {
                 return;
             }
 
-            console.log(data.foto_usuario);
-            console.log(data);
+           
 
             resposta.innerHTML = `
             <div class="produto-topo-area">
@@ -174,12 +178,22 @@ document.addEventListener("DOMContentLoaded", function () {
 
 });
 
-function abrirChat(idUsuario, nomeProduto) {
+async function abrirChat(idUsuario, nomeProduto) {
+
+    const resposta = await fetch(
+        "https://localhost:7132/Objeto/perfil",
+        { credentials: "include" }
+    );
+
+    if (resposta.status === 401) {
+        alert("Faça login para conversar com o vendedor.");
+  
+        return;
+    }
 
     const mensagem = encodeURIComponent(
         `Olá! Tenho interesse no produto "${nomeProduto}". Ele ainda está disponível?`
     );
-    console.log(`teste-chat.html?id=${idUsuario}&mensagem=${mensagem}`);
 
     window.location.href =
         `teste-chat.html?id=${idUsuario}&mensagem=${mensagem}`;
