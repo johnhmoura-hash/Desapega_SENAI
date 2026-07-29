@@ -28,11 +28,7 @@ formProduto.addEventListener('submit', function(e) {
     e.preventDefault();
     e.stopPropagation();
 
-<<<<<<< HEAD
-    
-=======
    
->>>>>>> daafc021f0e69badf86b0fdb00ba6d4e842c8604
 
     const valido =
         validarNomeProduto() &&
@@ -75,31 +71,18 @@ function enviarProduto() {
     })
     .then(async res => {
 
-<<<<<<< HEAD
-    
-
-=======
   
->>>>>>> daafc021f0e69badf86b0fdb00ba6d4e842c8604
     let dados = {};
 
     try {
         dados = await res.json();
     } catch (e) {
-<<<<<<< HEAD
-        
-=======
        
->>>>>>> daafc021f0e69badf86b0fdb00ba6d4e842c8604
     }
 
   if (res.ok) {
 
-<<<<<<< HEAD
-    
-=======
    
->>>>>>> daafc021f0e69badf86b0fdb00ba6d4e842c8604
 
     mostrarToast("Produto cadastrado com sucesso!", "sucesso");
 
@@ -107,10 +90,6 @@ function enviarProduto() {
 
     formProduto.reset();
 
-<<<<<<< HEAD
-   
-=======
->>>>>>> daafc021f0e69badf86b0fdb00ba6d4e842c8604
 
     document.querySelector(".photo-upload").innerHTML = `
         <i class="fa-solid fa-camera"></i>
@@ -120,10 +99,7 @@ function enviarProduto() {
 
 } else {
 
-<<<<<<< HEAD
-=======
     
->>>>>>> daafc021f0e69badf86b0fdb00ba6d4e842c8604
 
     mostrarToast(dados.mensagem || "Erro ao cadastrar o produto.", "erro");
 
