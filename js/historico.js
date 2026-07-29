@@ -28,9 +28,32 @@ async function carregarHistorico() {
         const historico = await respostaHistorico.json();
 
         const container = document.querySelector(".historicor");
-        container.innerHTML = "";
 
-        historico.forEach(troca => {
+container.innerHTML = "";
+
+historico.forEach(troca => {
+
+let classeStatus = "";
+let iconeStatus = "";
+
+switch (troca.status) {
+
+    case "Aceita":
+        classeStatus = "concluidor";
+        iconeStatus = "ri-checkbox-circle-fill";
+        break;
+
+    case "Recusada":
+        classeStatus = "recusador";
+        iconeStatus = "ri-close-circle-fill";
+        break;
+
+    default:
+        classeStatus = "pendenter";
+        iconeStatus = "ri-time-fill";
+        break;
+}
+        
 
             let meuProduto;
             let minhaFoto;
@@ -104,9 +127,10 @@ async function carregarHistorico() {
 
                         <p><strong>Data:</strong> ${troca.data}</p>
 
-                        <span class="staturs concluidor">
-                            ${troca.status}
-                        </span>
+                        <span class="staturs ${classeStatus}">
+    <i class="${iconeStatus}"></i>
+    ${troca.status}
+</span>
 
                     </div>
 
