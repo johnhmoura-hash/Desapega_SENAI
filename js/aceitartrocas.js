@@ -56,9 +56,7 @@ document.addEventListener("DOMContentLoaded", function () {
         btnPontos.style.display =
             data.pontos_proposto == true ? "block" : "none";
     })
-    .catch(err => {
-        console.error(err);
-    });
+  
 
 
     document.getElementById("btn-cancelar").addEventListener("click",recusarTroca);
@@ -85,7 +83,7 @@ document.addEventListener("DOMContentLoaded", function () {
         window.location.href = "index.html";
     })
     .catch(error => {
-        console.error(error);
+       
         alert("Não foi possível excluir a proposta.");
     });
     }
@@ -113,7 +111,7 @@ document.addEventListener("DOMContentLoaded", function () {
         window.location.href = "index.html";
     })
     .catch(error => {
-        console.error(error);
+        
         alert("Não foi possível aceitar a proposta.");
     });
     } 
@@ -142,7 +140,7 @@ document.addEventListener("DOMContentLoaded", function () {
         window.location.href = "index.html";
     })
     .catch(error => {
-        console.error(error);
+        
         alert("Não foi possível aceitar a proposta.");
     });
     } 

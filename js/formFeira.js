@@ -74,13 +74,11 @@ function enviarFormulario() {
     })
     .then(response => response.json())
     .then(data => {
-        console.log("Sucesso:", data);
+       
         alert("Inscrição salva com sucesso!");
         window.location.href = "index.html"; 
     })
-    .catch(error => {
-        console.error("Erro:", error);
-    });
+   
 
 }
 }

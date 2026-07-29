@@ -28,7 +28,7 @@ formProduto.addEventListener('submit', function(e) {
     e.preventDefault();
     e.stopPropagation();
 
-    console.log("Submit bloqueado");
+   
 
     const valido =
         validarNomeProduto() &&
@@ -71,19 +71,18 @@ function enviarProduto() {
     })
     .then(async res => {
 
-    console.log("Status:", res.status);
-
+  
     let dados = {};
 
     try {
         dados = await res.json();
     } catch (e) {
-        console.log("A resposta não é JSON.");
+       
     }
 
   if (res.ok) {
 
-    console.log("Entrou no res.ok");
+   
 
     mostrarToast("Produto cadastrado com sucesso!", "sucesso");
 
@@ -91,7 +90,6 @@ function enviarProduto() {
 
     formProduto.reset();
 
-    console.log("Depois do toast");
 
     document.querySelector(".photo-upload").innerHTML = `
         <i class="fa-solid fa-camera"></i>
@@ -101,7 +99,7 @@ function enviarProduto() {
 
 } else {
 
-    console.log("Entrou no else");
+    
 
     mostrarToast(dados.mensagem || "Erro ao cadastrar o produto.", "erro");
 
@@ -110,8 +108,7 @@ function enviarProduto() {
     })
     .catch(erro => {
         
-   console.error(erro);
-    console.log("Entrou no catch");
+  
 
     mostrarToast("Erro ao conectar ao servidor.", "erro");
 

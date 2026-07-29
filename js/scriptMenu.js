@@ -77,7 +77,7 @@ document.addEventListener("DOMContentLoaded", function () {
 
         const dados = await response.json();
 
-        console.log(dados)
+        
 
         const badge = document.getElementById("badgeNotificacao");
 

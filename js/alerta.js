@@ -1,6 +1,6 @@
 function mostrarToast(mensagem, tipo = "info") {
 
-    console.log("ENTROU NO TOAST");
+   
 
     const toast = document.getElementById("toast");
     const texto = document.getElementById("toastMensagem");
