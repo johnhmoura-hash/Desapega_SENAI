@@ -43,11 +43,11 @@ myForm.addEventListener('submit', function (event) {
         .then(response => response.json())
         .then(data => {
 
-            console.log("Sucesso:", data);
+           
 
             
             alert("Conta criada com sucesso!");
-            console.log("Sucesso:", data);
+         
 
 
 

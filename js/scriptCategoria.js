@@ -24,7 +24,7 @@ fetch(url, {
     produtos = data;
     mostrarProdutos(produtos);
 })
-.catch(error => console.error(error));
+
 
 
 });

@@ -140,7 +140,7 @@ switch (troca.status) {
 
     } catch (erro) {
 
-        console.error(erro);
+        
 
     }
 

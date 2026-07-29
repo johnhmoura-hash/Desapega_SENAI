@@ -1,0 +1,132 @@
+
+
+.all{
+    min-height: 90vh; 
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: 20px; 
+    box-sizing: border-box;
+    text-decoration: none;
+}
+.box-produto{
+    width: 950px;
+    height: 680px;
+    background: #fff;
+    border-radius: 25px;
+    overflow: hidden;
+    display: flex;
+    box-shadow: 0 10px 25px rgba(0,0,0,.1);
+}
+
+.box-produto::before {
+    content: "";
+    width: 48%;
+    min-width: 320px;
+
+    background: url("../Img/anunciar.png") center center;
+    background-size: cover;
+    background-repeat: no-repeat;
+
+    flex-shrink: 0;
+}
+.box-produto span{
+  color: rgb(145, 145, 145);
+   font-size: 15px;
+}
+
+
+.photo-upload {
+  width: 50%;
+  height: 150px;
+  background-color: #c7d7ea;
+  border-radius: 15px;
+  margin-bottom: 20px;
+  position: relative;
+
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  overflow: hidden; 
+}
+.ajustep{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin-bottom: 5px;
+
+}
+.preview-foto {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  border-radius: 15px;
+}
+.photo-upload svg {
+  width: 60px;
+  stroke: #555;
+  fill: none;
+  stroke-width: 1.5;
+}
+
+.form-produto{
+    flex: 1;
+    display: flex;
+    flex-direction: column;
+    padding: 30px;
+    box-sizing: border-box;
+
+    overflow-y: auto;
+    overflow-x: hidden;
+}
+
+
+
+
+.form-produto::-webkit-scrollbar{
+    width: 8px;
+}
+
+.form-produto::-webkit-scrollbar-track{
+    background: #f1f1f1;
+    border-radius: 10px;
+}
+
+.form-produto::-webkit-scrollbar-thumb{
+    background: #3968ad;
+    border-radius: 10px;
+}
+
+.form-produto::-webkit-scrollbar-thumb:hover{
+    background: #2d5791;
+}
+
+
+
+.form-produto label {
+  margin-bottom: 10px;
+  font-weight: 500;
+}
+
+.input-info {
+    width: 100%;
+    padding: 12px 15px;
+    margin-bottom: 10px;
+    border-radius: 12px;
+    border: 1px solid #3b82f6;
+    outline: none;
+    box-sizing: border-box;
+    font-size: 14px;
+}
+
+.input-info:focus {
+  border-color: #0056b3;
+}
+
+
+textarea.input-info {
+     width: 100%;
+    margin: 0 0 20px;
+    min-height: 80px;
+}
+
