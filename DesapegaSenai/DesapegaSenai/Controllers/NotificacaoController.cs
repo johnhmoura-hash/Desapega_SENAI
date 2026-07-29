@@ -69,6 +69,52 @@ namespace DesapegaSenai.Controllers
             return Ok(notificacoes);
         }
 
+
+        [HttpGet("naolidas")]
+        public IActionResult BuscarNaoLidas()
+        {
+            var usuario = HttpContext.Session.GetString("Idusado");
+
+            if (usuario == null)
+                return Unauthorized();
+
+            int usuarioID = int.Parse(usuario);
+
+            int quantidade = _context.Notificacoes.Count(n =>
+                n.Fk_usuarios_matricula == usuarioID &&
+                n.Status == "Não lida");
+
+            return Ok(new
+            {
+                quantidade
+            });
+        }
+
+        [HttpPut("lidas")]
+        public IActionResult MarcarComoLidas()
+        {
+            var usuario = HttpContext.Session.GetString("Idusado");
+
+            if (usuario == null)
+                return Unauthorized();
+
+            int usuarioID = int.Parse(usuario);
+
+            var notificacoes = _context.Notificacoes
+                .Where(n => n.Fk_usuarios_matricula == usuarioID &&
+                            n.Status == "Não lida")
+                .ToList();
+
+            foreach (var notificacao in notificacoes)
+            {
+                notificacao.Status = "Lida";
+            }
+
+            _context.SaveChanges();
+
+            return Ok();
+        }
+
         [HttpDelete("{id}")]
         public IActionResult Excluir(int id)
         {
@@ -82,5 +128,7 @@ namespace DesapegaSenai.Controllers
 
             return Ok();
         }
+
+
     }
 }

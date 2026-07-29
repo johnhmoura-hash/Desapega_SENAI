@@ -15,18 +15,10 @@ using System.Reflection;
 [assembly: System.Reflection.AssemblyConfigurationAttribute("Debug")]
 [assembly: System.Reflection.AssemblyFileVersionAttribute("1.0.0.0")]
 <<<<<<< HEAD
-[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0+a421f6e63881e46753efd699635eacf60c90c7d0")]
+[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0+d2b0caab8b590a88e690c5cd697b7f4b0db07b10")]
 =======
-<<<<<<< HEAD
-[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0+d472436eec85e4857e00bfa8feac1a7219a17b5b")]
-=======
-<<<<<<< HEAD
-[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0+27f51d2f50df3118de1e4665d3ec51fab3df5b62")]
-=======
-[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0+8d0283f2a5691f3340c1f9efc2aaf653e14142f4")]
->>>>>>> 59bb4b9150c8311ac7f4b3ab6c1ce0a49c47beb5
->>>>>>> 4db8a0563d401c1458f697c17e73c11edcb52bc0
->>>>>>> d2b0caab8b590a88e690c5cd697b7f4b0db07b10
+[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0+2fca1fa2eaeaa6eaa987a127f5d115de44f545ca")]
+>>>>>>> e651547a5e6757f6952574579153d7ff72448013
 [assembly: System.Reflection.AssemblyProductAttribute("DesapegaSenai")]
 [assembly: System.Reflection.AssemblyTitleAttribute("DesapegaSenai")]
 [assembly: System.Reflection.AssemblyVersionAttribute("1.0.0.0")]

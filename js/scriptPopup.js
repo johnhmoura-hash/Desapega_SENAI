@@ -34,7 +34,7 @@ async function carregarNotificacoes() {
             item.classList.add("item-notificacao");
             item.innerHTML = `
         
-       <span> ${n.conteudo}</span>
+        <span> ${n.conteudo}</span>
          <button class="btnExcluir">
         <i class="ri-delete-bin-line"></i>
          </button>       
@@ -61,9 +61,22 @@ async function carregarNotificacoes() {
 
                 item.style.cursor = "pointer";
 
-                item.onclick = () => {
-                    location.href = `aceitartrocas.html?idTroca=${n.fk_troca_id}`;
-                };
+              item.onclick = () => {
+
+    const overlay = document.getElementById("overlayTroca");
+    const modal = document.querySelector(".modal-troca");
+
+    modal.innerHTML = `
+        <iframe
+            src="aceitartrocas.html?idTroca=${n.fk_troca_id}"
+            frameborder="0">
+        </iframe>
+    `;
+
+    overlay.style.display = "flex";
+
+    popupNotificacao.classList.remove("ativo");
+};
 
             } else {
 
@@ -112,5 +125,15 @@ document.addEventListener("click", function (e) {
         popupNotificacao.classList.remove("ativo");
         btnNotificacao.classList.remove("ativo-popup");
     }
+
+    document.getElementById("btnNotificacao").addEventListener("click", async () => {
+
+    carregarNotificacoes();
+    await fetch("https://localhost:7132/notificacao/lidas", {
+        method: "PUT",
+        credentials: "include"
+    });
+    document.getElementById("badgeNotificacao").style.display = "none";
+});
 
 });

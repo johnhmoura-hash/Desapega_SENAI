@@ -8,10 +8,10 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Principal-Desapega SENAI</title>
   <link rel="stylesheet" href="css/estilo.css">
-  <link rel="stylesheet" href="css/popup.css">
   <link rel="stylesheet" href="css/notificacao.css">
-  <link rel="icon" href="Img/possivel logo.png" type="image/x-icon">
   <link rel="stylesheet" href="css/mobile.css">
+  <link rel="stylesheet" href="css/popup.css">
+  <link rel="icon" href="Img/possivel logo.png" type="image/x-icon">
 </head>
 
 <body>
@@ -19,7 +19,8 @@
     <br>
   </div>
 
-  <header class="page">
+  
+    <header class="page">
     <div class="container-login">
       <div class="logo2">
         <img src="Img/possivel logo.png" width="40">
@@ -48,23 +49,26 @@
         </div>
 
        
-        <div class="menu2 chat-wrapper" >
+        <div class="menu2 chat-wrapper">
           <a href="teste-chat.html" id="btnChat">
             Chat <i class="ri-chat-3-line"></i>
-            <span id="badgeChat" class="badge">0</span>
+            <span id="badgeChat" class="badge"></span>
           </a>
         </div>
 
  <div class=" notificacao-wrapper">
 
           <a href="#" id="btnNotificacao">
-            Notificações <i class="ri-notification-line"></i>
+            Notificações 
+          <i class="ri-notification-line"></i>
+           <span id="badgeNotificacao" class="badge"></span>
           </a>
 
           <div class="popup-notificacao" id="popupNotificacao">
 
             <div class="popup-header">
               <h4>Notificações</h4>
+             
             </div>
 
             <div class="popup-body" id="listaNotificacoes">
@@ -242,6 +246,11 @@
       </div>
 
   </footer>
+
+
+  <div id="overlayTroca" class="overlay">
+    <div class="modal-troca"></div>
+</div>
 
 
 

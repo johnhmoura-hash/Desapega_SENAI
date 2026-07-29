@@ -53,14 +53,14 @@ namespace DesapegaSenai.Controllers
                     .First();
 
                     var outroUsuario = _context.Usuarios
-    .Where(u => u.Matricula == g.Key)
-    .Select(u => new
-    {
-        u.Matricula,
-        u.Nome,
-        u.Foto_usuario
-    })
-    .FirstOrDefault();
+                        .Where(u => u.Matricula == g.Key)
+                        .Select(u => new
+                        {
+                            u.Matricula,
+                            u.Nome,
+                            u.Foto_usuario
+                        })
+                        .FirstOrDefault();
 
 
                     if (outroUsuario == null)
@@ -72,7 +72,12 @@ namespace DesapegaSenai.Controllers
                         Nome = outroUsuario.Nome,
                         Foto = outroUsuario.Foto_usuario,
                         UltimaMensagem = ultima.Conteudo,
-                        Data = ultima.Data_hr
+                        Data = ultima.Data_hr,
+
+                        QtddNaoLidas = _context.Mensagens.Count(m =>
+                        m.Fk_usuarios_remetente == outroUsuario.Matricula &&
+                        m.Fk_usuarios_destinatario == usuarioID &&
+                        !m.Lida)
                     };
                 })
                 .OrderByDescending(c => c.Data);
@@ -140,6 +145,8 @@ namespace DesapegaSenai.Controllers
                 })
                 .ToList();
 
+            _context.SaveChanges();
+
             return Ok(new
             {
                 Contato = new
@@ -161,7 +168,7 @@ namespace DesapegaSenai.Controllers
             int usuarioID = int.Parse(usuario);
 
             int qtddMensagens = _context.Mensagens.Count(m =>
-            m.Fk_usuarios_remetente == usuarioID &&
+            m.Fk_usuarios_destinatario == usuarioID &&
             !m.Lida);
 
             return Ok(new
