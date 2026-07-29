@@ -95,6 +95,7 @@ document.addEventListener("DOMContentLoaded", () => {
                 return;
             }
 
+
             conversas.forEach(c => {
 
                 const foto = c.foto
@@ -114,6 +115,9 @@ document.addEventListener("DOMContentLoaded", () => {
                             <small>${c.ultimaMensagem}</small>
                         </div>
 
+                          ${c.qtddNaoLidas > 0
+                        ? `<span class="bolinha-chat">${c.qtddNaoLidas}</span>`
+                        : ""}
                     </div>
                 `;
 
@@ -223,6 +227,23 @@ document.addEventListener("DOMContentLoaded", () => {
         }
 
     }
+
+      btnEnviar?.addEventListener("keydown", function (event) {
+
+        if (event.key === "Enter") {
+
+            const texto = this.value.trim();
+
+            if (texto === "") return;
+
+            window.location.href = `tela_categoria.html?pesquisa=${encodeURIComponent(texto)}`;
+        }
+
+    });
+
+
+
+
     function formatarData(data) {
 
         const d = new Date(data);
@@ -307,33 +328,6 @@ document.addEventListener("DOMContentLoaded", () => {
         }
     }
 
-    async function carregarIndicadorChat() {
-
-        const response = await fetch(
-            "https://localhost:7132/mensagem/naolidas",
-            {
-                credentials: "include"
-            }
-        );
-
-        const dados = await response.json();
-
-        const badge = document.getElementById("badgeChat");
-
-        if (!badge) {
-            return;
-        }
-
-        if (dados.quantidade > 0) {
-            badge.style.display = "flex";
-            badge.textContent = dados.quantidade;
-        } else {
-            badge.style.display = "none";
-        }
-    }
-    carregarIndicadorChat();
-
-    setInterval(carregarIndicadorChat, 5000);
 
 });
 
