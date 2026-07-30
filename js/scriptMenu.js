@@ -76,11 +76,8 @@ document.addEventListener("DOMContentLoaded", function () {
 
         const dados = await response.json();
 
-<<<<<<< HEAD
-=======
         
 
->>>>>>> daafc021f0e69badf86b0fdb00ba6d4e842c8604
         const badge = document.getElementById("badgeNotificacao");
 
         if (!badge) return;
