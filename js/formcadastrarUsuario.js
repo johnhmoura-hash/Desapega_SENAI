@@ -5,10 +5,16 @@ const numTelefone = document.getElementById('numTelefone');
 const email = document.getElementById('email');
 const emailConfirmar = document.getElementById('emailConfirmar');
 const confirmarSenha = document.getElementById('confirmarSenha');
+const nome = document.getElementById('nome');
 
 myForm.addEventListener('submit', function (event) {
 
     event.preventDefault();
+
+    if (!nome || !numMatricula || !email || !numTelefone || !senha) {
+        alert("Preencha todos os campos obrigatórios.");
+        return;
+    }
 
     fetch('https://localhost:7132/usuario/cadastrar', {
         method: 'POST',

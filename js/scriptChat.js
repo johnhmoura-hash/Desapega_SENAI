@@ -14,8 +14,7 @@ document.addEventListener("DOMContentLoaded", () => {
 
     const idUsuario = new URLSearchParams(window.location.search).get("id");
 
-    carregarConversas();
-
+ carregarConversas();
     if (!idUsuario) {
 
         chat.innerHTML = `
@@ -45,6 +44,7 @@ document.addEventListener("DOMContentLoaded", () => {
         ultimoIdMensagem = 0;
 
         carregarMensagens();
+       
 
         setInterval(() => {
 
@@ -52,6 +52,7 @@ document.addEventListener("DOMContentLoaded", () => {
 
             if (inputPesquisa.value.trim() === "") {
                 carregarConversas();
+                
             }
 
         }, 3000);
@@ -85,7 +86,7 @@ document.addEventListener("DOMContentLoaded", () => {
             <h3>Nenhuma conversa encontrada</h3>
             <p>Quando você trocar mensagens com outro usuário, elas aparecerão aqui.</p>
 
-            <a href="inicio.html" class="btn-novo">
+            <a href="index.html" class="btn-novo">
                 Procurar itens
             </a>
         </div>
