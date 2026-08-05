@@ -587,6 +587,24 @@ color: #0056b3;
 }
 
 
+#btnCancelar,
+#btnConfirmarLogout{
+    padding:10px 20px;
+    border:none;
+    border-radius:8px;
+    cursor:pointer;
+    font-size:15px;
+}
+
+#btnCancelar{
+    background:#ddd;
+}
+
+#btnConfirmarLogout{
+    background:#ff7a00;
+    color:#fff;
+}
+
 @media (max-width:768px){
     .infos{
         flex-direction:column;
