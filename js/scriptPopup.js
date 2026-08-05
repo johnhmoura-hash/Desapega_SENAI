@@ -28,7 +28,7 @@ async function carregarNotificacoes() {
         }
 
         notificacoes.forEach(n => {
-           
+
 
             const item = document.createElement("div");
             item.classList.add("item-notificacao");
@@ -65,6 +65,14 @@ async function carregarNotificacoes() {
 
                     const overlay = document.getElementById("overlayTroca");
                     const modal = document.querySelector(".modal-troca");
+
+
+                    overlay.addEventListener("click", (e) => {
+                        if (!modal.contains(e.target)) {
+                            overlay.style.display = "none";
+                            modal.innerHTML = "";
+                        }
+                    });
 
                     modal.innerHTML = `
                     <iframe
@@ -126,7 +134,7 @@ document.addEventListener("click", function (e) {
         btnNotificacao.classList.remove("ativo-popup");
     }
 
-    document.getElementById("btnNotificacao").addEventListener("click", async () => {
+    btnNotificacao.addEventListener("click", async () => {
 
         carregarNotificacoes();
         await fetch("https://localhost:7132/notificacao/lidas", {

@@ -1770,12 +1770,15 @@ justify-content: center;
     position:relative;
     overflow:hidden;
 }
+
 .preview-fotos {
-  width: 100%;
-  height: 100%;
-  object-fit: cover;
-  border-radius: 50%;
+width:100%;
+    height:100%;
+    object-fit:cover;
+    display:block;
+    z-index: 1;
 }
+
 .fotoeditperfil {
   position:absolute;
     inset:0;
@@ -1789,6 +1792,7 @@ justify-content: center;
     color:#555;
     background:rgba(255,255,255,.25);
 }
+
 .formEditar{
   display: flex;
   justify-content:center;
@@ -1797,9 +1801,6 @@ justify-content: center;
   flex-wrap: wrap;
   
 }
-
-
-
 
 /* ==========================
    RODAPÉ
@@ -1944,14 +1945,6 @@ justify-content: center;
 .caixa-ajuda p{
     color:#444;
 }
-
-
-
-
-
-
-
-
 
 .overlay{
     display:none;
