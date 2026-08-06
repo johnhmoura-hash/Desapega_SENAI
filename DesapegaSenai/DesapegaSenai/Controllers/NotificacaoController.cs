@@ -8,7 +8,6 @@ namespace DesapegaSenai.Controllers
     [ApiController]
     [Route("[controller]")]
     public class NotificacaoController : ControllerBase
-
     {
         private readonly DesapegaContext _context;
 
@@ -50,7 +49,7 @@ namespace DesapegaSenai.Controllers
                     join u in _context.Usuarios
                     on n.Fk_usuarios_matricula equals u.Matricula
                     where n.Fk_usuarios_matricula == matricula
-                    orderby n.Data descending
+                    orderby n.Id descending
                     select new
                         {
                             n.Id,
@@ -61,10 +60,8 @@ namespace DesapegaSenai.Controllers
                             n.Fk_troca_id,
                             Nome = u.Nome
 
-
-
                         }
-).ToList();
+                    ).ToList();
 
             return Ok(notificacoes);
         }

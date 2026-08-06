@@ -1,3 +1,8 @@
+function fecharModal() {
+    parent.document.getElementById("overlayTroca").style.display = "none";
+    parent.document.querySelector(".modal-troca").innerHTML = "";
+}
+
 document.addEventListener("DOMContentLoaded", function () {
 
     const idTroca = new URLSearchParams(window.location.search).get("idTroca");
@@ -80,7 +85,8 @@ document.addEventListener("DOMContentLoaded", function () {
         }
 
         alert("Proposta recusada com sucesso!");
-        window.location.href = "index.html";
+        fecharModal()
+        
     })
     .catch(error => {
        
@@ -108,11 +114,13 @@ document.addEventListener("DOMContentLoaded", function () {
         }
 
         alert("Proposta aceita com sucesso!");
-        window.location.href = "index.html";
+        fecharModal()
+   
     })
     .catch(error => {
         
         alert("Não foi possível aceitar a proposta.");
+        fecharModal()
     });
     } 
 
@@ -137,11 +145,13 @@ document.addEventListener("DOMContentLoaded", function () {
         }
 
         alert("Proposta aceita com sucesso!");
-        window.location.href = "index.html";
+        fecharModal()
+      
     })
     .catch(error => {
         
         alert("Não foi possível aceitar a proposta.");
+        fecharModal()
     });
     } 
 

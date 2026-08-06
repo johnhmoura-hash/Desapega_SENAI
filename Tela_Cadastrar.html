@@ -1,118 +1,120 @@
-
 <!DOCTYPE html>
 <html lang="pt-br">
+
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Tela de Cadastro</title>
-    <link rel="stylesheet" href="css/formulario_Cadastro.css">
-    <link rel="stylesheet" href="css/mobile.css">
-    <link rel="icon" href="Img/possivel logo.png" type="image/x-icon">
-    <link href="https://cdn.jsdelivr.net/npm/remixicon/fonts/remixicon.css" rel="stylesheet">
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Tela de Cadastro</title>
+  <link rel="stylesheet" href="css/formulario_Cadastro.css">
+  <link rel="stylesheet" href="css/mobile.css">
+  <link rel="icon" href="Img/possivel logo.png" type="image/x-icon">
+  <link href="https://cdn.jsdelivr.net/npm/remixicon/fonts/remixicon.css" rel="stylesheet">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
 </head>
 
 <body>
 
-    <div class="container">
+  <div class="container">
 
-        
-        <div class="left">
-            <img src="Img/logo6.png" class="logo" id="logo">
-            
-                
-        </div>
 
-        <div class="right">
+    <div class="left">
+      <img src="Img/logo6.png" class="logo" id="logo">
 
-            <div class="form-box">
 
-                <h2> CRIE UMA CONTA </h2>
-
-  <form type="submit" id="cadastrar">
-
-         
-    <div class="input-box">
-      <label for="usuario">Nome</label>
-      <div class="input">
-      <input type="text" id="nome" placeholder="Digite seu usuário">
-      <small class="erro"></small>
-      </div>
     </div>
 
-    <div class="input-box">
-      <label for="numMatricula">Número de Matrícula</label>
-      <div class="input">
-      <input  id="numMatricula"  maxlength="10" placeholder="Digite o número de matrícula"oninput="this.value = this.value.replace(/[^0-9]/g, '')">
-      <small></small>
-      </div>
-    </div>
-      
-    <div class="input-box">
-      <label for="numTelefone">Número de Telefone</label>
-     <div class="input">
-      <input  id="numTelefone" maxlength="11" placeholder="Digite o número de telefone" oninput="this.value = this.value.replace(/[^0-9]/g, '')">
-      <small></small>
-      </div>
-    </div>
-  
-    <div class="input-box">
-      <label for="email">Email</label>
-      <div class="input">
-      <input type="email" id="email" placeholder="Digite o seu email">
-      <small></small>
-      </div>
-    </div>
+    <div class="right">
 
-    <div class="input-box">
-      <label for="emailConfirmar"> Confirmar Email</label>
-    <div class="input">
-      <input type="email" id="emailConfirmar" placeholder="Confirme seu email">
-      <small></small>
-      </div>
-    </div>
+      <div class="form-box">
 
-    <div class="input-box">
-      <label for="senha">Senha</label>
-      <div class="input-senha">
-      <div class="input">
-      <input type="password" id="senha" maxlength="8" placeholder="Digite sua senha">
-      <i id="versenha" class="ri-eye-line"></i>
-      </div>
-      <small></small>
-      </div>
-    </div>
+        <h2> CRIE UMA CONTA </h2>
 
-    <div class="input-box">
+        <form type="submit" id="cadastrar">
 
-      <label for="confirmarSenha">Confirmar senha</label>
-      <div class="input-senha">   
-      <div class="input">
-      <input type="password" id="confirmarSenha" maxlength="8" placeholder="Confirme sua senha">
-      <i id="verconfirmesenha" class="ri-eye-line"></i> 
-      <small></small>
-      </div>
-      </div>
-    </div>
 
-    <div class="btn">
-      <input type="submit" value="Cadastre-se" >
-    </div>
-  </form>   
-             <p class="social">
-              Já tenho uma conta!
-             <a href="tela_login.html">Voltar</a>
-            </p>
-
-                   
-                   
-                </div>
-
+          <div class="input-box">
+            <label for="usuario">Nome</label>
+            <div class="input">
+              <input type="text" id="nome" placeholder="Digite seu usuário">
+              <small class="erro"></small>
             </div>
+          </div>
 
-        </div>
+          <div class="input-box">
+            <label for="numMatricula">Número de Matrícula</label>
+            <div class="input">
+              <input id="numMatricula" maxlength="10" placeholder="Digite o número de matrícula"
+                oninput="this.value = this.value.replace(/[^0-9]/g, '')">
+              <small></small>
+            </div>
+          </div>
+
+          <div class="input-box">
+            <label for="numTelefone">Número de Telefone</label>
+            <div class="input">
+              <input id="numTelefone" maxlength="11" placeholder="Digite o número de telefone"
+                oninput="this.value = this.value.replace(/[^0-9]/g, '')">
+              <small></small>
+            </div>
+          </div>
+
+          <div class="input-box">
+            <label for="email">Email</label>
+            <div class="input">
+              <input type="email" id="email" placeholder="Digite o seu email">
+              <small></small>
+            </div>
+          </div>
+
+          <div class="input-box">
+            <label for="emailConfirmar"> Confirmar Email</label>
+            <div class="input">
+              <input type="email" id="emailConfirmar" placeholder="Confirme seu email">
+              <small></small>
+            </div>
+          </div>
+
+          <div class="input-box">
+            <label for="senha">Senha</label>
+            <div class="input-senha">
+              <div class="input">
+                <input type="password" id="senha" maxlength="8" placeholder="Digite sua senha">
+                <i id="versenha" class="ri-eye-line"></i>
+                <small></small>
+              </div>
+            </div>
+          </div>
+
+          <div class="input-box">
+
+            <label for="confirmarSenha">Confirmar senha</label>
+            <div class="input-senha">
+              <div class="input">
+                <input type="password" id="confirmarSenha" maxlength="8" placeholder="Confirme sua senha">
+                <i id="verconfirmesenha" class="ri-eye-line"></i>
+                <small></small>
+              </div>
+            </div>
+          </div>
+
+          <div class="btn">
+            <input type="submit" value="Cadastre-se">
+          </div>
+        </form>
+        <p class="social">
+          Já tenho uma conta!
+          <a href="tela_login.html">Voltar</a>
+        </p>
+
+
+
+      </div>
 
     </div>
+
+  </div>
+
+  </div>
   <script src="js/logo_mover.js"></script>
   <script src="js/botãodeversenha.js"></script>
   <script src="js/formcadastrarUsuario.js"></script>

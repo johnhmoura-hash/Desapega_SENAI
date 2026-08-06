@@ -64,7 +64,6 @@ document.addEventListener("DOMContentLoaded", function () {
         }
     }
     carregarIndicadorChat();
-
     setInterval(carregarIndicadorChat, 3000);
 
     async function carregarIndicadorNotificacao() {
