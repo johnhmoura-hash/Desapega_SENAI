@@ -6,7 +6,6 @@ document.addEventListener("DOMContentLoaded", function () {
     })
     .then(response => response.json())
     .then(data => {
-console.log(data.objetos);
         const resposta = document.getElementById("grid-produtos");
 
         if (!resposta) {
@@ -113,23 +112,42 @@ console.log(data.objetos);
 
 
 const btnLogout = document.getElementById("logout");
+const popupLogout = document.getElementById("popupLogout");
+const btnCancelar = document.getElementById("btnCancelar");
+const btnConfirmarLogout = document.getElementById("btnConfirmarLogout");
 
 if (btnLogout) {
-    btnLogout.addEventListener("click", async function (e) {
+    btnLogout.addEventListener("click", function (e) {
         e.preventDefault();
 
-        const resposta = await fetch("https://localhost:7132/usuario/logout", {
-            method: "POST",
-            credentials: "include"
-        });
-
-        if (resposta.ok) {
-            window.location.href = "Tela_login.html";
-        } else {
-            alert("Erro ao fazer logout.");
-        }
+        popupLogout.style.display = "flex";
     });
 }
+
+btnCancelar.addEventListener("click", function () {
+    popupLogout.style.display = "none";
+});
+
+btnConfirmarLogout.addEventListener("click", async function () {
+
+    const resposta = await fetch("https://localhost:7132/usuario/logout", {
+        method: "POST",
+        credentials: "include"
+    });
+
+    if (resposta.ok) {
+        window.location.href = "Tela_login.html";
+    } else {
+        alert("Erro ao fazer logout.");
+    }
+});
+
+// Fecha ao clicar fora da caixa
+popupLogout.addEventListener("click", function (e) {
+    if (e.target === popupLogout) {
+        popupLogout.style.display = "none";
+    }
+});
 
 let idProdutoExcluir = null;
 

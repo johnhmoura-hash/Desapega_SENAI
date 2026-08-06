@@ -1,3 +1,8 @@
+function fecharModal() {
+    parent.document.getElementById("overlayTroca").style.display = "none";
+    parent.document.querySelector(".modal-troca").innerHTML = "";
+}
+
 document.addEventListener("DOMContentLoaded", function () {
 
     const idTroca = new URLSearchParams(window.location.search).get("idTroca");
@@ -56,9 +61,7 @@ document.addEventListener("DOMContentLoaded", function () {
         btnPontos.style.display =
             data.pontos_proposto == true ? "block" : "none";
     })
-    .catch(err => {
-        console.error(err);
-    });
+  
 
 
     document.getElementById("btn-cancelar").addEventListener("click",recusarTroca);
@@ -82,10 +85,11 @@ document.addEventListener("DOMContentLoaded", function () {
         }
 
         alert("Proposta recusada com sucesso!");
-        window.location.href = "index.html";
+        fecharModal()
+        
     })
     .catch(error => {
-        console.error(error);
+       
         alert("Não foi possível excluir a proposta.");
     });
     }
@@ -110,11 +114,13 @@ document.addEventListener("DOMContentLoaded", function () {
         }
 
         alert("Proposta aceita com sucesso!");
-        window.location.href = "index.html";
+        fecharModal()
+   
     })
     .catch(error => {
-        console.error(error);
+        
         alert("Não foi possível aceitar a proposta.");
+        fecharModal()
     });
     } 
 
@@ -139,11 +145,13 @@ document.addEventListener("DOMContentLoaded", function () {
         }
 
         alert("Proposta aceita com sucesso!");
-        window.location.href = "index.html";
+        fecharModal()
+      
     })
     .catch(error => {
-        console.error(error);
+        
         alert("Não foi possível aceitar a proposta.");
+        fecharModal()
     });
     } 
 

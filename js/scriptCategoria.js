@@ -15,7 +15,7 @@ else if (pesquisa) {
 
     url = `https://localhost:7132/objeto/pesquisa?pesquisa=${encodeURIComponent(pesquisa)}`;
 }
-console.log(url);
+
 fetch(url, {
     credentials: "include"
 })
@@ -24,7 +24,7 @@ fetch(url, {
     produtos = data;
     mostrarProdutos(produtos);
 })
-.catch(error => console.error(error));
+
 
 
 });

@@ -135,10 +135,12 @@ public IActionResult BuscarObjetoPerfil()
 
             var usuario = HttpContext.Session.GetString("Idusado");
 
-            if (usuario == null)
-                return Unauthorized("Não autenticado");
+            int? matricula = null;
 
-            int matricula = int.Parse(usuario);
+            if (usuario != null)
+            {
+                matricula = int.Parse(usuario);
+            }
 
 
             var resultado = (from u in _context.Usuarios
@@ -160,7 +162,10 @@ public IActionResult BuscarObjetoPerfil()
                                  foto = $"{Request.Scheme}://{Request.Host}/uploads/{o.Foto}",
                                  prefere_troca = o.Prefere_troca,
 
-                                 meuProduto = o.Fk_usuarios_matricula == matricula
+                                 meuProduto = usuario != null
+                                    ? o.Fk_usuarios_matricula == int.Parse(usuario)
+                                    : (bool?)null
+
                              }).FirstOrDefault();
 
             if (resultado == null)

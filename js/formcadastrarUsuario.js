@@ -5,25 +5,17 @@ const numTelefone = document.getElementById('numTelefone');
 const email = document.getElementById('email');
 const emailConfirmar = document.getElementById('emailConfirmar');
 const confirmarSenha = document.getElementById('confirmarSenha');
+const nome = document.getElementById('nome');
 
 myForm.addEventListener('submit', function (event) {
 
     event.preventDefault();
 
-    /* const valido =
-         validarNome() &&
-         validarMatricula() &&
-         validarNumTelefone() &&
-         validarEmail() &&
-         validarConfirmarEmail()&&
-         validarSenha() &&
-         validarconfirmarSenha();
- 
-     if (valido) {
-          enviarProduto();
-     }
- 
- function enviarProduto(){*/
+    if (!nome || !numMatricula || !email || !numTelefone || !senha) {
+        alert("Preencha todos os campos obrigatórios.");
+        return;
+    }
+
     fetch('https://localhost:7132/usuario/cadastrar', {
         method: 'POST',
         credentials: 'include',
@@ -36,21 +28,14 @@ myForm.addEventListener('submit', function (event) {
             Email: document.getElementById("email").value,
             Telefone: document.getElementById("numTelefone").value,
             Senha: document.getElementById("senha").value,
-            
+
         }),
     })
 
         .then(response => response.json())
         .then(data => {
 
-            console.log("Sucesso:", data);
-
-            
             alert("Conta criada com sucesso!");
-            console.log("Sucesso:", data);
-
-
-
 
         })
         .catch(error => {
@@ -91,31 +76,31 @@ if (confirmarSenha) confirmarSenha.addEventListener("keyup", validarconfirmarSen
 
 
 
-function validarNome(){ 
+function validarNome() {
     const nomeValor = nome.value.trim();
-    
-    if(nomeValor === ''){
+
+    if (nomeValor === '') {
         validarErro(nome, 'Campo obrigatório')
         return false;
-    } else if(nomeValor.length < 3) {
-          validarErro(nome, 'Campo obrigatório')
+    } else if (nomeValor.length < 3) {
+        validarErro(nome, 'Campo obrigatório')
         return false;
-    }else{
+    } else {
         validarSucesso(nome);
         return true;
     }
 }
 
-function validarMatricula(){
-     const numMatriculaValor = numMatricula.value.trim();   
+function validarMatricula() {
+    const numMatriculaValor = numMatricula.value.trim();
 
-    if(numMatriculaValor === ''){
+    if (numMatriculaValor === '') {
         validarErro(numMatricula, 'Campo obrigatório')
         return false;
-    } else if(numMatriculaValor.length !== 7){
+    } else if (numMatriculaValor.length < 10) {
         validarErro(numMatricula, 'A matrícula deve conter 10 números')
         return false;
-    }else{
+    } else {
         validarSucesso(numMatricula)
         return true;
     }
@@ -127,14 +112,14 @@ function validarNumTelefone() {
 
     if (numLimpo === '') {
         validarErro(numTelefone, 'Campo obrigatório');
-       return false;
+        return false;
 
-    } else if (numLimpo.length !== 11) { 
+    } else if (numLimpo.length !== 11) {
         validarErro(numTelefone, 'Formato incorreto');
         return false;
 
     } else {
-        
+
         numTelefone.value = numLimpo.replace(
             /^(\d{2})(\d{5})(\d{4})$/,
             "($1) $2-$3"
@@ -146,74 +131,73 @@ function validarNumTelefone() {
 
 }
 
-function validarEmail(){
-   const emailValor = email.value.trim();
+function validarEmail() {
+    const emailValor = email.value.trim();
 
 
-    if(emailValor === ''){
+    if (emailValor === '') {
         validarErro(email, 'Campo obrigatório');
         return false;
-    } else if(!isEmail(emailValor)){
-         validarErro(email, 'Campo obrigatório');
+    } else if (!isEmail(emailValor)) {
+        validarErro(email, 'Padrão incorreto');
         return false;
-    }else{
+    } else {
         validarSucesso(email);
         return true;
-    } 
+    }
 }
 
-function validarConfirmarEmail(){
+function validarConfirmarEmail() {
     const emailValor = email.value.trim();
     const emailConfirmarValor = emailConfirmar.value.trim();
 
-    if(emailConfirmarValor === ''){
+    if (emailConfirmarValor === '') {
         validarErro(emailConfirmar, 'Campo obrigatório');
-       return false;
-    } else if(emailValor !== emailConfirmarValor){
+        return false;
+    } else if (emailValor !== emailConfirmarValor) {
         validarErro(emailConfirmar, 'Os emails não coincidens');
         return false;
-    }else{
+    } else {
         validarSucesso(emailConfirmar);
-       return true;
-    } 
+        return true;
+    }
 }
 
-function validarSenha(){
+function validarSenha() {
+    
     const senhaValor = senha.value.trim();
-
-
-    if(senhaValor === ''){
+    if (senhaValor === '') {
         validarErro(senha, 'Campo obrigatório');
         return false;
-    } else if(senhaValor.length < 8){
+    } else if (senhaValor.length < 8) {
         validarErro(senha, 'A senha deve ter no mínino 8 caracteres');
         return false;
-    }else{
+    } else {
         validarSucesso(senha);
         return true;
     }
 
 }
-function validarconfirmarSenha(){
+function validarconfirmarSenha() {
     const confirmarSenhaValor = confirmarSenha.value.trim();
     const senhaValor = senha.value.trim();
 
-    
 
-    if(confirmarSenhaValor === ''){
+
+    if (confirmarSenhaValor === '') {
         validarErro(confirmarSenha, 'Campo obrigatório');
-       return false;
-    } else if(confirmarSenhaValor !== senhaValor){
+        return false;
+    } else if (confirmarSenhaValor !== senhaValor) {
         validarErro(confirmarSenha, 'As senhas não coincides');
-       return false;
-    }else{
+        return false;
+    } else {
         validarSucesso(confirmarSenha);
         return true;
     }
 
 }
 
-function validarErro(input, mensagem){
+function validarErro(input, mensagem) {
     const campo = input.parentElement;
     const small = campo.querySelector("small");
 
@@ -221,7 +205,7 @@ function validarErro(input, mensagem){
     campo.className = "campo error";
 }
 
-function validarSucesso(input){
+function validarSucesso(input) {
     const campo = input.parentElement;
     const small = campo.querySelector("small");
 
@@ -232,7 +216,7 @@ function validarSucesso(input){
 function isEmail(email) {
     return /^[a-zA-Z0-9._%+-]+@[a-zA-Z0-9-]+\.senai\.br$/.test(email);
 }
-function validarSucesso(input){
+function validarSucesso(input) {
     const campo = input.parentElement;
     const small = campo.querySelector("small");
 

@@ -15,7 +15,7 @@ document.addEventListener("DOMContentLoaded", () => {
     .then(data => {
 
 
-console.log(data);
+
         
         document.getElementById("fotoPerfil").innerHTML = `
             <img src="${data.foto_usuario}">
@@ -60,6 +60,6 @@ console.log(data);
         });
 
     })
-    .catch(err => console.error(err));
+    
 
 });

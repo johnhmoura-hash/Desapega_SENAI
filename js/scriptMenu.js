@@ -64,7 +64,6 @@ document.addEventListener("DOMContentLoaded", function () {
         }
     }
     carregarIndicadorChat();
-
     setInterval(carregarIndicadorChat, 3000);
 
     async function carregarIndicadorNotificacao() {
@@ -77,7 +76,7 @@ document.addEventListener("DOMContentLoaded", function () {
 
         const dados = await response.json();
 
-        console.log(dados)
+        
 
         const badge = document.getElementById("badgeNotificacao");
 

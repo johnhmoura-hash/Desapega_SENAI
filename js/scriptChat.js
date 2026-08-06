@@ -14,8 +14,7 @@ document.addEventListener("DOMContentLoaded", () => {
 
     const idUsuario = new URLSearchParams(window.location.search).get("id");
 
-    carregarConversas();
-
+ carregarConversas();
     if (!idUsuario) {
 
         chat.innerHTML = `
@@ -45,6 +44,7 @@ document.addEventListener("DOMContentLoaded", () => {
         ultimoIdMensagem = 0;
 
         carregarMensagens();
+       
 
         setInterval(() => {
 
@@ -52,6 +52,7 @@ document.addEventListener("DOMContentLoaded", () => {
 
             if (inputPesquisa.value.trim() === "") {
                 carregarConversas();
+                
             }
 
         }, 3000);
@@ -75,8 +76,7 @@ document.addEventListener("DOMContentLoaded", () => {
 
             const conversas = await response.json();
 
-            console.log(conversas);
-            console.log("Quantidade:", conversas.length);
+     
             sidebar.innerHTML = "";
 
             if (conversas.length === 0) {
@@ -86,7 +86,7 @@ document.addEventListener("DOMContentLoaded", () => {
             <h3>Nenhuma conversa encontrada</h3>
             <p>Quando você trocar mensagens com outro usuário, elas aparecerão aqui.</p>
 
-            <a href="inicio.html" class="btn-novo">
+            <a href="index.html" class="btn-novo">
                 Procurar itens
             </a>
         </div>
@@ -136,7 +136,7 @@ document.addEventListener("DOMContentLoaded", () => {
     async function carregarMensagens() {
 
         try {
-            console.log("Buscando mensagens. Último ID:", ultimoIdMensagem);
+           
 
             const response = await fetch(
                 `https://localhost:7132/mensagem/${idUsuario}?ultimoId=${ultimoIdMensagem}`,
@@ -150,8 +150,7 @@ document.addEventListener("DOMContentLoaded", () => {
 
             const dados = await response.json();
 
-            console.log(dados);
-            console.log(dados.mensagens);
+           
 
             heardChat.style.display = "flex";
 
@@ -258,8 +257,7 @@ document.addEventListener("DOMContentLoaded", () => {
 
     const params = new URLSearchParams(window.location.search);
 
-    console.log(window.location.search);
-    console.log(params.get("mensagem"));
+  
 
     const mensagem = params.get("mensagem");
 
@@ -298,7 +296,7 @@ document.addEventListener("DOMContentLoaded", () => {
 
             const usuarios = await response.json();
 
-            console.log(usuarios);
+           
             sidebar.innerHTML = "";
 
             usuarios.forEach(u => {
