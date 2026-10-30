@@ -42,20 +42,8 @@
       "DocumentGroups": [
         {
           "DockedWidth": 200,
-          "SelectedChildIndex": 7,
+          "SelectedChildIndex": 6,
           "Children": [
-            {
-              "$type": "Document",
-              "DocumentIndex": 3,
-              "Title": "UsuarioDTO.cs",
-              "DocumentMoniker": "C:\\Users\\manha.ceticc\\Documents\\GitHub\\Desapega_SENAI\\DesapegaSenai\\DesapegaSenai\\DTOs\\UsuarioDTO.cs",
-              "RelativeDocumentMoniker": "DesapegaSenai\\DTOs\\UsuarioDTO.cs",
-              "ToolTip": "C:\\Users\\manha.ceticc\\Documents\\GitHub\\Desapega_SENAI\\DesapegaSenai\\DesapegaSenai\\DTOs\\UsuarioDTO.cs",
-              "RelativeToolTip": "DesapegaSenai\\DTOs\\UsuarioDTO.cs",
-              "ViewState": "AgIAAAAAAAAAAAAAAAAAAA0AAAAAAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2026-09-01T13:00:15.254Z"
-            },
             {
               "$type": "Document",
               "DocumentIndex": 4,
@@ -78,8 +66,7 @@
               "RelativeToolTip": "DesapegaSenai\\Controllers\\UsuarioController.cs",
               "ViewState": "AgIAAFMAAAAAAAAAAAAwwF0AAAARAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2026-07-24T11:05:04.814Z",
-              "EditorCaption": ""
+              "WhenOpened": "2026-07-24T11:05:04.814Z"
             },
             {
               "$type": "Document",
@@ -137,10 +124,22 @@
               "RelativeDocumentMoniker": "DesapegaSenai\\Controllers\\ObjetoController.cs",
               "ToolTip": "C:\\Users\\manha.ceticc\\Documents\\GitHub\\Desapega_SENAI\\DesapegaSenai\\DesapegaSenai\\Controllers\\ObjetoController.cs",
               "RelativeToolTip": "DesapegaSenai\\Controllers\\ObjetoController.cs",
-              "ViewState": "AgIAAA4AAAAAAAAAAAAqwC4AAAApAAAAAAAAAA==",
+              "ViewState": "AgIAADkAAAAAAAAAAAAowEMAAAAzAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
               "WhenOpened": "2026-07-24T11:05:04.813Z",
               "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 3,
+              "Title": "UsuarioDTO.cs",
+              "DocumentMoniker": "C:\\Users\\manha.ceticc\\Documents\\GitHub\\Desapega_SENAI\\DesapegaSenai\\DesapegaSenai\\DTOs\\UsuarioDTO.cs",
+              "RelativeDocumentMoniker": "DesapegaSenai\\DTOs\\UsuarioDTO.cs",
+              "ToolTip": "C:\\Users\\manha.ceticc\\Documents\\GitHub\\Desapega_SENAI\\DesapegaSenai\\DesapegaSenai\\DTOs\\UsuarioDTO.cs",
+              "RelativeToolTip": "DesapegaSenai\\DTOs\\UsuarioDTO.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAA0AAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2026-09-01T13:00:15.254Z"
             }
           ]
         }
